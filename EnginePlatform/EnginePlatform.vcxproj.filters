@@ -1,21 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="EngineMath.cpp" />
+    <ClInclude Include="EngineWindow.h" />
+    <ClInclude Include="PreCompile.h">
+      <Filter>PreCompile</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EngineWindow.cpp" />
     <ClCompile Include="PreCompile.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="EngineMath.h" />
-    <ClInclude Include="PreCompile.h">
-      <Filter>PreCompile</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineDefine.h" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="PreCompile">
-      <UniqueIdentifier>{f9c233ef-8dc1-4ccb-9bc9-091ae6abcfbc}</UniqueIdentifier>
+      <UniqueIdentifier>{c42fe987-784e-4511-9ae1-708551d804c5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
