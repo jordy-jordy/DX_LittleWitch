@@ -20,7 +20,7 @@ public:
 	bool IsExists();
 	void MoveParent();
 
-	std::string GetPathToString();
+	ENGINEAPI std::string GetPathToString();
 
 	// 파일명 + 확장자 포함
 	std::string GetFileName();
