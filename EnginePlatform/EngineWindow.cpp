@@ -30,11 +30,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         EndPaint(hWnd, &ps);
     }
     break;
-    //case WM_SIZING:
-    //{
-    //    int a = 0;
-    //}
-    break;
     case WM_DESTROY:
         --WindowCount;
         break;
@@ -67,7 +62,7 @@ void UEngineWindow::EngineWindowInit(HINSTANCE _Instance)
     CreateWindowClass(wcex);
 }
 
-int UEngineWindow::WindowMessageLoop(std::function<void()> _StartFunction, std::function<void()> _FrameFunction)
+int UEngineWindow::WindowMessageLoop(std::function<void()> _StartFunction, std::function<void()> _FrameFunction, std::function<void()> _EndFunction)
 {
     MSG msg = MSG();
 
@@ -84,13 +79,18 @@ int UEngineWindow::WindowMessageLoop(std::function<void()> _StartFunction, std::
 
     while (0 != WindowCount)
     {
-        if(0 != PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+        if (0 != PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
         {
             TranslateMessage(&msg);
             DispatchMessage(&msg);
         }
 
         _FrameFunction();
+    }
+
+    if (nullptr != _EndFunction)
+    {
+        _EndFunction();
     }
 
     return (int)msg.wParam;
@@ -121,9 +121,9 @@ void UEngineWindow::CreateWindowClass(const WNDCLASSEXA& _Class)
     WindowClasss.insert(std::pair{ _Class.lpszClassName, _Class });
 }
 
-UEngineWindow::UEngineWindow() 
+UEngineWindow::UEngineWindow()
 {
-    
+
 }
 
 UEngineWindow::~UEngineWindow()
@@ -176,10 +176,10 @@ void UEngineWindow::Open(std::string_view _TitleName /*= "Window"*/)
         return;
     }
 
-	// 단순히 윈도창을 보여주는 것만이 아니라
-	ShowWindow(WindowHandle, SW_SHOW);
+    // 단순히 윈도창을 보여주는 것만이 아니라
+    ShowWindow(WindowHandle, SW_SHOW);
     UpdateWindow(WindowHandle);
-	// ShowWindow(WindowHandle, SW_HIDE);
+    // ShowWindow(WindowHandle, SW_HIDE);
 }
 
 void UEngineWindow::SetWindowPosAndScale(FVector _Pos, FVector _Scale)

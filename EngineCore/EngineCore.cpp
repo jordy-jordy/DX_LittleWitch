@@ -22,10 +22,19 @@ void UEngineCore::EngineStart(HINSTANCE _Instance)
 	MainWindow.Open("MainWindow");
 
 	// 윈도우와는 무관합니다.
-	UEngineWindow::WindowMessageLoop(nullptr,
+	UEngineWindow::WindowMessageLoop(
 		[]()
 		{
-
+			// 시작할때 하고 싶은것
+			// 1. 윈도우창 크기 바꾸고 싶다.
+		},
+		[]()
+		{
+			// 엔진이 돌아갈때 하고 싶은것
+		},
+		[]()
+		{
+			// 엔진이 끝났을때 하고 싶은것.
 		});
 
 
