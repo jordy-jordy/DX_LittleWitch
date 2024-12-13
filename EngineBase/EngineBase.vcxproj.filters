@@ -5,6 +5,7 @@
     <ClCompile Include="PreCompile.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
+    <ClCompile Include="EngineDebug.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EngineMath.h" />
@@ -12,6 +13,7 @@
       <Filter>PreCompile</Filter>
     </ClInclude>
     <ClInclude Include="EngineDefine.h" />
+    <ClInclude Include="EngineDebug.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
