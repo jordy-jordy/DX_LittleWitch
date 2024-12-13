@@ -1,17 +1,8 @@
 #include "PreCompile.h"
 #include "ContentsCore.h"
 
-// #define은 그냥 무조건 복붙
 CreateContentsCoreDefine(UContentsCore);
-//STDAPI_(__declspec(dllexport) INT_PTR) CreateContentsCore(std::shared_ptr<IContentsCore>& _Test)
-//{ 
-//	_Test = std::make_shared<UContentsCore>();
-//	if (nullptr == _Test) 
-//	{ 
-//		MSGASSERT("컨텐츠 모듈 생성에 실패했습니다."); 
-//	} 
-//	return 0; 
-//}
+
 
 UContentsCore::UContentsCore()
 {
@@ -23,13 +14,26 @@ UContentsCore::~UContentsCore()
 
 void UContentsCore::EngineStart(UEngineInitData& _Data)
 {
-	// mainwindow는 아무나 건들면 안된다.
-	// 넌 컨텐츠잖아 엔진이 관리하는 윈도우라는게 존재하는지도 몰라야한다.
-
-	_Data.WindowPos = { 100, 100 };
+	// 원하는 윈도우의 클라이언트 크기 설정
 	_Data.WindowSize = { 1280, 720 };
 
-	// 윈도우 크기 지정
+	// 모니터 해상도를 가져옴
+	int screenWidth = GetSystemMetrics(SM_CXSCREEN);
+	int screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+	// 클라이언트 크기를 기반으로 실제 윈도우 크기를 계산
+	RECT windowRect = { 0, 0, _Data.WindowSize.iX(), _Data.WindowSize.iY() };
+	AdjustWindowRect(&windowRect, WS_OVERLAPPEDWINDOW, FALSE);
+
+	// 전체 윈도우 크기 계산
+	int windowWidth = windowRect.right - windowRect.left;
+	int windowHeight = windowRect.bottom - windowRect.top;
+
+	// 화면 중앙에 위치하도록 계산
+	_Data.WindowPos = {
+		(screenWidth - windowWidth) / 2,  // X 좌표
+		(screenHeight - windowHeight) / 2 // Y 좌표
+	};
 }
 
 void UContentsCore::EngineTick(float _DeltaTime)
