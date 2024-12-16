@@ -15,6 +15,19 @@ public:
 
 	ENGINEAPI static void EngineStart(HINSTANCE _Instance, std::string_view _DllName);
 
+	// template<typename GameModeType, typename MainPawnType>
+	static class std::shared_ptr<class ULevel> CreateLevel(std::string_view _Name)
+	{
+		// 1 유지하고 있겠죠.
+		// shared_ptr을 사용하므로 new UEngineLevel()
+		std::shared_ptr<ULevel> NewLevel = NewLevelCreate(_Name);
+		// std::make_shared
+		// new UEngineLevel();
+
+		// 2가 됩니다
+		return NewLevel;
+	}
+
 protected:
 
 private:
@@ -24,5 +37,11 @@ private:
 
 	static void WindowInit(HINSTANCE _Instance);
 	static void LoadContents(std::string_view _DllName);
+
+	static void EngineEnd();
+
+	ENGINEAPI static std::shared_ptr<ULevel> NewLevelCreate(std::string_view _Name);
+
+	static std::map<std::string, std::shared_ptr<class ULevel>> Levels;
 };
 

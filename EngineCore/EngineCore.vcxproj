@@ -171,21 +171,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Actor.h" />
     <ClInclude Include="EngineCore.h">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="IContentsCore.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="PreCompile.h">
       <SubType>
       </SubType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
     <ClCompile Include="EngineCore.cpp">
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="PreCompile.cpp">
       <SubType>
       </SubType>

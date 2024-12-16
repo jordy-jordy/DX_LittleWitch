@@ -4,16 +4,32 @@
     <ClInclude Include="PreCompile.h">
       <Filter>PreCompile</Filter>
     </ClInclude>
-    <ClInclude Include="EngineCore.h" />
     <ClInclude Include="IContentsCore.h">
       <Filter>Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineCore.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Object</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
       <Filter>PreCompile</Filter>
     </ClCompile>
-    <ClCompile Include="EngineCore.cpp" />
+    <ClCompile Include="EngineCore.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -21,6 +37,15 @@
     </Filter>
     <Filter Include="Interface">
       <UniqueIdentifier>{cccd3d49-17e3-46ed-95da-3b2413f9e73e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{1719a118-8ff3-4bf8-8088-ee4e44d26c17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{7e91422e-5fca-426e-a889-e0290b4dbe0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Component">
+      <UniqueIdentifier>{f7ffd2bb-f066-4254-901e-f592d4be4298}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

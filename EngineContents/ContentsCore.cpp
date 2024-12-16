@@ -1,8 +1,9 @@
 #include "PreCompile.h"
 #include "ContentsCore.h"
+#include <EngineCore/Level.h>
+
 
 CreateContentsCoreDefine(UContentsCore);
-
 
 UContentsCore::UContentsCore()
 {
@@ -34,6 +35,9 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 		(screenWidth - windowWidth) / 2,  // X ÁÂÇ¥
 		(screenHeight - windowHeight) / 2 // Y ÁÂÇ¥
 	};
+
+
+	std::shared_ptr<ULevel> Level = UEngineCore::CreateLevel("Titlelevel");
 }
 
 void UContentsCore::EngineTick(float _DeltaTime)
