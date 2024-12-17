@@ -1,7 +1,6 @@
 #pragma once
 
 #include <EngineBase/Object.h>
-#include "EngineCore.h"
 #include <EngineBase/EngineDebug.h>
 
 // 설명 :
@@ -25,6 +24,7 @@ public:
 
 
 	void Tick(float _DeltaTime);
+	void Render(float _DeltaTime);
 
 	template<typename ActorType>
 	std::shared_ptr<ActorType> SpawnActor()
@@ -60,6 +60,9 @@ public:
 		return NewActor;
 	}
 
+	//                           0              100그룹
+	void ChangeRenderGroup(int _PrevGroupOrder, std::shared_ptr<class URenderer> _Renderer);
+
 protected:
 
 private:
@@ -67,5 +70,6 @@ private:
 
 	std::list<std::shared_ptr<class AActor>> AllActorList;
 
+	std::map<int, std::list<std::shared_ptr<class URenderer>>> Renderers;
 };
 

@@ -28,6 +28,9 @@
     <ClInclude Include="GameMode.h">
       <Filter>03_Object\01_Actor</Filter>
     </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>03_Object\00_Component\Contents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -54,6 +57,9 @@
     <ClCompile Include="GameMode.cpp">
       <Filter>03_Object\01_Actor</Filter>
     </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>03_Object\00_Component\Contents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="00_Core">
@@ -73,6 +79,9 @@
     </Filter>
     <Filter Include="03_Object\01_Actor">
       <UniqueIdentifier>{648e9f91-d940-455c-9d84-c56cf21e2fe5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Object\00_Component\Contents">
+      <UniqueIdentifier>{658d9d87-b32d-49aa-8714-adcea58d1aa0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
