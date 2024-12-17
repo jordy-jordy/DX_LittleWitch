@@ -14,7 +14,7 @@ UContentsCore::~UContentsCore()
 {
 }
 
-void UContentsCore::EngineStart(UEngineInitData& _Data)
+void UContentsCore::WidowSizePos(UEngineInitData& _Data)
 {
 	// 원하는 윈도우의 클라이언트 크기 설정
 	_Data.WindowSize = { 1280, 720 };
@@ -36,7 +36,11 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 		(screenWidth - windowWidth) / 2,  // X 좌표
 		(screenHeight - windowHeight) / 2 // Y 좌표
 	};
+}
 
+void UContentsCore::EngineStart(UEngineInitData& _Data)
+{
+	WidowSizePos(_Data);
 
 	UEngineCore::CreateLevel<ATitleGameMode, APawn>("Titlelevel");
 	UEngineCore::OpenLevel("Titlelevel");
