@@ -31,6 +31,9 @@
     <ClInclude Include="Renderer.h">
       <Filter>03_Object\00_Component\Contents</Filter>
     </ClInclude>
+    <ClInclude Include="EngineGraphicDevice.h">
+      <Filter>03_Graphic</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -60,6 +63,9 @@
     <ClCompile Include="Renderer.cpp">
       <Filter>03_Object\00_Component\Contents</Filter>
     </ClCompile>
+    <ClCompile Include="EngineGraphicDevice.cpp">
+      <Filter>03_Graphic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="00_Core">
@@ -82,6 +88,9 @@
     </Filter>
     <Filter Include="03_Object\00_Component\Contents">
       <UniqueIdentifier>{658d9d87-b32d-49aa-8714-adcea58d1aa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Graphic">
+      <UniqueIdentifier>{6b54280d-035c-4d30-ad86-113f90462459}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

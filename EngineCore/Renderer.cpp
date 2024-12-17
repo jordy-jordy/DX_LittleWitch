@@ -12,11 +12,8 @@ URenderer::~URenderer()
 void URenderer::SetOrder(int _Order)
 {
 	int PrevOrder = GetOrder();
-	// 100번이 되었죠?
 	UObject::SetOrder(_Order);
-
 	ULevel* Level = GetActor()->GetWorld();
-
 	// std::shared_ptr<URenderer> Render(this);
 	// std::enable_shared_from_this<UObject> 상속받은 클래스가 자기자신을 this
 	// std::shared_ptr로 만들어진 this를 사용하고 싶을대 호출하는 함수.
@@ -26,7 +23,6 @@ void URenderer::SetOrder(int _Order)
 	// std::shared_ptr<int> NewInt = std::make_shared<int>();
 	// std::shared_ptr<URenderer> RendererPtr = std::dynamic_pointer_cast<URenderer>(ObjectPtr);
 	std::shared_ptr<URenderer> RendererPtr = GetThis<URenderer>();
-
 	Level->ChangeRenderGroup(PrevOrder, RendererPtr);
 }
 

@@ -177,6 +177,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="EngineGraphicDevice.h" />
     <ClInclude Include="GameMode.h" />
     <ClInclude Include="IContentsCore.h" />
     <ClInclude Include="Level.h" />
@@ -195,6 +196,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="EngineGraphicDevice.cpp" />
     <ClCompile Include="GameMode.cpp" />
     <ClCompile Include="Level.cpp" />
     <ClCompile Include="Pawn.cpp" />
