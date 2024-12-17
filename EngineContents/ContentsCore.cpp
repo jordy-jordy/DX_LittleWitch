@@ -1,6 +1,7 @@
 #include "PreCompile.h"
 #include "ContentsCore.h"
 #include <EngineCore/Level.h>
+#include "TitleGameMode.h"
 
 
 CreateContentsCoreDefine(UContentsCore);
@@ -37,7 +38,8 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 	};
 
 
-	std::shared_ptr<ULevel> Level = UEngineCore::CreateLevel("Titlelevel");
+	UEngineCore::CreateLevel<ATitleGameMode, APawn>("Titlelevel");
+	UEngineCore::OpenLevel("Titlelevel");
 }
 
 void UContentsCore::EngineTick(float _DeltaTime)

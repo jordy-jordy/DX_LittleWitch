@@ -9,7 +9,10 @@ UEngineWindow UEngineCore::MainWindow;
 HMODULE UEngineCore::ContentsDLL = nullptr;
 std::shared_ptr<IContentsCore> UEngineCore::Core;
 
-std::map<std::string, std::shared_ptr<class ULevel>> UEngineCore::Levels;
+std::shared_ptr<class ULevel> UEngineCore::NextLevel;
+std::shared_ptr<class ULevel> UEngineCore::CurLevel = nullptr;
+
+std::map<std::string, std::shared_ptr<class ULevel>> UEngineCore::LevelMap;
 
 UEngineCore::UEngineCore()
 {
@@ -80,15 +83,18 @@ void UEngineCore::EngineStart(HINSTANCE _Instance, std::string_view _DllName)
 	UEngineWindow::WindowMessageLoop(
 		[]()
 		{
+			// 어딘가에서 이걸 호출하면 콘솔창이 뜨고 그 뒤로는 std::cout 하면 그 콘솔창에 메세지가 뜰겁니다.
+			// UEngineDebug::StartConsole();
 			UEngineInitData Data;
 			Core->EngineStart(Data);
-
 			MainWindow.SetWindowPosAndScale(Data.WindowPos, Data.WindowSize);
 
+			
 
 		},
 		[]()
 		{
+			EngineFrame();
 			// 엔진이 돌아갈때 하고 싶은것
 		},
 		[]()
@@ -118,14 +124,49 @@ std::shared_ptr<ULevel> UEngineCore::NewLevelCreate(std::string_view _Name)
 	std::shared_ptr<ULevel> Ptr = std::make_shared<ULevel>();
 	Ptr->SetName(_Name);
 
-	Levels.insert({ _Name.data(), Ptr});
+	LevelMap.insert({ _Name.data(), Ptr});
+
+	std::cout << "NewLevelCreate" << std::endl;
 
 	return Ptr;
+}
+
+void UEngineCore::OpenLevel(std::string_view _Name)
+{
+	if (false == LevelMap.contains(_Name.data()))
+	{
+		MSGASSERT("만들지 않은 레벨로 변경하려고 했습니다." + std::string(_Name));
+		return;
+	}
+	
+
+	NextLevel = LevelMap[_Name.data()];
+}
+
+void UEngineCore::EngineFrame()
+{
+	if (nullptr != NextLevel)
+	{
+		if (nullptr != CurLevel)
+		{
+			CurLevel->LevelChangeEnd();
+		}
+
+		CurLevel = NextLevel;
+
+		CurLevel->LevelChangeStart();
+		NextLevel = nullptr;
+	}
+
+	CurLevel->Tick(0.0f);
+
+	// tick
 }
 
 void UEngineCore::EngineEnd()
 {
 	// 리소스 정리도 여기서 할겁니다.
 
-	Levels.clear();
+	LevelMap.clear();
+	UEngineDebug::EndConsole();
 }

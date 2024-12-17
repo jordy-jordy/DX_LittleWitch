@@ -14,7 +14,7 @@ namespace UEngineDebug
 	ENGINEAPI void OutPutString(const std::string& Text);
 
 
-	// ENGINEAPI void StartConsole();
+	ENGINEAPI void StartConsole();
 
 	// AllocConsole();
 	// 이제 콘솔창과 연결된 입력 출력 핸들을 내가 지정한 것으로 바꿔라.
@@ -26,8 +26,7 @@ namespace UEngineDebug
 	//_tfreopen(_T("CONOUT$"), _T("w"), stdout);
 	//_tfreopen(_T("CONIN$"), _T("r"), stdin);
 	//_tfreopen(_T("CONERR$"), _T("w"), stderr);
-
-	// ENGINEAPI void EndConsole();
+	ENGINEAPI void EndConsole();
 	// FreeConsole();
 
 }

@@ -1,8 +1,9 @@
 #pragma once
 #include <string>
+#include <memory>
 
-// 설명 :
-class UObject
+// 설명 : std::enable_shared_from_this<UObject>
+class UObject : public std::enable_shared_from_this<UObject>
 {
 public:
 	// constrcuter destructer
