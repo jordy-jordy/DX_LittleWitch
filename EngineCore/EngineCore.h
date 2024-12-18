@@ -38,6 +38,8 @@ public:
 protected:
 
 private:
+	// 데이터영역에 있죠? => 언제 삭제될까요?
+	// 릭체크는 
 	ENGINEAPI static UEngineGraphicDevice Device;
 	static UEngineWindow MainWindow;
 	static HMODULE ContentsDLL;
