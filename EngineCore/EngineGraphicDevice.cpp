@@ -12,6 +12,24 @@ UEngineGraphicDevice::~UEngineGraphicDevice()
 
 void UEngineGraphicDevice::Release()
 {
+    if (nullptr != RTV)
+    {
+        RTV->Release();
+        RTV = nullptr;
+    }
+
+    if (nullptr != DXBackBufferTexture)
+    {
+        DXBackBufferTexture->Release();
+        DXBackBufferTexture = nullptr;
+    }
+
+    if (nullptr != SwapChain)
+    {
+        SwapChain->Release();
+        SwapChain = nullptr;
+    }
+
     if (nullptr != Context)
     {
         Context->Release();
@@ -115,7 +133,7 @@ void UEngineGraphicDevice::CreateDeviceAndContext()
     // 그래픽카드 2개 달려있는 사람들이 있다.
 
     // 가장 성능 좋은 그래픽 카드를 찾았다.
-    IDXGIAdapter* Adapter = GetHighPerFormanceAdapter();
+    MainAdapter = GetHighPerFormanceAdapter();
 
     int iFlag = 0;
 
@@ -158,7 +176,7 @@ void UEngineGraphicDevice::CreateDeviceAndContext()
     // _COM_Outptr_opt_ ID3D11DeviceContext** ppImmediateContext
 
     HRESULT Result = D3D11CreateDevice(
-        Adapter, 
+        MainAdapter,
         D3D_DRIVER_TYPE::D3D_DRIVER_TYPE_UNKNOWN,
         nullptr, // 특정 단계를 내가 짠 코드로 대체하겠다.
         iFlag,
@@ -205,8 +223,6 @@ void UEngineGraphicDevice::CreateDeviceAndContext()
         return;
     }
     // 초기화 종료
-
-    Adapter->Release();
 }
 
 void UEngineGraphicDevice::CreateBackBuffer(const UEngineWindow& _Window)
@@ -265,9 +281,77 @@ void UEngineGraphicDevice::CreateBackBuffer(const UEngineWindow& _Window)
     // 전혀 기억안남
     ScInfo.Flags = DXGI_SWAP_CHAIN_FLAG_ALLOW_MODE_SWITCH;
 
+    //MainAdapter->Release();
+
+    IDXGIFactory* pF = nullptr;
+
+    // 날 만든 팩토리를 얻어올수 있다.
+    MainAdapter->GetParent(__uuidof(IDXGIFactory), reinterpret_cast<void**>(&pF));
+
+    // IUnknown* pDevice,
+    // DXGI_SWAP_CHAIN_DESC* pDesc,
+    // IDXGISwapChain** ppSwapChain
+
+    pF->CreateSwapChain(Device, &ScInfo, &SwapChain);
+
+    pF->Release();
+    MainAdapter->Release();
+
+    if (nullptr == SwapChain)
+    {
+        MSGASSERT("스왑체인 제작에 실패했습니다.");
+    }
+
+    // HDC라고 보면 됩니다.
+    // 스왑체인 내부에 존재하는 
+    // HDC안에 bitmap이 들어있는 개념이었죠?
+    // bitmap => 진짜 색깔 배열에 대한 핸들
+    // FColor Arr[100][100];
+    // directx에서는 이런 bitmap이 id3d11texture2d*
+
+    // SwapChain내부에 id3d11texture2d*들고 있다.
+    // DXBackBufferTexture => 는 BITMAP입니다.
+    DXBackBufferTexture = nullptr;
+    if (S_OK != SwapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>
+        (&DXBackBufferTexture)))
+    {
+        MSGASSERT("백버퍼 텍스처를 얻어오는데 실패했습니다.");
+    };
+
+    // id3d11texture2d* 이녀석 만으로는 할수 있는게 많이 없습니다.
+    // 애는 이미지의 2차원 데이터를 나타낼뿐 수정권한은 없기 때문입니다.
+    // 이미지를 수정하거나 사용할수 있는 권한을 id3d11texture2d*을 얻어내야 합니다.
+    // WINAPI에서 HDC 얻어내는 것처럼 id3d11texture2d* 수정권한인
+    // 텍스처에서 만들어내야 합니다.
+
+    //                             HBITMAP                       HDC
+    if (S_OK != Device->CreateRenderTargetView(DXBackBufferTexture, nullptr, &RTV))
+    {
+        MSGASSERT("텍스처 수정권한 획득에 실패했습니다");
+    }
+
 }
 
 
+void UEngineGraphicDevice::RenderStart()
+{
+    FVector ClearColor;
 
+    ClearColor = FVector(0.0f, 0.0f, 1.0f, 1.0f);
 
+    // 이미지 파란색으로 채색해줘.
+    Context->ClearRenderTargetView(RTV, ClearColor.Arr1D);
+}
 
+void UEngineGraphicDevice::RenderEnd()
+{
+    // 내가 지정한 hwnd에 다이렉트 랜더링 결과를 출력해라.
+    HRESULT Result = SwapChain->Present(0, 0);
+
+    //             디바이스가 랜더링 도중 삭제          디바이스가 리셋되었을경우
+    if (Result == DXGI_ERROR_DEVICE_REMOVED || Result == DXGI_ERROR_DEVICE_RESET)
+    {
+        MSGASSERT("해상도 변경이나 디바이스 관련 설정이 런타임 도중 수정되었습니다");
+        return;
+    }
+}

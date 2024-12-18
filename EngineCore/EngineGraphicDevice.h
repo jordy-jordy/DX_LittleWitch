@@ -48,6 +48,10 @@ public:
 
 	void Release();
 
+	void RenderStart();
+
+	void RenderEnd();
+
 protected:
 
 private:
@@ -68,6 +72,13 @@ private:
 	// 다이렉트 x에서는 백버퍼를 스왑 체인이라고 부르고
 	// 내가 교체나 
 	IDXGISwapChain* SwapChain = nullptr;
+
+	IDXGIAdapter* MainAdapter = nullptr;
+
+	ID3D11Texture2D* DXBackBufferTexture = nullptr;
+	ID3D11RenderTargetView* RTV = nullptr;
+
+	//FVector ClearColor = FVector::BLUE;
 
 };
 
