@@ -490,6 +490,8 @@ public:
 
 };
 
+using FVector = float4;
+
 // 행렬 은 보통 매트릭스 라고 합니다.
 class FMatrix
 {

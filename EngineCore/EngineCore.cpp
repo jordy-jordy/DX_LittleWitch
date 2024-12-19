@@ -172,6 +172,11 @@ void UEngineCore::EngineEnd()
 {
 	// 리소스 정리도 여기서 할겁니다.
 	Device.Release();
+
+	CurLevel = nullptr;
+	NextLevel = nullptr;
 	LevelMap.clear();
+
 	UEngineDebug::EndConsole();
+
 }
