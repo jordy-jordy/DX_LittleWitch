@@ -26,5 +26,12 @@ VertexShaderOutPut VertexToWorld(EngineVertex _Vertex)
 
 float4 PixelToWorld(VertexShaderOutPut _Vertex) : SV_Target0
 {
-    return float4(0.5098f, 0.7922f, 0.6118f, 1.0f);
+    if (_Vertex.SVPOSITION.x < 640.0f) // x축 기준으로 반 나누기
+    {
+        return float4(0.0f, 0.0f, 0.0f, 1.0f); // 검은색
+    }
+    else
+    {
+        return float4(1.0f, 1.0f, 1.0f, 1.0f);
+    }
 }
