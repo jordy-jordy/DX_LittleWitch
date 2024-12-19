@@ -1,4 +1,5 @@
 
+// #include ""
 
 
 
@@ -24,10 +25,16 @@
 // 내가 이 점의 컬러에요
 // 포지션이에요
 
+//#define TEST
+//#ifdef TEST
+//#else
+//#endif
+
 struct EngineVertex
 {
 	float4 COLOR : COLOR;
 	float4 POSITION : POSITION;
+
 };
 
 // 버텍스 쉐이더는 무조건 리턴값이 있어야 합니다.
@@ -40,13 +47,12 @@ struct VertexShaderOutPut
 	float4 COLOR : COLOR;
 };
 
+// 버텍스쉐이더를 다 만들었다.
 VertexShaderOutPut VertexToWorld(EngineVertex _Vertex)
 {
 	VertexShaderOutPut OutPut;
-	
 	// _Vertex 0.5, 0.5
 	OutPut.SVPOSITION = _Vertex.POSITION;
 	OutPut.COLOR = _Vertex.COLOR;
-	
 	return OutPut;
 }
