@@ -26,5 +26,5 @@ VertexShaderOutPut VertexToWorld(EngineVertex _Vertex)
 
 float4 PixelToWorld(VertexShaderOutPut _Vertex) : SV_Target0
 {
-	return float4(1.0f, 0.0f, 0.0f, 1.0f);
+    return float4(0.5098f, 0.7922f, 0.6118f, 1.0f);
 }
