@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Player.h" />
     <ClInclude Include="PreCompile.h">
       <Filter>01_PreCompile</Filter>
     </ClInclude>
     <ClInclude Include="TitleLogo.h">
-      <Filter>03_Actors\0_Title</Filter>
+      <Filter>03_Actors\00_Title</Filter>
     </ClInclude>
     <ClInclude Include="TitleGameMode.h">
       <Filter>02_GameMode</Filter>
@@ -14,20 +13,25 @@
     <ClInclude Include="ContentsCore.h">
       <Filter>00_Core</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>03_Actors\02_Play</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Player.cpp" />
     <ClCompile Include="PreCompile.cpp">
       <Filter>01_PreCompile</Filter>
     </ClCompile>
     <ClCompile Include="TitleLogo.cpp">
-      <Filter>03_Actors\0_Title</Filter>
+      <Filter>03_Actors\00_Title</Filter>
     </ClCompile>
     <ClCompile Include="TitleGameMode.cpp">
       <Filter>02_GameMode</Filter>
     </ClCompile>
     <ClCompile Include="ContentsCore.cpp">
       <Filter>00_Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>03_Actors\02_Play</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -43,8 +47,11 @@
     <Filter Include="03_Actors">
       <UniqueIdentifier>{5330aaca-3ea8-4355-a83a-2f01272a40c6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03_Actors\0_Title">
+    <Filter Include="03_Actors\00_Title">
       <UniqueIdentifier>{3f56e8c4-d1a6-41ec-bea6-a4d1e3a0d279}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\02_Play">
+      <UniqueIdentifier>{7f451d07-f808-4eda-bd64-9fa093a42036}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
