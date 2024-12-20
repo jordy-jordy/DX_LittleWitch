@@ -1,99 +1,110 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="EngineCore.h" />
-    <ClInclude Include="PreCompile.h" />
     <ClInclude Include="IContentsCore.h">
-      <Filter>Interface</Filter>
+      <Filter>02_Interface</Filter>
     </ClInclude>
     <ClInclude Include="Level.h">
-      <Filter>Object</Filter>
+      <Filter>04_Object</Filter>
     </ClInclude>
     <ClInclude Include="Actor.h">
-      <Filter>Object</Filter>
+      <Filter>04_Object</Filter>
     </ClInclude>
     <ClInclude Include="ActorComponent.h">
-      <Filter>Object\Component</Filter>
+      <Filter>04_Object\Component</Filter>
     </ClInclude>
     <ClInclude Include="SceneComponent.h">
-      <Filter>Object\Component</Filter>
+      <Filter>04_Object\Component</Filter>
     </ClInclude>
     <ClInclude Include="GameMode.h">
-      <Filter>Object\Actor</Filter>
+      <Filter>04_Object\Actor</Filter>
     </ClInclude>
     <ClInclude Include="Pawn.h">
-      <Filter>Object\Actor</Filter>
+      <Filter>04_Object\Actor</Filter>
     </ClInclude>
     <ClInclude Include="Renderer.h">
-      <Filter>Object\Component\Contents</Filter>
+      <Filter>04_Object\Component\Contents</Filter>
     </ClInclude>
     <ClInclude Include="EngineGraphicDevice.h">
-      <Filter>Graphic</Filter>
+      <Filter>03_Graphic</Filter>
     </ClInclude>
     <ClInclude Include="EngineCamera.h">
-      <Filter>Object\Render</Filter>
+      <Filter>04_Object\Render</Filter>
     </ClInclude>
     <ClInclude Include="CameraActor.h">
-      <Filter>Object\Render</Filter>
+      <Filter>04_Object\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineCore.h">
+      <Filter>00_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="PreCompile.h">
+      <Filter>01_PreCompile</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EngineCore.cpp" />
-    <ClCompile Include="PreCompile.cpp" />
     <ClCompile Include="Level.cpp">
-      <Filter>Object</Filter>
+      <Filter>04_Object</Filter>
     </ClCompile>
     <ClCompile Include="Actor.cpp">
-      <Filter>Object</Filter>
+      <Filter>04_Object</Filter>
     </ClCompile>
     <ClCompile Include="ActorComponent.cpp">
-      <Filter>Object\Component</Filter>
+      <Filter>04_Object\Component</Filter>
     </ClCompile>
     <ClCompile Include="SceneComponent.cpp">
-      <Filter>Object\Component</Filter>
+      <Filter>04_Object\Component</Filter>
     </ClCompile>
     <ClCompile Include="GameMode.cpp">
-      <Filter>Object\Actor</Filter>
+      <Filter>04_Object\Actor</Filter>
     </ClCompile>
     <ClCompile Include="Pawn.cpp">
-      <Filter>Object\Actor</Filter>
+      <Filter>04_Object\Actor</Filter>
     </ClCompile>
     <ClCompile Include="Renderer.cpp">
-      <Filter>Object\Component\Contents</Filter>
+      <Filter>04_Object\Component\Contents</Filter>
     </ClCompile>
     <ClCompile Include="EngineGraphicDevice.cpp">
-      <Filter>Graphic</Filter>
+      <Filter>03_Graphic</Filter>
     </ClCompile>
     <ClCompile Include="EngineCamera.cpp">
-      <Filter>Object\Render</Filter>
+      <Filter>04_Object\Render</Filter>
     </ClCompile>
     <ClCompile Include="CameraActor.cpp">
-      <Filter>Object\Render</Filter>
+      <Filter>04_Object\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineCore.cpp">
+      <Filter>00_Core</Filter>
+    </ClCompile>
+    <ClCompile Include="PreCompile.cpp">
+      <Filter>01_PreCompile</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Interface">
-      <UniqueIdentifier>{dbbc7d85-8a99-4d04-941c-12190193cbcb}</UniqueIdentifier>
+    <Filter Include="01_PreCompile">
+      <UniqueIdentifier>{85bf19de-4383-45f1-bef4-c457c437adf5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Core">
+    <Filter Include="00_Core">
       <UniqueIdentifier>{7804f68d-5a6b-41af-b1db-5c8cc65d0713}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object">
-      <UniqueIdentifier>{2f9cec39-ffc5-42e7-951f-4e4aa54ba953}</UniqueIdentifier>
+    <Filter Include="02_Interface">
+      <UniqueIdentifier>{dbbc7d85-8a99-4d04-941c-12190193cbcb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\Component">
-      <UniqueIdentifier>{f035e895-31ab-4451-8f6a-d30bbf373292}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\Actor">
-      <UniqueIdentifier>{c0338f66-8d0f-4f97-9480-66043fb96908}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Object\Component\Contents">
-      <UniqueIdentifier>{e1de5f16-b413-48ce-b221-15697df9fca2}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Graphic">
+    <Filter Include="03_Graphic">
       <UniqueIdentifier>{27490627-d4db-4c0e-a2da-2174f676fcfc}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Object\Render">
+    <Filter Include="04_Object">
+      <UniqueIdentifier>{2f9cec39-ffc5-42e7-951f-4e4aa54ba953}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Object\Component">
+      <UniqueIdentifier>{f035e895-31ab-4451-8f6a-d30bbf373292}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Object\Component\Contents">
+      <UniqueIdentifier>{e1de5f16-b413-48ce-b221-15697df9fca2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Object\Actor">
+      <UniqueIdentifier>{c0338f66-8d0f-4f97-9480-66043fb96908}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Object\Render">
       <UniqueIdentifier>{af84143f-11d7-4986-8f8e-8fc5f9e2d1ca}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
