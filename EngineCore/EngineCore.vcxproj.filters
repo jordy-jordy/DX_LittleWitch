@@ -122,6 +122,9 @@
     <Filter Include="01_ThirdParty\DirectxTex\Inc">
       <UniqueIdentifier>{4005c831-de80-42b2-9c00-7903e146e24b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01_ThirdParty\DirectxTex\Release">
+      <UniqueIdentifier>{14691a10-93f9-4603-ac14-e23e9beab8f4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ThirdParty\DirectxTex\Inc\DirectXTex.inl">
@@ -129,8 +132,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="ThirdParty\DirectxTex\Debug\DirectXTex.lib">
+    <Library Include="ThirdParty\DirectxTex\Debug\DirectXTex_Debug.lib">
       <Filter>01_ThirdParty\DirectxTex\Debug</Filter>
+    </Library>
+    <Library Include="ThirdParty\DirectxTex\Release\DirectXTex_Release.lib">
+      <Filter>01_ThirdParty\DirectxTex\Release</Filter>
     </Library>
   </ItemGroup>
 </Project>
