@@ -6,8 +6,7 @@ ATitleLogo::ATitleLogo()
 {
 	// 랜더러를 만든다.
 	LogoRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	LogoRenderer->SetSprite("Player_Test.png");
-
+	LogoRenderer->SetSprite("Ellie_Basic_Collecting_Mongsiri.png");
 
 	SetActorRelativeScale3D({600.0f, 600.0f, 1.0f });
 	// SetActorLocation({ 200.0f, 100.0f, 1.0f });
