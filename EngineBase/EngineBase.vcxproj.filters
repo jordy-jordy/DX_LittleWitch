@@ -28,6 +28,9 @@
     <ClCompile Include="EngineString.cpp">
       <Filter>String</Filter>
     </ClCompile>
+    <ClCompile Include="EngineTimer.cpp">
+      <Filter>Time</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PreCompile.h">
@@ -60,6 +63,9 @@
     <ClInclude Include="EngineString.h">
       <Filter>String</Filter>
     </ClInclude>
+    <ClInclude Include="EngineTimer.h">
+      <Filter>Time</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="PreCompile">
@@ -82,6 +88,9 @@
     </Filter>
     <Filter Include="String">
       <UniqueIdentifier>{202222d2-7446-47a6-8b63-6993e933ad6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Time">
+      <UniqueIdentifier>{68217d31-7eb4-4e96-b4ff-aaaff05d707c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

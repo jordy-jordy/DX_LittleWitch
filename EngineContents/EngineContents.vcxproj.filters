@@ -14,7 +14,7 @@
       <Filter>00_Core</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
-      <Filter>03_Actors\02_Play</Filter>
+      <Filter>03_Actors\01_Play</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -31,7 +31,7 @@
       <Filter>00_Core</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>03_Actors\02_Play</Filter>
+      <Filter>03_Actors\01_Play</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -50,7 +50,7 @@
     <Filter Include="03_Actors\00_Title">
       <UniqueIdentifier>{3f56e8c4-d1a6-41ec-bea6-a4d1e3a0d279}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03_Actors\02_Play">
+    <Filter Include="03_Actors\01_Play">
       <UniqueIdentifier>{7f451d07-f808-4eda-bd64-9fa093a42036}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
