@@ -196,6 +196,7 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="EngineResources.h" />
+    <ClInclude Include="EngineSprite.h" />
     <ClInclude Include="EngineTexture.h" />
     <ClInclude Include="GameMode.h">
       <SubType>
@@ -251,6 +252,7 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="EngineResources.cpp" />
+    <ClCompile Include="EngineSprite.cpp" />
     <ClCompile Include="EngineTexture.cpp" />
     <ClCompile Include="GameMode.cpp">
       <SubType>

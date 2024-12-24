@@ -7,16 +7,10 @@
 ATitleGameMode::ATitleGameMode()
 {
 	{
-		std::shared_ptr<ATitleLogo> Logo = GetWorld()->SpawnActor<ATitleLogo>();
+		Logo = GetWorld()->SpawnActor<ATitleLogo>();
 		Logo->SetActorLocation({ 300.0f, 0.0f, 0.0f });
-		Logo->GetRenderer()->SetSpriteData({ 0.0f, 0.0f }, {0.5f, 0.5f});
+		Logo->GetRenderer()->SetSpriteData(4);
 	}
-
-	{
-		std::shared_ptr<ATitleLogo> Logo = GetWorld()->SpawnActor<ATitleLogo>();
-		Logo->SetActorLocation({ -300.0f, 0.0f, 0.0f });
-	}
-
 
 	// 카메라를 일정거리 뒤로 가서 
 	// 카메라 위치조정을 무조건 해줘야 할것이다.
@@ -33,6 +27,19 @@ void ATitleGameMode::Tick(float _DeltaTime)
 {
 	// 부모 호출
 	AActor::Tick(_DeltaTime);
+
+	static float Time = 1.0f;
+	static int Index = 0;
+
+	Logo->GetRenderer()->SetSpriteData(Index);
+
+	Time -= 0.0001;
+
+	if (0.0f >= Time)
+	{
+		++Index;
+		Time = 1.0f;
+	}
 
 
 }
