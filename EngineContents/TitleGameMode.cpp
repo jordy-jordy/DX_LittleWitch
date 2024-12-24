@@ -2,11 +2,20 @@
 #include "TitleGameMode.h"
 #include "TitleLogo.h"
 #include <EngineCore/CameraActor.h>
+#include <EngineCore/SpriteRenderer.h>
 
 ATitleGameMode::ATitleGameMode()
 {
-	GetWorld()->SpawnActor<ATitleLogo>();
+	{
+		std::shared_ptr<ATitleLogo> Logo = GetWorld()->SpawnActor<ATitleLogo>();
+		Logo->SetActorLocation({ 300.0f, 0.0f, 0.0f });
+		Logo->GetRenderer()->SetSpriteData({ 0.0f, 0.0f }, {0.5f, 0.5f});
+	}
 
+	{
+		std::shared_ptr<ATitleLogo> Logo = GetWorld()->SpawnActor<ATitleLogo>();
+		Logo->SetActorLocation({ -300.0f, 0.0f, 0.0f });
+	}
 
 
 	// 카메라를 일정거리 뒤로 가서 
