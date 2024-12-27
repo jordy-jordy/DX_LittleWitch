@@ -61,7 +61,7 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 	}
 
 	UEngineSprite::CreateSpriteToMeta("Aurea_Idle.png", ".sdata");
-
+	//UEngineSprite::CreateSpriteToMeta("Mongsiri_Collected.png","");
 
 	UEngineCore::CreateLevel<ATitleGameMode, APawn>("Titlelevel");
 	UEngineCore::OpenLevel("Titlelevel");

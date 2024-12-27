@@ -16,6 +16,11 @@ ATitleLogo::ATitleLogo()
 	Animation->IsAutoScale = true;
 	Animation->AutoScaleRatio = 4.0f;
 	LogoRenderer->ChangeAnimation("Idle");
+
+	TestRenderer = CreateDefaultSubObject<USpriteRenderer>();
+	TestRenderer->SetSprite("Mongsiri_Collected.png", 0);
+	TestRenderer->SetRelativeScale3D({ 800, 800, 1.0f });
+
 }
 
 ATitleLogo::~ATitleLogo()
