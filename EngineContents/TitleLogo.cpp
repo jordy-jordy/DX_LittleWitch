@@ -1,16 +1,15 @@
 #include "PreCompile.h"
 #include "TitleLogo.h"
 #include <EngineCore/SpriteRenderer.h>
+#include <EnginePlatform/EngineInput.h>
+#include <EngineCore/DefaultSceneComponent.h>
 
 ATitleLogo::ATitleLogo()
 {
 	// 랜더러를 만든다.
 	LogoRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	LogoRenderer->SetSprite("Aurea_Idle.png", 0);
-
-
-	SetActorRelativeScale3D({600.0f, 600.0f, 1.0f });
-	// SetActorLocation({ 200.0f, 100.0f, 1.0f });
+	LogoRenderer->SetSprite("Aurea_Idle.png", 3);
+	LogoRenderer->SetRelativeScale3D({ 500, 500, 1.0f });
 }
 
 ATitleLogo::~ATitleLogo()

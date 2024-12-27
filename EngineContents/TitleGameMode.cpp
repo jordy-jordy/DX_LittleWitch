@@ -23,8 +23,8 @@ ATitleGameMode::ATitleGameMode()
 {
 	{
 		Logo = GetWorld()->SpawnActor<ATitleLogo>();
-		Logo->SetActorLocation({ 300.0f, 0.0f, 0.0f });
-		Logo->GetRenderer()->SetSpriteData(4);
+		//Logo->SetActorLocation({ 300.0f, 0.0f, 0.0f });
+		//Logo->GetRenderer()->SetSpriteData(4);
 	}
 
 	// 카메라를 일정거리 뒤로 가서 
@@ -32,7 +32,7 @@ ATitleGameMode::ATitleGameMode()
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
 	Camera->SetActorLocation({0.0f, 0.0f, -1000.0f, 1.0f});
 
-	UEngineGUI::CreateGUIWindow<TestWindow>("TestWindow");
+	//UEngineGUI::CreateGUIWindow<TestWindow>("TestWindow");
 }
 
 ATitleGameMode::~ATitleGameMode()
