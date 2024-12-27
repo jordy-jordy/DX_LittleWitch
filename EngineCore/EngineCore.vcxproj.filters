@@ -264,11 +264,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="ThirdParty\DirectxTex\Debug\DirectXTex_Debug.lib">
+    <CopyFileToFolders Include="ThirdParty\DirectxTex\Debug\DirectXTex_Debug.lib">
       <Filter>01_ThirdParty\DirectxTex\Debug</Filter>
-    </Library>
-    <Library Include="ThirdParty\DirectxTex\Release\DirectXTex_Release.lib">
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="ThirdParty\DirectxTex\Release\DirectXTex_Release.lib">
       <Filter>01_ThirdParty\DirectxTex\Release</Filter>
-    </Library>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>
