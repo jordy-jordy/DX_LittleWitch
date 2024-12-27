@@ -94,6 +94,15 @@
     <ClInclude Include="RenderUnit.h">
       <Filter>04_Object\Component\Render</Filter>
     </ClInclude>
+    <ClInclude Include="IndexBuffer.h">
+      <Filter>05_Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>05_Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineVertex.h">
+      <Filter>05_Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Level.cpp">
@@ -176,6 +185,15 @@
     </ClCompile>
     <ClCompile Include="RenderUnit.cpp">
       <Filter>04_Object\Component\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineGraphicDevice_Resources.cpp">
+      <Filter>03_Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="IndexBuffer.cpp">
+      <Filter>05_Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>05_Resources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
