@@ -85,6 +85,9 @@
     <ClInclude Include="EngineGUIWindow.h">
       <Filter>01_GUI</Filter>
     </ClInclude>
+    <ClInclude Include="DefaultSceneComponent.h">
+      <Filter>04_Object\Component\Contents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Level.cpp">
@@ -158,6 +161,9 @@
     </ClCompile>
     <ClCompile Include="EngineGUIWindow.cpp">
       <Filter>01_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="DefaultSceneComponent.cpp">
+      <Filter>04_Object\Component\Contents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
