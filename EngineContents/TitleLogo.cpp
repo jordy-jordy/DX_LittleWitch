@@ -6,7 +6,7 @@ ATitleLogo::ATitleLogo()
 {
 	// 랜더러를 만든다.
 	LogoRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	LogoRenderer->SetSprite("Player.png", 0);
+	LogoRenderer->SetSprite("Aurea_Idle.png", 0);
 
 
 	SetActorRelativeScale3D({600.0f, 600.0f, 1.0f });
