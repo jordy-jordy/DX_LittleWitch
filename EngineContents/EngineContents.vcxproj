@@ -172,7 +172,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ContentsCore.h" />
+    <ClInclude Include="EndGameMode.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="Player.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="PlayGameMode.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -185,7 +193,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContentsCore.cpp" />
+    <ClCompile Include="EndGameMode.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
     <ClCompile Include="Player.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="PlayGameMode.cpp">
       <SubType>
       </SubType>
     </ClCompile>

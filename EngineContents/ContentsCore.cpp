@@ -3,7 +3,10 @@
 #include <EngineCore/Level.h>
 #include <EngineCore/EngineTexture.h>
 #include <EngineCore/EngineSprite.h>
+
 #include "TitleGameMode.h"
+#include "PlayGameMode.h"
+#include "EndGameMode.h"
 
 
 CreateContentsCoreDefine(UContentsCore);
@@ -14,6 +17,29 @@ UContentsCore::UContentsCore()
 
 UContentsCore::~UContentsCore()
 {
+}
+
+void UContentsCore::EngineStart(UEngineInitData& _Data)
+{
+	WidowSizePos(_Data);
+	DirLoad();
+	SpritesInit();
+
+	UEngineCore::CreateLevel<ATitleGameMode, APawn>("TITLE");
+	UEngineCore::CreateLevel<APlayGameMode, APawn>("PLAY");
+	UEngineCore::CreateLevel<AEndGameMode, APawn>("END");
+
+	UEngineCore::OpenLevel("TITLE");
+}
+
+void UContentsCore::EngineTick(float _DeltaTime)
+{
+
+}
+
+void UContentsCore::EngineEnd()
+{
+
 }
 
 void UContentsCore::WidowSizePos(UEngineInitData& _Data)
@@ -40,39 +66,26 @@ void UContentsCore::WidowSizePos(UEngineInitData& _Data)
 	};
 }
 
-void UContentsCore::EngineStart(UEngineInitData& _Data)
+void UContentsCore::DirLoad()
 {
-	WidowSizePos(_Data);
-
+	UEngineDirectory Dir;
+	if (false == Dir.MoveParentToDirectory("ContentsResources"))
 	{
-		UEngineDirectory Dir;
-		if (false == Dir.MoveParentToDirectory("ContentsResources"))
-		{
-			MSGASSERT("리소스 폴더를 찾지 못했습니다.");
-			return;
-		}
-		Dir.Append("Image//WitchResource");
-		std::vector<UEngineFile> ImageFiles = Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
-		for (size_t i = 0; i < ImageFiles.size(); i++)
-		{
-			std::string FilePath = ImageFiles[i].GetPathToString();
-			UEngineTexture::Load(FilePath);
-		}
+		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
+		return;
 	}
+	Dir.Append("Image//WitchResource");
+	std::vector<UEngineFile> ImageFiles = Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
+	for (size_t i = 0; i < ImageFiles.size(); i++)
+	{
+		std::string FilePath = ImageFiles[i].GetPathToString();
+		UEngineTexture::Load(FilePath);
+	}
+}
 
+void UContentsCore::SpritesInit()
+{
 	UEngineSprite::CreateSpriteToMeta("Aurea_Idle.png", ".sdata");
 	//UEngineSprite::CreateSpriteToMeta("Mongsiri_Collected.png","");
-
-	UEngineCore::CreateLevel<ATitleGameMode, APawn>("Titlelevel");
-	UEngineCore::OpenLevel("Titlelevel");
-}
-
-void UContentsCore::EngineTick(float _DeltaTime)
-{
-
-}
-
-void UContentsCore::EngineEnd()
-{
 
 }
