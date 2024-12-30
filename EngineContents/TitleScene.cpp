@@ -85,6 +85,7 @@ ATitleScene::ATitleScene()
 
 	BRIDGE_SHADOW1 = CreateDefaultSubObject<USpriteRenderer>();
 	BRIDGE_SHADOW1->SetSprite("Title_Train_Bridge_Down.png", 0);
+	BRIDGE_SHADOW1->SpriteData.CuttingPos.W = 0.3f;
 	BRIDGE_SHADOW1->SetRelativeScale3D({ 1404.0f, 32.0f, 1.0f });
 	SetLocation_Window(BRIDGE_SHADOW1, { -59.0f, 630.0f, 0 });
 
@@ -112,6 +113,11 @@ ATitleScene::ATitleScene()
 	TRAIN_BRIDGE->SetSprite("Title_Train_Bridge.png", 0);
 	TRAIN_BRIDGE->SetRelativeScale3D({ 1404.0f, 133.0f, 1.0f });
 	SetLocation_Window(TRAIN_BRIDGE, { -62.0f, 502.0f, 0 });
+
+	WATER_SHINE = CreateDefaultSubObject<USpriteRenderer>();
+	WATER_SHINE->SetSprite("Title_Train_WaterShine.png", 0);
+	WATER_SHINE->SetRelativeScale3D({ 1257.0f, 3.0f, 1.0f });
+	SetLocation_Window(WATER_SHINE, { -62.0f, 635.0f, 0 });
 
 	LOGO = CreateDefaultSubObject<USpriteRenderer>();
 	LOGO->SetSprite("Logo.png", 0);
