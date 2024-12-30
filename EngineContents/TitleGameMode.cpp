@@ -1,11 +1,12 @@
 #include "PreCompile.h"
 #include "TitleGameMode.h"
-#include "TitleLogo.h"
 #include <EngineCore/CameraActor.h>
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/EngineGUIWindow.h>
 #include <EngineCore/EngineGUI.h>
 #include <EngineCore/imgui.h>
+
+#include "TitleScene.h"
 
 class TestWindow : public UEngineGUIWindow
 {
@@ -21,7 +22,7 @@ public:
 
 ATitleGameMode::ATitleGameMode()
 {
-	Logo = GetWorld()->SpawnActor<ATitleLogo>();
+	Title = GetWorld()->SpawnActor<ATitleScene>();
 	//Logo->SetActorLocation({ 300.0f, 0.0f, 0.0f });
 	//Logo->GetRenderer()->SetSpriteData(4);
 

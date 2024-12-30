@@ -134,152 +134,20 @@ TextureImporter:
       name: Title_Logo_0
       rect:
         serializedVersion: 2
-        x: 94
-        y: 187
-        width: 984
-        height: 536
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 2048
+        height: 909
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 511fedb7c7a4f0460800000000000000
-      internalID: 7210063426958061845
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Logo_1
-      rect:
-        serializedVersion: 2
-        x: 353
-        y: 695
-        width: 84
-        height: 172
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e2eaad44e780bb9e0800000000000000
-      internalID: -1604679503813366226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Logo_2
-      rect:
-        serializedVersion: 2
-        x: 434
-        y: 605
-        width: 321
-        height: 251
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ffd0d16eef1c77b0800000000000000
-      internalID: -5225266358952861707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Logo_3
-      rect:
-        serializedVersion: 2
-        x: 802
-        y: 34
-        width: 1149
-        height: 841
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a2aa1deee6d9fbc30800000000000000
-      internalID: 4377390462606092842
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Logo_4
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 102
-        width: 317
-        height: 302
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 707729a94a33844d0800000000000000
-      internalID: -3150211157284718841
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Logo_5
-      rect:
-        serializedVersion: 2
-        x: 565
-        y: 59
-        width: 99
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6c339daf07f528770800000000000000
-      internalID: 8611550376335324102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Logo_6
-      rect:
-        serializedVersion: 2
-        x: 655
-        y: 72
-        width: 179
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c48404412105d36c0800000000000000
-      internalID: -4162082442041079732
+      spriteID: 26092e7f47f687a468647086db9bc32c
+      internalID: 1436095309
       vertices: []
       indices: 
       edges: []
@@ -288,7 +156,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: d8454429436ac70418f6a0d9b392e09d
     internalID: 0
     vertices: []
     indices: 
@@ -297,7 +165,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Title_Logo_0: 1436095309
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

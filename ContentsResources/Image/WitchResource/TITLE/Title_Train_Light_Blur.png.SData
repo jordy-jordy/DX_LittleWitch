@@ -119,12 +119,12 @@ TextureImporter:
       name: Title_Train_Light_Blur_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 2
-        width: 40
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 102
+        height: 14
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,33 +137,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Title_Train_Light_Blur_1
-      rect:
-        serializedVersion: 2
-        x: 57
-        y: 2
-        width: 40
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 86d4ffec4ca243390800000000000000
-      internalID: -7839594026570396312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: b5ef05d50b5c54e4d8a1e851935478c3
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +152,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Title_Train_Light_Blur_0: 2637182787015831821
-      Title_Train_Light_Blur_1: -7839594026570396312
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

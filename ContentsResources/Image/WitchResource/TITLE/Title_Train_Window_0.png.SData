@@ -125,12 +125,12 @@ TextureImporter:
       name: Title_Train_Window_0_0
       rect:
         serializedVersion: 2
-        x: 3
+        x: 0
         y: 0
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 68
+        height: 10
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,77 +143,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Title_Train_Window_0_1
-      rect:
-        serializedVersion: 2
-        x: 14
-        y: 0
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9d6fa5dca841ed810800000000000000
-      internalID: 1791892288123369177
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Train_Window_0_2
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 0
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 75df187e2d2af1450800000000000000
-      internalID: 6061742650174864727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Train_Window_0_3
-      rect:
-        serializedVersion: 2
-        x: 42
-        y: 0
-        width: 26
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fced50aef571d1360800000000000000
-      internalID: 7141890284795059919
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 92e5560169efa8949ae74401a8db9116
     internalID: 0
     vertices: []
     indices: 
@@ -224,9 +158,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Title_Train_Window_0_0: 4111990590830443305
-      Title_Train_Window_0_1: 1791892288123369177
-      Title_Train_Window_0_2: 6061742650174864727
-      Title_Train_Window_0_3: 7141890284795059919
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

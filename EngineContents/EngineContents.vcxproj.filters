@@ -22,6 +22,12 @@
     <ClInclude Include="EndGameMode.h">
       <Filter>02_GameMode</Filter>
     </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>03_Actors\00_Title</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalVar.h">
+      <Filter>00_GlobalValue</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -45,6 +51,9 @@
     <ClCompile Include="EndGameMode.cpp">
       <Filter>02_GameMode</Filter>
     </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>03_Actors\00_Title</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="00_Core">
@@ -64,6 +73,9 @@
     </Filter>
     <Filter Include="03_Actors\01_Play">
       <UniqueIdentifier>{7f451d07-f808-4eda-bd64-9fa093a42036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00_GlobalValue">
+      <UniqueIdentifier>{731b4870-d7cf-40ee-8541-120ca62301f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -4,6 +4,7 @@
 #include <EngineCore/EngineTexture.h>
 #include <EngineCore/EngineSprite.h>
 
+#include "GlobalVar.h"
 #include "TitleGameMode.h"
 #include "PlayGameMode.h"
 #include "EndGameMode.h"
@@ -45,7 +46,7 @@ void UContentsCore::EngineEnd()
 void UContentsCore::WidowSizePos(UEngineInitData& _Data)
 {
 	// 원하는 윈도우의 클라이언트 크기 설정
-	_Data.WindowSize = { 1280, 720 };
+	_Data.WindowSize = WINDOW_SIZE;
 
 	// 모니터 해상도를 가져옴
 	int screenWidth = GetSystemMetrics(SM_CXSCREEN);
@@ -74,7 +75,7 @@ void UContentsCore::DirLoad()
 		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
 		return;
 	}
-	Dir.Append("Image//WitchResource");
+	Dir.Append("Image//WitchResource//TITLE");
 	std::vector<UEngineFile> ImageFiles = Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
 	for (size_t i = 0; i < ImageFiles.size(); i++)
 	{

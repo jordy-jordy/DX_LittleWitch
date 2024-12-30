@@ -127,10 +127,10 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 111
-        height: 109
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 220
+        height: 122
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -143,77 +143,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Title_Train_Tree_1_1
-      rect:
-        serializedVersion: 2
-        x: 129
-        y: 0
-        width: 13
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52e734eb007ec1390800000000000000
-      internalID: -7846142460408136155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Train_Tree_1_2
-      rect:
-        serializedVersion: 2
-        x: 135
-        y: 0
-        width: 83
-        height: 122
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71d71972095dc8450800000000000000
-      internalID: 6092479211041291543
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Title_Train_Tree_1_3
-      rect:
-        serializedVersion: 2
-        x: 206
-        y: 0
-        width: 14
-        height: 12
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1959715ad62e23f00800000000000000
-      internalID: 1095186619953550737
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 36e9eeadcc6cd814c8f7108ea1ddc970
     internalID: 0
     vertices: []
     indices: 
@@ -224,9 +158,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Title_Train_Tree_1_0: 4133063171405031378
-      Title_Train_Tree_1_1: -7846142460408136155
-      Title_Train_Tree_1_2: 6092479211041291543
-      Title_Train_Tree_1_3: 1095186619953550737
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

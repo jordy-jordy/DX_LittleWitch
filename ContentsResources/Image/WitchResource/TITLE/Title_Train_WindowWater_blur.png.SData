@@ -119,12 +119,12 @@ TextureImporter:
       name: Title_Train_WindowWater_blur_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 8
-        width: 173
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 204
+        height: 22
+      alignment: 1
+      pivot: {x: 0, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -137,33 +137,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: Title_Train_WindowWater_blur_1
-      rect:
-        serializedVersion: 2
-        x: 175
-        y: 2
-        width: 22
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 54715af2f0ad46a80800000000000000
-      internalID: -8474408840045717691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 302ec1909b0fd3d4ba6c39bd2a1b91e2
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +152,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Title_Train_WindowWater_blur_0: 7975695495422016750
-      Title_Train_WindowWater_blur_1: -8474408840045717691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
