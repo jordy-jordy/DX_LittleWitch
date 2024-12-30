@@ -4,9 +4,6 @@
     <ClInclude Include="PreCompile.h">
       <Filter>01_PreCompile</Filter>
     </ClInclude>
-    <ClInclude Include="TitleLogo.h">
-      <Filter>03_Actors\00_Title</Filter>
-    </ClInclude>
     <ClInclude Include="TitleGameMode.h">
       <Filter>02_GameMode</Filter>
     </ClInclude>
@@ -32,9 +29,6 @@
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
       <Filter>01_PreCompile</Filter>
-    </ClCompile>
-    <ClCompile Include="TitleLogo.cpp">
-      <Filter>03_Actors\00_Title</Filter>
     </ClCompile>
     <ClCompile Include="TitleGameMode.cpp">
       <Filter>02_GameMode</Filter>

@@ -231,7 +231,12 @@ void USpriteRenderer::ChangeAnimation(std::string_view _AnimationName, bool _For
 		CurAnimation->Events[CurAnimation->CurIndex]();
 	}
 
-	// Sprite = CurAnimation->Sprite;
+	if (true == CurAnimation->IsAutoScale)
+	{
+		FVector Scale = CurAnimation->Sprite->GetSpriteScaleToReal(CurIndex);
+		Scale.Z = 1.0f;
+		SetRelativeScale3D(Scale * CurAnimation->AutoScaleRatio);
+	}
 }
 
 
