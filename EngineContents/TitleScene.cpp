@@ -18,6 +18,11 @@ ATitleScene::ATitleScene()
 	BG_WATER->SetRelativeScale3D({ 1280.0f, 195.0f, 1.0f });
 	SetLocation_Window(BG_WATER, { 0, 525.0f, 0 });
 
+	SKY_STAR = CreateDefaultSubObject<USpriteRenderer>();
+	SKY_STAR->SetSprite("Title_train_star.png", 1);
+	SKY_STAR->SetRelativeScale3D({ 1165.0f, 228.0f, 1.0f });
+	SetLocation_Window(SKY_STAR, { 46.0f, 35.0f, 0 });
+
 	SKY_MOON = CreateDefaultSubObject<USpriteRenderer>();
 	SKY_MOON->SetSprite("Title_Train_Moon.png", 0);
 	SKY_MOON->SetRelativeScale3D({ 171.0f, 171.0f, 1.0f });
