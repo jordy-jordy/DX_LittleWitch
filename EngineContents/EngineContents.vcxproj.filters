@@ -25,6 +25,9 @@
     <ClInclude Include="GlobalVar.h">
       <Filter>00_GlobalValue</Filter>
     </ClInclude>
+    <ClInclude Include="Field.h">
+      <Filter>03_Actors\01_Play</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -47,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="TitleScene.cpp">
       <Filter>03_Actors\00_Title</Filter>
+    </ClCompile>
+    <ClCompile Include="Field.cpp">
+      <Filter>03_Actors\01_Play</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

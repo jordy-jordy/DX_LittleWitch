@@ -1,5 +1,6 @@
 #include "PreCompile.h"
 #include "TitleGameMode.h"
+#include <EnginePlatform/EngineInput.h>
 #include <EngineCore/CameraActor.h>
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/EngineGUIWindow.h>
@@ -34,10 +35,15 @@ ATitleGameMode::ATitleGameMode()
 
 ATitleGameMode::~ATitleGameMode()
 {
-
 }
 
 void ATitleGameMode::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
+
+	if (UEngineInput::IsPress(VK_SPACE))
+	{
+		UEngineCore::OpenLevel("PLAY");
+	}
+
 }

@@ -28,6 +28,11 @@ ATitleScene::ATitleScene()
 	SetLocation_Window(SKY_STAR, { 0.0f, 0.0f, 0 });
 	SKY_STAR->ChangeAnimation("STARS");
 
+	MOUNTAIN = CreateDefaultSubObject<USpriteRenderer>();
+	MOUNTAIN->SetSprite("Title_Train_Mountain.png", 0);
+	MOUNTAIN->SetRelativeScale3D({ 1315.0f, 304.0f, 1.0f });
+	SetLocation_Window(MOUNTAIN, { -389.0f, 216.0f, 0 });
+
 	SKY_MOON = CreateDefaultSubObject<USpriteRenderer>();
 	SKY_MOON->SetSprite("Title_Train_Moon.png", 0);
 	SKY_MOON->SetRelativeScale3D({ 171.0f, 171.0f, 1.0f });
@@ -83,6 +88,11 @@ ATitleScene::ATitleScene()
 	TRAIN_SHADOW->SetRelativeScale3D({ 870.0f, 53.0f, 1.0f });
 	SetLocation_Window(TRAIN_SHADOW, { 0.0f, 658.0f, 0 });
 
+	MOUNTAIN_SHADOW = CreateDefaultSubObject<USpriteRenderer>();
+	MOUNTAIN_SHADOW->SetSprite("Title_Train_MountainWater_blur.png", 0);
+	MOUNTAIN_SHADOW->SetRelativeScale3D({ 1297.0f, 222.0f, 1.0f });
+	SetLocation_Window(MOUNTAIN_SHADOW, { -371.0f, 520.0f, 0 });
+
 	BRIDGE_SHADOW1 = CreateDefaultSubObject<USpriteRenderer>();
 	BRIDGE_SHADOW1->SetSprite("Title_Train_Bridge_Down.png", 0);
 	BRIDGE_SHADOW1->SpriteData.CuttingPos.W = 0.3f;
@@ -124,10 +134,6 @@ ATitleScene::ATitleScene()
 	LOGO->SetRelativeScale3D({ 451.0f, 220.0f, 1.0f });
 	SetLocation_Window(LOGO, {817.0f, 116.0f, 0});
 
-
-
-
-
 	//LogoRenderer->CreateAnimation("Idle", "Aurea_Idle.png", 2, 4, 0.15f);
 	//USpriteRenderer::FrameAnimation* Animation = LogoRenderer->FindAnimation("Idle");
 	//Animation->IsAutoScale = true;
@@ -137,7 +143,6 @@ ATitleScene::ATitleScene()
 
 ATitleScene::~ATitleScene()
 {
-
 };
 
 void ATitleScene::BeginPlay()

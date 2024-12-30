@@ -31,6 +31,8 @@ private:
 	std::shared_ptr<class USpriteRenderer> LOGO;
 	std::shared_ptr<class USpriteRenderer> BG_SKY;
 	std::shared_ptr<class USpriteRenderer> BG_WATER;
+	std::shared_ptr<class USpriteRenderer> MOUNTAIN;
+	std::shared_ptr<class USpriteRenderer> MOUNTAIN_SHADOW;
 	std::shared_ptr<class USpriteRenderer> WATER_GLARE;
 	std::shared_ptr<class USpriteRenderer> WATER_SHINE;
 	std::shared_ptr<class USpriteRenderer> SKY_MOON;
