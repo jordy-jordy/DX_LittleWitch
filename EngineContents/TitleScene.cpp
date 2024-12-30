@@ -19,14 +19,64 @@ ATitleScene::ATitleScene()
 	SetLocation_Window(BG_WATER, { 0, 525.0f, 0 });
 
 	SKY_STAR = CreateDefaultSubObject<USpriteRenderer>();
-	SKY_STAR->SetSprite("Title_train_star.png", 1);
-	SKY_STAR->SetRelativeScale3D({ 1165.0f, 228.0f, 1.0f });
-	SetLocation_Window(SKY_STAR, { 46.0f, 35.0f, 0 });
+	SKY_STAR->SetSprite("Title_train_star.png", 0);
+	SKY_STAR->CreateAnimation("STARS", "Title_train_star.png", 0, 4, 0.15f);
+	//SKY_STAR->SetRelativeScale3D({ 1275.0f, 352.0f, 1.0f });
+	USpriteRenderer::FrameAnimation* STAR_ANIM = SKY_STAR->FindAnimation("STARS");
+	STAR_ANIM->IsAutoScale = true;
+	STAR_ANIM->AutoScaleRatio = 2.75f;
+	SetLocation_Window(SKY_STAR, { 0.0f, 0.0f, 0 });
+	SKY_STAR->ChangeAnimation("STARS");
 
 	SKY_MOON = CreateDefaultSubObject<USpriteRenderer>();
 	SKY_MOON->SetSprite("Title_Train_Moon.png", 0);
 	SKY_MOON->SetRelativeScale3D({ 171.0f, 171.0f, 1.0f });
 	SetLocation_Window(SKY_MOON, { 229.0f, 66.0f, 0 });
+
+	TRAIN0 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN0->SetSprite("Title_Train_Train_0.png", 0);
+	TRAIN0->SetRelativeScale3D({ 259.0f, 72.0f, 1.0f });
+	SetLocation_Window(TRAIN0, { 615.0f, 431.0f, 0 });
+
+	TRAIN0_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN0_LIGHT->SetSprite("Title_Train_Window_0.png", 0);
+	TRAIN0_LIGHT->SetRelativeScale3D({ 172.0f, 28.0f, 1.0f });
+	SetLocation_Window(TRAIN0_LIGHT, { 631.0f, 455.0f, 0 });
+
+	TRAIN1 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN1->SetSprite("Title_Train_Train_1.png", 0);
+	TRAIN1->SetRelativeScale3D({ 152.0f, 72.0f, 1.0f });
+	SetLocation_Window(TRAIN1, { 466.0f, 431.0f, 0 });
+
+	TRAIN1_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN1_LIGHT->SetSprite("Title_Train_Window_1.png", 0);
+	TRAIN1_LIGHT->SetRelativeScale3D({ 142.0f, 36.0f, 1.0f });
+	SetLocation_Window(TRAIN1_LIGHT, { 473.0f, 449.0f, 0 });
+
+	TRAIN2 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN2->SetSprite("Title_Train_Train_1.png", 0);
+	TRAIN2->SetRelativeScale3D({ 152.0f, 72.0f, 1.0f });
+	SetLocation_Window(TRAIN2, { 317.0f, 431.0f, 0 });
+
+	TRAIN2_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN2_LIGHT->SetSprite("Title_Train_Window_1.png", 0);
+	TRAIN2_LIGHT->SetRelativeScale3D({ 142.0f, 36.0f, 1.0f });
+	SetLocation_Window(TRAIN2_LIGHT, { 325.0f, 449.0f, 0 });
+
+	TRAIN3 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN3->SetSprite("Title_Train_Train_3.png", 0);
+	TRAIN3->SetRelativeScale3D({ 299.0f, 70.0f, 1.0f });
+	SetLocation_Window(TRAIN3, { 21.0f, 432.0f, 0 });
+
+	TRAIN3_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN3_LIGHT->SetSprite("Title_Train_Light.png", 0);
+	TRAIN3_LIGHT->SetRelativeScale3D({ 221.0f, 17.0f, 1.0f });
+	SetLocation_Window(TRAIN3_LIGHT, { 67.0f, 467.0f, 0 });
+
+	TRAIN4 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN4->SetSprite("Title_Train_Train_3.png", 0);
+	TRAIN4->SetRelativeScale3D({ 299.0f, 70.0f, 1.0f });
+	SetLocation_Window(TRAIN4, { -275.0f, 432.0f, 0 });
 
 	LOGO = CreateDefaultSubObject<USpriteRenderer>();
 	LOGO->SetSprite("Logo.png", 0);

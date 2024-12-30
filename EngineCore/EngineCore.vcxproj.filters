@@ -103,6 +103,9 @@
     <ClInclude Include="EngineVertex.h">
       <Filter>05_Resources</Filter>
     </ClInclude>
+    <ClInclude Include="EngineBlend.h">
+      <Filter>05_Resources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Level.cpp">
@@ -193,6 +196,9 @@
       <Filter>05_Resources</Filter>
     </ClCompile>
     <ClCompile Include="Mesh.cpp">
+      <Filter>05_Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineBlend.cpp">
       <Filter>05_Resources</Filter>
     </ClCompile>
   </ItemGroup>

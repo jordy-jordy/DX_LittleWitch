@@ -184,6 +184,7 @@
       </SubType>
     </ClInclude>
     <ClInclude Include="DefaultSceneComponent.h" />
+    <ClInclude Include="EngineBlend.h" />
     <ClInclude Include="EngineCamera.h">
       <SubType>
       </SubType>
@@ -259,6 +260,7 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="DefaultSceneComponent.cpp" />
+    <ClCompile Include="EngineBlend.cpp" />
     <ClCompile Include="EngineCamera.cpp">
       <SubType>
       </SubType>
