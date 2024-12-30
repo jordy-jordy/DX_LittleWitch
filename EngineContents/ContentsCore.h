@@ -18,8 +18,6 @@ public:
 	UContentsCore& operator=(UContentsCore&& _Other) noexcept = delete;
 
 	void WidowSizePos(UEngineInitData& _Data);
-	void DirLoad();
-	void SpritesInit();
 
 
 protected:

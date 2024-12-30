@@ -16,8 +16,15 @@ public:
 	APlayGameMode& operator=(const APlayGameMode& _Other) = delete;
 	APlayGameMode& operator=(APlayGameMode&& _Other) noexcept = delete;
 
+	void PlayDirLoad();
+	void PlaySpritesInit();
+
+
 protected:
+	void Tick(float _DeltaTime);
+	void BeginPlay();
 
 private:
+	std::shared_ptr<class APlayerScene> Player;
 
 };

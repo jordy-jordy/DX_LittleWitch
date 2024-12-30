@@ -15,9 +15,14 @@ public:
 	ATitleGameMode& operator=(const ATitleGameMode& _Other) = delete;
 	ATitleGameMode& operator=(ATitleGameMode&& _Other) noexcept = delete;
 
-	void Tick(float _DeltaTime);
+	void TitleDirLoad();
+	void TitleSpritesInit();
+
 
 protected:
+	void Tick(float _DeltaTime);
+	void BeginPlay();
+
 
 private:
 	std::shared_ptr<class ATitleScene> Title;
