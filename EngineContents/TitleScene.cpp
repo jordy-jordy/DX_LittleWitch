@@ -78,6 +78,41 @@ ATitleScene::ATitleScene()
 	TRAIN4->SetRelativeScale3D({ 299.0f, 70.0f, 1.0f });
 	SetLocation_Window(TRAIN4, { -275.0f, 432.0f, 0 });
 
+	TRAIN_SHADOW = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN_SHADOW->SetSprite("Title_Train_TrainWater_blur.png", 0);
+	TRAIN_SHADOW->SetRelativeScale3D({ 870.0f, 53.0f, 1.0f });
+	SetLocation_Window(TRAIN_SHADOW, { 0.0f, 658.0f, 0 });
+
+	BRIDGE_SHADOW1 = CreateDefaultSubObject<USpriteRenderer>();
+	BRIDGE_SHADOW1->SetSprite("Title_Train_Bridge_Down.png", 0);
+	BRIDGE_SHADOW1->SetRelativeScale3D({ 1404.0f, 32.0f, 1.0f });
+	SetLocation_Window(BRIDGE_SHADOW1, { -59.0f, 630.0f, 0 });
+
+	WATER_GLARE = CreateDefaultSubObject<USpriteRenderer>();
+	WATER_GLARE->SetSprite("Title_Train_WaterShine_blur.png", 0);
+	WATER_GLARE->SetRelativeScale3D({ 1335.0f, 180.0f, 1.0f });
+	SetLocation_Window(WATER_GLARE, { -29.0f, 563.0f, 0 });
+
+	BRIDGE_SHADOW0 = CreateDefaultSubObject<USpriteRenderer>();
+	BRIDGE_SHADOW0->SetSprite("Title_Train_Bridge_Shadow.png", 0);
+	BRIDGE_SHADOW0->SetRelativeScale3D({ 1300.0f, 81.0f, 1.0f });
+	SetLocation_Window(BRIDGE_SHADOW0, { -10.0f, 595.0f, 0 });
+
+	TRAIN_LIGHT_BLUR0 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN_LIGHT_BLUR0->SetSprite("Title_Train_WindowWater_blur.png", 0);
+	TRAIN_LIGHT_BLUR0->SetRelativeScale3D({ 540.0f, 69.0f, 1.0f });
+	SetLocation_Window(TRAIN_LIGHT_BLUR0, { 292.0f, 645.0f, 0 });
+
+	TRAIN_LIGHT_BLUR1 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN_LIGHT_BLUR1->SetSprite("Title_Train_Light_Blur.png", 0);
+	TRAIN_LIGHT_BLUR1->SetRelativeScale3D({ 287.0f, 39.0f, 1.0f });
+	SetLocation_Window(TRAIN_LIGHT_BLUR1, { 21.0f, 656.0f, 0 });
+
+	TRAIN_BRIDGE = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN_BRIDGE->SetSprite("Title_Train_Bridge.png", 0);
+	TRAIN_BRIDGE->SetRelativeScale3D({ 1404.0f, 133.0f, 1.0f });
+	SetLocation_Window(TRAIN_BRIDGE, { -62.0f, 502.0f, 0 });
+
 	LOGO = CreateDefaultSubObject<USpriteRenderer>();
 	LOGO->SetSprite("Logo.png", 0);
 	LOGO->SetRelativeScale3D({ 451.0f, 220.0f, 1.0f });

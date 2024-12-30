@@ -44,4 +44,9 @@ private:
 	std::shared_ptr<class USpriteRenderer> TRAIN3_LIGHT;
 	std::shared_ptr<class USpriteRenderer> TRAIN4;
 	std::shared_ptr<class USpriteRenderer> TRAIN_BRIDGE;
+	std::shared_ptr<class USpriteRenderer> TRAIN_LIGHT_BLUR0;
+	std::shared_ptr<class USpriteRenderer> TRAIN_LIGHT_BLUR1;
+	std::shared_ptr<class USpriteRenderer> BRIDGE_SHADOW0;
+	std::shared_ptr<class USpriteRenderer> BRIDGE_SHADOW1;
+	std::shared_ptr<class USpriteRenderer> TRAIN_SHADOW;
 };
