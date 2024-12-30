@@ -4,11 +4,14 @@
 #include <EngineCore/CameraActor.h>
 #include <EngineCore/SpriteRenderer.h>
 
+#include "Player.h"
 
 APlayGameMode::APlayGameMode()
 {
 	PlayDirLoad();
 	PlaySpritesInit();
+
+	Player = GetWorld()->SpawnActor<APlayer>();
 };
 
 APlayGameMode::~APlayGameMode()

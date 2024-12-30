@@ -22,6 +22,7 @@ protected:
 
 
 private:
+	std::shared_ptr<class USpriteRenderer> Player;
 
 };
 

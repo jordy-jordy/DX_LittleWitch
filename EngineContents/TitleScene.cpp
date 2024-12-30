@@ -1,8 +1,9 @@
 #include "PreCompile.h"
 #include "TitleScene.h"
+
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
-#include <EngineCore/DefaultSceneComponent.h>
+//#include <EngineCore/DefaultSceneComponent.h>
 
 #include "GlobalVar.h"
 
