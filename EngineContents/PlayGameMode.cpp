@@ -50,8 +50,9 @@ void APlayGameMode::PlayDirLoad()
 
 void APlayGameMode::PlaySpritesInit()
 {
-	UEngineSprite::CreateSpriteToMeta("Ellie_Idle.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Ellie_Basic_Idle.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("Ellie_Basic_Walk.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("Ellie_Basic_Run.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Ellie_Walk.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Aurea_Idle.png", ".sdata");
 }

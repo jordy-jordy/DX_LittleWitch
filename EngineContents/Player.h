@@ -2,6 +2,17 @@
 #include <EngineCore/Actor.h>
 
 
+enum class PlayerIDLE_Vector
+{
+	NONE = 0,
+	IDLE_FRONT_LEFT = 1,
+	IDLE_FRONT = 2,
+	IDLE_FRONT_RIGHT = 3,
+	IDLE_BACK_LEFT = 4,
+	IDLE_BACK = 5,
+	IDLE_BACK_RIGHT = 6
+};
+
 // Ό³Έν :
 class APlayer : public AActor
 {
@@ -15,6 +26,8 @@ public:
 	APlayer(APlayer&& _Other) noexcept = delete;
 	APlayer& operator=(const APlayer& _Other) = delete;
 	APlayer& operator=(APlayer&& _Other) noexcept = delete;
+
+
 
 protected:
 	void BeginPlay() override;
