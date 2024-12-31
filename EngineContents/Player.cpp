@@ -11,21 +11,36 @@ APlayer::APlayer()
 	//std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	//RootComponent = Default;
 
-	Player = CreateDefaultSubObject<USpriteRenderer>();
-	//Player->SetSprite("Ellie_Idle.png", 0);
-	Player->CreateAnimation("IDLE_LEFT", "Ellie_Idle.png", 0, 3, 0.15f);
-	Player->CreateAnimation("IDLE_FRONT", "Ellie_Idle.png", 4, 7, 0.15f);
-	Player->CreateAnimation("IDLE_RIGHT", "Ellie_Idle.png", 8, 11, 0.15f);
-	Player->CreateAnimation("IDLE_BACK", "Ellie_Idle.png", 16, 19, 0.15f);
+	ELLIE = CreateDefaultSubObject<USpriteRenderer>();
+	////////////////////////////////////////////////////////////////////// ¿¤¸® IDLE
+	ELLIE->CreateAnimation("ELLIE_IDLE_FRONT_LEFT",  "Ellie_Basic_Idle.png",  3,  6, 0.2f);
+	ELLIE->CreateAnimation("ELLIE_IDLE_FRONT",       "Ellie_Basic_Idle.png",  7, 10, 0.2f);
+	ELLIE->CreateAnimation("ELLIE_IDLE_FRONT_RIGHT", "Ellie_Basic_Idle.png", 11, 14, 0.2f);
+	ELLIE->CreateAnimation("ELLIE_IDLE_BACK_LEFT",   "Ellie_Basic_Idle.png", 15, 18, 0.2f);
+	ELLIE->CreateAnimation("ELLIE_IDLE_BACK",        "Ellie_Basic_Idle.png", 19, 22, 0.2f);
+	ELLIE->CreateAnimation("ELLIE_IDLE_BACK_RIGHT",  "Ellie_Basic_Idle.png", 23, 26, 0.2f);
 
-	Player->CreateAnimation("WALK_LEFT", "Ellie_Walk.png", 0, 11, 0.15f);
+	////////////////////////////////////////////////////////////////////// ¿¤¸® HAT IDLE
+	ELLIE_HAT = CreateDefaultSubObject<USpriteRenderer>();
+	ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT_LEFT",  "Ellie_Basic_Idle.png", 27, 29, 0.1f);
+	ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT",       "Ellie_Basic_Idle.png", 30, 33, 0.1f);
+	ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT_RIGHT", "Ellie_Basic_Idle.png", 34, 36, 0.1f);
+	ELLIE_HAT->CreateAnimation("HAT_IDLE_BACK_LEFT",   "Ellie_Basic_Idle.png", 37, 38, 0.1f);
+	ELLIE_HAT->CreateAnimation("HAT_IDLE_BACK_RIGHT",  "Ellie_Basic_Idle.png", 39, 40, 0.1f);
 
-	Player->CreateAnimation("AUREA_IDLE_RIGHT", "Aurea_Idle.png", 1, 5, 0.15f);
+	////////////////////////////////////////////////////////////////////// ¿¤¸® SHADOW IDLE
 
-	Player->SetRelativeScale3D({ 100.0f, 100.0f, 1.0f });
 
-	Player->ChangeAnimation("IDLE_FRONT");
-	
+	AUREA = CreateDefaultSubObject<USpriteRenderer>();
+	AUREA->CreateAnimation("AUREA_IDLE_LEFT", "Aurea_Idle.png", 0, 3, 0.15f);
+
+	//ELLIE->ChangeAnimation("ELLIE_IDLE_FRONT_LEFT");
+	ELLIE_HAT->ChangeAnimation("HAT_IDLE_FRONT_LEFT");
+	AUREA->ChangeAnimation("AUREA_IDLE_LEFT");
+
+	//ELLIE->SetRelativeLocation({ 200,0,0 });
+	ELLIE_HAT->SetRelativeLocation({ 200,0,0 });
+	AUREA->SetRelativeLocation({ -200,0,0 });
 	//Player->SetupAttachment(RootComponent);
 }
 
@@ -42,9 +57,9 @@ void APlayer::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
-	if (UEngineInput::IsPress('A'))
-	{
-		Player->ChangeAnimation("WALK_LEFT");
-	}
+	//if (UEngineInput::IsPress('A'))
+	//{
+	//	ELLIE->ChangeAnimation("WALK_LEFT");
+	//}
 
 }

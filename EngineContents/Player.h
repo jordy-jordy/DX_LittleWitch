@@ -22,7 +22,10 @@ protected:
 
 
 private:
-	std::shared_ptr<class USpriteRenderer> Player;
+	std::shared_ptr<class USpriteRenderer> ELLIE;
+	std::shared_ptr<class USpriteRenderer> ELLIE_HAT;
+	std::shared_ptr<class USpriteRenderer> ELLIE_SHADOW;
+	std::shared_ptr<class USpriteRenderer> AUREA;
 
 };
 
