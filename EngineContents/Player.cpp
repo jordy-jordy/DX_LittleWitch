@@ -80,8 +80,8 @@ APlayer::APlayer()
 	AUREA->CreateAnimation("AUREA_IDLE_LEFT", "Aurea_Idle.png", 0, 3, 0.15f);
 
 	ELLIE_SHADOW->ChangeAnimation("ELLIE_RUN_SHADOW");
-	ELLIE->ChangeAnimation("ELLIE_RUN_DOWN");
-	ELLIE_HAT->ChangeAnimation("HAT_RUN_DOWN");
+	ELLIE->ChangeAnimation("ELLIE_WALK_DOWN");
+	ELLIE_HAT->ChangeAnimation("HAT_WALK_DOWN");
 	AUREA->ChangeAnimation("AUREA_IDLE_LEFT");
 
 	ELLIE_SHADOW->SetRelativeLocation({ 200,0,0 });
