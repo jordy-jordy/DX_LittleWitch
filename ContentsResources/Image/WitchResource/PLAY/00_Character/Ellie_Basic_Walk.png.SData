@@ -3357,6 +3357,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_Walk_128
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 0
+        width: 140
+        height: 140
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a190ca9bd53457408046147a7e8ce80
+      internalID: 336949405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -3404,6 +3426,7 @@ TextureImporter:
       Ellie_Basic_Walk_125: 6501321849424155092
       Ellie_Basic_Walk_126: -5349120023511745102
       Ellie_Basic_Walk_127: -2475268201988742454
+      Ellie_Basic_Walk_128: 336949405
       Ellie_Basic_Walk_13: -1976245977204038871
       Ellie_Basic_Walk_14: -5182571313939916272
       Ellie_Basic_Walk_15: 2223605577959714664
