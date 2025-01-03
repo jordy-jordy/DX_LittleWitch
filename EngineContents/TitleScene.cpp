@@ -32,7 +32,7 @@ ATitleScene::ATitleScene()
 	MOUNTAIN = CreateDefaultSubObject<USpriteRenderer>();
 	MOUNTAIN->SetSprite("Title_Train_Mountain.png", 0);
 	MOUNTAIN->SetRelativeScale3D({ 1315.0f, 304.0f, 1.0f });
-	SetLocation_Window(MOUNTAIN, { -389.0f, 216.0f, 0 });
+	SetLocation_Window(MOUNTAIN, { 0.0f, 216.0f, 0 });
 
 	SKY_MOON = CreateDefaultSubObject<USpriteRenderer>();
 	SKY_MOON->SetSprite("Title_Train_Moon.png", 0);
@@ -92,7 +92,7 @@ ATitleScene::ATitleScene()
 	MOUNTAIN_SHADOW = CreateDefaultSubObject<USpriteRenderer>();
 	MOUNTAIN_SHADOW->SetSprite("Title_Train_MountainWater_blur.png", 0);
 	MOUNTAIN_SHADOW->SetRelativeScale3D({ 1297.0f, 222.0f, 1.0f });
-	SetLocation_Window(MOUNTAIN_SHADOW, { -371.0f, 520.0f, 0 });
+	SetLocation_Window(MOUNTAIN_SHADOW, { 0.0f, 520.0f, 0 });
 
 	BRIDGE_SHADOW1 = CreateDefaultSubObject<USpriteRenderer>();
 	BRIDGE_SHADOW1->SetSprite("Title_Train_Bridge_Down.png", 0);
@@ -138,8 +138,8 @@ ATitleScene::ATitleScene()
 	BG_SKY->SetupAttachment(RootComponent);
 	BG_WATER->SetupAttachment(RootComponent);
 	SKY_STAR->SetupAttachment(RootComponent);
-	MOUNTAIN->SetupAttachment(RootComponent);
 	SKY_MOON->SetupAttachment(RootComponent);
+	MOUNTAIN->SetupAttachment(RootComponent);
 	TRAIN0->SetupAttachment(RootComponent);
 	TRAIN0_LIGHT->SetupAttachment(RootComponent);
 	TRAIN1->SetupAttachment(RootComponent);
@@ -179,6 +179,15 @@ void ATitleScene::BeginPlay()
 void ATitleScene::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
+
+	float SPEED_Near = 0.7f;
+	float SPEEN_Far = 0.3f;
+
+	MOUNTAIN->UVValue.PlusUVValue += (float4{1.0f, 0.0f, 0.0f, 0.0f} * SPEEN_Far *_DeltaTime);
+	MOUNTAIN_SHADOW->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEEN_Far * _DeltaTime);
+	TRAIN_BRIDGE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
+	WATER_GLARE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
+	WATER_SHINE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 }
 
 void ATitleScene::SetLocation_Window(const std::shared_ptr<USpriteRenderer> _Renderer, const FVector _Value)
