@@ -14,6 +14,11 @@ UEngineGraphicDevice& UEngineCore::GetDevice()
 	return Device;
 }
 
+UEngineWindow& UEngineCore::GetMainWindow()
+{
+	return MainWindow;
+}
+
 // 리얼 본체죠?
 // UEngineGraphicDevice EngienCore.dll::UEngineCore::Device;
 UEngineGraphicDevice UEngineCore::Device;

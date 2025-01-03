@@ -1,14 +1,17 @@
 #include "PreCompile.h"
 #include "TitleScene.h"
 
+#include <EngineCore/DefaultSceneComponent.h>
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
-//#include <EngineCore/DefaultSceneComponent.h>
 
 #include "GlobalVar.h"
 
 ATitleScene::ATitleScene()
 {
+	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
+	RootComponent = Default;
+
 	BG_SKY = CreateDefaultSubObject<USpriteRenderer>();
 	BG_SKY->SetSprite("Title_Train_Sky.png", 0);
 	BG_SKY->SetRelativeScale3D({ 1280.0f, 720.0f, 1.0f });
@@ -22,10 +25,7 @@ ATitleScene::ATitleScene()
 	SKY_STAR = CreateDefaultSubObject<USpriteRenderer>();
 	SKY_STAR->SetSprite("Title_train_star.png", 0);
 	SKY_STAR->CreateAnimation("STARS", "Title_train_star.png", 0, 4, 0.15f);
-	//SKY_STAR->SetRelativeScale3D({ 1275.0f, 352.0f, 1.0f });
-	USpriteRenderer::FrameAnimation* STAR_ANIM = SKY_STAR->FindAnimation("STARS");
-	STAR_ANIM->IsAutoScale = true;
-	STAR_ANIM->AutoScaleRatio = 2.75f;
+	SKY_STAR->SetRelativeScale3D({ 1275.0f, 352.0f, 1.0f });
 	SetLocation_Window(SKY_STAR, { 0.0f, 0.0f, 0 });
 	SKY_STAR->ChangeAnimation("STARS");
 
@@ -134,6 +134,31 @@ ATitleScene::ATitleScene()
 	LOGO->SetSprite("Logo.png", 0);
 	LOGO->SetRelativeScale3D({ 451.0f, 220.0f, 1.0f });
 	SetLocation_Window(LOGO, {817.0f, 116.0f, 0});
+
+	BG_SKY->SetupAttachment(RootComponent);
+	BG_WATER->SetupAttachment(RootComponent);
+	SKY_STAR->SetupAttachment(RootComponent);
+	MOUNTAIN->SetupAttachment(RootComponent);
+	SKY_MOON->SetupAttachment(RootComponent);
+	TRAIN0->SetupAttachment(RootComponent);
+	TRAIN0_LIGHT->SetupAttachment(RootComponent);
+	TRAIN1->SetupAttachment(RootComponent);
+	TRAIN1_LIGHT->SetupAttachment(RootComponent);
+	TRAIN2->SetupAttachment(RootComponent);
+	TRAIN2_LIGHT->SetupAttachment(RootComponent);
+	TRAIN3->SetupAttachment(RootComponent);
+	TRAIN3_LIGHT->SetupAttachment(RootComponent);
+	TRAIN4->SetupAttachment(RootComponent);
+	TRAIN_SHADOW->SetupAttachment(RootComponent);
+	MOUNTAIN_SHADOW->SetupAttachment(RootComponent);
+	BRIDGE_SHADOW1->SetupAttachment(RootComponent);
+	WATER_GLARE->SetupAttachment(RootComponent);
+	BRIDGE_SHADOW0->SetupAttachment(RootComponent);
+	TRAIN_LIGHT_BLUR0->SetupAttachment(RootComponent);
+	TRAIN_LIGHT_BLUR1->SetupAttachment(RootComponent);
+	TRAIN_BRIDGE->SetupAttachment(RootComponent);
+	WATER_SHINE->SetupAttachment(RootComponent);
+	LOGO->SetupAttachment(RootComponent);
 
 	//LogoRenderer->CreateAnimation("Idle", "Aurea_Idle.png", 2, 4, 0.15f);
 	//USpriteRenderer::FrameAnimation* Animation = LogoRenderer->FindAnimation("Idle");

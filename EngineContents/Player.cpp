@@ -8,8 +8,8 @@
 
 APlayer::APlayer()
 {
-	//std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
-	//RootComponent = Default;
+	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
+	RootComponent = Default;
 
 	//////////////////////////////////////////////////////////////////////////////////// ¿¤¸® IDLE
 	ELLIE = CreateDefaultSubObject<USpriteRenderer>();
@@ -80,15 +80,23 @@ APlayer::APlayer()
 	AUREA->CreateAnimation("AUREA_IDLE_LEFT", "Aurea_Idle.png", 0, 3, 0.15f);
 
 	ELLIE_SHADOW->ChangeAnimation("ELLIE_RUN_SHADOW");
+	ELLIE_SHADOW->SetAutoScale(true);
 	ELLIE->ChangeAnimation("ELLIE_WALK_DOWN");
+	ELLIE->SetAutoScale(true);
 	ELLIE_HAT->ChangeAnimation("HAT_WALK_DOWN");
+	ELLIE_HAT->SetAutoScale(true);
 	AUREA->ChangeAnimation("AUREA_IDLE_LEFT");
+	AUREA->SetAutoScale(true);
 
 	ELLIE_SHADOW->SetRelativeLocation({ 200,0,0 });
 	ELLIE->SetRelativeLocation({ 200,0,0 });
 	ELLIE_HAT->SetRelativeLocation({ 200,0,0 });
 	AUREA->SetRelativeLocation({ -200,0,0 });
-	//Player->SetupAttachment(RootComponent);
+
+	ELLIE_SHADOW->SetupAttachment(RootComponent);
+	ELLIE->SetupAttachment(RootComponent);
+	ELLIE_HAT->SetupAttachment(RootComponent);
+	AUREA->SetupAttachment(RootComponent);
 }
 
 APlayer::~APlayer()
