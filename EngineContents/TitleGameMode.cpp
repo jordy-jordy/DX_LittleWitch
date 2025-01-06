@@ -80,10 +80,6 @@ void ATitleGameMode::TitleSpritesInit()
 	UEngineSprite::CreateSpriteToMeta("Title_Train_Bridge.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Title_Train_Bridge_Down.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Title_Train_Bridge_Shadow.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("Title_Train_Cloud_0.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("Title_Train_Cloud_1.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("Title_Train_Cloud_2.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("Title_Train_Cloud_3.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Title_Train_CloudBlur_0.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Title_Train_CloudBlur_1.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Title_Train_Cover.png", ".sdata");

@@ -52,11 +52,9 @@ private:
 	std::shared_ptr<class USpriteRenderer> BRIDGE_SHADOW0;
 	std::shared_ptr<class USpriteRenderer> BRIDGE_SHADOW1;
 	std::shared_ptr<class USpriteRenderer> TRAIN_SHADOW;
-	std::shared_ptr<class USpriteRenderer> CLOUD_0;
-	std::shared_ptr<class USpriteRenderer> CLOUD_1;
-	std::shared_ptr<class USpriteRenderer> CLOUD_2;
-	std::shared_ptr<class USpriteRenderer> CLOUD_3;
 	std::shared_ptr<class USpriteRenderer> CLOUD_FAR;
 	std::shared_ptr<class USpriteRenderer> CLOUD_MID;
 	std::shared_ptr<class USpriteRenderer> CLOUD_NEAR;
+	std::shared_ptr<class USpriteRenderer> TREE_0;
+	std::shared_ptr<class USpriteRenderer> TREE_1;
 };

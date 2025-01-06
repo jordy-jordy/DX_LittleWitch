@@ -29,26 +29,6 @@ ATitleScene::ATitleScene()
 	SKY_MOON->SetRelativeScale3D({ 171.0f, 171.0f, 1.0f });
 	SetLocation_Window(SKY_MOON, { 229.0f, 66.0f, 8000.0f });
 
-	//CLOUD_0 = CreateDefaultSubObject<USpriteRenderer>();
-	//CLOUD_0->SetSprite("Title_Train_Cloud_0.png", 0);
-	//CLOUD_0->SetRelativeScale3D({ 156.0f * 3, 80.0f * 3, 1.0f });
-	//SetLocation_Window(CLOUD_0, { 100.0f, 20.0f, 7000.0f });
-
-	//CLOUD_1 = CreateDefaultSubObject<USpriteRenderer>();
-	//CLOUD_1->SetSprite("Title_Train_Cloud_1.png", 0);
-	//CLOUD_1->SetRelativeScale3D({ 338.0f, 134.0f, 1.0f });
-	//SetLocation_Window(CLOUD_1, { 50.0f, 50.0f, 6000.0f });
-
-	//CLOUD_2 = CreateDefaultSubObject<USpriteRenderer>();
-	//CLOUD_2->SetSprite("Title_Train_Cloud_2.png", 0);
-	//CLOUD_2->SetRelativeScale3D({ 276.0f, 120.0f, 1.0f });
-	//SetLocation_Window(CLOUD_2, { 50.0f, 50.0f, 5000.0f });
-
-	//CLOUD_3 = CreateDefaultSubObject<USpriteRenderer>();
-	//CLOUD_3->SetSprite("Title_Train_Cloud_3.png", 0);
-	//CLOUD_3->SetRelativeScale3D({ 182.0f, 92.0f, 1.0f });
-	//SetLocation_Window(CLOUD_3, { 50.0f, 50.0f, 4000.0f });
-
 	CLOUD_FAR = CreateDefaultSubObject<USpriteRenderer>();
 	CLOUD_FAR->SetSprite("CLOUD_FAR.png", 0);
 	CLOUD_FAR->SetRelativeScale3D({ 2142.0f, 720.0f, 1.0f });
@@ -131,7 +111,6 @@ ATitleScene::ATitleScene()
 
 	BRIDGE_SHADOW1 = CreateDefaultSubObject<USpriteRenderer>();
 	BRIDGE_SHADOW1->SetSprite("Title_Train_Bridge_Down.png", 0);
-	//BRIDGE_SHADOW1->SpriteData.CuttingPos.W = 0.3f;
 	BRIDGE_SHADOW1->SetRelativeScale3D({ 1404.0f, 58.0f, 1.0f });
 	SetLocation_Window(BRIDGE_SHADOW1, { -62.0f, 630.0f, 790.0f });
 
@@ -165,10 +144,22 @@ ATitleScene::ATitleScene()
 	WATER_SHINE->SetRelativeScale3D({ 1404.0f, 4.0f, 1.0f });
 	SetLocation_Window(WATER_SHINE, { -62.0f, 635.0f, 750.0f });
 
+	TREE_0 = CreateDefaultSubObject<USpriteRenderer>();
+	TREE_0->SetSprite("Title_Train_Tree_0.png", 0);
+	TREE_0->SetAutoScale(true);
+	TREE_0->SetAutoScaleRatio(1.0f);
+	SetLocation_Window(TREE_0, { 0.0f, 340.0f, 500.0f });
+
+	TREE_1 = CreateDefaultSubObject<USpriteRenderer>();
+	TREE_1->SetSprite("Title_Train_Tree_1.png", 0);
+	TREE_1->SetAutoScale(true);
+	TREE_1->SetAutoScaleRatio(1.0f);
+	SetLocation_Window(TREE_1, { 0.0f, 360.0f, 450.0f });
+
 	LOGO = CreateDefaultSubObject<USpriteRenderer>();
 	LOGO->SetSprite("Logo.png", 0);
 	LOGO->SetRelativeScale3D({ 451.0f, 220.0f, 1.0f });
-	SetLocation_Window(LOGO, {817.0f, 116.0f, 0.0f});
+	SetLocation_Window(LOGO, { 817.0f, 116.0f, 0.0f });
 
 	BG_SKY->SetupAttachment(RootComponent);
 	SKY_STAR->SetupAttachment(RootComponent);
@@ -176,10 +167,6 @@ ATitleScene::ATitleScene()
 	CLOUD_FAR->SetupAttachment(RootComponent);
 	CLOUD_MID->SetupAttachment(RootComponent);
 	CLOUD_NEAR->SetupAttachment(RootComponent);
-	//CLOUD_0->SetupAttachment(RootComponent);
-	//CLOUD_1->SetupAttachment(RootComponent);
-	//CLOUD_2->SetupAttachment(RootComponent);
-	//CLOUD_3->SetupAttachment(RootComponent);
 	BG_WATER->SetupAttachment(RootComponent);
 	MOUNTAIN->SetupAttachment(RootComponent);
 	TRAIN_SHADOW->SetupAttachment(RootComponent);
@@ -200,6 +187,8 @@ ATitleScene::ATitleScene()
 	TRAIN_BRIDGE->SetupAttachment(RootComponent);
 	//BRIDGE_SHADOW0->SetupAttachment(RootComponent);
 	WATER_SHINE->SetupAttachment(RootComponent);
+	TREE_0->SetupAttachment(RootComponent);
+	TREE_1->SetupAttachment(RootComponent);
 	LOGO->SetupAttachment(RootComponent);
 
 	//LogoRenderer->CreateAnimation("Idle", "Aurea_Idle.png", 2, 4, 0.15f);
@@ -230,6 +219,9 @@ void ATitleScene::Tick(float _DeltaTime)
 	float SPEED_CLOUD_Mid = 0.1f;
 	float SPEED_CLOUD_Near = 0.15f;
 
+	float SPEED_TREE_Far = 0.75f;
+	float SPEED_TREE_Near = 0.8f;
+
 	MOUNTAIN->UVValue.PlusUVValue += (float4{1.0f, 0.0f, 0.0f, 0.0f} *SPEED_Far *_DeltaTime);
 	MOUNTAIN_SHADOW->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_Far * _DeltaTime);
 
@@ -241,6 +233,9 @@ void ATitleScene::Tick(float _DeltaTime)
 	BRIDGE_SHADOW1->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 	WATER_GLARE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 	WATER_SHINE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
+
+	TREE_0->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_TREE_Far * _DeltaTime);
+	TREE_1->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_TREE_Near * _DeltaTime);
 }
 
 void ATitleScene::SetLocation_Window(const std::shared_ptr<USpriteRenderer> _Renderer, const FVector _Value)
