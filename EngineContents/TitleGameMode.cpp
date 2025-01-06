@@ -109,6 +109,9 @@ void ATitleGameMode::TitleSpritesInit()
 	UEngineSprite::CreateSpriteToMeta("Title_Train_Window_1.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Title_Train_Window_2.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Title_Train_WindowWater_blur.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("CLOUD_FAR.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("CLOUD_NEAR.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("CLOUD_MIDDLE.png", ".sdata");
 
 
 }

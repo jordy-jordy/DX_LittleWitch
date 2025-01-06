@@ -61,7 +61,7 @@ protected:
 
 private:
 	float Near = 1.0f;
-	float Far = 5000.0f;
+	float Far = 10000.0f;
 
 	float FOV = 60.0f;
 

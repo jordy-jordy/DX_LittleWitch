@@ -15,14 +15,54 @@ ATitleScene::ATitleScene()
 	BG_SKY = CreateDefaultSubObject<USpriteRenderer>();
 	BG_SKY->SetSprite("Title_Train_Sky.png", 0);
 	BG_SKY->SetRelativeScale3D({ 1280.0f, 720.0f, 1.0f });
-	SetLocation_Window(BG_SKY, { 0, 0, 1000.0f });
+	SetLocation_Window(BG_SKY, { 0, 0, 8900.0f });
 
 	SKY_STAR = CreateDefaultSubObject<USpriteRenderer>();
 	SKY_STAR->SetSprite("Title_train_star.png", 0);
 	SKY_STAR->CreateAnimation("STARS", "Title_train_star.png", 0, 4, 0.15f);
 	SKY_STAR->SetRelativeScale3D({ 1275.0f, 352.0f, 1.0f });
-	SetLocation_Window(SKY_STAR, { 0.0f, 0.0f, 980.0f });
+	SetLocation_Window(SKY_STAR, { 0.0f, 0.0f, 8800.0f });
 	SKY_STAR->ChangeAnimation("STARS");
+
+	SKY_MOON = CreateDefaultSubObject<USpriteRenderer>();
+	SKY_MOON->SetSprite("Title_Train_Moon.png", 0);
+	SKY_MOON->SetRelativeScale3D({ 171.0f, 171.0f, 1.0f });
+	SetLocation_Window(SKY_MOON, { 229.0f, 66.0f, 8000.0f });
+
+	//CLOUD_0 = CreateDefaultSubObject<USpriteRenderer>();
+	//CLOUD_0->SetSprite("Title_Train_Cloud_0.png", 0);
+	//CLOUD_0->SetRelativeScale3D({ 156.0f * 3, 80.0f * 3, 1.0f });
+	//SetLocation_Window(CLOUD_0, { 100.0f, 20.0f, 7000.0f });
+
+	//CLOUD_1 = CreateDefaultSubObject<USpriteRenderer>();
+	//CLOUD_1->SetSprite("Title_Train_Cloud_1.png", 0);
+	//CLOUD_1->SetRelativeScale3D({ 338.0f, 134.0f, 1.0f });
+	//SetLocation_Window(CLOUD_1, { 50.0f, 50.0f, 6000.0f });
+
+	//CLOUD_2 = CreateDefaultSubObject<USpriteRenderer>();
+	//CLOUD_2->SetSprite("Title_Train_Cloud_2.png", 0);
+	//CLOUD_2->SetRelativeScale3D({ 276.0f, 120.0f, 1.0f });
+	//SetLocation_Window(CLOUD_2, { 50.0f, 50.0f, 5000.0f });
+
+	//CLOUD_3 = CreateDefaultSubObject<USpriteRenderer>();
+	//CLOUD_3->SetSprite("Title_Train_Cloud_3.png", 0);
+	//CLOUD_3->SetRelativeScale3D({ 182.0f, 92.0f, 1.0f });
+	//SetLocation_Window(CLOUD_3, { 50.0f, 50.0f, 4000.0f });
+
+	CLOUD_FAR = CreateDefaultSubObject<USpriteRenderer>();
+	CLOUD_FAR->SetSprite("CLOUD_FAR.png", 0);
+	CLOUD_FAR->SetRelativeScale3D({ 2142.0f, 720.0f, 1.0f });
+	SetLocation_Window(CLOUD_FAR, { 0.0f, 0.0f, 7000.0f });
+
+	CLOUD_MID = CreateDefaultSubObject<USpriteRenderer>();
+	CLOUD_MID->SetSprite("CLOUD_MIDDLE.png", 0);
+	CLOUD_MID->SetRelativeScale3D({ 2142.0f, 720.0f, 1.0f });
+	SetLocation_Window(CLOUD_MID, { 0.0f, 0.0f, 6500.0f });
+
+	CLOUD_NEAR = CreateDefaultSubObject<USpriteRenderer>();
+	CLOUD_NEAR->SetSprite("CLOUD_NEAR.png", 0);
+	CLOUD_NEAR->SetRelativeScale3D({ 2142.0f, 720.0f, 1.0f });
+	SetLocation_Window(CLOUD_NEAR, { 0.0f, 0.0f, 6000.0f });
 
 	BG_WATER = CreateDefaultSubObject<USpriteRenderer>();
 	BG_WATER->SetSprite("Title_Train_Water.png", 0);
@@ -32,12 +72,7 @@ ATitleScene::ATitleScene()
 	MOUNTAIN = CreateDefaultSubObject<USpriteRenderer>();
 	MOUNTAIN->SetSprite("Title_Train_Mountain.png", 0);
 	MOUNTAIN->SetRelativeScale3D({ 1315.0f, 304.0f, 1.0f });
-	SetLocation_Window(MOUNTAIN, { 0.0f, 216.0f, 950.0f });
-
-	SKY_MOON = CreateDefaultSubObject<USpriteRenderer>();
-	SKY_MOON->SetSprite("Title_Train_Moon.png", 0);
-	SKY_MOON->SetRelativeScale3D({ 171.0f, 171.0f, 1.0f });
-	SetLocation_Window(SKY_MOON, { 229.0f, 66.0f, 970.0f });
+	SetLocation_Window(MOUNTAIN, { 0.0f, 216.0f, 900.0f });
 
 	TRAIN_SHADOW = CreateDefaultSubObject<USpriteRenderer>();
 	TRAIN_SHADOW->SetSprite("Title_Train_TrainWater_blur.png", 0);
@@ -136,27 +171,34 @@ ATitleScene::ATitleScene()
 	SetLocation_Window(LOGO, {817.0f, 116.0f, 0.0f});
 
 	BG_SKY->SetupAttachment(RootComponent);
-	BG_WATER->SetupAttachment(RootComponent);
 	SKY_STAR->SetupAttachment(RootComponent);
 	SKY_MOON->SetupAttachment(RootComponent);
+	CLOUD_FAR->SetupAttachment(RootComponent);
+	CLOUD_MID->SetupAttachment(RootComponent);
+	CLOUD_NEAR->SetupAttachment(RootComponent);
+	//CLOUD_0->SetupAttachment(RootComponent);
+	//CLOUD_1->SetupAttachment(RootComponent);
+	//CLOUD_2->SetupAttachment(RootComponent);
+	//CLOUD_3->SetupAttachment(RootComponent);
+	BG_WATER->SetupAttachment(RootComponent);
 	MOUNTAIN->SetupAttachment(RootComponent);
-	TRAIN0->SetupAttachment(RootComponent);
-	TRAIN0_LIGHT->SetupAttachment(RootComponent);
-	TRAIN1->SetupAttachment(RootComponent);
-	TRAIN1_LIGHT->SetupAttachment(RootComponent);
-	TRAIN2->SetupAttachment(RootComponent);
-	TRAIN2_LIGHT->SetupAttachment(RootComponent);
-	TRAIN3->SetupAttachment(RootComponent);
-	TRAIN3_LIGHT->SetupAttachment(RootComponent);
-	TRAIN4->SetupAttachment(RootComponent);
 	TRAIN_SHADOW->SetupAttachment(RootComponent);
 	MOUNTAIN_SHADOW->SetupAttachment(RootComponent);
+	TRAIN0->SetupAttachment(RootComponent);
+	TRAIN1->SetupAttachment(RootComponent);
+	TRAIN2->SetupAttachment(RootComponent);
+	TRAIN3->SetupAttachment(RootComponent);
+	TRAIN4->SetupAttachment(RootComponent);
+	TRAIN0_LIGHT->SetupAttachment(RootComponent);
+	TRAIN1_LIGHT->SetupAttachment(RootComponent);
+	TRAIN2_LIGHT->SetupAttachment(RootComponent);
+	TRAIN3_LIGHT->SetupAttachment(RootComponent);
 	BRIDGE_SHADOW1->SetupAttachment(RootComponent);
 	WATER_GLARE->SetupAttachment(RootComponent);
-	//BRIDGE_SHADOW0->SetupAttachment(RootComponent);
 	TRAIN_LIGHT_BLUR0->SetupAttachment(RootComponent);
 	TRAIN_LIGHT_BLUR1->SetupAttachment(RootComponent);
 	TRAIN_BRIDGE->SetupAttachment(RootComponent);
+	//BRIDGE_SHADOW0->SetupAttachment(RootComponent);
 	WATER_SHINE->SetupAttachment(RootComponent);
 	LOGO->SetupAttachment(RootComponent);
 
@@ -180,11 +222,21 @@ void ATitleScene::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
+	float SPEED_Far = 0.3f;
+	float SPEED_Mid = 0.5f;
 	float SPEED_Near = 0.7f;
-	float SPEEN_Far = 0.3f;
 
-	MOUNTAIN->UVValue.PlusUVValue += (float4{1.0f, 0.0f, 0.0f, 0.0f} * SPEEN_Far *_DeltaTime);
-	MOUNTAIN_SHADOW->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEEN_Far * _DeltaTime);
+	float SPEED_CLOUD_Far = 0.05f;
+	float SPEED_CLOUD_Mid = 0.1f;
+	float SPEED_CLOUD_Near = 0.15f;
+
+	MOUNTAIN->UVValue.PlusUVValue += (float4{1.0f, 0.0f, 0.0f, 0.0f} *SPEED_Far *_DeltaTime);
+	MOUNTAIN_SHADOW->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_Far * _DeltaTime);
+
+	CLOUD_FAR->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_CLOUD_Far * _DeltaTime);
+	CLOUD_MID->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_CLOUD_Mid * _DeltaTime);
+	CLOUD_NEAR->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_CLOUD_Near * _DeltaTime);
+
 	TRAIN_BRIDGE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_Near * _DeltaTime);
 	BRIDGE_SHADOW1->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 	WATER_GLARE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
