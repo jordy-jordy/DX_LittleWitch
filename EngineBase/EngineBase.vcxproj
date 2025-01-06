@@ -182,6 +182,7 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PreCompile.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="EnginePath.cpp" />
+    <ClCompile Include="EngineRandom.cpp" />
     <ClCompile Include="EngineSerializer.cpp" />
     <ClCompile Include="EngineString.cpp" />
     <ClCompile Include="EngineTimer.cpp" />
@@ -203,6 +204,7 @@
     <ClInclude Include="EngineFile.h" />
     <ClInclude Include="EngineMath.h" />
     <ClInclude Include="EnginePath.h" />
+    <ClInclude Include="EngineRandom.h" />
     <ClInclude Include="EngineSerializer.h" />
     <ClInclude Include="EngineString.h" />
     <ClInclude Include="EngineTimer.h" />

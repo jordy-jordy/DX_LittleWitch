@@ -190,12 +190,6 @@ ATitleScene::ATitleScene()
 	TREE_0->SetupAttachment(RootComponent);
 	TREE_1->SetupAttachment(RootComponent);
 	LOGO->SetupAttachment(RootComponent);
-
-	//LogoRenderer->CreateAnimation("Idle", "Aurea_Idle.png", 2, 4, 0.15f);
-	//USpriteRenderer::FrameAnimation* Animation = LogoRenderer->FindAnimation("Idle");
-	//Animation->IsAutoScale = true;
-	//Animation->AutoScaleRatio = 4.0f;
-	//LogoRenderer->ChangeAnimation("Idle");
 };
 
 ATitleScene::~ATitleScene()
