@@ -1,7 +1,8 @@
 #pragma once
+#include <EngineCore/Actor.h>
 
 // Ό³Έν :
-class AField_Green
+class AField_Green : public AActor
 {
 public:
 	// constrcuter destructer
@@ -15,6 +16,8 @@ public:
 	AField_Green& operator=(AField_Green&& _Other) noexcept = delete;
 
 protected:
+	void BeginPlay() override;
+	void Tick(float _DeltaTime) override;
 
 private:
 

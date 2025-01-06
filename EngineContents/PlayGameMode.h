@@ -26,5 +26,6 @@ protected:
 
 private:
 	std::shared_ptr<class APawn> Player;
+	std::shared_ptr<class AActor> MainField;
 
 };

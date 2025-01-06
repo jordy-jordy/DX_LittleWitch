@@ -5,12 +5,14 @@
 #include <EngineCore/SpriteRenderer.h>
 
 #include "Player.h"
+#include "Field_Home.h"
 
 APlayGameMode::APlayGameMode()
 {
 	PlayDirLoad();
 	PlaySpritesInit();
 
+	MainField = GetWorld()->SpawnActor<AField_Home>();
 	Player = GetWorld()->SpawnActor<APlayer>();
 };
 

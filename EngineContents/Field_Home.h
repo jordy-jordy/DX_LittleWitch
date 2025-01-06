@@ -1,7 +1,8 @@
 #pragma once
+#include <EngineCore/Actor.h>
 
 // Ό³Έν :
-class AField_Home
+class AField_Home : public AActor
 {
 public:
 	// constrcuter destructer
@@ -15,7 +16,10 @@ public:
 	AField_Home& operator=(AField_Home&& _Other) noexcept = delete;
 
 protected:
+	void BeginPlay() override;
+	void Tick(float _DeltaTime) override;
 
 private:
+	std::shared_ptr<class USpriteRenderer> MainField;
 
 };
