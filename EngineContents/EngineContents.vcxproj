@@ -176,6 +176,14 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="Field_Green.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
+    <ClInclude Include="Field_Home.h">
+      <SubType>
+      </SubType>
+    </ClInclude>
     <ClInclude Include="GlobalVar.h">
       <SubType>
       </SubType>
@@ -201,6 +209,14 @@
   <ItemGroup>
     <ClCompile Include="ContentsCore.cpp" />
     <ClCompile Include="EndGameMode.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Field_Green.cpp">
+      <SubType>
+      </SubType>
+    </ClCompile>
+    <ClCompile Include="Field_Home.cpp">
       <SubType>
       </SubType>
     </ClCompile>
