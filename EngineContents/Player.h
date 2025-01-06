@@ -65,9 +65,9 @@ public:
 	APlayer& operator=(const APlayer& _Other) = delete;
 	APlayer& operator=(APlayer&& _Other) noexcept = delete;
 
-	void EllieIDLE();
-	void EllieWALK();
-	void EllieRUN();
+	void EllieIDLE(float _DeltaTime);
+	void EllieWALK(float _DeltaTime);
+	void EllieRUN(float _DeltaTime);
 
 	void ChangeState(EllieState::State _CurPlayerState);
 

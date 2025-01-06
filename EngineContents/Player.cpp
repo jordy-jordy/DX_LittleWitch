@@ -119,15 +119,15 @@ void APlayer::Tick(float _DeltaTime)
 	switch (CurrentState)
 	{
 	case EllieState::State::IDLE:
-		EllieIDLE();
+		EllieIDLE(_DeltaTime);
 		break;
 
 	case EllieState::State::WALK:
-		EllieWALK();
+		EllieWALK(_DeltaTime);
 		break;
 
 	case EllieState::State::RUN:
-		EllieRUN();
+		EllieRUN(_DeltaTime);
 		break;
 	default:
 		break;
@@ -152,7 +152,7 @@ void APlayer::ChangeState(EllieState::State _CurPlayerState)
 }
 
 
-void APlayer::EllieIDLE()
+void APlayer::EllieIDLE(float _DeltaTime)
 {
 	//if (UEngineInput::IsUp('A'))
 	//{
@@ -220,11 +220,12 @@ void APlayer::EllieIDLE()
 	}
 }
 
-void APlayer::EllieWALK()
+void APlayer::EllieWALK(float _DeltaTime)
 {
 	if (UEngineInput::IsPress('A'))
 	{
 		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_LEFT;
+		ELLIE->AddRelativeLocation(FVector{ -1.0f, 0.0f, 0.0f });
 	}
 	if (UEngineInput::IsPress('W'))
 	{
@@ -289,7 +290,7 @@ void APlayer::EllieWALK()
 
 }
 
-void APlayer::EllieRUN()
+void APlayer::EllieRUN(float _DeltaTime)
 {
 	switch (CurrentRUNState)
 	{
