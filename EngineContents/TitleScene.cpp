@@ -15,125 +15,125 @@ ATitleScene::ATitleScene()
 	BG_SKY = CreateDefaultSubObject<USpriteRenderer>();
 	BG_SKY->SetSprite("Title_Train_Sky.png", 0);
 	BG_SKY->SetRelativeScale3D({ 1280.0f, 720.0f, 1.0f });
-	SetLocation_Window(BG_SKY, { 0,0,0 });
-
-	BG_WATER = CreateDefaultSubObject<USpriteRenderer>();
-	BG_WATER->SetSprite("Title_Train_Water.png", 0);
-	BG_WATER->SetRelativeScale3D({ 1280.0f, 195.0f, 1.0f });
-	SetLocation_Window(BG_WATER, { 0, 525.0f, 0 });
+	SetLocation_Window(BG_SKY, { 0, 0, 1000.0f });
 
 	SKY_STAR = CreateDefaultSubObject<USpriteRenderer>();
 	SKY_STAR->SetSprite("Title_train_star.png", 0);
 	SKY_STAR->CreateAnimation("STARS", "Title_train_star.png", 0, 4, 0.15f);
 	SKY_STAR->SetRelativeScale3D({ 1275.0f, 352.0f, 1.0f });
-	SetLocation_Window(SKY_STAR, { 0.0f, 0.0f, 0 });
+	SetLocation_Window(SKY_STAR, { 0.0f, 0.0f, 980.0f });
 	SKY_STAR->ChangeAnimation("STARS");
+
+	BG_WATER = CreateDefaultSubObject<USpriteRenderer>();
+	BG_WATER->SetSprite("Title_Train_Water.png", 0);
+	BG_WATER->SetRelativeScale3D({ 1280.0f, 195.0f, 1.0f });
+	SetLocation_Window(BG_WATER, { 0, 525.0f, 950.0f });
 
 	MOUNTAIN = CreateDefaultSubObject<USpriteRenderer>();
 	MOUNTAIN->SetSprite("Title_Train_Mountain.png", 0);
 	MOUNTAIN->SetRelativeScale3D({ 1315.0f, 304.0f, 1.0f });
-	SetLocation_Window(MOUNTAIN, { 0.0f, 216.0f, 0 });
+	SetLocation_Window(MOUNTAIN, { 0.0f, 216.0f, 950.0f });
 
 	SKY_MOON = CreateDefaultSubObject<USpriteRenderer>();
 	SKY_MOON->SetSprite("Title_Train_Moon.png", 0);
 	SKY_MOON->SetRelativeScale3D({ 171.0f, 171.0f, 1.0f });
-	SetLocation_Window(SKY_MOON, { 229.0f, 66.0f, 0 });
-
-	TRAIN0 = CreateDefaultSubObject<USpriteRenderer>();
-	TRAIN0->SetSprite("Title_Train_Train_0.png", 0);
-	TRAIN0->SetRelativeScale3D({ 259.0f, 72.0f, 1.0f });
-	SetLocation_Window(TRAIN0, { 615.0f, 431.0f, 0 });
-
-	TRAIN0_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
-	TRAIN0_LIGHT->SetSprite("Title_Train_Window_0.png", 0);
-	TRAIN0_LIGHT->SetRelativeScale3D({ 172.0f, 28.0f, 1.0f });
-	SetLocation_Window(TRAIN0_LIGHT, { 631.0f, 455.0f, 0 });
-
-	TRAIN1 = CreateDefaultSubObject<USpriteRenderer>();
-	TRAIN1->SetSprite("Title_Train_Train_1.png", 0);
-	TRAIN1->SetRelativeScale3D({ 152.0f, 72.0f, 1.0f });
-	SetLocation_Window(TRAIN1, { 466.0f, 431.0f, 0 });
-
-	TRAIN1_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
-	TRAIN1_LIGHT->SetSprite("Title_Train_Window_1.png", 0);
-	TRAIN1_LIGHT->SetRelativeScale3D({ 142.0f, 36.0f, 1.0f });
-	SetLocation_Window(TRAIN1_LIGHT, { 473.0f, 449.0f, 0 });
-
-	TRAIN2 = CreateDefaultSubObject<USpriteRenderer>();
-	TRAIN2->SetSprite("Title_Train_Train_1.png", 0);
-	TRAIN2->SetRelativeScale3D({ 152.0f, 72.0f, 1.0f });
-	SetLocation_Window(TRAIN2, { 317.0f, 431.0f, 0 });
-
-	TRAIN2_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
-	TRAIN2_LIGHT->SetSprite("Title_Train_Window_1.png", 0);
-	TRAIN2_LIGHT->SetRelativeScale3D({ 142.0f, 36.0f, 1.0f });
-	SetLocation_Window(TRAIN2_LIGHT, { 325.0f, 449.0f, 0 });
-
-	TRAIN3 = CreateDefaultSubObject<USpriteRenderer>();
-	TRAIN3->SetSprite("Title_Train_Train_3.png", 0);
-	TRAIN3->SetRelativeScale3D({ 299.0f, 70.0f, 1.0f });
-	SetLocation_Window(TRAIN3, { 21.0f, 432.0f, 0 });
-
-	TRAIN3_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
-	TRAIN3_LIGHT->SetSprite("Title_Train_Light.png", 0);
-	TRAIN3_LIGHT->SetRelativeScale3D({ 221.0f, 17.0f, 1.0f });
-	SetLocation_Window(TRAIN3_LIGHT, { 67.0f, 467.0f, 0 });
-
-	TRAIN4 = CreateDefaultSubObject<USpriteRenderer>();
-	TRAIN4->SetSprite("Title_Train_Train_3.png", 0);
-	TRAIN4->SetRelativeScale3D({ 299.0f, 70.0f, 1.0f });
-	SetLocation_Window(TRAIN4, { -275.0f, 432.0f, 0 });
+	SetLocation_Window(SKY_MOON, { 229.0f, 66.0f, 970.0f });
 
 	TRAIN_SHADOW = CreateDefaultSubObject<USpriteRenderer>();
 	TRAIN_SHADOW->SetSprite("Title_Train_TrainWater_blur.png", 0);
 	TRAIN_SHADOW->SetRelativeScale3D({ 870.0f, 53.0f, 1.0f });
-	SetLocation_Window(TRAIN_SHADOW, { 0.0f, 658.0f, 0 });
+	SetLocation_Window(TRAIN_SHADOW, { 0.0f, 658.0f, 830.0f });
 
 	MOUNTAIN_SHADOW = CreateDefaultSubObject<USpriteRenderer>();
 	MOUNTAIN_SHADOW->SetSprite("Title_Train_MountainWater_blur.png", 0);
 	MOUNTAIN_SHADOW->SetRelativeScale3D({ 1297.0f, 222.0f, 1.0f });
-	SetLocation_Window(MOUNTAIN_SHADOW, { 0.0f, 520.0f, 0 });
+	SetLocation_Window(MOUNTAIN_SHADOW, { 0.0f, 520.0f, 820.0f });
+
+	TRAIN0 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN0->SetSprite("Title_Train_Train_0.png", 0);
+	TRAIN0->SetRelativeScale3D({ 259.0f, 72.0f, 1.0f });
+	SetLocation_Window(TRAIN0, { 615.0f, 431.0f, 800.0f });
+
+	TRAIN1 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN1->SetSprite("Title_Train_Train_1.png", 0);
+	TRAIN1->SetRelativeScale3D({ 152.0f, 72.0f, 1.0f });
+	SetLocation_Window(TRAIN1, { 466.0f, 431.0f, 800.0f });
+
+	TRAIN2 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN2->SetSprite("Title_Train_Train_1.png", 0);
+	TRAIN2->SetRelativeScale3D({ 152.0f, 72.0f, 1.0f });
+	SetLocation_Window(TRAIN2, { 317.0f, 431.0f, 800.0f });
+
+	TRAIN3 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN3->SetSprite("Title_Train_Train_3.png", 0);
+	TRAIN3->SetRelativeScale3D({ 299.0f, 70.0f, 1.0f });
+	SetLocation_Window(TRAIN3, { 21.0f, 432.0f, 800.0f });
+
+	TRAIN4 = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN4->SetSprite("Title_Train_Train_3.png", 0);
+	TRAIN4->SetRelativeScale3D({ 299.0f, 70.0f, 1.0f });
+	SetLocation_Window(TRAIN4, { -275.0f, 432.0f, 800.0f });
+
+	TRAIN0_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN0_LIGHT->SetSprite("Title_Train_Window_0.png", 0);
+	TRAIN0_LIGHT->SetRelativeScale3D({ 172.0f, 28.0f, 1.0f });
+	SetLocation_Window(TRAIN0_LIGHT, { 631.0f, 455.0f, 790.0f });
+
+	TRAIN1_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN1_LIGHT->SetSprite("Title_Train_Window_1.png", 0);
+	TRAIN1_LIGHT->SetRelativeScale3D({ 142.0f, 36.0f, 1.0f });
+	SetLocation_Window(TRAIN1_LIGHT, { 473.0f, 449.0f, 790.0f });
+
+	TRAIN2_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN2_LIGHT->SetSprite("Title_Train_Window_1.png", 0);
+	TRAIN2_LIGHT->SetRelativeScale3D({ 142.0f, 36.0f, 1.0f });
+	SetLocation_Window(TRAIN2_LIGHT, { 325.0f, 449.0f, 790.0f });
+
+	TRAIN3_LIGHT = CreateDefaultSubObject<USpriteRenderer>();
+	TRAIN3_LIGHT->SetSprite("Title_Train_Light.png", 0);
+	TRAIN3_LIGHT->SetRelativeScale3D({ 221.0f, 17.0f, 1.0f });
+	SetLocation_Window(TRAIN3_LIGHT, { 67.0f, 467.0f, 790.0f });
 
 	BRIDGE_SHADOW1 = CreateDefaultSubObject<USpriteRenderer>();
 	BRIDGE_SHADOW1->SetSprite("Title_Train_Bridge_Down.png", 0);
-	BRIDGE_SHADOW1->SpriteData.CuttingPos.W = 0.3f;
-	BRIDGE_SHADOW1->SetRelativeScale3D({ 1404.0f, 32.0f, 1.0f });
-	SetLocation_Window(BRIDGE_SHADOW1, { -59.0f, 630.0f, 0 });
+	//BRIDGE_SHADOW1->SpriteData.CuttingPos.W = 0.3f;
+	BRIDGE_SHADOW1->SetRelativeScale3D({ 1404.0f, 58.0f, 1.0f });
+	SetLocation_Window(BRIDGE_SHADOW1, { -62.0f, 630.0f, 790.0f });
 
 	WATER_GLARE = CreateDefaultSubObject<USpriteRenderer>();
 	WATER_GLARE->SetSprite("Title_Train_WaterShine_blur.png", 0);
 	WATER_GLARE->SetRelativeScale3D({ 1335.0f, 180.0f, 1.0f });
-	SetLocation_Window(WATER_GLARE, { -29.0f, 563.0f, 0 });
+	SetLocation_Window(WATER_GLARE, { -29.0f, 563.0f, 780.0f });
 
-	BRIDGE_SHADOW0 = CreateDefaultSubObject<USpriteRenderer>();
-	BRIDGE_SHADOW0->SetSprite("Title_Train_Bridge_Shadow.png", 0);
-	BRIDGE_SHADOW0->SetRelativeScale3D({ 1300.0f, 81.0f, 1.0f });
-	SetLocation_Window(BRIDGE_SHADOW0, { -10.0f, 595.0f, 0 });
+	//BRIDGE_SHADOW0 = CreateDefaultSubObject<USpriteRenderer>();
+	//BRIDGE_SHADOW0->SetSprite("Title_Train_Bridge_Shadow.png", 0);
+	//BRIDGE_SHADOW0->SetRelativeScale3D({ 1300.0f, 81.0f, 1.0f });
+	//SetLocation_Window(BRIDGE_SHADOW0, { -10.0f, 595.0f, 770.0f });
 
 	TRAIN_LIGHT_BLUR0 = CreateDefaultSubObject<USpriteRenderer>();
 	TRAIN_LIGHT_BLUR0->SetSprite("Title_Train_WindowWater_blur.png", 0);
 	TRAIN_LIGHT_BLUR0->SetRelativeScale3D({ 540.0f, 69.0f, 1.0f });
-	SetLocation_Window(TRAIN_LIGHT_BLUR0, { 292.0f, 645.0f, 0 });
+	SetLocation_Window(TRAIN_LIGHT_BLUR0, { 292.0f, 645.0f, 760.0f });
 
 	TRAIN_LIGHT_BLUR1 = CreateDefaultSubObject<USpriteRenderer>();
 	TRAIN_LIGHT_BLUR1->SetSprite("Title_Train_Light_Blur.png", 0);
 	TRAIN_LIGHT_BLUR1->SetRelativeScale3D({ 287.0f, 39.0f, 1.0f });
-	SetLocation_Window(TRAIN_LIGHT_BLUR1, { 21.0f, 656.0f, 0 });
+	SetLocation_Window(TRAIN_LIGHT_BLUR1, { 21.0f, 656.0f, 760.0f });
 
 	TRAIN_BRIDGE = CreateDefaultSubObject<USpriteRenderer>();
 	TRAIN_BRIDGE->SetSprite("Title_Train_Bridge.png", 0);
 	TRAIN_BRIDGE->SetRelativeScale3D({ 1404.0f, 133.0f, 1.0f });
-	SetLocation_Window(TRAIN_BRIDGE, { -62.0f, 502.0f, 0 });
+	SetLocation_Window(TRAIN_BRIDGE, { -62.0f, 502.0f, 760.0f });
 
 	WATER_SHINE = CreateDefaultSubObject<USpriteRenderer>();
 	WATER_SHINE->SetSprite("Title_Train_WaterShine.png", 0);
-	WATER_SHINE->SetRelativeScale3D({ 1257.0f, 3.0f, 1.0f });
-	SetLocation_Window(WATER_SHINE, { -62.0f, 635.0f, 0 });
+	WATER_SHINE->SetRelativeScale3D({ 1404.0f, 4.0f, 1.0f });
+	SetLocation_Window(WATER_SHINE, { -62.0f, 635.0f, 750.0f });
 
 	LOGO = CreateDefaultSubObject<USpriteRenderer>();
 	LOGO->SetSprite("Logo.png", 0);
 	LOGO->SetRelativeScale3D({ 451.0f, 220.0f, 1.0f });
-	SetLocation_Window(LOGO, {817.0f, 116.0f, 0});
+	SetLocation_Window(LOGO, {817.0f, 116.0f, 0.0f});
 
 	BG_SKY->SetupAttachment(RootComponent);
 	BG_WATER->SetupAttachment(RootComponent);
@@ -153,7 +153,7 @@ ATitleScene::ATitleScene()
 	MOUNTAIN_SHADOW->SetupAttachment(RootComponent);
 	BRIDGE_SHADOW1->SetupAttachment(RootComponent);
 	WATER_GLARE->SetupAttachment(RootComponent);
-	BRIDGE_SHADOW0->SetupAttachment(RootComponent);
+	//BRIDGE_SHADOW0->SetupAttachment(RootComponent);
 	TRAIN_LIGHT_BLUR0->SetupAttachment(RootComponent);
 	TRAIN_LIGHT_BLUR1->SetupAttachment(RootComponent);
 	TRAIN_BRIDGE->SetupAttachment(RootComponent);
@@ -185,7 +185,8 @@ void ATitleScene::Tick(float _DeltaTime)
 
 	MOUNTAIN->UVValue.PlusUVValue += (float4{1.0f, 0.0f, 0.0f, 0.0f} * SPEEN_Far *_DeltaTime);
 	MOUNTAIN_SHADOW->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEEN_Far * _DeltaTime);
-	TRAIN_BRIDGE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
+	TRAIN_BRIDGE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_Near * _DeltaTime);
+	BRIDGE_SHADOW1->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 	WATER_GLARE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 	WATER_SHINE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 }
@@ -194,5 +195,5 @@ void ATitleScene::SetLocation_Window(const std::shared_ptr<USpriteRenderer> _Ren
 {
 	FVector Location = -(HALF_WINDOW_SIZE) + _Value;
 
-	_Renderer->SetWorldLocation({ Location.X, -Location.Y });
+	_Renderer->SetWorldLocation({ Location.X, -Location.Y, _Value.Z });
 }
