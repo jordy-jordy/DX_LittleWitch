@@ -139,6 +139,12 @@
     <ClInclude Include="EngineShaderResources.h">
       <Filter>06_Render</Filter>
     </ClInclude>
+    <ClInclude Include="EngineDepthStencilState.h">
+      <Filter>05_Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeEventComponent.h">
+      <Filter>04_Object\Component\Contents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Level.cpp">
@@ -266,6 +272,12 @@
     </ClCompile>
     <ClCompile Include="EngineShaderResources.cpp">
       <Filter>06_Render</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineDepthStencilState.cpp">
+      <Filter>05_Resources</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeEventComponent.cpp">
+      <Filter>04_Object\Component\Contents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

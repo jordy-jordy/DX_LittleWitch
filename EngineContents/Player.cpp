@@ -89,9 +89,9 @@ APlayer::APlayer()
 	AUREA->ChangeAnimation("AUREA_IDLE_LEFT");
 	AUREA->SetAutoScale(true);
 
-	ELLIE_SHADOW->SetRelativeLocation({ 200,0,0 });
-	ELLIE->SetRelativeLocation({ 200,0,0 });
-	ELLIE_HAT->SetRelativeLocation({ 200,0,0 });
+	ELLIE_SHADOW->SetRelativeLocation({ 200,0,5 });
+	ELLIE->SetRelativeLocation({ 200,0,4 });
+	ELLIE_HAT->SetRelativeLocation({ 200,0,3 });
 	AUREA->SetRelativeLocation({ -200,0,0 });
 
 	ELLIE_SHADOW->SetupAttachment(RootComponent);

@@ -24,6 +24,7 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="EngineWinImage.h" />
     <ClInclude Include="PreCompile.h">
       <SubType>
       </SubType>
@@ -35,6 +36,7 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="EngineWinImage.cpp" />
     <ClCompile Include="PreCompile.cpp">
       <SubType>
       </SubType>
