@@ -25,6 +25,6 @@ protected:
 	void BeginPlay();
 
 private:
-	std::shared_ptr<class APlayer> Player;
+	std::shared_ptr<class APawn> Player;
 
 };

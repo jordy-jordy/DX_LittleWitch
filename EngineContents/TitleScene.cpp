@@ -222,20 +222,20 @@ void ATitleScene::Tick(float _DeltaTime)
 	float SPEED_TREE_Far = 0.75f;
 	float SPEED_TREE_Near = 0.8f;
 
-	MOUNTAIN->UVValue.PlusUVValue += (float4{1.0f, 0.0f, 0.0f, 0.0f} *SPEED_Far *_DeltaTime);
-	MOUNTAIN_SHADOW->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_Far * _DeltaTime);
+	MOUNTAIN->UVValue.PlusUVValue += (float4{1.0f, 0.0f, 0.0f, 0.0f} * SPEED_Far *_DeltaTime);
+	MOUNTAIN_SHADOW->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Far * _DeltaTime);
 
-	CLOUD_FAR->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_CLOUD_Far * _DeltaTime);
-	CLOUD_MID->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_CLOUD_Mid * _DeltaTime);
-	CLOUD_NEAR->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_CLOUD_Near * _DeltaTime);
+	CLOUD_FAR->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_CLOUD_Far * _DeltaTime);
+	CLOUD_MID->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_CLOUD_Mid * _DeltaTime);
+	CLOUD_NEAR->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_CLOUD_Near * _DeltaTime);
 
-	TRAIN_BRIDGE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_Near * _DeltaTime);
+	TRAIN_BRIDGE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 	BRIDGE_SHADOW1->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 	WATER_GLARE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 	WATER_SHINE->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_Near * _DeltaTime);
 
-	TREE_0->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_TREE_Far * _DeltaTime);
-	TREE_1->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } *SPEED_TREE_Near * _DeltaTime);
+	TREE_0->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_TREE_Far * _DeltaTime);
+	TREE_1->UVValue.PlusUVValue += (float4{ 1.0f, 0.0f, 0.0f, 0.0f } * SPEED_TREE_Near * _DeltaTime);
 }
 
 void ATitleScene::SetLocation_Window(const std::shared_ptr<USpriteRenderer> _Renderer, const FVector _Value)
