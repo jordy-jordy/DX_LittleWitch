@@ -28,7 +28,7 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 	UEngineCore::CreateLevel<APlayGameMode, APawn>("PLAY");
 	//UEngineCore::CreateLevel<AEndGameMode, APawn>("END");
 
-	UEngineCore::OpenLevel("TITLE");
+	UEngineCore::OpenLevel(START_MODE);
 }
 
 void UContentsCore::EngineTick(float _DeltaTime)
