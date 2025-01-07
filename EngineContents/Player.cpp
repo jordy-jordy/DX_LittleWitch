@@ -95,7 +95,7 @@ APlayer::APlayer()
 
 	ELLIE_Coll = CreateDefaultSubObject<UCollision>();
 	ELLIE_Coll->SetCollisionProfileName("Player");
-	ELLIE_Coll->SetRelativeLocation({ 0, 70, 0});
+	ELLIE_Coll->SetWorldLocation({ 0, 70, 0});
 	ELLIE_Coll->SetScale3D({1, 1, 0});
 	//ELLIE_Coll->SetCollisionEnter([](UCollision* _This, UCollision* _Other)
 	//	{
@@ -130,7 +130,6 @@ void APlayer::BeginPlay()
 void APlayer::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
-	CheckIsInField();
 
 	switch (CurrentState)
 	{
@@ -266,21 +265,30 @@ void APlayer::EllieWALK(float _DeltaTime)
 		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_DOWN;
 	}
 
+	FVector NEXTPOS_UP = ELLIE_Coll->GetActor()->GetActorLocation() + (VECTOR_UP * ELLIE_WALK_SPEED * _DeltaTime);
+	FVector NEXTPOS_DOWN = ELLIE_Coll->GetActor()->GetActorLocation() + (VECTOR_DOWN * ELLIE_WALK_SPEED * _DeltaTime);
+	FVector NEXTPOS_LEFT = ELLIE_Coll->GetActor()->GetActorLocation() + (VECTOR_LEFT * ELLIE_WALK_SPEED * _DeltaTime);
+	FVector NEXTPOS_RIGHT = ELLIE_Coll->GetActor()->GetActorLocation() + (VECTOR_RIGHT * ELLIE_WALK_SPEED * _DeltaTime);
+	FVector POS = ELLIE_Coll->GetActor()->GetActorLocation();
+
+
+	std::vector<UCollision*> Result;
 	switch (CurrentWALKState)
 	{
 	case EllieState::EllieWALK_Vector::WALK_UP:
 		ELLIE->ChangeAnimation("ELLIE_WALK_UP");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_UP");
-		if (true == IsInField)
+		if (true == ELLIE_Coll->CollisionCheck("Field", NEXTPOS_UP, Result))
 		{
 			AddRelativeLocation(VECTOR_UP * ELLIE_WALK_SPEED * _DeltaTime);
+			int a = 0;
 		}
 		break;
 
 	case EllieState::EllieWALK_Vector::WALK_DOWN:
 		ELLIE->ChangeAnimation("ELLIE_WALK_DOWN");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_DOWN");
-		if (true == IsInField)
+		if (true == ELLIE_Coll->CollisionCheck("Field", NEXTPOS_DOWN, Result))
 		{
 			AddRelativeLocation(VECTOR_DOWN * ELLIE_WALK_SPEED * _DeltaTime);
 		}
@@ -289,7 +297,7 @@ void APlayer::EllieWALK(float _DeltaTime)
 	case EllieState::EllieWALK_Vector::WALK_LEFT:
 		ELLIE->ChangeAnimation("ELLIE_WALK_LEFT");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_LEFT");
-		if (true == IsInField)
+		if (true == ELLIE_Coll->CollisionCheck("Field", NEXTPOS_LEFT, Result))
 		{
 			AddRelativeLocation(VECTOR_LEFT * ELLIE_WALK_SPEED * _DeltaTime);
 		}
@@ -304,8 +312,9 @@ void APlayer::EllieWALK(float _DeltaTime)
 	case EllieState::EllieWALK_Vector::WALK_RIGHT:
 		ELLIE->ChangeAnimation("ELLIE_WALK_RIGHT");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_RIGHT");
-		if (true == IsInField)
+		if (true == ELLIE_Coll->CollisionCheck("Field", NEXTPOS_RIGHT, Result))
 		{
+			
 			AddRelativeLocation(VECTOR_RIGHT * ELLIE_WALK_SPEED * _DeltaTime);
 		}
 		break;
