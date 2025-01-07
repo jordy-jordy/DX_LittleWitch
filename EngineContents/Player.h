@@ -72,9 +72,11 @@ public:
 	void ChangeState(EllieState::State _CurPlayerState);
 
 	EllieState::State CurrentState = EllieState::State::IDLE;
-	EllieState::EllieIDLE_Vector CurrentIDLEState = EllieState::EllieIDLE_Vector::IDLE_FRONT;
+	EllieState::EllieIDLE_Vector CurrentIDLEState = EllieState::EllieIDLE_Vector::NONE;
 	EllieState::EllieWALK_Vector CurrentWALKState = EllieState::EllieWALK_Vector::NONE;
 	EllieState::EllieRUN_Vector CurrentRUNState = EllieState::EllieRUN_Vector::NONE;
+
+	void CheckCanMove();
 
 
 protected:
@@ -83,6 +85,8 @@ protected:
 
 
 private:
+	bool IsCanMove = true;
+
 	std::shared_ptr<class USpriteRenderer> ELLIE;
 	std::shared_ptr<class USpriteRenderer> ELLIE_HAT;
 	std::shared_ptr<class USpriteRenderer> ELLIE_SHADOW;

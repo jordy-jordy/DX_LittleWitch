@@ -11,12 +11,10 @@ AField_Home::AField_Home()
 	RootComponent = Default;
 
 	MainField = CreateDefaultSubObject<USpriteRenderer>();
-	MainField->SetRelativeScale3D({ 600, 600, 1 });
-	MainField->SetWorldLocation({0, 0, 2000});
+	MainField->SetRelativeScale3D(MainFieldSize);
+	MainField->SetWorldLocation({0.0f, 0.0f, 2000.0f });
 
 	MainField->SetupAttachment(RootComponent);
-
-
 };
 
 AField_Home::~AField_Home()
