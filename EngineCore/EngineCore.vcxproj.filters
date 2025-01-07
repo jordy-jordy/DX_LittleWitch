@@ -145,6 +145,9 @@
     <ClInclude Include="TimeEventComponent.h">
       <Filter>04_Object\Component\Contents</Filter>
     </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>04_Object\Component\Collision</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Level.cpp">
@@ -279,6 +282,9 @@
     <ClCompile Include="TimeEventComponent.cpp">
       <Filter>04_Object\Component\Contents</Filter>
     </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>04_Object\Component\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="01_PreCompile">
@@ -358,6 +364,9 @@
     </Filter>
     <Filter Include="06_Render">
       <UniqueIdentifier>{8f5a72d2-276d-4353-8f35-d47154c67097}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Object\Component\Collision">
+      <UniqueIdentifier>{33cc85bd-d0d7-41e7-b2c6-85804da2c8f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

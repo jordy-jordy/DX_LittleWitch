@@ -209,9 +209,9 @@ void ATitleScene::Tick(float _DeltaTime)
 	float SPEED_Mid = 0.5f;
 	float SPEED_Near = 0.7f;
 
-	float SPEED_CLOUD_Far = 0.05f;
-	float SPEED_CLOUD_Mid = 0.1f;
-	float SPEED_CLOUD_Near = 0.15f;
+	float SPEED_CLOUD_Far = 0.04f;
+	float SPEED_CLOUD_Mid = 0.08f;
+	float SPEED_CLOUD_Near = 0.12f;
 
 	float SPEED_TREE_Far = 0.75f;
 	float SPEED_TREE_Near = 0.8f;

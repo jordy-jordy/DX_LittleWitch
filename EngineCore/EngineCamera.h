@@ -56,12 +56,14 @@ public:
 
 	ENGINEAPI void SetZSort(int _Order, bool _Value);
 
+	ENGINEAPI void Release(float _DeltaTime);
+
 protected:
 
 
 private:
 	float Near = 1.0f;
-	float Far = 10000.0f;
+	float Far = 5000.0f;
 
 	float FOV = 60.0f;
 
