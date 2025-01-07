@@ -26,7 +26,8 @@ protected:
 	void Tick(float _DeltaTime) override;
 
 private:
-	static inline FVector MainFieldSize = { 600.0f, 600.0f, 1.0f };
+	static inline FVector MainFieldSize = { 300.0f, 300.0f, 0.0f };
 	std::shared_ptr<class USpriteRenderer> MainField;
 
+	std::shared_ptr<class UCollision> MainField_Coll;
 };

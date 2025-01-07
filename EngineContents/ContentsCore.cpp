@@ -24,7 +24,7 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 {
 	WidowSizePos(_Data);
 
-	UEngineCore::CreateLevel<ATitleGameMode, APawn>("TITLE");
+	UEngineCore::CreateLevel<ATitleGameMode, AActor>("TITLE");
 	UEngineCore::CreateLevel<APlayGameMode, APawn>("PLAY");
 	//UEngineCore::CreateLevel<AEndGameMode, APawn>("END");
 

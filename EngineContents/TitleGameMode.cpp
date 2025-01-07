@@ -1,12 +1,13 @@
 #include "PreCompile.h"
 #include "TitleGameMode.h"
+
 #include <EnginePlatform/EngineInput.h>
-#include <EngineCore/CameraActor.h>
-#include <EngineCore/EngineCamera.h>
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/EngineGUIWindow.h>
 #include <EngineCore/EngineGUI.h>
 #include <EngineCore/imgui.h>
+#include <EngineCore/CameraActor.h>
+#include <EngineCore/EngineCamera.h>
 
 #include "TitleScene.h"
 
@@ -28,13 +29,11 @@ ATitleGameMode::ATitleGameMode()
 	TitleSpritesInit();
 
 	Title = GetWorld()->SpawnActor<ATitleScene>();
-	//Logo->SetActorLocation({ 300.0f, 0.0f, 0.0f });
-	//Logo->GetRenderer()->SetSpriteData(4);
 
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
 	Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });
-	std::shared_ptr<UEngineCamera> CameraComp = Camera->GetCameraComponent();
-	CameraComp->SetFar(10000.0f);
+	Camera->GetCameraComponent()->SetFar(10000.0f);
+	Camera->GetCameraComponent()->SetZSort(0, false);
 	
 
 	//UEngineGUI::CreateGUIWindow<TestWindow>("TestWindow");

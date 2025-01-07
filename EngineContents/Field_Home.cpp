@@ -1,9 +1,12 @@
 #include "PreCompile.h"
 #include "Field_Home.h"
 
-#include "GlobalVar.h"
 #include <EngineCore/DefaultSceneComponent.h>
 #include <EngineCore/SpriteRenderer.h>
+#include <EngineCore/Collision.h>
+
+#include "GlobalVar.h"
+
 
 AField_Home::AField_Home()
 {
@@ -12,8 +15,12 @@ AField_Home::AField_Home()
 
 	MainField = CreateDefaultSubObject<USpriteRenderer>();
 	MainField->SetRelativeScale3D(MainFieldSize);
-	MainField->SetWorldLocation({0.0f, 0.0f, 2000.0f });
 
+	MainField_Coll = CreateDefaultSubObject<UCollision>();
+	MainField_Coll->SetCollisionProfileName("Field");
+	MainField_Coll->SetScale3D(MainField->GetWorldScale3D());
+
+	MainField_Coll->SetupAttachment(RootComponent);
 	MainField->SetupAttachment(RootComponent);
 };
 

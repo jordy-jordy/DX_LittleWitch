@@ -1,19 +1,35 @@
 #include "PreCompile.h"
 #include "PlayGameMode.h"
+
 #include <EnginePlatform/EngineInput.h>
-#include <EngineCore/CameraActor.h>
 #include <EngineCore/SpriteRenderer.h>
+#include <EngineCore/CameraActor.h>
+#include <EngineCore/EngineCamera.h>
 
 #include "Player.h"
 #include "Field_Home.h"
+#include "Field_Green.h"
 
 APlayGameMode::APlayGameMode()
 {
 	PlayDirLoad();
 	PlaySpritesInit();
 
+	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
+	Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });
+	Camera->GetCameraComponent()->SetFar(10000.0f);
+	Camera->GetCameraComponent()->SetZSort(0, false);
+
+	GetWorld()->CreateCollisionProfile("Field");
+	GetWorld()->CreateCollisionProfile("Player");
+
+	GetWorld()->LinkCollisionProfile("Player", "Field");
+
 	MainField = GetWorld()->SpawnActor<AField_Home>();
+	MainField->SetActorLocation({ 0.0f, 0.0f, 1.0f });
 	Player = GetWorld()->SpawnActor<APlayer>();
+	Player->SetActorLocation({ 0.0f, 0.0f, 0.0f });
+
 };
 
 APlayGameMode::~APlayGameMode()

@@ -48,7 +48,6 @@ struct EllieState
 		RUN_RIGHT_UP = 6,
 		MAX
 	};
-
 };
 
 // Ό³Έν :
@@ -76,7 +75,7 @@ public:
 	EllieState::EllieWALK_Vector CurrentWALKState = EllieState::EllieWALK_Vector::NONE;
 	EllieState::EllieRUN_Vector CurrentRUNState = EllieState::EllieRUN_Vector::NONE;
 
-	void CheckCanMove();
+	bool CheckIsInField();
 
 
 protected:
@@ -85,12 +84,12 @@ protected:
 
 
 private:
-	bool IsCanMove = true;
+	bool IsInField = false;
 
+	std::shared_ptr<class USpriteRenderer> ELLIE_SHADOW;
 	std::shared_ptr<class USpriteRenderer> ELLIE;
 	std::shared_ptr<class USpriteRenderer> ELLIE_HAT;
-	std::shared_ptr<class USpriteRenderer> ELLIE_SHADOW;
-	std::shared_ptr<class USpriteRenderer> AUREA;
 
+	std::shared_ptr<class UCollision> ELLIE_Coll;
 };
 
