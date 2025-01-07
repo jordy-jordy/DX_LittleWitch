@@ -112,6 +112,11 @@ public:
 
 	void SetSprite(UEngineSprite* _Sprite);
 
+	ENGINEAPI UEngineSprite* GetSprite()
+	{
+		return Sprite;
+	}
+
 	ResultColor ColorData;
 	FUVValue UVValue;
 	FSpriteData SpriteData;

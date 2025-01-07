@@ -14,9 +14,12 @@ APlayer::APlayer()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
+	ELLIE = CreateDefaultSubObject<USpriteRenderer>();
+	ELLIE_HAT = CreateDefaultSubObject<USpriteRenderer>();
+	ELLIE_SHADOW = CreateDefaultSubObject<USpriteRenderer>();
+
 	/***** ¿¤¸® - IDLE - Ä³¸¯ÅÍ *****/
 	{
-		ELLIE = CreateDefaultSubObject<USpriteRenderer>();
 		ELLIE->CreateAnimation("ELLIE_IDLE_FRONT_LEFT", "Ellie_Basic_Idle.png", 3, 6, ELLIE_ANIMDEFAULT_SPEED);
 		ELLIE->CreateAnimation("ELLIE_IDLE_FRONT", "Ellie_Basic_Idle.png", 7, 10, ELLIE_ANIMDEFAULT_SPEED);
 		ELLIE->CreateAnimation("ELLIE_IDLE_FRONT_RIGHT", "Ellie_Basic_Idle.png", 11, 14, ELLIE_ANIMDEFAULT_SPEED);
@@ -27,7 +30,6 @@ APlayer::APlayer()
 
 	/***** ¿¤¸® - IDLE - ¸ðÀÚ   *****/
 	{
-		ELLIE_HAT = CreateDefaultSubObject<USpriteRenderer>();
 		ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT_LEFT", "Ellie_Basic_Idle.png", { 27, 28, 28, 29 }, { ELLIE_ANIMDEFAULT_SPEED });
 		ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT", "Ellie_Basic_Idle.png", { 30, 31, 32, 33 }, { ELLIE_ANIMDEFAULT_SPEED });
 		ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT_RIGHT", "Ellie_Basic_Idle.png", { 34, 35, 35, 36 }, { ELLIE_ANIMDEFAULT_SPEED });
@@ -38,7 +40,6 @@ APlayer::APlayer()
 
 	/***** ¿¤¸® - IDLE - ±×¸²ÀÚ *****/
 	{
-		ELLIE_SHADOW = CreateDefaultSubObject<USpriteRenderer>();
 		ELLIE_SHADOW->SetSprite("Ellie_Basic_Idle.png", 1);
 		ELLIE_SHADOW->SetRelativeScale3D({ 140, 140, 0 });
 	}
@@ -88,15 +89,18 @@ APlayer::APlayer()
 		ELLIE_SHADOW->CreateAnimation("ELLIE_RUN_SHADOW", "Ellie_Basic_Run.png", 0, 2, ELLIE_ANIMDEFAULT_SPEED);
 	}
 
+	ELLIE->ChangeAnimation("ELLIE_IDLE_FRONT");
 	ELLIE->SetAutoScale(true);
 	ELLIE->SetRelativeLocation({ 0, 0, 0 });
+	ELLIE_HAT->ChangeAnimation("HAT_IDLE_FRONT");
 	ELLIE_HAT->SetAutoScale(true);
 	ELLIE_HAT->SetRelativeLocation({ 0, 0, -1 });
 
 	ELLIE_Coll = CreateDefaultSubObject<UCollision>();
 	ELLIE_Coll->SetCollisionProfileName("Player");
-	ELLIE_Coll->SetWorldLocation({ 0, 70, 0});
-	ELLIE_Coll->SetScale3D({1, 1, 0});
+	ELLIE_Coll->SetWorldLocation({ 0, 70, 0 });
+	ELLIE_Coll->SetScale3D({1, 1, 1});
+	//ELLIE_Coll->SetRadius(1);
 	//ELLIE_Coll->SetCollisionEnter([](UCollision* _This, UCollision* _Other)
 	//	{
 	//		UEngineDebug::OutPutString("Enter");
@@ -115,6 +119,8 @@ APlayer::APlayer()
 	ELLIE_Coll->SetupAttachment(RootComponent);
 	ELLIE->SetupAttachment(RootComponent);
 	ELLIE_HAT->SetupAttachment(RootComponent);
+
+	//FVector SIZE = ELLIE->GetSprite()->GetSpriteScaleToReal(0);
 
 }
 
@@ -265,12 +271,10 @@ void APlayer::EllieWALK(float _DeltaTime)
 		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_DOWN;
 	}
 
-	FVector NEXTPOS_UP = ELLIE_Coll->GetActor()->GetActorLocation() + (VECTOR_UP * ELLIE_WALK_SPEED * _DeltaTime);
-	FVector NEXTPOS_DOWN = ELLIE_Coll->GetActor()->GetActorLocation() + (VECTOR_DOWN * ELLIE_WALK_SPEED * _DeltaTime);
-	FVector NEXTPOS_LEFT = ELLIE_Coll->GetActor()->GetActorLocation() + (VECTOR_LEFT * ELLIE_WALK_SPEED * _DeltaTime);
-	FVector NEXTPOS_RIGHT = ELLIE_Coll->GetActor()->GetActorLocation() + (VECTOR_RIGHT * ELLIE_WALK_SPEED * _DeltaTime);
-	FVector POS = ELLIE_Coll->GetActor()->GetActorLocation();
-
+	FVector NEXTPOS_UP = VECTOR_UP * ELLIE_WALK_SPEED * _DeltaTime;
+	FVector NEXTPOS_DOWN = VECTOR_DOWN * ELLIE_WALK_SPEED * _DeltaTime;
+	FVector NEXTPOS_LEFT = VECTOR_LEFT * ELLIE_WALK_SPEED * _DeltaTime;
+	FVector NEXTPOS_RIGHT = VECTOR_RIGHT * ELLIE_WALK_SPEED * _DeltaTime;
 
 	std::vector<UCollision*> Result;
 	switch (CurrentWALKState)
@@ -278,17 +282,16 @@ void APlayer::EllieWALK(float _DeltaTime)
 	case EllieState::EllieWALK_Vector::WALK_UP:
 		ELLIE->ChangeAnimation("ELLIE_WALK_UP");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_UP");
-		if (true == ELLIE_Coll->CollisionCheck("Field", NEXTPOS_UP, Result))
+		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_UP, Result))
 		{
 			AddRelativeLocation(VECTOR_UP * ELLIE_WALK_SPEED * _DeltaTime);
-			int a = 0;
 		}
 		break;
 
 	case EllieState::EllieWALK_Vector::WALK_DOWN:
 		ELLIE->ChangeAnimation("ELLIE_WALK_DOWN");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_DOWN");
-		if (true == ELLIE_Coll->CollisionCheck("Field", NEXTPOS_DOWN, Result))
+		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_DOWN, Result))
 		{
 			AddRelativeLocation(VECTOR_DOWN * ELLIE_WALK_SPEED * _DeltaTime);
 		}
@@ -297,7 +300,7 @@ void APlayer::EllieWALK(float _DeltaTime)
 	case EllieState::EllieWALK_Vector::WALK_LEFT:
 		ELLIE->ChangeAnimation("ELLIE_WALK_LEFT");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_LEFT");
-		if (true == ELLIE_Coll->CollisionCheck("Field", NEXTPOS_LEFT, Result))
+		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_LEFT, Result))
 		{
 			AddRelativeLocation(VECTOR_LEFT * ELLIE_WALK_SPEED * _DeltaTime);
 		}
@@ -312,12 +315,13 @@ void APlayer::EllieWALK(float _DeltaTime)
 	case EllieState::EllieWALK_Vector::WALK_RIGHT:
 		ELLIE->ChangeAnimation("ELLIE_WALK_RIGHT");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_RIGHT");
-		if (true == ELLIE_Coll->CollisionCheck("Field", NEXTPOS_RIGHT, Result))
+		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_RIGHT, Result))
 		{
-			
+
 			AddRelativeLocation(VECTOR_RIGHT * ELLIE_WALK_SPEED * _DeltaTime);
 		}
 		break;
+
 
 	case EllieState::EllieWALK_Vector::WALK_RIGHT_UP:
 		ELLIE->ChangeAnimation("ELLIE_WALK_RIGHT_UP");

@@ -28,7 +28,7 @@ public:
 		return ProfileName;
 	}
 
-	void SetRadius(float _Value);
+	ENGINEAPI void SetRadius(float _Value);
 
 	// vector인게 왜 vector로 하냐
 	// unreal에서 vector
