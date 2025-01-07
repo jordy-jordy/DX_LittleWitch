@@ -89,9 +89,9 @@ APlayer::APlayer()
 	ELLIE->SetAutoScale(true);
 	ELLIE_HAT->SetAutoScale(true);
 
-	//ELLIE_SHADOW->SetRelativeLocation({ 200,0,5 });
-	ELLIE->SetRelativeLocation({ 0.0f , 0.0f , 4.0f });
-	ELLIE_HAT->SetRelativeLocation({ 0.0f , 0.0f , 3.0f });
+	//ELLIE_SHADOW->SetRelativeLocation({ 0.0f , 0.0f , 4.0f });
+	ELLIE->SetRelativeLocation({ 0.0f , 0.0f , 2.0f });
+	ELLIE_HAT->SetRelativeLocation({ 0.0f , 0.0f , 0.0f });
 
 	//ELLIE_SHADOW->SetupAttachment(RootComponent);
 	ELLIE->SetupAttachment(RootComponent);
