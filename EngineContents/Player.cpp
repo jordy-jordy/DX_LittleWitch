@@ -5,6 +5,8 @@
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineInput.h>
 #include <EngineCore/Collision.h>
+#include <EngineCore/EngineCamera.h>
+#include <EngineCore/CameraActor.h>
 
 #include "GlobalVar.h"
 
@@ -100,28 +102,17 @@ APlayer::APlayer()
 	ELLIE_Coll->SetCollisionProfileName("Player");
 	ELLIE_Coll->SetWorldLocation({ 0, 70, 0 });
 	ELLIE_Coll->SetScale3D({10, 10, 1});
-	//ELLIE_Coll->SetRadius(1);
-	//ELLIE_Coll->SetCollisionEnter([](UCollision* _This, UCollision* _Other)
-	//	{
-	//		UEngineDebug::OutPutString("Enter");
-	//	});
-	//ELLIE_Coll->SetCollisionStay([](UCollision* _This, UCollision* _Other)
-	//	{
-	//		UEngineDebug::OutPutString("Stay");
-	//	});
-
-	//ELLIE_Coll->SetCollisionEnd([](UCollision* _This, UCollision* _Other)
-	//	{
-	//		UEngineDebug::OutPutString("End");
-	//	});
-
+	
 	//ELLIE_SHADOW->SetupAttachment(RootComponent);
 	ELLIE_Coll->SetupAttachment(RootComponent);
 	ELLIE->SetupAttachment(RootComponent);
 	ELLIE_HAT->SetupAttachment(RootComponent);
 
-	//FVector SIZE = ELLIE->GetSprite()->GetSpriteScaleToReal(0);
-
+	Camera = GetWorld()->GetMainCamera();
+	Camera->SetActorLocation(this->GetActorLocation());
+	Camera->GetCameraComponent()->SetFar(10000);
+	Camera->GetCameraComponent()->SetNear(-100);
+	Camera->GetCameraComponent()->SetZSort(0, false);
 }
 
 APlayer::~APlayer()
@@ -284,7 +275,8 @@ void APlayer::EllieWALK(float _DeltaTime)
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_UP");
 		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_UP, Result))
 		{
-			AddRelativeLocation(VECTOR_UP * ELLIE_WALK_SPEED * _DeltaTime);
+			Camera->AddActorLocation(NEXTPOS_UP);
+			AddActorLocation(NEXTPOS_UP);
 		}
 		break;
 
@@ -293,7 +285,8 @@ void APlayer::EllieWALK(float _DeltaTime)
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_DOWN");
 		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_DOWN, Result))
 		{
-			AddRelativeLocation(VECTOR_DOWN * ELLIE_WALK_SPEED * _DeltaTime);
+			Camera->AddActorLocation(NEXTPOS_DOWN);
+			AddActorLocation(NEXTPOS_DOWN);
 		}
 		break;
 
@@ -302,7 +295,8 @@ void APlayer::EllieWALK(float _DeltaTime)
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_LEFT");
 		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_LEFT, Result))
 		{
-			AddRelativeLocation(VECTOR_LEFT * ELLIE_WALK_SPEED * _DeltaTime);
+			Camera->AddActorLocation(NEXTPOS_LEFT);
+			AddActorLocation(NEXTPOS_LEFT);
 		}
 		break;
 
@@ -317,8 +311,8 @@ void APlayer::EllieWALK(float _DeltaTime)
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_RIGHT");
 		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_RIGHT, Result))
 		{
-
-			AddRelativeLocation(VECTOR_RIGHT * ELLIE_WALK_SPEED * _DeltaTime);
+			Camera->AddActorLocation(NEXTPOS_RIGHT);
+			AddActorLocation(NEXTPOS_RIGHT);
 		}
 		break;
 

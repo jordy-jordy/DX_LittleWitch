@@ -15,10 +15,10 @@ APlayGameMode::APlayGameMode()
 	PlayDirLoad();
 	PlaySpritesInit();
 
-	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
-	Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });
-	Camera->GetCameraComponent()->SetFar(10000.0f);
-	Camera->GetCameraComponent()->SetZSort(0, false);
+	//std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
+	//Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });
+	//Camera->GetCameraComponent()->SetFar(10000.0f);
+	//Camera->GetCameraComponent()->SetZSort(0, false);
 
 	GetWorld()->CreateCollisionProfile("Field");
 	GetWorld()->CreateCollisionProfile("Player");

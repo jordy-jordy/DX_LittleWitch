@@ -86,6 +86,8 @@ protected:
 private:
 	bool IsInField = false;
 
+	std::shared_ptr<class ACameraActor> Camera;
+
 	std::shared_ptr<class USpriteRenderer> ELLIE_SHADOW;
 	std::shared_ptr<class USpriteRenderer> ELLIE;
 	std::shared_ptr<class USpriteRenderer> ELLIE_HAT;
