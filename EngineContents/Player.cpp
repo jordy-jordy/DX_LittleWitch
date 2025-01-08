@@ -101,8 +101,8 @@ APlayer::APlayer()
 	ELLIE_COL = CreateDefaultSubObject<UCollision>();
 	ELLIE_COL->SetCollisionProfileName("Player");
 	ELLIE_COL->SetWorldLocation({ 0, 70, 0 });
-	ELLIE_COL->SetScale3D({10, 10, 1});
-	
+	ELLIE_COL->SetScale3D({ 10, 10, 1 });
+
 	//ELLIE_SHADOW->SetupAttachment(RootComponent);
 	ELLIE_COL->SetupAttachment(RootComponent);
 	ELLIE->SetupAttachment(RootComponent);
@@ -153,10 +153,13 @@ void APlayer::ChangeState(EllieState::State _CurPlayerState)
 	{
 	case EllieState::State::IDLE:
 		break;
+
 	case EllieState::State::WALK:
 		break;
+
 	case EllieState::State::RUN:
 		break;
+
 	default:
 		break;
 	}
@@ -264,7 +267,7 @@ void APlayer::EllieWALK(float _DeltaTime)
 	if (UEngineInput::IsPress('A') && UEngineInput::IsPress(VK_LSHIFT) ||
 		UEngineInput::IsPress('D') && UEngineInput::IsPress(VK_LSHIFT) ||
 		UEngineInput::IsPress('W') && UEngineInput::IsPress(VK_LSHIFT) ||
-		UEngineInput::IsPress('S') && UEngineInput::IsPress(VK_LSHIFT)) 
+		UEngineInput::IsPress('S') && UEngineInput::IsPress(VK_LSHIFT))
 	{
 		ChangeState(EllieState::State::RUN);
 		return;
@@ -313,6 +316,11 @@ void APlayer::EllieWALK(float _DeltaTime)
 		EllieMove(_DeltaTime);
 		break;
 
+	case EllieState::POSVECTOR::LEFT_DOWN:
+		SetEllieAnimation("ELLIE_WALK_LEFT", "HAT_WALK_LEFT");
+		EllieMove(_DeltaTime);
+		break;
+
 	case EllieState::POSVECTOR::RIGHT:
 		SetEllieAnimation("ELLIE_WALK_RIGHT", "HAT_WALK_RIGHT");
 		EllieMove(_DeltaTime);
@@ -320,6 +328,11 @@ void APlayer::EllieWALK(float _DeltaTime)
 
 	case EllieState::POSVECTOR::RIGHT_UP:
 		SetEllieAnimation("ELLIE_WALK_RIGHT_UP", "HAT_WALK_RIGHT_UP");
+		EllieMove(_DeltaTime);
+		break;
+
+	case EllieState::POSVECTOR::RIGHT_DOWN:
+		SetEllieAnimation("ELLIE_WALK_RIGHT", "HAT_WALK_RIGHT");
 		EllieMove(_DeltaTime);
 		break;
 	}
@@ -388,6 +401,11 @@ void APlayer::EllieRUN(float _DeltaTime)
 		EllieMove(_DeltaTime);
 		break;
 
+	case EllieState::POSVECTOR::LEFT_DOWN:
+		SetEllieAnimation("ELLIE_RUN_LEFT", "HAT_RUN_LEFT");
+		EllieMove(_DeltaTime);
+		break;
+
 	case EllieState::POSVECTOR::RIGHT:
 		SetEllieAnimation("ELLIE_RUN_RIGHT", "HAT_RUN_RIGHT");
 		EllieMove(_DeltaTime);
@@ -395,6 +413,11 @@ void APlayer::EllieRUN(float _DeltaTime)
 
 	case EllieState::POSVECTOR::RIGHT_UP:
 		SetEllieAnimation("ELLIE_RUN_RIGHT_UP", "HAT_RUN_RIGHT_UP");
+		EllieMove(_DeltaTime);
+		break;
+
+	case EllieState::POSVECTOR::RIGHT_DOWN:
+		SetEllieAnimation("ELLIE_RUN_RIGHT", "HAT_RUN_RIGHT");
 		EllieMove(_DeltaTime);
 		break;
 	}
