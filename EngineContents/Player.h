@@ -15,39 +15,17 @@ struct EllieState
 		MAX
 	};
 
-	enum class EllieIDLE_Vector
+	enum class POSVECTOR
 	{
 		NONE = 0,
-		IDLE_FRONT_LEFT = 1,
-		IDLE_FRONT = 2,
-		IDLE_FRONT_RIGHT = 3,
-		IDLE_BACK_LEFT = 4,
-		IDLE_BACK = 5,
-		IDLE_BACK_RIGHT = 6,
-		MAX
-	};
-
-	enum class EllieWALK_Vector
-	{
-		NONE = 0,
-		WALK_UP = 1,
-		WALK_DOWN = 2,
-		WALK_LEFT = 3,
-		WALK_LEFT_UP = 4,
-		WALK_RIGHT = 5,
-		WALK_RIGHT_UP = 6,
-		MAX
-	};
-
-	enum class EllieRUN_Vector
-	{
-		NONE = 0,
-		RUN_UP = 1,
-		RUN_DOWN = 2,
-		RUN_LEFT = 3,
-		RUN_LEFT_UP = 4,
-		RUN_RIGHT = 5,
-		RUN_RIGHT_UP = 6,
+		UP = 1,
+		DOWN = 2,
+		LEFT = 3,
+		LEFT_UP = 4,
+		LEFT_DOWN = 5,
+		RIGHT = 6,
+		RIGHT_UP = 7,
+		RIGHT_DOWN = 8,
 		MAX
 	};
 };
@@ -99,9 +77,7 @@ private:
 
 	FVector CurVector = VECTOR_NONE;
 	EllieState::State CurState = EllieState::State::IDLE;
-	EllieState::EllieIDLE_Vector IDLE_CurState = EllieState::EllieIDLE_Vector::NONE;
-	EllieState::EllieWALK_Vector WALK_CurState = EllieState::EllieWALK_Vector::NONE;
-	EllieState::EllieRUN_Vector RUN_CurState = EllieState::EllieRUN_Vector::NONE;
+	EllieState::POSVECTOR CurPosVector = EllieState::POSVECTOR::NONE;
 
 	std::shared_ptr<class ACameraActor> Camera;
 
