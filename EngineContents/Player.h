@@ -71,17 +71,21 @@ public:
 	void EllieRUN(float _DeltaTime);
 
 	void EllieMove(float _DeltaTime);
+	void SwitchCurState_Speed()
+	{
+		if (CurState == EllieState::State::WALK)
+		{
+			CurState_Speed = ELLIE_WALK_SPEED;
+		}
+
+		if (CurState == EllieState::State::RUN)
+		{
+			CurState_Speed = ELLIE_RUN_SPEED;
+		}
+	}
 
 	void ChangeState(EllieState::State _CurPlayerState);
 	void SetEllieAnimation(const std::string_view& _EllieAnimation, const std::string_view& _HatAnimation = "");
-
-
-	EllieState::State CurrentState = EllieState::State::IDLE;
-	EllieState::EllieIDLE_Vector CurrentIDLEState = EllieState::EllieIDLE_Vector::NONE;
-	EllieState::EllieWALK_Vector CurrentWALKState = EllieState::EllieWALK_Vector::NONE;
-	EllieState::EllieRUN_Vector CurrentRUNState = EllieState::EllieRUN_Vector::NONE;
-
-	FVector Current_Vector = VECTOR_NONE;
 
 
 protected:
@@ -91,6 +95,13 @@ protected:
 
 private:
 	bool IsInField = false;
+	float CurState_Speed = 0.0f;
+
+	FVector CurVector = VECTOR_NONE;
+	EllieState::State CurState = EllieState::State::IDLE;
+	EllieState::EllieIDLE_Vector IDLE_CurState = EllieState::EllieIDLE_Vector::NONE;
+	EllieState::EllieWALK_Vector WALK_CurState = EllieState::EllieWALK_Vector::NONE;
+	EllieState::EllieRUN_Vector RUN_CurState = EllieState::EllieRUN_Vector::NONE;
 
 	std::shared_ptr<class ACameraActor> Camera;
 
@@ -98,6 +109,7 @@ private:
 	std::shared_ptr<class USpriteRenderer> ELLIE;
 	std::shared_ptr<class USpriteRenderer> ELLIE_HAT;
 
-	std::shared_ptr<class UCollision> ELLIE_Coll;
+	std::shared_ptr<class UCollision> ELLIE_COL;
+
 };
 

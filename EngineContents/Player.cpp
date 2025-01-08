@@ -98,13 +98,13 @@ APlayer::APlayer()
 	ELLIE_HAT->SetAutoScale(true);
 	ELLIE_HAT->SetRelativeLocation({ 0, 0, -1 });
 
-	ELLIE_Coll = CreateDefaultSubObject<UCollision>();
-	ELLIE_Coll->SetCollisionProfileName("Player");
-	ELLIE_Coll->SetWorldLocation({ 0, 70, 0 });
-	ELLIE_Coll->SetScale3D({10, 10, 1});
+	ELLIE_COL = CreateDefaultSubObject<UCollision>();
+	ELLIE_COL->SetCollisionProfileName("Player");
+	ELLIE_COL->SetWorldLocation({ 0, 70, 0 });
+	ELLIE_COL->SetScale3D({10, 10, 1});
 	
 	//ELLIE_SHADOW->SetupAttachment(RootComponent);
-	ELLIE_Coll->SetupAttachment(RootComponent);
+	ELLIE_COL->SetupAttachment(RootComponent);
 	ELLIE->SetupAttachment(RootComponent);
 	ELLIE_HAT->SetupAttachment(RootComponent);
 
@@ -128,7 +128,7 @@ void APlayer::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
-	switch (CurrentState)
+	switch (CurState)
 	{
 	case EllieState::State::IDLE:
 		EllieIDLE(_DeltaTime);
@@ -174,33 +174,12 @@ void APlayer::ChangeState(EllieState::State _CurPlayerState)
 		break;
 	}
 
-	CurrentState = _CurPlayerState;
+	CurState = _CurPlayerState;
 }
 
 void APlayer::EllieIDLE(float _DeltaTime)
 {
-	if (CurrentWALKState == EllieState::EllieWALK_Vector::WALK_UP)
-	{
-		CurrentIDLEState = EllieState::EllieIDLE_Vector::IDLE_BACK;
-	}
-	else if (CurrentWALKState == EllieState::EllieWALK_Vector::WALK_DOWN)
-	{
-		CurrentIDLEState = EllieState::EllieIDLE_Vector::IDLE_FRONT;
-	}
-	else if (CurrentWALKState == EllieState::EllieWALK_Vector::WALK_LEFT)
-	{
-		CurrentIDLEState = EllieState::EllieIDLE_Vector::IDLE_FRONT_LEFT;
-	}
-	else if (CurrentWALKState == EllieState::EllieWALK_Vector::WALK_RIGHT)
-	{
-		CurrentIDLEState = EllieState::EllieIDLE_Vector::IDLE_FRONT_RIGHT;
-	}
-	else
-	{
-		CurrentIDLEState = EllieState::EllieIDLE_Vector::IDLE_FRONT;
-	}
-
-	switch (CurrentIDLEState)
+	switch (IDLE_CurState)
 	{
 	case EllieState::EllieIDLE_Vector::IDLE_FRONT_LEFT:
 		SetEllieAnimation("ELLIE_IDLE_FRONT_LEFT", "HAT_IDLE_FRONT_LEFT");
@@ -225,136 +204,205 @@ void APlayer::EllieIDLE(float _DeltaTime)
 		break;
 	}
 
-	if (true == UEngineInput::IsPress('A') ||
-		true == UEngineInput::IsPress('D') ||
-		true == UEngineInput::IsPress('W') ||
-		true == UEngineInput::IsPress('S'))
+	if (UEngineInput::IsPress('A') ||
+		UEngineInput::IsPress('D') ||
+		UEngineInput::IsPress('W') ||
+		UEngineInput::IsPress('S'))
 	{
 		ChangeState(EllieState::State::WALK);
+		return;
+	}	
+	
+	if (UEngineInput::IsPress('A') && UEngineInput::IsPress(VK_LSHIFT) ||
+		UEngineInput::IsPress('D') && UEngineInput::IsPress(VK_LSHIFT) ||
+		UEngineInput::IsPress('W') && UEngineInput::IsPress(VK_LSHIFT) ||
+		UEngineInput::IsPress('S') && UEngineInput::IsPress(VK_LSHIFT) )
+	{
+		ChangeState(EllieState::State::RUN);
 		return;
 	}
 }
 
 void APlayer::EllieWALK(float _DeltaTime)
 {
-	if (UEngineInput::IsPress('A'))
-	{
-		Current_Vector = VECTOR_LEFT;
-		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_LEFT;
-	}
-	if (UEngineInput::IsPress('W'))
-	{
-		Current_Vector = VECTOR_UP;
-		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_UP;
-	}
-	if (UEngineInput::IsPress('D'))
-	{
-		Current_Vector = VECTOR_RIGHT;
-		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_RIGHT;
-	}
-	if (UEngineInput::IsPress('S'))
-	{
-		Current_Vector = VECTOR_DOWN;
-		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_DOWN;
-	}
-
-
-	switch (CurrentWALKState)
-	{
-	case EllieState::EllieWALK_Vector::WALK_UP:
-		ELLIE->ChangeAnimation("ELLIE_WALK_UP");
-		ELLIE_HAT->ChangeAnimation("HAT_WALK_UP");
-		EllieMove(_DeltaTime);
-		break;
-
-	case EllieState::EllieWALK_Vector::WALK_DOWN:
-		ELLIE->ChangeAnimation("ELLIE_WALK_DOWN");
-		ELLIE_HAT->ChangeAnimation("HAT_WALK_DOWN");
-		EllieMove(_DeltaTime);
-		break;
-
-	case EllieState::EllieWALK_Vector::WALK_LEFT:
-		ELLIE->ChangeAnimation("ELLIE_WALK_LEFT");
-		ELLIE_HAT->ChangeAnimation("HAT_WALK_LEFT");
-		EllieMove(_DeltaTime);
-		break;
-
-	case EllieState::EllieWALK_Vector::WALK_LEFT_UP:
-		ELLIE->ChangeAnimation("ELLIE_WALK_LEFT_UP");
-		ELLIE_HAT->ChangeAnimation("HAT_WALK_LEFT_UP");
-		EllieMove(_DeltaTime);
-		break;
-
-	case EllieState::EllieWALK_Vector::WALK_RIGHT:
-		ELLIE->ChangeAnimation("ELLIE_WALK_RIGHT");
-		ELLIE_HAT->ChangeAnimation("HAT_WALK_RIGHT");
-		EllieMove(_DeltaTime);
-		break;
-
-	case EllieState::EllieWALK_Vector::WALK_RIGHT_UP:
-		ELLIE->ChangeAnimation("ELLIE_WALK_RIGHT_UP");
-		ELLIE_HAT->ChangeAnimation("HAT_WALK_RIGHT_UP");
-		EllieMove(_DeltaTime);
-		break;
-	}
-
-	if (true == UEngineInput::IsUp('A') ||
-		true == UEngineInput::IsUp('D') ||
-		true == UEngineInput::IsUp('W') ||
-		true == UEngineInput::IsUp('S'))
+	if (UEngineInput::IsUp('A') ||
+		UEngineInput::IsUp('D') ||
+		UEngineInput::IsUp('W') ||
+		UEngineInput::IsUp('S'))
 	{
 		ChangeState(EllieState::State::IDLE);
 		return;
 	}
 
+	if (UEngineInput::IsPress('A') && UEngineInput::IsPress(VK_LSHIFT) ||
+		UEngineInput::IsPress('D') && UEngineInput::IsPress(VK_LSHIFT) ||
+		UEngineInput::IsPress('W') && UEngineInput::IsPress(VK_LSHIFT) ||
+		UEngineInput::IsPress('S') && UEngineInput::IsPress(VK_LSHIFT)) 
+	{
+		ChangeState(EllieState::State::RUN);
+		return;
+	}
+
+	if (UEngineInput::IsPress('A'))
+	{
+		CurVector = VECTOR_LEFT;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_LEFT;
+	}
+	if (UEngineInput::IsPress('W'))
+	{
+		CurVector = VECTOR_UP;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_UP;
+	}
+	if (UEngineInput::IsPress('D'))
+	{
+		CurVector = VECTOR_RIGHT;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_RIGHT;
+	}
+	if (UEngineInput::IsPress('S'))
+	{
+		CurVector = VECTOR_DOWN;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_DOWN;
+	}
+
+	switch (WALK_CurState)
+	{
+	case EllieState::EllieWALK_Vector::WALK_UP:
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_BACK;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_UP;
+		SetEllieAnimation("ELLIE_WALK_UP", "HAT_WALK_UP");
+		EllieMove(_DeltaTime);
+		break;
+
+	case EllieState::EllieWALK_Vector::WALK_DOWN:
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_FRONT;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_DOWN;
+		SetEllieAnimation("ELLIE_WALK_DOWN", "HAT_WALK_DOWN");
+		EllieMove(_DeltaTime);
+		break;
+
+	case EllieState::EllieWALK_Vector::WALK_LEFT:
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_FRONT_LEFT;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_LEFT;
+		SetEllieAnimation("ELLIE_WALK_LEFT", "HAT_WALK_LEFT");
+		EllieMove(_DeltaTime);
+		break;
+
+	case EllieState::EllieWALK_Vector::WALK_LEFT_UP:
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_BACK_LEFT;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_LEFT_UP;
+		SetEllieAnimation("ELLIE_WALK_LEFT_UP", "HAT_WALK_LEFT_UP");
+		EllieMove(_DeltaTime);
+		break;
+
+	case EllieState::EllieWALK_Vector::WALK_RIGHT:
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_FRONT_RIGHT;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_RIGHT;
+		SetEllieAnimation("ELLIE_WALK_RIGHT", "HAT_WALK_RIGHT");
+		EllieMove(_DeltaTime);
+		break;
+
+	case EllieState::EllieWALK_Vector::WALK_RIGHT_UP:
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_BACK_RIGHT;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_RIGHT_UP;
+		SetEllieAnimation("ELLIE_WALK_RIGHT_UP", "HAT_WALK_RIGHT_UP");
+		EllieMove(_DeltaTime);
+		break;
+	}
 }
 
 void APlayer::EllieRUN(float _DeltaTime)
 {
-	switch (CurrentRUNState)
+	if (UEngineInput::IsUp('A') ||
+		UEngineInput::IsUp('D') ||
+		UEngineInput::IsUp('W') ||
+		UEngineInput::IsUp('S'))
+	{
+		ChangeState(EllieState::State::IDLE);
+		return;
+	}
+
+	if (UEngineInput::IsPress('A') && UEngineInput::IsUp(VK_LSHIFT) ||
+		UEngineInput::IsPress('D') && UEngineInput::IsUp(VK_LSHIFT) ||
+		UEngineInput::IsPress('W') && UEngineInput::IsUp(VK_LSHIFT) ||
+		UEngineInput::IsPress('S') && UEngineInput::IsUp(VK_LSHIFT))
+	{
+		ChangeState(EllieState::State::WALK);
+		return;
+	}
+
+	if (UEngineInput::IsPress('A'))
+	{
+		CurVector = VECTOR_LEFT;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_LEFT;
+	}
+	if (UEngineInput::IsPress('W'))
+	{
+		CurVector = VECTOR_UP;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_UP;
+	}
+	if (UEngineInput::IsPress('D'))
+	{
+		CurVector = VECTOR_RIGHT;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_RIGHT;
+	}
+	if (UEngineInput::IsPress('S'))
+	{
+		CurVector = VECTOR_DOWN;
+		RUN_CurState = EllieState::EllieRUN_Vector::RUN_DOWN;
+	}
+
+	switch (RUN_CurState)
 	{
 	case EllieState::EllieRUN_Vector::RUN_UP:
-		ELLIE->ChangeAnimation("ELLIE_RUN_UP");
-		ELLIE_HAT->SetActive(false);
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_BACK;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_UP;
+		SetEllieAnimation("ELLIE_RUN_UP", "HAT_RUN_UP");
+		EllieMove(_DeltaTime);
 		break;
 
 	case EllieState::EllieRUN_Vector::RUN_DOWN:
-		ELLIE->ChangeAnimation("ELLIE_RUN_DOWN");
-		ELLIE_HAT->SetActive(true);
-		ELLIE_HAT->ChangeAnimation("HAT_RUN_DOWN");
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_FRONT;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_DOWN;
+		SetEllieAnimation("ELLIE_RUN_DOWN", "HAT_RUN_DOWN");
+		EllieMove(_DeltaTime);
 		break;
 
 	case EllieState::EllieRUN_Vector::RUN_LEFT:
-		ELLIE->ChangeAnimation("ELLIE_RUN_LEFT");
-		ELLIE_HAT->SetActive(true);
-		ELLIE_HAT->ChangeAnimation("HAT_RUN_LEFT");
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_FRONT_LEFT;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_LEFT;
+		SetEllieAnimation("ELLIE_RUN_LEFT", "HAT_RUN_LEFT");
+		EllieMove(_DeltaTime);
 		break;
 
 	case EllieState::EllieRUN_Vector::RUN_LEFT_UP:
-		ELLIE->ChangeAnimation("ELLIE_RUN_LEFT_UP");
-		ELLIE_HAT->SetActive(true);
-		ELLIE_HAT->ChangeAnimation("HAT_RUN_LEFT_UP");
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_BACK_LEFT;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_LEFT_UP;
+		SetEllieAnimation("ELLIE_RUN_LEFT_UP", "HAT_RUN_LEFT_UP");
+		EllieMove(_DeltaTime);
 		break;
 
 	case EllieState::EllieRUN_Vector::RUN_RIGHT:
-		ELLIE->ChangeAnimation("ELLIE_RUN_RIGHT");
-		ELLIE_HAT->SetActive(true);
-		ELLIE_HAT->ChangeAnimation("HAT_RUN_RIGHT");
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_FRONT_RIGHT;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_RIGHT;
+		SetEllieAnimation("ELLIE_RUN_RIGHT", "HAT_RUN_RIGHT");
+		EllieMove(_DeltaTime);
 		break;
 
 	case EllieState::EllieRUN_Vector::RUN_RIGHT_UP:
-		ELLIE->ChangeAnimation("ELLIE_RUN_RIGHT_UP");
-		ELLIE_HAT->SetActive(true);
-		ELLIE_HAT->ChangeAnimation("HAT_RUN_RIGHT_UP");
+		IDLE_CurState = EllieState::EllieIDLE_Vector::IDLE_BACK_RIGHT;
+		WALK_CurState = EllieState::EllieWALK_Vector::WALK_RIGHT_UP;
+		SetEllieAnimation("ELLIE_RUN_RIGHT_UP", "HAT_RUN_RIGHT_UP");
+		EllieMove(_DeltaTime);
 		break;
 	}
 }
 
 void APlayer::EllieMove(float _DeltaTime)
 {
-	FVector NEXTPOS = Current_Vector * ELLIE_WALK_SPEED * _DeltaTime;
+	SwitchCurState_Speed();
+	FVector NEXTPOS = CurVector * CurState_Speed * _DeltaTime;
 	std::vector<UCollision*> Result;
-	if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS, Result))
+	if (false != ELLIE_COL->CollisionCheck("Field", NEXTPOS, Result))
 	{
 		Camera->AddActorLocation(NEXTPOS);
 		AddActorLocation(NEXTPOS);
