@@ -8,6 +8,7 @@
 #include "TitleGameMode.h"
 #include "PlayGameMode.h"
 #include "EndGameMode.h"
+#include "Player.h"
 
 
 CreateContentsCoreDefine(UContentsCore);
@@ -24,8 +25,8 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 {
 	WidowSizePos(_Data);
 
-	UEngineCore::CreateLevel<ATitleGameMode, AActor>("TITLE");
-	UEngineCore::CreateLevel<APlayGameMode, APawn>("PLAY");
+	UEngineCore::CreateLevel<ATitleGameMode, APawn>("TITLE");
+	UEngineCore::CreateLevel<APlayGameMode, APlayer>("PLAY");
 	//UEngineCore::CreateLevel<AEndGameMode, APawn>("END");
 
 	UEngineCore::OpenLevel(START_MODE);

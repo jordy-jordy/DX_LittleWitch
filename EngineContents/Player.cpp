@@ -110,11 +110,6 @@ APlayer::APlayer()
 	ELLIE->SetupAttachment(RootComponent);
 	ELLIE_HAT->SetupAttachment(RootComponent);
 
-	Camera = GetWorld()->GetMainCamera();
-	Camera->SetActorLocation(this->GetActorLocation());
-	Camera->GetCameraComponent()->SetFar(10000);
-	Camera->GetCameraComponent()->SetNear(-100);
-	//Camera->GetCameraComponent()->SetZSort(0, false);
 }
 
 APlayer::~APlayer()
@@ -192,16 +187,9 @@ void APlayer::EllieMove(float _DeltaTime)
 	std::vector<UCollision*> Result;
 	if (false != ELLIE_COL->CollisionCheck("Field", NEXTPOS, Result))
 	{
-		FTransform FieldTransform = Result[0]->GetTransformRef();
-		FTransform CameraTransform = Camera->GetActorTransform();
-
-
-		Camera->AddActorLocation(NEXTPOS);
 		AddActorLocation(NEXTPOS);
-
+		GetWorld()->GetMainCamera()->SetActorLocation(this->GetActorLocation());
 	}
-	
-
 }
 
 void APlayer::EllieIDLE(float _DeltaTime)

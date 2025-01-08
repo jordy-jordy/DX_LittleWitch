@@ -1,9 +1,9 @@
 #pragma once
-#include <EngineCore/Actor.h>
+#include <EngineCore/GameMode.h>
 
 
 // Ό³Έν :
-class APlayGameMode : public AActor
+class APlayGameMode : public AGameMode
 {
 public:
 	// constrcuter destructer
@@ -25,7 +25,7 @@ protected:
 	void BeginPlay();
 
 private:
-	std::shared_ptr<class APawn> Player;
+	std::shared_ptr<class AActor> Player;
 	std::shared_ptr<class AActor> MainField;
 
 };

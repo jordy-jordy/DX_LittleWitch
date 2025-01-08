@@ -79,8 +79,6 @@ private:
 	EllieState::State CurState = EllieState::State::IDLE;
 	EllieState::POSVECTOR CurPosVector = EllieState::POSVECTOR::NONE;
 
-	std::shared_ptr<class ACameraActor> Camera;
-
 	std::shared_ptr<class USpriteRenderer> ELLIE_SHADOW;
 	std::shared_ptr<class USpriteRenderer> ELLIE;
 	std::shared_ptr<class USpriteRenderer> ELLIE_HAT;
