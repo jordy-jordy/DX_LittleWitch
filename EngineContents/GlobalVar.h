@@ -5,10 +5,10 @@
 
 static std::string_view START_MODE = "PLAY";
 
-static FVector WINDOW_SIZE = { 1280, 720 };
-static FVector HALF_WINDOW_SIZE = WINDOW_SIZE * 0.5;
+static const FVector WINDOW_SIZE = { 1280, 720 };
+static const FVector HALF_WINDOW_SIZE = WINDOW_SIZE * 0.5;
 
-static float ELLIE_ANIMDEFAULT_SPEED = 0.13f;
+static const float ELLIE_ANIMDEFAULT_SPEED = 0.13f;
 
 static float ELLIE_WALK_SPEED = 300.0f;
 static float ELLIE_RUN_SPEED = 1000.0f;

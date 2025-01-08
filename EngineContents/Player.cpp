@@ -22,12 +22,12 @@ APlayer::APlayer()
 
 	/***** ¿¤¸® - IDLE - Ä³¸¯ÅÍ *****/
 	{
-		ELLIE->CreateAnimation("ELLIE_IDLE_FRONT_LEFT", "Ellie_Basic_Idle.png", 3, 6, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_FRONT", "Ellie_Basic_Idle.png", 7, 10, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_FRONT_RIGHT", "Ellie_Basic_Idle.png", 11, 14, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_BACK_LEFT", "Ellie_Basic_Idle.png", 15, 18, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_BACK", "Ellie_Basic_Idle.png", 19, 22, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_BACK_RIGHT", "Ellie_Basic_Idle.png", 23, 26, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_UP", "Ellie_Basic_Idle.png", 19, 22, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_DOWN", "Ellie_Basic_Idle.png", 7, 10, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_LEFT", "Ellie_Basic_Idle.png", 3, 6, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_LEFT_UP", "Ellie_Basic_Idle.png", 15, 18, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_RIGHT", "Ellie_Basic_Idle.png", 11, 14, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_RIGHT_UP", "Ellie_Basic_Idle.png", 23, 26, ELLIE_ANIMDEFAULT_SPEED);
 	}
 
 	/***** ¿¤¸® - IDLE - ¸ðÀÚ   *****/
@@ -91,7 +91,7 @@ APlayer::APlayer()
 		ELLIE_SHADOW->CreateAnimation("ELLIE_RUN_SHADOW", "Ellie_Basic_Run.png", 0, 2, ELLIE_ANIMDEFAULT_SPEED);
 	}
 
-	ELLIE->ChangeAnimation("ELLIE_IDLE_FRONT");
+	ELLIE->ChangeAnimation("ELLIE_IDLE_DOWN");
 	ELLIE->SetAutoScale(true);
 	ELLIE->SetRelativeLocation({ 0, 0, 0 });
 	ELLIE_HAT->ChangeAnimation("HAT_IDLE_FRONT");
@@ -213,39 +213,39 @@ void APlayer::EllieIDLE(float _DeltaTime)
 	switch (CurPosVector)
 	{
 	case EllieState::POSVECTOR::UP:
-		SetEllieAnimation("ELLIE_IDLE_BACK", "HAT_IDLE_BACK");
+		SetEllieAnimation("ELLIE_IDLE_UP", "HAT_IDLE_BACK");
 		break;
 
 	case EllieState::POSVECTOR::DOWN:
-		SetEllieAnimation("ELLIE_IDLE_FRONT", "HAT_IDLE_FRONT");
+		SetEllieAnimation("ELLIE_IDLE_DOWN", "HAT_IDLE_FRONT");
 		break;
 
 	case EllieState::POSVECTOR::LEFT:
-		SetEllieAnimation("ELLIE_IDLE_FRONT_LEFT", "HAT_IDLE_FRONT_LEFT");
+		SetEllieAnimation("ELLIE_IDLE_LEFT", "HAT_IDLE_FRONT_LEFT");
 		break;
 
 	case EllieState::POSVECTOR::LEFT_UP:
-		SetEllieAnimation("ELLIE_IDLE_BACK_LEFT", "HAT_IDLE_BACK_LEFT");
+		SetEllieAnimation("ELLIE_IDLE_LEFT_UP", "HAT_IDLE_BACK_LEFT");
 		break;
 
 	case EllieState::POSVECTOR::LEFT_DOWN:
-		SetEllieAnimation("ELLIE_IDLE_FRONT_LEFT", "HAT_IDLE_FRONT_LEFT");
+		SetEllieAnimation("ELLIE_IDLE_LEFT", "HAT_IDLE_FRONT_LEFT");
 		break;
 
 	case EllieState::POSVECTOR::RIGHT:
-		SetEllieAnimation("ELLIE_IDLE_FRONT_RIGHT", "HAT_IDLE_FRONT_RIGHT");
+		SetEllieAnimation("ELLIE_IDLE_RIGHT", "HAT_IDLE_FRONT_RIGHT");
 		break;
 
 	case EllieState::POSVECTOR::RIGHT_UP:
-		SetEllieAnimation("ELLIE_IDLE_BACK_RIGHT", "HAT_IDLE_BACK_RIGHT");
+		SetEllieAnimation("ELLIE_IDLE_RIGHT_UP", "HAT_IDLE_BACK_RIGHT");
 		break;
 
 	case EllieState::POSVECTOR::RIGHT_DOWN:
-		SetEllieAnimation("ELLIE_IDLE_FRONT_RIGHT", "ELLIE_IDLE_FRONT_RIGHT");
+		SetEllieAnimation("ELLIE_IDLE_RIGHT", "ELLIE_IDLE_RIGHT");
 		break;
 
 	default:
-		SetEllieAnimation("ELLIE_IDLE_FRONT", "HAT_IDLE_FRONT");
+		SetEllieAnimation("ELLIE_IDLE_DOWN", "HAT_IDLE_FRONT");
 		break;
 	}
 }
