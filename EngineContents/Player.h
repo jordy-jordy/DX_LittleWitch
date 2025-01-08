@@ -72,7 +72,6 @@ protected:
 
 
 private:
-	bool IsInField = false;
 	float CurState_Speed = 0.0f;
 
 	FVector CurVector = VECTOR_NONE;
@@ -84,7 +83,5 @@ private:
 	std::shared_ptr<class USpriteRenderer> ELLIE_HAT;
 
 	std::shared_ptr<class UCollision> ELLIE_COL;
-
-	std::shared_ptr<class UCollision> HomeField_Coll;
 };
 

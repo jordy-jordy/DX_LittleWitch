@@ -188,7 +188,37 @@ void APlayer::EllieMove(float _DeltaTime)
 	if (false != ELLIE_COL->CollisionCheck("Field", NEXTPOS, Result))
 	{
 		AddActorLocation(NEXTPOS);
-		GetWorld()->GetMainCamera()->SetActorLocation(this->GetActorLocation());
+		ACameraActor* Camera = GetWorld()->GetMainCamera().get();
+
+		FTransform CameraTransform = Camera->GetActorTransform();
+		FTransform FieldTransform = Result[0]->GetTransformRef();
+		FVector TargetScale = FieldTransform.Scale * 0.8f;
+		FVector POS = this->GetActorLocation();
+		float CurPosY = this->GetActorLocation().Y;
+		float CurPosX = this->GetActorLocation().X;
+
+		if (-150 > CurPosX)
+		{
+			Camera->SetActorLocation({ -150, CurPosY, 0.0f });
+			return;
+		}
+		if (CurPosX > 150)
+		{
+			Camera->SetActorLocation({ 150, CurPosY, 0.0f });
+			return;
+		}
+		if (-150 > CurPosY)
+		{
+			Camera->SetActorLocation({ CurPosX, -150, 0.0f });
+			return;
+		}
+		if (CurPosY > 150)
+		{
+			Camera->SetActorLocation({ CurPosX, 150, 0.0f });
+			return;
+		}
+		Camera->SetActorLocation(POS);
+
 	}
 }
 
