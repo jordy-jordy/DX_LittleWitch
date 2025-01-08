@@ -13,14 +13,14 @@ static float ELLIE_ANIMDEFAULT_SPEED = 0.13f;
 static float ELLIE_WALK_SPEED = 300.0f;
 static float ELLIE_RUN_SPEED = 1000.0f;
 
-static FVector VECTOR_NONE = { 0.0f, 0.0f, 0.0f };
-static FVector VECTOR_UP = { 0.0f, 1.0f, 0.0f };
-static FVector VECTOR_DOWN = { 0.0f, -1.0f, 0.0f };
-static FVector VECTOR_LEFT = { -1.0f, 0.0f, 0.0f };
-static FVector VECTOR_LEFT_UP = { -1.0f, 1.0f, 0.0f };
-static FVector VECTOR_LEFT_DOWN = { -1.0f, -1.0f, 0.0f };
-static FVector VECTOR_RIGHT = { 1.0f, 0.0f, 0.0f };
-static FVector VECTOR_RIGHT_UP = { 1.0f, 1.0f, 0.0f };
-static FVector VECTOR_RIGHT_DOWN = { 1.0f, -1.0f, 0.0f };
+static const FVector VECTOR_NONE = { 0.0f, 0.0f, 0.0f };
+static const FVector VECTOR_UP = { 0.0f, 1.0f, 0.0f };
+static const FVector VECTOR_DOWN = { 0.0f, -1.0f, 0.0f };
+static const FVector VECTOR_LEFT = { -1.0f, 0.0f, 0.0f };
+static const FVector VECTOR_LEFT_UP = { -1.0f, 1.0f, 0.0f };
+static const FVector VECTOR_LEFT_DOWN = { -1.0f, -1.0f, 0.0f };
+static const FVector VECTOR_RIGHT = { 1.0f, 0.0f, 0.0f };
+static const FVector VECTOR_RIGHT_UP = { 1.0f, 1.0f, 0.0f };
+static const FVector VECTOR_RIGHT_DOWN = { 1.0f, -1.0f, 0.0f };
 
 
