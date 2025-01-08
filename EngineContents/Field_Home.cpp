@@ -13,15 +13,15 @@ AField_Home::AField_Home()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
-	MainField = CreateDefaultSubObject<USpriteRenderer>();
-	MainField->SetRelativeScale3D(MainFieldSize);
+	HomeField = CreateDefaultSubObject<USpriteRenderer>();
+	HomeField->SetRelativeScale3D(HomeFieldSize);
 
-	MainField_Coll = CreateDefaultSubObject<UCollision>();
-	MainField_Coll->SetCollisionProfileName("Field");
-	MainField_Coll->SetScale3D({500, 500, 0});
+	HomeField_Coll = CreateDefaultSubObject<UCollision>();
+	HomeField_Coll->SetCollisionProfileName("Field");
+	HomeField_Coll->SetScale3D(HomeFieldCollSize);
 
-	MainField_Coll->SetupAttachment(RootComponent);
-	MainField->SetupAttachment(RootComponent);
+	HomeField_Coll->SetupAttachment(RootComponent);
+	HomeField->SetupAttachment(RootComponent);
 };
 
 AField_Home::~AField_Home()

@@ -87,5 +87,6 @@ private:
 
 	std::shared_ptr<class UCollision> ELLIE_COL;
 
+	std::shared_ptr<class UCollision> HomeField_Coll;
 };
 

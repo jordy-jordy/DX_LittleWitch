@@ -8,6 +8,8 @@
 #include <EngineCore/EngineCamera.h>
 #include <EngineCore/CameraActor.h>
 
+#include "Field_Home.h"
+
 #include "GlobalVar.h"
 
 
@@ -184,13 +186,22 @@ void APlayer::SetEllieAnimation(const std::string_view& _EllieAnimation, const s
 void APlayer::EllieMove(float _DeltaTime)
 {
 	SwitchCurState_Speed();
+
 	FVector NEXTPOS = CurVector * CurState_Speed * _DeltaTime;
+
 	std::vector<UCollision*> Result;
 	if (false != ELLIE_COL->CollisionCheck("Field", NEXTPOS, Result))
 	{
+		FTransform FieldTransform = Result[0]->GetTransformRef();
+		FTransform CameraTransform = Camera->GetActorTransform();
+
+
 		Camera->AddActorLocation(NEXTPOS);
 		AddActorLocation(NEXTPOS);
+
 	}
+	
+
 }
 
 void APlayer::EllieIDLE(float _DeltaTime)

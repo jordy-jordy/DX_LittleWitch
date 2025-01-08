@@ -3,25 +3,11 @@
 
 #include <EnginePlatform/EngineInput.h>
 #include <EngineCore/SpriteRenderer.h>
-#include <EngineCore/EngineGUIWindow.h>
-#include <EngineCore/EngineGUI.h>
-#include <EngineCore/imgui.h>
 #include <EngineCore/CameraActor.h>
 #include <EngineCore/EngineCamera.h>
 
 #include "TitleScene.h"
 
-class TestWindow : public UEngineGUIWindow
-{
-public:
-	void OnGUI() override
-	{
-		ImGui::Button("WindowButton");
-		ImGui::SameLine(); // ÇÑ°£ ¶ç±â
-		ImGui::Text("test");
-
-	}
-};
 
 ATitleGameMode::ATitleGameMode()
 {
@@ -34,9 +20,6 @@ ATitleGameMode::ATitleGameMode()
 	Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });
 	Camera->GetCameraComponent()->SetFar(10000.0f);
 	Camera->GetCameraComponent()->SetZSort(0, false);
-	
-
-	//UEngineGUI::CreateGUIWindow<TestWindow>("TestWindow");
 }
 
 ATitleGameMode::~ATitleGameMode()

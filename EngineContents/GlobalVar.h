@@ -10,7 +10,7 @@ static const FVector HALF_WINDOW_SIZE = WINDOW_SIZE * 0.5;
 
 static const float ELLIE_ANIMDEFAULT_SPEED = 0.13f;
 
-static float ELLIE_WALK_SPEED = 300.0f;
+static float ELLIE_WALK_SPEED = 600.0f;
 static float ELLIE_RUN_SPEED = 1000.0f;
 
 static const FVector VECTOR_NONE = { 0.0f, 0.0f, 0.0f };

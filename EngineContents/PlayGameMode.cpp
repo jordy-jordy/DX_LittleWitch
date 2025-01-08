@@ -6,14 +6,34 @@
 #include <EngineCore/CameraActor.h>
 #include <EngineCore/EngineCamera.h>
 
+#include <EngineCore/EngineGUIWindow.h>
+#include <EngineCore/EngineGUI.h>
+#include <EngineCore/imgui.h>
+
 #include "Player.h"
 #include "Field_Home.h"
 #include "Field_Green.h"
+
+
+class EditValue : public UEngineGUIWindow
+{
+public:
+	void OnGUI() override
+	{
+		ImGui::Button("AddSpeed_Walk");
+		ImGui::Button("AddSpeed_Run");
+		//ImGui::SameLine(); // ÇÑ°£ ¶ç±â
+		ImGui::Button("SubSpeed_Walk");
+		ImGui::Button("SubSpeed_Run");
+		//ImGui::Text("test");
+	}
+};
 
 APlayGameMode::APlayGameMode()
 {
 	PlayDirLoad();
 	PlaySpritesInit();
+	//UEngineGUI::CreateGUIWindow<EditValue>("EditValue");
 
 	//std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
 	//Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });

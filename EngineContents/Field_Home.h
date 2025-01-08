@@ -1,6 +1,7 @@
 #pragma once
 #include <EngineCore/Actor.h>
 
+
 // Ό³Έν :
 class AField_Home : public AActor
 {
@@ -15,9 +16,14 @@ public:
 	AField_Home& operator=(const AField_Home& _Other) = delete;
 	AField_Home& operator=(AField_Home&& _Other) noexcept = delete;
 
-	static FVector GetMainFieldSize()
+	FVector GetHomeFieldSize()
 	{
-		return MainFieldSize;
+		return HomeFieldSize;
+	}
+
+	std::shared_ptr<class UCollision> GetMainField_Coll()
+	{
+		return HomeField_Coll;
 	}
 
 
@@ -26,8 +32,9 @@ protected:
 	void Tick(float _DeltaTime) override;
 
 private:
-	static inline FVector MainFieldSize = { 300.0f, 300.0f, 0.0f };
-	std::shared_ptr<class USpriteRenderer> MainField;
+	FVector HomeFieldSize = { 300.0f, 300.0f, 0.0f };
+	FVector HomeFieldCollSize = { 600.0f, 600.0f, 0.0f };
 
-	std::shared_ptr<class UCollision> MainField_Coll;
+	std::shared_ptr<class USpriteRenderer> HomeField;
+	std::shared_ptr<class UCollision> HomeField_Coll;
 };
