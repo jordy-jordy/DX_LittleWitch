@@ -18,7 +18,7 @@ AField_Home::AField_Home()
 
 	MainField_Coll = CreateDefaultSubObject<UCollision>();
 	MainField_Coll->SetCollisionProfileName("Field");
-	MainField_Coll->SetScale3D(MainField->GetWorldScale3D());
+	MainField_Coll->SetScale3D({220, 220, 0});
 
 	MainField_Coll->SetupAttachment(RootComponent);
 	MainField->SetupAttachment(RootComponent);

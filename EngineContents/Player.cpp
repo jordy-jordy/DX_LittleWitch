@@ -99,7 +99,7 @@ APlayer::APlayer()
 	ELLIE_Coll = CreateDefaultSubObject<UCollision>();
 	ELLIE_Coll->SetCollisionProfileName("Player");
 	ELLIE_Coll->SetWorldLocation({ 0, 70, 0 });
-	ELLIE_Coll->SetScale3D({1, 1, 1});
+	ELLIE_Coll->SetScale3D({10, 10, 1});
 	//ELLIE_Coll->SetRadius(1);
 	//ELLIE_Coll->SetCollisionEnter([](UCollision* _This, UCollision* _Other)
 	//	{
