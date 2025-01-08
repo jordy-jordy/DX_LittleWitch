@@ -146,18 +146,18 @@ void APlayer::Tick(float _DeltaTime)
 	}
 }
 
-bool APlayer::CheckIsInField()
+void APlayer::SetEllieAnimation(const std::string_view& _EllieAnimation, const std::string_view& _HatAnimation/* = ""*/)
 {
-	std::vector<UCollision*> Result;
-	if (true == ELLIE_Coll->CollisionCheck("Field", Result))
+	ELLIE->ChangeAnimation(_EllieAnimation);
+	if (!_HatAnimation.empty())
 	{
-		return IsInField = true;
+		ELLIE_HAT->SetActive(true);
+		ELLIE_HAT->ChangeAnimation(_HatAnimation);
 	}
-	else if (false == ELLIE_Coll->CollisionCheck("Field", Result))
+	else
 	{
-		return IsInField = false;
+		ELLIE_HAT->SetActive(false);
 	}
-	return true;
 }
 
 void APlayer::ChangeState(EllieState::State _CurPlayerState)
@@ -203,33 +203,25 @@ void APlayer::EllieIDLE(float _DeltaTime)
 	switch (CurrentIDLEState)
 	{
 	case EllieState::EllieIDLE_Vector::IDLE_FRONT_LEFT:
-		ELLIE->ChangeAnimation("ELLIE_IDLE_FRONT_LEFT");
-		ELLIE_HAT->ChangeAnimation("HAT_IDLE_FRONT_LEFT");
+		SetEllieAnimation("ELLIE_IDLE_FRONT_LEFT", "HAT_IDLE_FRONT_LEFT");
 		break;
-
 	case EllieState::EllieIDLE_Vector::IDLE_FRONT:
-		ELLIE->ChangeAnimation("ELLIE_IDLE_FRONT");
-		ELLIE_HAT->ChangeAnimation("HAT_IDLE_FRONT");
+		SetEllieAnimation("ELLIE_IDLE_FRONT", "HAT_IDLE_FRONT");
 		break;
-
 	case EllieState::EllieIDLE_Vector::IDLE_FRONT_RIGHT:
-		ELLIE->ChangeAnimation("ELLIE_IDLE_FRONT_RIGHT");
-		ELLIE_HAT->ChangeAnimation("HAT_IDLE_FRONT_RIGHT");
+		SetEllieAnimation("ELLIE_IDLE_FRONT_RIGHT", "HAT_IDLE_FRONT_RIGHT");
 		break;
-
 	case EllieState::EllieIDLE_Vector::IDLE_BACK_LEFT:
-		ELLIE->ChangeAnimation("ELLIE_IDLE_BACK_LEFT");
-		ELLIE_HAT->ChangeAnimation("HAT_IDLE_BACK_LEFT");
+		SetEllieAnimation("ELLIE_IDLE_BACK_LEFT", "HAT_IDLE_BACK_LEFT");
 		break;
-
 	case EllieState::EllieIDLE_Vector::IDLE_BACK:
-		ELLIE->ChangeAnimation("ELLIE_IDLE_BACK");
-		ELLIE_HAT->ChangeAnimation("HAT_IDLE_BACK");
+		SetEllieAnimation("ELLIE_IDLE_BACK", "HAT_IDLE_BACK");
 		break;
-
 	case EllieState::EllieIDLE_Vector::IDLE_BACK_RIGHT:
-		ELLIE->ChangeAnimation("ELLIE_IDLE_BACK_RIGHT");
-		ELLIE_HAT->ChangeAnimation("HAT_IDLE_BACK_RIGHT");
+		SetEllieAnimation("ELLIE_IDLE_BACK_RIGHT", "HAT_IDLE_BACK_RIGHT");
+		break;
+	default:
+		SetEllieAnimation("ELLIE_IDLE_FRONT", "HAT_IDLE_FRONT");
 		break;
 	}
 
@@ -247,80 +239,62 @@ void APlayer::EllieWALK(float _DeltaTime)
 {
 	if (UEngineInput::IsPress('A'))
 	{
+		Current_Vector = VECTOR_LEFT;
 		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_LEFT;
 	}
 	if (UEngineInput::IsPress('W'))
 	{
+		Current_Vector = VECTOR_UP;
 		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_UP;
 	}
 	if (UEngineInput::IsPress('D'))
 	{
+		Current_Vector = VECTOR_RIGHT;
 		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_RIGHT;
 	}
 	if (UEngineInput::IsPress('S'))
 	{
+		Current_Vector = VECTOR_DOWN;
 		CurrentWALKState = EllieState::EllieWALK_Vector::WALK_DOWN;
 	}
 
-	FVector NEXTPOS_UP = VECTOR_UP * ELLIE_WALK_SPEED * _DeltaTime;
-	FVector NEXTPOS_DOWN = VECTOR_DOWN * ELLIE_WALK_SPEED * _DeltaTime;
-	FVector NEXTPOS_LEFT = VECTOR_LEFT * ELLIE_WALK_SPEED * _DeltaTime;
-	FVector NEXTPOS_RIGHT = VECTOR_RIGHT * ELLIE_WALK_SPEED * _DeltaTime;
 
-	std::vector<UCollision*> Result;
 	switch (CurrentWALKState)
 	{
 	case EllieState::EllieWALK_Vector::WALK_UP:
 		ELLIE->ChangeAnimation("ELLIE_WALK_UP");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_UP");
-		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_UP, Result))
-		{
-			Camera->AddActorLocation(NEXTPOS_UP);
-			AddActorLocation(NEXTPOS_UP);
-		}
+		EllieMove(_DeltaTime);
 		break;
 
 	case EllieState::EllieWALK_Vector::WALK_DOWN:
 		ELLIE->ChangeAnimation("ELLIE_WALK_DOWN");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_DOWN");
-		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_DOWN, Result))
-		{
-			Camera->AddActorLocation(NEXTPOS_DOWN);
-			AddActorLocation(NEXTPOS_DOWN);
-		}
+		EllieMove(_DeltaTime);
 		break;
 
 	case EllieState::EllieWALK_Vector::WALK_LEFT:
 		ELLIE->ChangeAnimation("ELLIE_WALK_LEFT");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_LEFT");
-		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_LEFT, Result))
-		{
-			Camera->AddActorLocation(NEXTPOS_LEFT);
-			AddActorLocation(NEXTPOS_LEFT);
-		}
+		EllieMove(_DeltaTime);
 		break;
 
 	case EllieState::EllieWALK_Vector::WALK_LEFT_UP:
 		ELLIE->ChangeAnimation("ELLIE_WALK_LEFT_UP");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_LEFT_UP");
-		AddRelativeLocation(VECTOR_LEFT_UP * ELLIE_WALK_SPEED * _DeltaTime);
+		EllieMove(_DeltaTime);
 		break;
 
 	case EllieState::EllieWALK_Vector::WALK_RIGHT:
 		ELLIE->ChangeAnimation("ELLIE_WALK_RIGHT");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_RIGHT");
-		if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS_RIGHT, Result))
-		{
-			Camera->AddActorLocation(NEXTPOS_RIGHT);
-			AddActorLocation(NEXTPOS_RIGHT);
-		}
+		EllieMove(_DeltaTime);
 		break;
-
 
 	case EllieState::EllieWALK_Vector::WALK_RIGHT_UP:
 		ELLIE->ChangeAnimation("ELLIE_WALK_RIGHT_UP");
 		ELLIE_HAT->ChangeAnimation("HAT_WALK_RIGHT_UP");
-		AddRelativeLocation(VECTOR_RIGHT_UP * ELLIE_WALK_SPEED * _DeltaTime);
+		EllieMove(_DeltaTime);
 		break;
 	}
 
@@ -373,5 +347,16 @@ void APlayer::EllieRUN(float _DeltaTime)
 		ELLIE_HAT->SetActive(true);
 		ELLIE_HAT->ChangeAnimation("HAT_RUN_RIGHT_UP");
 		break;
+	}
+}
+
+void APlayer::EllieMove(float _DeltaTime)
+{
+	FVector NEXTPOS = Current_Vector * ELLIE_WALK_SPEED * _DeltaTime;
+	std::vector<UCollision*> Result;
+	if (false != ELLIE_Coll->CollisionCheck("Field", NEXTPOS, Result))
+	{
+		Camera->AddActorLocation(NEXTPOS);
+		AddActorLocation(NEXTPOS);
 	}
 }

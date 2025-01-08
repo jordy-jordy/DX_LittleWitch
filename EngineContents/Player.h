@@ -1,6 +1,8 @@
 #pragma once
 #include <EngineCore/Actor.h>
 
+#include "GlobalVar.h"
+
 
 struct EllieState
 {
@@ -68,14 +70,18 @@ public:
 	void EllieWALK(float _DeltaTime);
 	void EllieRUN(float _DeltaTime);
 
+	void EllieMove(float _DeltaTime);
+
 	void ChangeState(EllieState::State _CurPlayerState);
+	void SetEllieAnimation(const std::string_view& _EllieAnimation, const std::string_view& _HatAnimation = "");
+
 
 	EllieState::State CurrentState = EllieState::State::IDLE;
 	EllieState::EllieIDLE_Vector CurrentIDLEState = EllieState::EllieIDLE_Vector::NONE;
 	EllieState::EllieWALK_Vector CurrentWALKState = EllieState::EllieWALK_Vector::NONE;
 	EllieState::EllieRUN_Vector CurrentRUNState = EllieState::EllieRUN_Vector::NONE;
 
-	bool CheckIsInField();
+	FVector Current_Vector = VECTOR_NONE;
 
 
 protected:
