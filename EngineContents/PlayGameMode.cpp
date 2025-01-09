@@ -66,6 +66,10 @@ void APlayGameMode::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
+	if (UEngineInput::IsDown(VK_SPACE))
+	{
+		UEngineCore::OpenLevel("TITLE");
+	}
 
 }
 

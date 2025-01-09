@@ -35,7 +35,7 @@ void ATitleGameMode::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
-	if (UEngineInput::IsPress(VK_SPACE))
+	if (UEngineInput::IsDown(VK_SPACE))
 	{
 		UEngineCore::OpenLevel("PLAY");
 	}
