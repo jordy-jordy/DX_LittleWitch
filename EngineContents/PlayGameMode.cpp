@@ -77,7 +77,7 @@ void APlayGameMode::PlayDirLoad()
 		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
 		return;
 	}
-	Dir.Append("Image//WitchResource//PLAY//00_Character");
+	Dir.Append("Image//WitchResource//PLAY");
 	std::vector<UEngineFile> ImageFiles = Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
 	for (size_t i = 0; i < ImageFiles.size(); i++)
 	{

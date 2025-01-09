@@ -15,12 +15,19 @@ AField_Home::AField_Home()
 
 	HomeField = CreateDefaultSubObject<USpriteRenderer>();
 	HomeField->SetRelativeScale3D(HomeFieldSize);
+	HomeField->SetTexture("test_field.png");
 
 	HomeField_Coll = CreateDefaultSubObject<UCollision>();
 	HomeField_Coll->SetCollisionProfileName("Field");
-	HomeField_Coll->SetScale3D(HomeFieldSize * 0.8f);
+	HomeField_Coll->SetScale3D(HomeFieldSize * Collision_Per);
+
+	FVector CAMERAFIELD = HomeFieldSize * Collision_Per * Camera_Per;
+	std::shared_ptr<class USpriteRenderer> CameraMoveField = CreateDefaultSubObject<USpriteRenderer>();
+	CameraMoveField->SetTexture("Radius_Camera.png");
+	CameraMoveField->SetRelativeScale3D(CAMERAFIELD);
 
 	HomeField_Coll->SetupAttachment(RootComponent);
+	CameraMoveField->SetupAttachment(RootComponent);
 	HomeField->SetupAttachment(RootComponent);
 };
 

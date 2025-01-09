@@ -103,7 +103,7 @@ APlayer::APlayer()
 	ELLIE_COL = CreateDefaultSubObject<UCollision>();
 	ELLIE_COL->SetCollisionProfileName("Player");
 	ELLIE_COL->SetWorldLocation({ 0, 70, 0 });
-	ELLIE_COL->SetScale3D({ 1, 1, 1 });
+	ELLIE_COL->SetScale3D({ 10, 10, 1 });
 
 	//ELLIE_SHADOW->SetupAttachment(RootComponent);
 	ELLIE_COL->SetupAttachment(RootComponent);
@@ -192,8 +192,8 @@ void APlayer::EllieMove(float _DeltaTime)
 	{
 		AddActorLocation(NEXTPOS);
 
-		FTransform FieldTransform = Result[0]->GetTransformRef();
-		FVector TargetScale = (FieldTransform.Scale * 0.5f) * 0.45f;
+		FTransform FieldCollision_Transform = Result[0]->GetTransformRef();
+		FVector TargetScale = (FieldCollision_Transform.Scale * Camera_Per) * 0.5f;
 		FVector ELLIEPOS = this->GetActorLocation();
 		float CurPosX = static_cast<float>(ELLIEPOS.iX());
 		float CurPosY = static_cast<float>(ELLIEPOS.iY() + 70.0f);

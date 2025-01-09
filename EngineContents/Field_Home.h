@@ -1,6 +1,8 @@
 #pragma once
 #include <EngineCore/Actor.h>
 
+#include "GlobalVar.h"
+
 
 // Ό³Έν :
 class AField_Home : public AActor
@@ -32,7 +34,7 @@ protected:
 	void Tick(float _DeltaTime) override;
 
 private:
-	FVector HomeFieldSize = { 1280.0f * 0.8f, 720.0f * 0.8f, 0.0f };
+	FVector HomeFieldSize = { 1280.0f * HomeField_Per, 720.0f * HomeField_Per, 0.0f };
 
 	std::shared_ptr<class USpriteRenderer> HomeField;
 	std::shared_ptr<class UCollision> HomeField_Coll;
