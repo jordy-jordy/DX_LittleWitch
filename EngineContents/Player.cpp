@@ -183,7 +183,7 @@ void APlayer::SetEllieAnimation(const std::string_view& _EllieAnimation, const s
 
 void APlayer::UpdateCameraLocation(const FVector& _ElliePos)
 {
-	FVector TargetScale = HomeFieldSize * 0.5f; // 600, 600 => 300, 300
+	FVector TargetScale = HomeFieldSize * 0.5f;
 	float Plus_WinSizeX = _ElliePos.X + HALF_WINDOW_SIZE.X;
 	float Plus_WinSizeY = _ElliePos.Y + HALF_WINDOW_SIZE.Y;
 	float Minus_WinSizeX = _ElliePos.X - HALF_WINDOW_SIZE.X;
@@ -232,8 +232,6 @@ void APlayer::EllieMove(float _DeltaTime)
 	if (false != ELLIE_COL->CollisionCheck("Field", NEXTPOS, Result))
 	{
 		AddActorLocation(NEXTPOS);
-		FVector TargetScale = HomeFieldSize * 0.5f;
-
 		UpdateCameraLocation(this->GetActorLocation());
 	}
 }

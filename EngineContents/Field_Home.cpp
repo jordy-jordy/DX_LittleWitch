@@ -19,7 +19,7 @@ AField_Home::AField_Home()
 
 	HomeField_Coll = CreateDefaultSubObject<UCollision>();
 	HomeField_Coll->SetCollisionProfileName("Field");
-	HomeField_Coll->SetScale3D(HomeFieldSize * Collision_Per);
+	HomeField_Coll->SetScale3D({ HomeFieldSize.X - ELLIESIZE.X, HomeFieldSize.Y - ELLIESIZE.Y });
 
 	HomeField_Coll->SetupAttachment(RootComponent);
 	HomeField->SetupAttachment(RootComponent);
