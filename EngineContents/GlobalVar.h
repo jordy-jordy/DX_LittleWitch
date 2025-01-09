@@ -25,6 +25,6 @@ static const FVector VECTOR_RIGHT = { 1.0f, 0.0f, 0.0f };
 static const FVector VECTOR_RIGHT_UP = { 1.0f, 1.0f, 0.0f };
 static const FVector VECTOR_RIGHT_DOWN = { 1.0f, -1.0f, 0.0f };
 
-static const FVector HomeFieldSize = { 500.0f, 3000.0f, 0.0f };
+static const FVector HomeFieldSize = { 800.0f, 800.0f, 0.0f };
 
 

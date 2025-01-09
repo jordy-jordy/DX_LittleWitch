@@ -26,4 +26,6 @@ protected:
 private:
 	std::shared_ptr<class USpriteRenderer> HomeField;
 	std::shared_ptr<class UCollision> HomeField_Coll;
+	
+	std::shared_ptr<class USpriteRenderer> HomeField_ColImage;
 };
