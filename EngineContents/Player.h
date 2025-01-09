@@ -83,5 +83,7 @@ private:
 	std::shared_ptr<class USpriteRenderer> ELLIE_HAT;
 
 	std::shared_ptr<class UCollision> ELLIE_COL;
+
+	ACameraActor* Camera = nullptr;
 };
 

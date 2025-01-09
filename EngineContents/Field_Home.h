@@ -32,8 +32,7 @@ protected:
 	void Tick(float _DeltaTime) override;
 
 private:
-	FVector HomeFieldSize = { 300.0f, 300.0f, 0.0f };
-	FVector HomeFieldCollSize = { 600.0f, 600.0f, 0.0f };
+	FVector HomeFieldSize = { 1280.0f * 0.8f, 720.0f * 0.8f, 0.0f };
 
 	std::shared_ptr<class USpriteRenderer> HomeField;
 	std::shared_ptr<class UCollision> HomeField_Coll;

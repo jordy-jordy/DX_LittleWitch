@@ -46,7 +46,6 @@ APlayGameMode::APlayGameMode()
 	Player->SetActorLocation({ 0.0f, 0.0f, 0.0f });
 
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
-	Camera->SetActorLocation(Player->GetActorLocation());
 	Camera->GetCameraComponent()->SetFar(10000.0f);
 	Camera->GetCameraComponent()->SetNear(-100.0f);
 	Camera->GetCameraComponent()->SetZSort(0, false);

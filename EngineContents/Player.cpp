@@ -103,12 +103,15 @@ APlayer::APlayer()
 	ELLIE_COL = CreateDefaultSubObject<UCollision>();
 	ELLIE_COL->SetCollisionProfileName("Player");
 	ELLIE_COL->SetWorldLocation({ 0, 70, 0 });
-	ELLIE_COL->SetScale3D({ 10, 10, 1 });
+	ELLIE_COL->SetScale3D({ 1, 1, 1 });
 
 	//ELLIE_SHADOW->SetupAttachment(RootComponent);
 	ELLIE_COL->SetupAttachment(RootComponent);
 	ELLIE->SetupAttachment(RootComponent);
 	ELLIE_HAT->SetupAttachment(RootComponent);
+
+	Camera = GetWorld()->GetMainCamera().get();
+	Camera->SetActorLocation({ GetActorLocation().X, GetActorLocation().Y + 70.0f, 0.0f});
 
 }
 
@@ -188,37 +191,51 @@ void APlayer::EllieMove(float _DeltaTime)
 	if (false != ELLIE_COL->CollisionCheck("Field", NEXTPOS, Result))
 	{
 		AddActorLocation(NEXTPOS);
-		ACameraActor* Camera = GetWorld()->GetMainCamera().get();
 
-		FTransform CameraTransform = Camera->GetActorTransform();
 		FTransform FieldTransform = Result[0]->GetTransformRef();
-		FVector TargetScale = FieldTransform.Scale * 0.8f;
-		FVector POS = this->GetActorLocation();
-		float CurPosY = this->GetActorLocation().Y;
-		float CurPosX = this->GetActorLocation().X;
+		FVector TargetScale = (FieldTransform.Scale * 0.5f) * 0.45f;
+		FVector ELLIEPOS = this->GetActorLocation();
+		float CurPosX = static_cast<float>(ELLIEPOS.iX());
+		float CurPosY = static_cast<float>(ELLIEPOS.iY() + 70.0f);
 
-		if (-150 > CurPosX)
+		if (-TargetScale.X < CurPosX && CurPosX < TargetScale.X && -TargetScale.Y < CurPosY && CurPosY < TargetScale.Y)
 		{
-			Camera->SetActorLocation({ -150, CurPosY, 0.0f });
-			return;
+			Camera->SetActorLocation({ CurPosX, CurPosY, 0.0f });
 		}
-		if (CurPosX > 150)
-		{
-			Camera->SetActorLocation({ 150, CurPosY, 0.0f });
-			return;
-		}
-		if (-150 > CurPosY)
-		{
-			Camera->SetActorLocation({ CurPosX, -150, 0.0f });
-			return;
-		}
-		if (CurPosY > 150)
-		{
-			Camera->SetActorLocation({ CurPosX, 150, 0.0f });
-			return;
-		}
-		Camera->SetActorLocation(POS);
 
+		if (-TargetScale.X < CurPosX && CurPosX < TargetScale.X && CurPosY < -TargetScale.Y)
+		{
+			Camera->SetActorLocation({ CurPosX, -TargetScale.Y, 0.0f });
+		}
+		if (-TargetScale.X < CurPosX && CurPosX < TargetScale.X && TargetScale.Y < CurPosY)
+		{
+			Camera->SetActorLocation({ CurPosX, TargetScale.Y, 0.0f });
+		}
+		if (-TargetScale.Y < CurPosY && CurPosY < TargetScale.Y && CurPosX < -TargetScale.X)
+		{
+			Camera->SetActorLocation({ -TargetScale.X, CurPosY, 0.0f });
+		}
+		if (-TargetScale.Y < CurPosY && CurPosY < TargetScale.Y && TargetScale.X < CurPosX)
+		{
+			Camera->SetActorLocation({ TargetScale.X, CurPosY, 0.0f });
+		}
+
+		if (TargetScale.X < CurPosX && TargetScale.Y < CurPosY)
+		{
+			Camera->SetActorLocation({ TargetScale.X, TargetScale.Y, 0.0f });
+		}
+		if (TargetScale.X < CurPosX && CurPosY < -TargetScale.Y)
+		{
+			Camera->SetActorLocation({ TargetScale.X, -TargetScale.Y, 0.0f });
+		}
+		if (CurPosX < -TargetScale.X && TargetScale.Y < CurPosY)
+		{
+			Camera->SetActorLocation({ -TargetScale.X, TargetScale.Y, 0.0f });
+		}
+		if (CurPosX < -TargetScale.X && CurPosY < -TargetScale.Y)
+		{
+			Camera->SetActorLocation({ -TargetScale.X, -TargetScale.Y, 0.0f });
+		}
 	}
 }
 
