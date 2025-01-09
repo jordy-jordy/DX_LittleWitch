@@ -31,6 +31,9 @@
     <ClInclude Include="Field_Green.h">
       <Filter>03_Actors\01_Play</Filter>
     </ClInclude>
+    <ClInclude Include="TileMapEditor.h">
+      <Filter>02_GameMode\MapEditor</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -60,6 +63,9 @@
     <ClCompile Include="Field_Green.cpp">
       <Filter>03_Actors\01_Play</Filter>
     </ClCompile>
+    <ClCompile Include="TileMapEditor.cpp">
+      <Filter>02_GameMode\MapEditor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="00_Core">
@@ -82,6 +88,12 @@
     </Filter>
     <Filter Include="00_GlobalValue">
       <UniqueIdentifier>{731b4870-d7cf-40ee-8541-120ca62301f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_GameMode\MapEditor">
+      <UniqueIdentifier>{c47a3ade-d210-4ebb-9de8-e56ea4a499b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\03_MapEditor">
+      <UniqueIdentifier>{622ff84b-60c7-43af-bb5a-761901673055}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

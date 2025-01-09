@@ -5,11 +5,13 @@
 #include <EngineCore/EngineSprite.h>
 
 #include "GlobalVar.h"
+
 #include "TitleGameMode.h"
 #include "PlayGameMode.h"
 #include "EndGameMode.h"
-#include "Player.h"
+#include "TileMapEditor.h"
 
+#include "Player.h"
 
 CreateContentsCoreDefine(UContentsCore);
 
@@ -27,7 +29,8 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 
 	UEngineCore::CreateLevel<ATitleGameMode, APawn>("TITLE");
 	UEngineCore::CreateLevel<APlayGameMode, APlayer>("PLAY");
-	//UEngineCore::CreateLevel<AEndGameMode, APawn>("END");
+	UEngineCore::CreateLevel<AEndGameMode, APawn>("END");
+	UEngineCore::CreateLevel<ATileMapEditor, APawn>("MAPEDITOR");
 
 	UEngineCore::OpenLevel(START_MODE);
 }
