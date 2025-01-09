@@ -65,6 +65,8 @@ public:
 	void ChangeState(EllieState::State _CurPlayerState);
 	void SetEllieAnimation(const std::string_view& _EllieAnimation, const std::string_view& _HatAnimation = "");
 
+	void UpdateCameraLocation(const FVector& _ElliePos);
+
 
 protected:
 	void BeginPlay() override;

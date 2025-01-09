@@ -24,8 +24,9 @@ static const FVector VECTOR_RIGHT_UP = { 1.0f, 1.0f, 0.0f };
 static const FVector VECTOR_RIGHT_DOWN = { 1.0f, -1.0f, 0.0f };
 
 static float HomeField_Per = 1.0f;
-static float Collision_Per = 0.98f;
+static float Collision_Per = 0.95f;
 static float Camera_Per = 0.5f;
 
+static const FVector HomeFieldSize = { 3000.0f * HomeField_Per, 600.0f * HomeField_Per, 0.0f };
 
 
