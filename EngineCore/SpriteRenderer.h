@@ -143,7 +143,7 @@ private:
 	std::map<std::string, FrameAnimation> FrameAnimations;
 	FrameAnimation* CurAnimation = nullptr; 
 	UEngineSprite* Sprite = nullptr;
-	bool IsAutoScale = false;
+	bool IsAutoScale = true;
 	float AutoScaleRatio = 1.0f;
 };
 
