@@ -33,7 +33,6 @@ APlayGameMode::APlayGameMode()
 {
 	PlayDirLoad();
 	PlaySpritesInit();
-	//UEngineGUI::CreateGUIWindow<EditValue>("EditValue");
 
 	GetWorld()->CreateCollisionProfile("Field");
 	GetWorld()->CreateCollisionProfile("Player");

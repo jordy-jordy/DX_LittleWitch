@@ -16,9 +16,14 @@ public:
 	ATileMapEditorMode& operator=(const ATileMapEditorMode& _Other) = delete;
 	ATileMapEditorMode& operator=(ATileMapEditorMode&& _Other) noexcept = delete;
 
+	void TileMapDirLoad();
+	
 	void Tick(float _DeltaTime);
 
 protected:
+	void LevelChangeStart() override;
+	void BeginPlay();
+
 
 private:
 	std::shared_ptr<class UTileMapWindow> TileMapWindow;

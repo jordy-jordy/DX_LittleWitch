@@ -3,9 +3,12 @@
 #include <EngineCore/Level.h>
 #include <EngineCore/EngineTexture.h>
 #include <EngineCore/EngineSprite.h>
+#include <EngineCore/EngineGUI.h>
+#include <EngineCore/EngineGUIWindow.h>
 
 #include "GlobalVar.h"
 
+#include "ContentsEditorGUI.h"
 #include "TileMapEditorMode.h"
 #include "TitleGameMode.h"
 #include "PlayGameMode.h"
@@ -26,6 +29,10 @@ UContentsCore::~UContentsCore()
 void UContentsCore::EngineStart(UEngineInitData& _Data)
 {
 	WidowSizePos(_Data);
+
+	UEngineGUI::CreateGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
+	std::shared_ptr<UContentsEditorGUI> Window = UEngineGUI::FindGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
+	Window->SetActive(true);
 
 	UEngineCore::CreateLevel<ATitleGameMode, APawn>("TITLE");
 	UEngineCore::CreateLevel<APlayGameMode, APlayer>("PLAY");
