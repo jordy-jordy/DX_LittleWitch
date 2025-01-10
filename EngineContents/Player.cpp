@@ -24,88 +24,101 @@ APlayer::APlayer()
 
 	/***** ¿¤¸® - IDLE - Ä³¸¯ÅÍ *****/
 	{
-		ELLIE->CreateAnimation("ELLIE_IDLE_UP", "Ellie_Basic_Idle.png", 19, 22, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_DOWN", "Ellie_Basic_Idle.png", 7, 10, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_LEFT", "Ellie_Basic_Idle.png", 3, 6, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_LEFT_UP", "Ellie_Basic_Idle.png", 15, 18, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_RIGHT", "Ellie_Basic_Idle.png", 11, 14, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_IDLE_RIGHT_UP", "Ellie_Basic_Idle.png", 23, 26, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_UP", "Ellie_Basic_Idle.png", 20, 23, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_DOWN", "Ellie_Basic_Idle.png", 8, 11, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_LEFT", "Ellie_Basic_Idle.png", 4, 7, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_LEFT_UP", "Ellie_Basic_Idle.png", 16, 19, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_RIGHT", "Ellie_Basic_Idle.png", 12, 15, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_IDLE_RIGHT_UP", "Ellie_Basic_Idle.png", 24, 27, ELLIE_ANIMDEFAULT_SPEED);
 	}
 
 	/***** ¿¤¸® - IDLE - ¸ðÀÚ   *****/
 	{
-		ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT_LEFT", "Ellie_Basic_Idle.png", { 27, 28, 28, 29 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT", "Ellie_Basic_Idle.png", { 30, 31, 32, 33 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT_RIGHT", "Ellie_Basic_Idle.png", { 34, 35, 35, 36 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_IDLE_BACK_LEFT", "Ellie_Basic_Idle.png", { 37, 38, 38, 37 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_IDLE_BACK", "Ellie_Basic_Walk.png", 128, 128, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE_HAT->CreateAnimation("HAT_IDLE_BACK_RIGHT", "Ellie_Basic_Idle.png", { 39, 40, 40, 39 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT_LEFT", "Ellie_Basic_Idle.png", { 28, 29, 29, 30 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT", "Ellie_Basic_Idle.png", { 31, 32, 33, 34 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_IDLE_FRONT_RIGHT", "Ellie_Basic_Idle.png", { 35, 36, 36, 37 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_IDLE_BACK_LEFT", "Ellie_Basic_Idle.png", { 38, 39, 39, 38 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_IDLE_BACK", "Ellie_Basic_Idle.png", 0, 0, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE_HAT->CreateAnimation("HAT_IDLE_BACK_RIGHT", "Ellie_Basic_Idle.png", { 40, 41, 41, 40 }, { ELLIE_ANIMDEFAULT_SPEED });
 	}
 
 	/***** ¿¤¸® - IDLE - ±×¸²ÀÚ *****/
 	{
-		ELLIE_SHADOW->SetSprite("Ellie_Basic_Idle.png", 1);
-		ELLIE_SHADOW->SetRelativeScale3D({ 140, 140, 0 });
+		ELLIE_SHADOW->CreateAnimation("ELLIE_IDLE_SHADOW", "Ellie_Basic_Idle.png", 1, 3, ELLIE_ANIMDEFAULT_SPEED);
 	}
 
 	/***** ¿¤¸® - WALK - Ä³¸¯ÅÍ *****/
 	{
-		ELLIE->CreateAnimation("ELLIE_WALK_UP", "Ellie_Basic_Walk.png", 77, 84, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_WALK_DOWN", "Ellie_Basic_Walk.png", 41, 48, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_WALK_LEFT", "Ellie_Basic_Walk.png", 33, 40, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_WALK_LEFT_UP", "Ellie_Basic_Walk.png", 65, 72, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_WALK_RIGHT", "Ellie_Basic_Walk.png", 53, 60, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE->CreateAnimation("ELLIE_WALK_RIGHT_UP", "Ellie_Basic_Walk.png", 89, 97, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_WALK_UP", "Ellie_Basic_Walk.png", 78, 85, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_WALK_DOWN", "Ellie_Basic_Walk.png", 42, 49, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_WALK_LEFT", "Ellie_Basic_Walk.png", 34, 41, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_WALK_LEFT_UP", "Ellie_Basic_Walk.png", 66, 73, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_WALK_RIGHT", "Ellie_Basic_Walk.png", 54, 61, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE->CreateAnimation("ELLIE_WALK_RIGHT_UP", "Ellie_Basic_Walk.png", 90, 98, ELLIE_ANIMDEFAULT_SPEED);
 	}
 
 	/***** ¿¤¸® - WALK - ¸ðÀÚ   *****/
 	{
-		ELLIE_HAT->CreateAnimation("HAT_WALK_UP", "Ellie_Basic_Walk.png", 128, 128, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE_HAT->CreateAnimation("HAT_WALK_DOWN", "Ellie_Basic_Walk.png", { 109, 110, 128, 128, 109, 110, 128, 128 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_WALK_LEFT", "Ellie_Basic_Walk.png", { 107, 108, 99, 99, 107, 108, 99, 99 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_WALK_LEFT_UP", "Ellie_Basic_Walk.png", 128, 128, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE_HAT->CreateAnimation("HAT_WALK_RIGHT", "Ellie_Basic_Walk.png", { 114, 115, 116, 116, 114, 115, 116, 116 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_WALK_RIGHT_UP", "Ellie_Basic_Walk.png", 128, 128, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE_HAT->CreateAnimation("HAT_WALK_UP", "Ellie_Basic_Walk.png", 0, 0, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE_HAT->CreateAnimation("HAT_WALK_DOWN", "Ellie_Basic_Walk.png", { 110, 111, 0, 0, 110, 111, 0, 0 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_WALK_LEFT", "Ellie_Basic_Walk.png", { 108, 109, 100, 100, 108, 109, 100, 100 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_WALK_LEFT_UP", "Ellie_Basic_Walk.png", 0, 0, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE_HAT->CreateAnimation("HAT_WALK_RIGHT", "Ellie_Basic_Walk.png", { 115, 116, 117, 117, 115, 116, 117, 117 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_WALK_RIGHT_UP", "Ellie_Basic_Walk.png", 0, 0, ELLIE_ANIMDEFAULT_SPEED);
 	}
-
+	
+	/***** ¿¤¸® - WALK  - ±×¸²ÀÚ *****/
+	{
+		ELLIE_SHADOW->CreateAnimation("ELLIE_WALK_SHADOW", "Ellie_Basic_Walk.png", 1, 5, ELLIE_ANIMDEFAULT_SPEED);
+	}
+	
 	/***** ¿¤¸® - RUN  - Ä³¸¯ÅÍ *****/
 	{
-		ELLIE->CreateAnimation("ELLIE_RUN_UP", "Ellie_Basic_Run.png", { 29, 30, 31, 32, 33, 34 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE->CreateAnimation("ELLIE_RUN_DOWN", "Ellie_Basic_Run.png", { 9, 10, 11, 12, 13, 14 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE->CreateAnimation("ELLIE_RUN_LEFT", "Ellie_Basic_Run.png", { 3, 4, 5, 6, 7, 8 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE->CreateAnimation("ELLIE_RUN_LEFT_UP", "Ellie_Basic_Run.png", { 23, 24, 25, 23, 26, 27 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE->CreateAnimation("ELLIE_RUN_RIGHT", "Ellie_Basic_Run.png", { 16, 17, 18, 19, 20, 21 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE->CreateAnimation("ELLIE_RUN_RIGHT_UP", "Ellie_Basic_Run.png", { 36, 37, 38, 36, 39, 40 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE->CreateAnimation("ELLIE_RUN_UP", "Ellie_Basic_Run.png", 30, 35, ELLIE_ANIMDEFAULT_SPEED );
+		ELLIE->CreateAnimation("ELLIE_RUN_DOWN", "Ellie_Basic_Run.png", 10, 15, ELLIE_ANIMDEFAULT_SPEED );
+		ELLIE->CreateAnimation("ELLIE_RUN_LEFT", "Ellie_Basic_Run.png", 4, 9, ELLIE_ANIMDEFAULT_SPEED );
+		ELLIE->CreateAnimation("ELLIE_RUN_LEFT_UP", "Ellie_Basic_Run.png", { 24, 25, 26, 24, 27, 28 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE->CreateAnimation("ELLIE_RUN_RIGHT", "Ellie_Basic_Run.png", 17, 22, ELLIE_ANIMDEFAULT_SPEED );
+		ELLIE->CreateAnimation("ELLIE_RUN_RIGHT_UP", "Ellie_Basic_Run.png", { 37, 38, 39, 37, 40, 41 }, { ELLIE_ANIMDEFAULT_SPEED });
 	}
 
 	/***** ¿¤¸® - RUN  - ¸ðÀÚ   *****/
 	{
-		ELLIE_HAT->CreateAnimation("HAT_RUN_UP", "Ellie_Basic_Walk.png", 128, 128, ELLIE_ANIMDEFAULT_SPEED);
-		ELLIE_HAT->CreateAnimation("HAT_RUN_DOWN", "Ellie_Basic_Run.png", { 46, 47, 47, 46, 48, 48 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_RUN_LEFT", "Ellie_Basic_Run.png", { 41, 42, 43, 41, 44, 45 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_RUN_LEFT_UP", "Ellie_Basic_Run.png", { 56, 57, 58, 56, 59, 60 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_RUN_RIGHT", "Ellie_Basic_Run.png", { 50, 51, 52, 50, 53, 54 }, { ELLIE_ANIMDEFAULT_SPEED });
-		ELLIE_HAT->CreateAnimation("HAT_RUN_RIGHT_UP", "Ellie_Basic_Run.png", { 62, 63, 64, 62, 65, 66 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_RUN_UP", "Ellie_Basic_Run.png", 0, 0, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE_HAT->CreateAnimation("HAT_RUN_DOWN", "Ellie_Basic_Run.png", { 47, 48, 48, 47, 49, 49 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_RUN_LEFT", "Ellie_Basic_Run.png", { 42, 43, 44, 42, 45, 46 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_RUN_LEFT_UP", "Ellie_Basic_Run.png", { 57, 58, 59, 57, 60, 61 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_RUN_RIGHT", "Ellie_Basic_Run.png", { 51, 52, 53, 51, 54, 55 }, { ELLIE_ANIMDEFAULT_SPEED });
+		ELLIE_HAT->CreateAnimation("HAT_RUN_RIGHT_UP", "Ellie_Basic_Run.png", { 63, 64, 65, 63, 66, 67 }, { ELLIE_ANIMDEFAULT_SPEED });
 	}
 
 	/***** ¿¤¸® - RUN  - ±×¸²ÀÚ *****/
 	{
-		ELLIE_SHADOW->CreateAnimation("ELLIE_RUN_SHADOW", "Ellie_Basic_Run.png", 0, 2, ELLIE_ANIMDEFAULT_SPEED);
+		ELLIE_SHADOW->CreateAnimation("ELLIE_RUN_SHADOW", "Ellie_Basic_Run.png", 1, 3, ELLIE_ANIMDEFAULT_SPEED);
 	}
+
+	
+	ELLIE_SHADOW->ChangeAnimation("ELLIE_IDLE_SHADOW");
+	ELLIE_SHADOW->SetAutoScale(true);
+	ELLIE_SHADOW->SetAutoScaleRatio(2.25f);
+	ELLIE_SHADOW->SetRelativeLocation({ 0, 0, 2 });
 
 	ELLIE->ChangeAnimation("ELLIE_IDLE_DOWN");
 	ELLIE->SetAutoScale(true);
+	ELLIE->SetAutoScaleRatio(2.25f);
 	ELLIE->SetRelativeLocation({ 0, 0, 0 });
+
 	ELLIE_HAT->ChangeAnimation("HAT_IDLE_FRONT");
 	ELLIE_HAT->SetAutoScale(true);
-	ELLIE_HAT->SetRelativeLocation({ 0, 0, -1 });
+	ELLIE_HAT->SetAutoScaleRatio(2.25f);
+	ELLIE_HAT->SetRelativeLocation({ 0, 0, -2 });
 
 	ELLIE_COL = CreateDefaultSubObject<UCollision>();
 	ELLIE_COL->SetCollisionProfileName("Player");
-	ELLIE_COL->SetWorldLocation({ 0, 70, 0 });
+	ELLIE_COL->SetWorldLocation({ 0, 56.25, 0 });
 	ELLIE_COL->SetScale3D({ 10, 10, 1 });
 
-	//ELLIE_SHADOW->SetupAttachment(RootComponent);
+	ELLIE_SHADOW->SetupAttachment(RootComponent);
 	ELLIE_COL->SetupAttachment(RootComponent);
 	ELLIE->SetupAttachment(RootComponent);
 	ELLIE_HAT->SetupAttachment(RootComponent);
@@ -153,12 +166,15 @@ void APlayer::ChangeState(EllieState::State _CurPlayerState)
 	switch (_CurPlayerState)
 	{
 	case EllieState::State::IDLE:
+		ELLIE_SHADOW->ChangeAnimation("ELLIE_IDLE_SHADOW");
 		break;
 
 	case EllieState::State::WALK:
+		ELLIE_SHADOW->ChangeAnimation("ELLIE_WALK_SHADOW");
 		break;
 
 	case EllieState::State::RUN:
+		ELLIE_SHADOW->ChangeAnimation("ELLIE_RUN_SHADOW");
 		break;
 
 	default:
@@ -251,7 +267,7 @@ void APlayer::EllieIDLE(float _DeltaTime)
 	if (UEngineInput::IsPress('A') && UEngineInput::IsPress(VK_LSHIFT) ||
 		UEngineInput::IsPress('D') && UEngineInput::IsPress(VK_LSHIFT) ||
 		UEngineInput::IsPress('W') && UEngineInput::IsPress(VK_LSHIFT) ||
-		UEngineInput::IsPress('S') && UEngineInput::IsPress(VK_LSHIFT))
+		UEngineInput::IsPress('S') && UEngineInput::IsPress(VK_LSHIFT)) 
 	{
 		ChangeState(EllieState::State::RUN);
 		return;
@@ -288,7 +304,7 @@ void APlayer::EllieIDLE(float _DeltaTime)
 		break;
 
 	case EllieState::POSVECTOR::RIGHT_DOWN:
-		SetEllieAnimation("ELLIE_IDLE_RIGHT", "ELLIE_IDLE_RIGHT");
+		SetEllieAnimation("ELLIE_IDLE_RIGHT", "HAT_IDLE_FRONT_RIGHT");
 		break;
 
 	default:
@@ -332,10 +348,30 @@ void APlayer::EllieWALK(float _DeltaTime)
 		CurVector = VECTOR_LEFT;
 		CurPosVector = EllieState::POSVECTOR::LEFT;
 	}
+	if (UEngineInput::IsPress('A') && UEngineInput::IsPress('W'))
+	{
+		CurVector = VECTOR_LEFT_UP;
+		CurPosVector = EllieState::POSVECTOR::LEFT_UP;
+	}
+	if (UEngineInput::IsPress('A') && UEngineInput::IsPress('S'))
+	{
+		CurVector = VECTOR_LEFT_DOWN;
+		CurPosVector = EllieState::POSVECTOR::LEFT_DOWN;
+	}
 	if (UEngineInput::IsPress('D'))
 	{
 		CurVector = VECTOR_RIGHT;
 		CurPosVector = EllieState::POSVECTOR::RIGHT;
+	}
+	if (UEngineInput::IsPress('D') && UEngineInput::IsPress('W'))
+	{
+		CurVector = VECTOR_RIGHT_UP;
+		CurPosVector = EllieState::POSVECTOR::RIGHT_UP;
+	}
+	if (UEngineInput::IsPress('D') && UEngineInput::IsPress('S'))
+	{
+		CurVector = VECTOR_RIGHT_DOWN;
+		CurPosVector = EllieState::POSVECTOR::RIGHT_DOWN;
 	}
 
 	switch (CurPosVector)
@@ -417,10 +453,30 @@ void APlayer::EllieRUN(float _DeltaTime)
 		CurVector = VECTOR_LEFT;
 		CurPosVector = EllieState::POSVECTOR::LEFT;
 	}
+	if (UEngineInput::IsPress('A') && UEngineInput::IsPress('W') && UEngineInput::IsPress(VK_LSHIFT))
+	{
+		CurVector = VECTOR_LEFT_UP;
+		CurPosVector = EllieState::POSVECTOR::LEFT_UP;
+	}
+	if (UEngineInput::IsPress('A') && UEngineInput::IsPress('S') && UEngineInput::IsPress(VK_LSHIFT))
+	{
+		CurVector = VECTOR_LEFT_DOWN;
+		CurPosVector = EllieState::POSVECTOR::LEFT_DOWN;
+	}
 	if (UEngineInput::IsPress('D') && UEngineInput::IsPress(VK_LSHIFT))
 	{
 		CurVector = VECTOR_RIGHT;
 		CurPosVector = EllieState::POSVECTOR::RIGHT;
+	}
+	if (UEngineInput::IsPress('D') && UEngineInput::IsPress('W') && UEngineInput::IsPress(VK_LSHIFT))
+	{
+		CurVector = VECTOR_RIGHT_UP;
+		CurPosVector = EllieState::POSVECTOR::RIGHT_UP;
+	}
+	if (UEngineInput::IsPress('D') && UEngineInput::IsPress('S') && UEngineInput::IsPress(VK_LSHIFT))
+	{
+		CurVector = VECTOR_RIGHT_DOWN;
+		CurPosVector = EllieState::POSVECTOR::RIGHT_DOWN;
 	}
 
 	switch (CurPosVector)

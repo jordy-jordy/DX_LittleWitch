@@ -15,10 +15,12 @@ AField_Home::AField_Home()
 
 	HomeField = CreateDefaultSubObject<USpriteRenderer>();
 	HomeField->SetRelativeScale3D(HomeFieldSize);
+	HomeField->SetWorldLocation({0, 0, 200});
 	HomeField->SetTexture("test_field.png");
 
 	HomeField_ColImage = CreateDefaultSubObject<USpriteRenderer>();
 	HomeField_ColImage->SetRelativeScale3D({800, 800});
+	HomeField_ColImage->SetWorldLocation({ 0, 0, 100 });
 	HomeField_ColImage->SetTexture("pixel_coll.png");
 
 	HomeField_Coll = CreateDefaultSubObject<UCollision>();

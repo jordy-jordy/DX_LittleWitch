@@ -545,10 +545,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_0
       rect:
         serializedVersion: 2
-        x: 140
-        y: 1400
-        width: 140
-        height: 140
+        x: 0
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -567,10 +567,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_1
       rect:
         serializedVersion: 2
-        x: 280
-        y: 1400
-        width: 140
-        height: 140
+        x: 50
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -589,10 +589,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_2
       rect:
         serializedVersion: 2
-        x: 420
-        y: 1400
-        width: 140
-        height: 140
+        x: 100
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -611,10 +611,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_3
       rect:
         serializedVersion: 2
-        x: 560
-        y: 1400
-        width: 140
-        height: 140
+        x: 150
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -633,10 +633,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_4
       rect:
         serializedVersion: 2
-        x: 700
-        y: 1400
-        width: 140
-        height: 140
+        x: 200
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -655,10 +655,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_5
       rect:
         serializedVersion: 2
-        x: 840
-        y: 1400
-        width: 140
-        height: 140
+        x: 250
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -677,10 +677,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_6
       rect:
         serializedVersion: 2
-        x: 980
-        y: 1400
-        width: 140
-        height: 140
+        x: 300
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -699,10 +699,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_7
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1400
-        width: 140
-        height: 140
+        x: 350
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -721,10 +721,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_8
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 1400
-        width: 140
-        height: 140
+        x: 400
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -743,10 +743,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_9
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 1400
-        width: 140
-        height: 140
+        x: 450
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -765,10 +765,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_10
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 1400
-        width: 140
-        height: 140
+        x: 500
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -787,10 +787,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1260
-        width: 140
-        height: 140
+        x: 550
+        y: 500
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -809,10 +809,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_12
       rect:
         serializedVersion: 2
-        x: 140
-        y: 1260
-        width: 140
-        height: 140
+        x: 0
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -831,10 +831,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_13
       rect:
         serializedVersion: 2
-        x: 280
-        y: 1260
-        width: 140
-        height: 140
+        x: 50
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -853,10 +853,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_14
       rect:
         serializedVersion: 2
-        x: 420
-        y: 1260
-        width: 140
-        height: 140
+        x: 100
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -875,10 +875,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_15
       rect:
         serializedVersion: 2
-        x: 560
-        y: 1260
-        width: 140
-        height: 140
+        x: 150
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -897,10 +897,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_16
       rect:
         serializedVersion: 2
-        x: 700
-        y: 1260
-        width: 140
-        height: 140
+        x: 200
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -919,10 +919,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_17
       rect:
         serializedVersion: 2
-        x: 840
-        y: 1260
-        width: 140
-        height: 140
+        x: 250
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -941,10 +941,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_18
       rect:
         serializedVersion: 2
-        x: 980
-        y: 1260
-        width: 140
-        height: 140
+        x: 300
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -963,10 +963,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_19
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1260
-        width: 140
-        height: 140
+        x: 350
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -985,10 +985,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_20
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 1260
-        width: 140
-        height: 140
+        x: 400
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1007,10 +1007,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_21
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 1260
-        width: 140
-        height: 140
+        x: 450
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1029,10 +1029,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_22
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 1260
-        width: 140
-        height: 140
+        x: 500
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1051,10 +1051,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_23
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1120
-        width: 140
-        height: 140
+        x: 550
+        y: 450
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1073,10 +1073,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_24
       rect:
         serializedVersion: 2
-        x: 140
-        y: 1120
-        width: 140
-        height: 140
+        x: 0
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1095,10 +1095,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_25
       rect:
         serializedVersion: 2
-        x: 280
-        y: 1120
-        width: 140
-        height: 140
+        x: 50
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1117,10 +1117,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_26
       rect:
         serializedVersion: 2
-        x: 420
-        y: 1120
-        width: 140
-        height: 140
+        x: 100
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1139,10 +1139,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_27
       rect:
         serializedVersion: 2
-        x: 560
-        y: 1120
-        width: 140
-        height: 140
+        x: 150
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1161,10 +1161,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_28
       rect:
         serializedVersion: 2
-        x: 700
-        y: 1120
-        width: 140
-        height: 140
+        x: 200
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1183,10 +1183,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_29
       rect:
         serializedVersion: 2
-        x: 840
-        y: 1120
-        width: 140
-        height: 140
+        x: 250
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1205,10 +1205,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_30
       rect:
         serializedVersion: 2
-        x: 980
-        y: 1120
-        width: 140
-        height: 140
+        x: 300
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1227,10 +1227,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_31
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1120
-        width: 140
-        height: 140
+        x: 350
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1249,10 +1249,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_32
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 1120
-        width: 140
-        height: 140
+        x: 400
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1271,10 +1271,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_33
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 1120
-        width: 140
-        height: 140
+        x: 450
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1293,10 +1293,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_34
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 1120
-        width: 140
-        height: 140
+        x: 500
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1315,10 +1315,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_35
       rect:
         serializedVersion: 2
-        x: 0
-        y: 980
-        width: 140
-        height: 140
+        x: 550
+        y: 400
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1337,10 +1337,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_36
       rect:
         serializedVersion: 2
-        x: 140
-        y: 980
-        width: 140
-        height: 140
+        x: 0
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1359,10 +1359,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_37
       rect:
         serializedVersion: 2
-        x: 280
-        y: 980
-        width: 140
-        height: 140
+        x: 50
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1381,10 +1381,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_38
       rect:
         serializedVersion: 2
-        x: 420
-        y: 980
-        width: 140
-        height: 140
+        x: 100
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1403,10 +1403,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_39
       rect:
         serializedVersion: 2
-        x: 560
-        y: 980
-        width: 140
-        height: 140
+        x: 150
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1425,10 +1425,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_40
       rect:
         serializedVersion: 2
-        x: 700
-        y: 980
-        width: 140
-        height: 140
+        x: 200
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1447,10 +1447,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_41
       rect:
         serializedVersion: 2
-        x: 840
-        y: 980
-        width: 140
-        height: 140
+        x: 250
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1469,10 +1469,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_42
       rect:
         serializedVersion: 2
-        x: 980
-        y: 980
-        width: 140
-        height: 140
+        x: 300
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1491,10 +1491,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_43
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 980
-        width: 140
-        height: 140
+        x: 350
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1513,10 +1513,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_44
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 980
-        width: 140
-        height: 140
+        x: 400
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1535,10 +1535,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_45
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 980
-        width: 140
-        height: 140
+        x: 450
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1557,10 +1557,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_46
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 980
-        width: 140
-        height: 140
+        x: 500
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1579,10 +1579,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_47
       rect:
         serializedVersion: 2
-        x: 0
-        y: 840
-        width: 140
-        height: 140
+        x: 550
+        y: 350
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1601,10 +1601,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_48
       rect:
         serializedVersion: 2
-        x: 140
-        y: 840
-        width: 140
-        height: 140
+        x: 0
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1623,10 +1623,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_49
       rect:
         serializedVersion: 2
-        x: 280
-        y: 840
-        width: 140
-        height: 140
+        x: 50
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1645,10 +1645,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_50
       rect:
         serializedVersion: 2
-        x: 420
-        y: 840
-        width: 140
-        height: 140
+        x: 100
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1667,10 +1667,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_51
       rect:
         serializedVersion: 2
-        x: 560
-        y: 840
-        width: 140
-        height: 140
+        x: 150
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1689,10 +1689,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_52
       rect:
         serializedVersion: 2
-        x: 700
-        y: 840
-        width: 140
-        height: 140
+        x: 200
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1711,10 +1711,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_53
       rect:
         serializedVersion: 2
-        x: 840
-        y: 840
-        width: 140
-        height: 140
+        x: 250
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1733,10 +1733,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_54
       rect:
         serializedVersion: 2
-        x: 980
-        y: 840
-        width: 140
-        height: 140
+        x: 300
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1755,10 +1755,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_55
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 840
-        width: 140
-        height: 140
+        x: 350
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1777,10 +1777,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_56
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 840
-        width: 140
-        height: 140
+        x: 400
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1799,10 +1799,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_57
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 840
-        width: 140
-        height: 140
+        x: 450
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1821,10 +1821,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_58
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 840
-        width: 140
-        height: 140
+        x: 500
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1843,10 +1843,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_59
       rect:
         serializedVersion: 2
-        x: 0
-        y: 700
-        width: 140
-        height: 140
+        x: 550
+        y: 300
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1865,10 +1865,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_60
       rect:
         serializedVersion: 2
-        x: 140
-        y: 700
-        width: 140
-        height: 140
+        x: 0
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1887,10 +1887,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_61
       rect:
         serializedVersion: 2
-        x: 280
-        y: 700
-        width: 140
-        height: 140
+        x: 50
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1909,10 +1909,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_62
       rect:
         serializedVersion: 2
-        x: 420
-        y: 700
-        width: 140
-        height: 140
+        x: 100
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1931,10 +1931,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_63
       rect:
         serializedVersion: 2
-        x: 560
-        y: 700
-        width: 140
-        height: 140
+        x: 150
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1953,10 +1953,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_64
       rect:
         serializedVersion: 2
-        x: 700
-        y: 700
-        width: 140
-        height: 140
+        x: 200
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1975,10 +1975,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_65
       rect:
         serializedVersion: 2
-        x: 840
-        y: 700
-        width: 140
-        height: 140
+        x: 250
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1997,10 +1997,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_66
       rect:
         serializedVersion: 2
-        x: 980
-        y: 700
-        width: 140
-        height: 140
+        x: 300
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2019,10 +2019,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_67
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 700
-        width: 140
-        height: 140
+        x: 350
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2041,10 +2041,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_68
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 700
-        width: 140
-        height: 140
+        x: 400
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2063,10 +2063,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_69
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 700
-        width: 140
-        height: 140
+        x: 450
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2085,10 +2085,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_70
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 700
-        width: 140
-        height: 140
+        x: 500
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2107,10 +2107,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_71
       rect:
         serializedVersion: 2
-        x: 0
-        y: 560
-        width: 140
-        height: 140
+        x: 550
+        y: 250
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2129,10 +2129,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_72
       rect:
         serializedVersion: 2
-        x: 140
-        y: 560
-        width: 140
-        height: 140
+        x: 0
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2151,10 +2151,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_73
       rect:
         serializedVersion: 2
-        x: 280
-        y: 560
-        width: 140
-        height: 140
+        x: 50
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2173,10 +2173,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_74
       rect:
         serializedVersion: 2
-        x: 420
-        y: 560
-        width: 140
-        height: 140
+        x: 100
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2195,10 +2195,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_75
       rect:
         serializedVersion: 2
-        x: 560
-        y: 560
-        width: 140
-        height: 140
+        x: 150
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2217,10 +2217,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_76
       rect:
         serializedVersion: 2
-        x: 700
-        y: 560
-        width: 140
-        height: 140
+        x: 200
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2239,10 +2239,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_77
       rect:
         serializedVersion: 2
-        x: 840
-        y: 560
-        width: 140
-        height: 140
+        x: 250
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2261,10 +2261,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_78
       rect:
         serializedVersion: 2
-        x: 980
-        y: 560
-        width: 140
-        height: 140
+        x: 300
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2283,10 +2283,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_79
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 560
-        width: 140
-        height: 140
+        x: 350
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2305,10 +2305,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_80
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 560
-        width: 140
-        height: 140
+        x: 400
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2327,10 +2327,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_81
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 560
-        width: 140
-        height: 140
+        x: 450
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2349,10 +2349,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_82
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 560
-        width: 140
-        height: 140
+        x: 500
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2371,10 +2371,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_83
       rect:
         serializedVersion: 2
-        x: 0
-        y: 420
-        width: 140
-        height: 140
+        x: 550
+        y: 200
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2393,10 +2393,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_84
       rect:
         serializedVersion: 2
-        x: 140
-        y: 420
-        width: 140
-        height: 140
+        x: 0
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2415,10 +2415,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_85
       rect:
         serializedVersion: 2
-        x: 280
-        y: 420
-        width: 140
-        height: 140
+        x: 50
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2437,10 +2437,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_86
       rect:
         serializedVersion: 2
-        x: 420
-        y: 420
-        width: 140
-        height: 140
+        x: 100
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2459,10 +2459,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_87
       rect:
         serializedVersion: 2
-        x: 560
-        y: 420
-        width: 140
-        height: 140
+        x: 150
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2481,10 +2481,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_88
       rect:
         serializedVersion: 2
-        x: 700
-        y: 420
-        width: 140
-        height: 140
+        x: 200
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2503,10 +2503,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_89
       rect:
         serializedVersion: 2
-        x: 840
-        y: 420
-        width: 140
-        height: 140
+        x: 250
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2525,10 +2525,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_90
       rect:
         serializedVersion: 2
-        x: 980
-        y: 420
-        width: 140
-        height: 140
+        x: 300
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2547,10 +2547,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_91
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 420
-        width: 140
-        height: 140
+        x: 350
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2569,10 +2569,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_92
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 420
-        width: 140
-        height: 140
+        x: 400
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2591,10 +2591,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_93
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 420
-        width: 140
-        height: 140
+        x: 450
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2613,10 +2613,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_94
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 420
-        width: 140
-        height: 140
+        x: 500
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2635,10 +2635,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_95
       rect:
         serializedVersion: 2
-        x: 0
-        y: 280
-        width: 140
-        height: 140
+        x: 550
+        y: 150
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2657,10 +2657,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_96
       rect:
         serializedVersion: 2
-        x: 140
-        y: 280
-        width: 140
-        height: 140
+        x: 0
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2679,10 +2679,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_97
       rect:
         serializedVersion: 2
-        x: 280
-        y: 280
-        width: 140
-        height: 140
+        x: 50
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2701,10 +2701,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_98
       rect:
         serializedVersion: 2
-        x: 420
-        y: 280
-        width: 140
-        height: 140
+        x: 100
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2723,10 +2723,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_99
       rect:
         serializedVersion: 2
-        x: 560
-        y: 280
-        width: 140
-        height: 140
+        x: 150
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2745,10 +2745,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_100
       rect:
         serializedVersion: 2
-        x: 700
-        y: 280
-        width: 140
-        height: 140
+        x: 200
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2767,10 +2767,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_101
       rect:
         serializedVersion: 2
-        x: 840
-        y: 280
-        width: 140
-        height: 140
+        x: 250
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2789,10 +2789,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_102
       rect:
         serializedVersion: 2
-        x: 980
-        y: 280
-        width: 140
-        height: 140
+        x: 300
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2811,10 +2811,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_103
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 280
-        width: 140
-        height: 140
+        x: 350
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2833,10 +2833,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_104
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 280
-        width: 140
-        height: 140
+        x: 400
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2855,10 +2855,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_105
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 280
-        width: 140
-        height: 140
+        x: 450
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2877,10 +2877,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_106
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 280
-        width: 140
-        height: 140
+        x: 500
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2899,10 +2899,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_107
       rect:
         serializedVersion: 2
-        x: 0
-        y: 140
-        width: 140
-        height: 140
+        x: 550
+        y: 100
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2921,10 +2921,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_108
       rect:
         serializedVersion: 2
-        x: 140
-        y: 140
-        width: 140
-        height: 140
+        x: 0
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2943,10 +2943,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_109
       rect:
         serializedVersion: 2
-        x: 280
-        y: 140
-        width: 140
-        height: 140
+        x: 50
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2965,10 +2965,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_110
       rect:
         serializedVersion: 2
-        x: 420
-        y: 140
-        width: 140
-        height: 140
+        x: 100
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2987,10 +2987,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_111
       rect:
         serializedVersion: 2
-        x: 560
-        y: 140
-        width: 140
-        height: 140
+        x: 150
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3009,10 +3009,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_112
       rect:
         serializedVersion: 2
-        x: 700
-        y: 140
-        width: 140
-        height: 140
+        x: 200
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3031,10 +3031,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_113
       rect:
         serializedVersion: 2
-        x: 840
-        y: 140
-        width: 140
-        height: 140
+        x: 250
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3053,10 +3053,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_114
       rect:
         serializedVersion: 2
-        x: 980
-        y: 140
-        width: 140
-        height: 140
+        x: 300
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3075,10 +3075,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_115
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 140
-        width: 140
-        height: 140
+        x: 350
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3097,10 +3097,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_116
       rect:
         serializedVersion: 2
-        x: 1260
-        y: 140
-        width: 140
-        height: 140
+        x: 400
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3119,10 +3119,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_117
       rect:
         serializedVersion: 2
-        x: 1400
-        y: 140
-        width: 140
-        height: 140
+        x: 450
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3141,10 +3141,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_118
       rect:
         serializedVersion: 2
-        x: 1540
-        y: 140
-        width: 140
-        height: 140
+        x: 500
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3163,10 +3163,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_119
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 140
-        height: 140
+        x: 550
+        y: 50
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3185,10 +3185,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_120
       rect:
         serializedVersion: 2
-        x: 140
+        x: 0
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3207,10 +3207,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_121
       rect:
         serializedVersion: 2
-        x: 280
+        x: 50
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3229,10 +3229,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_122
       rect:
         serializedVersion: 2
-        x: 420
+        x: 100
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3251,10 +3251,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_123
       rect:
         serializedVersion: 2
-        x: 560
+        x: 150
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3273,10 +3273,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_124
       rect:
         serializedVersion: 2
-        x: 700
+        x: 200
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3295,10 +3295,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_125
       rect:
         serializedVersion: 2
-        x: 840
+        x: 250
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3317,10 +3317,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_126
       rect:
         serializedVersion: 2
-        x: 980
+        x: 300
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3339,10 +3339,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_127
       rect:
         serializedVersion: 2
-        x: 1120
+        x: 350
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3361,10 +3361,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_128
       rect:
         serializedVersion: 2
-        x: 1260
+        x: 400
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3383,10 +3383,10 @@ TextureImporter:
       name: Ellie_Basic_Walk_129
       rect:
         serializedVersion: 2
-        x: 1400
+        x: 450
         y: 0
-        width: 140
-        height: 140
+        width: 50
+        height: 50
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -3397,6 +3397,50 @@ TextureImporter:
       bones: []
       spriteID: 4b3f491a43d53cd4eaca7a4bc050b68b
       internalID: -795185302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_Walk_130
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41b857c96c800b40a988e504d266d67
+      internalID: 2026693774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_Walk_131
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 0
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4413d61125c1b5046b90ce7ceb519982
+      internalID: 1453931718
       vertices: []
       indices: 
       edges: []
@@ -3451,6 +3495,8 @@ TextureImporter:
       Ellie_Basic_Walk_128: 336949405
       Ellie_Basic_Walk_129: -795185302
       Ellie_Basic_Walk_13: -1976245977204038871
+      Ellie_Basic_Walk_130: 2026693774
+      Ellie_Basic_Walk_131: 1453931718
       Ellie_Basic_Walk_14: -5182571313939916272
       Ellie_Basic_Walk_15: 2223605577959714664
       Ellie_Basic_Walk_16: -3196635303079678402

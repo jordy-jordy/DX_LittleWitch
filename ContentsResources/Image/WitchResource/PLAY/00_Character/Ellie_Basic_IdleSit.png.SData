@@ -1,7 +1,58 @@
 fileFormatVersion: 2
-guid: 32ea659e392907f44b20f6439fed435f
+guid: f45535aa704b0ab4fb21ba9a3c406d5c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -622832006012067362
+    second: Ellie_Basic_IdleSit_0
+  - first:
+      213: -7561439329547849422
+    second: Ellie_Basic_IdleSit_1
+  - first:
+      213: 2253187440761897719
+    second: Ellie_Basic_IdleSit_2
+  - first:
+      213: 5827530496087484800
+    second: Ellie_Basic_IdleSit_3
+  - first:
+      213: 7387395583125407032
+    second: Ellie_Basic_IdleSit_4
+  - first:
+      213: 3816177422075382914
+    second: Ellie_Basic_IdleSit_5
+  - first:
+      213: 9018807059904390902
+    second: Ellie_Basic_IdleSit_6
+  - first:
+      213: 4406515552808005846
+    second: Ellie_Basic_IdleSit_7
+  - first:
+      213: -9059158945444260607
+    second: Ellie_Basic_IdleSit_8
+  - first:
+      213: -8443015379639602275
+    second: Ellie_Basic_IdleSit_9
+  - first:
+      213: 2184841209671571941
+    second: Ellie_Basic_IdleSit_10
+  - first:
+      213: 2895987518905453759
+    second: Ellie_Basic_IdleSit_11
+  - first:
+      213: -7111819709153312386
+    second: Ellie_Basic_IdleSit_12
+  - first:
+      213: 710591995221618113
+    second: Ellie_Basic_IdleSit_13
+  - first:
+      213: 8830585133172656674
+    second: Ellie_Basic_IdleSit_14
+  - first:
+      213: 2723798940477096507
+    second: Ellie_Basic_IdleSit_15
+  - first:
+      213: 8937059967588060571
+    second: Ellie_Basic_IdleSit_16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -34,12 +85,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 0
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -69,10 +120,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -110,7 +161,139 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_0
+      name: Ellie_Basic_IdleSit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2315ce3b129994ea6ef850b41b7311
+      internalID: 1339962568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 200
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631c31078c4899449ae208cada0e3dac
+      internalID: -644203962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 200
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d5d350eaf36a0b46bd2dde2d2875e07
+      internalID: -1732580739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 200
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e53317beb4b37c47a2528bb14daf94f
+      internalID: -681375232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_4
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be4a2050508fcf40ab267e3eb59de40
+      internalID: -745427763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_5
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 200
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288e471b599eafb4a98e94800a336517
+      internalID: -1343956955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_6
       rect:
         serializedVersion: 2
         x: 0
@@ -125,14 +308,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22a027fecff3deb4b9f2ccda4a2e6506
-      internalID: -1942653899
+      spriteID: 28789c84cf551204d9d66d4c4f0cc728
+      internalID: 1805030243
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_1
+      name: Ellie_Basic_IdleSit_7
       rect:
         serializedVersion: 2
         x: 50
@@ -147,14 +330,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f2f328ec40296b4794f927d1b745a78
-      internalID: 6245011
+      spriteID: d647f2254cd28ca48b8d1724a43a97a0
+      internalID: 1411259863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_2
+      name: Ellie_Basic_IdleSit_8
       rect:
         serializedVersion: 2
         x: 100
@@ -169,14 +352,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e28e487c2593f7c4a9f465f755d4f320
-      internalID: 416010627
+      spriteID: fa1ce11b1175e7d4a8dcb6e52fc61c74
+      internalID: -750894670
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_3
+      name: Ellie_Basic_IdleSit_9
       rect:
         serializedVersion: 2
         x: 150
@@ -191,14 +374,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d5610b00fa97cec488bf134df59e231c
-      internalID: 435635009
+      spriteID: 74edea1978a2d7546a014fe35e52613c
+      internalID: -758609881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_4
+      name: Ellie_Basic_IdleSit_10
       rect:
         serializedVersion: 2
         x: 200
@@ -213,14 +396,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 506a74721798b314d91459b75e8f7cf8
-      internalID: -2032608532
+      spriteID: ce3329fe2328fef42b3cf35150fd7daa
+      internalID: 1490680561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_5
+      name: Ellie_Basic_IdleSit_11
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 150
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e101874d5279a54fa3d8e23d28626ff
+      internalID: -897241164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_12
       rect:
         serializedVersion: 2
         x: 0
@@ -235,14 +440,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4740b545651d27a44bad8b170118d1fd
-      internalID: 594874294
+      spriteID: 708d5583ad82eb04490a03d8f23ffcd8
+      internalID: -845562134
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_6
+      name: Ellie_Basic_IdleSit_13
       rect:
         serializedVersion: 2
         x: 50
@@ -257,14 +462,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1f0fbab68b63a04aae1f5412a014945
-      internalID: 1710168116
+      spriteID: 551f4fef2585e6c458fafa304e342f71
+      internalID: 2094986462
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_7
+      name: Ellie_Basic_IdleSit_14
       rect:
         serializedVersion: 2
         x: 100
@@ -279,14 +484,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c5bfa732dd796c44b4749a638adcefc
-      internalID: 1527983938
+      spriteID: 17f6bb7280fedcf48af1cd5245501872
+      internalID: -1593158639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_8
+      name: Ellie_Basic_IdleSit_15
       rect:
         serializedVersion: 2
         x: 150
@@ -301,14 +506,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c14a83c24c732984bbf93a877c5746d3
-      internalID: 588125136
+      spriteID: 39fef736ad26d7448ade7f20eff039b8
+      internalID: 1569666451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_9
+      name: Ellie_Basic_IdleSit_16
       rect:
         serializedVersion: 2
         x: 200
@@ -323,14 +528,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dae39fa0e2411c4291245eb1344d30c
-      internalID: -1824545902
+      spriteID: 71061c78acf22ee47b819215926d3653
+      internalID: 2048934459
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_10
+      name: Ellie_Basic_IdleSit_17
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 100
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60760eb4d762c9346bdbe7d10102b3ae
+      internalID: -785842755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_18
       rect:
         serializedVersion: 2
         x: 0
@@ -345,14 +572,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 296cd13321f44d34db09ed443cbf6e48
-      internalID: 984490786
+      spriteID: f6e9ff12243cc7548b41d10877c17ea8
+      internalID: 1961687334
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_11
+      name: Ellie_Basic_IdleSit_19
       rect:
         serializedVersion: 2
         x: 50
@@ -367,14 +594,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: afd20c7fa5310364c9c9ca1f1771a3a5
-      internalID: -1314363595
+      spriteID: 908dea9ff56383c4d917f0c921561667
+      internalID: -2074353247
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_12
+      name: Ellie_Basic_IdleSit_20
       rect:
         serializedVersion: 2
         x: 100
@@ -389,14 +616,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f61485e40850f4489d5f86d1956334f
-      internalID: -453835363
+      spriteID: 9956bb66f1b3d27489d9b46c10241a5f
+      internalID: -1709965693
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_13
+      name: Ellie_Basic_IdleSit_21
       rect:
         serializedVersion: 2
         x: 150
@@ -411,14 +638,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 828460aa231fe0c4fb93ab52d0bcce0d
-      internalID: -1577002140
+      spriteID: d279344135e2786499cc16f70eda65a8
+      internalID: 1405165999
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_14
+      name: Ellie_Basic_IdleSit_22
       rect:
         serializedVersion: 2
         x: 200
@@ -433,14 +660,36 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f28206f85e69ffe47bcbc3286f2e1a93
-      internalID: 735531987
+      spriteID: e75ed2045d171454e8d1c7ca182ab969
+      internalID: 681510724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_15
+      name: Ellie_Basic_IdleSit_23
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 50
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf3f39adc87114d47806cadadd9857f2
+      internalID: -124076986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_24
       rect:
         serializedVersion: 2
         x: 0
@@ -455,14 +704,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b6533c4bebb8f6f4a9a352b9db01abcb
-      internalID: 127022694
+      spriteID: 6310f57e8cd34df4d8239bfd3fc22c15
+      internalID: -337328220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_16
+      name: Ellie_Basic_IdleSit_25
       rect:
         serializedVersion: 2
         x: 50
@@ -477,14 +726,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a0da5645e0e3ce4faab140c8cc0faee
-      internalID: -1126023002
+      spriteID: ed39fc409bf7ca145a065bd49f04a5d5
+      internalID: 220850727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_17
+      name: Ellie_Basic_IdleSit_26
       rect:
         serializedVersion: 2
         x: 100
@@ -499,14 +748,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e6f939f6ac8c3a048a97e71c02d26080
-      internalID: 309229844
+      spriteID: af144b7ea6a489d42aeba165f07a29ca
+      internalID: 532067997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_18
+      name: Ellie_Basic_IdleSit_27
       rect:
         serializedVersion: 2
         x: 150
@@ -521,14 +770,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f058ee99c39bad24f92acaedde84b6b3
-      internalID: 325736081
+      spriteID: a8eab6702e05fab4d93fefeeb46e1e30
+      internalID: -1329092078
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ellie_Basic_Collecting_Mongsiri_19
+      name: Ellie_Basic_IdleSit_28
       rect:
         serializedVersion: 2
         x: 200
@@ -543,8 +792,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da70987f50c12184abaf475471202e84
-      internalID: 2000328249
+      spriteID: 67b004d96ca48f0448983245246c0e17
+      internalID: -1064363794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ellie_Basic_IdleSit_29
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6edbb64ce79ea4fb234703484c989b
+      internalID: -1105417134
       vertices: []
       indices: 
       edges: []
@@ -553,7 +824,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1581a00d46b01ca41a8e98e888c00e7d
+    spriteID: 20c272ec1361ea546990bd5ddc2fb86f
     internalID: 0
     vertices: []
     indices: 
@@ -563,26 +834,36 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Ellie_Basic_Collecting_Mongsiri_0: -1942653899
-      Ellie_Basic_Collecting_Mongsiri_1: 6245011
-      Ellie_Basic_Collecting_Mongsiri_10: 984490786
-      Ellie_Basic_Collecting_Mongsiri_11: -1314363595
-      Ellie_Basic_Collecting_Mongsiri_12: -453835363
-      Ellie_Basic_Collecting_Mongsiri_13: -1577002140
-      Ellie_Basic_Collecting_Mongsiri_14: 735531987
-      Ellie_Basic_Collecting_Mongsiri_15: 127022694
-      Ellie_Basic_Collecting_Mongsiri_16: -1126023002
-      Ellie_Basic_Collecting_Mongsiri_17: 309229844
-      Ellie_Basic_Collecting_Mongsiri_18: 325736081
-      Ellie_Basic_Collecting_Mongsiri_19: 2000328249
-      Ellie_Basic_Collecting_Mongsiri_2: 416010627
-      Ellie_Basic_Collecting_Mongsiri_3: 435635009
-      Ellie_Basic_Collecting_Mongsiri_4: -2032608532
-      Ellie_Basic_Collecting_Mongsiri_5: 594874294
-      Ellie_Basic_Collecting_Mongsiri_6: 1710168116
-      Ellie_Basic_Collecting_Mongsiri_7: 1527983938
-      Ellie_Basic_Collecting_Mongsiri_8: 588125136
-      Ellie_Basic_Collecting_Mongsiri_9: -1824545902
+      Ellie_Basic_IdleSit_0: 1339962568
+      Ellie_Basic_IdleSit_1: -644203962
+      Ellie_Basic_IdleSit_10: 1490680561
+      Ellie_Basic_IdleSit_11: -897241164
+      Ellie_Basic_IdleSit_12: -845562134
+      Ellie_Basic_IdleSit_13: 2094986462
+      Ellie_Basic_IdleSit_14: -1593158639
+      Ellie_Basic_IdleSit_15: 1569666451
+      Ellie_Basic_IdleSit_16: 2048934459
+      Ellie_Basic_IdleSit_17: -785842755
+      Ellie_Basic_IdleSit_18: 1961687334
+      Ellie_Basic_IdleSit_19: -2074353247
+      Ellie_Basic_IdleSit_2: -1732580739
+      Ellie_Basic_IdleSit_20: -1709965693
+      Ellie_Basic_IdleSit_21: 1405165999
+      Ellie_Basic_IdleSit_22: 681510724
+      Ellie_Basic_IdleSit_23: -124076986
+      Ellie_Basic_IdleSit_24: -337328220
+      Ellie_Basic_IdleSit_25: 220850727
+      Ellie_Basic_IdleSit_26: 532067997
+      Ellie_Basic_IdleSit_27: -1329092078
+      Ellie_Basic_IdleSit_28: -1064363794
+      Ellie_Basic_IdleSit_29: -1105417134
+      Ellie_Basic_IdleSit_3: -681375232
+      Ellie_Basic_IdleSit_4: -745427763
+      Ellie_Basic_IdleSit_5: -1343956955
+      Ellie_Basic_IdleSit_6: 1805030243
+      Ellie_Basic_IdleSit_7: 1411259863
+      Ellie_Basic_IdleSit_8: -750894670
+      Ellie_Basic_IdleSit_9: -758609881
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
