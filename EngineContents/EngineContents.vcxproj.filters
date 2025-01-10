@@ -31,7 +31,7 @@
     <ClInclude Include="Field_Green.h">
       <Filter>03_Actors\01_Play</Filter>
     </ClInclude>
-    <ClInclude Include="TileMapEditor.h">
+    <ClInclude Include="TileMapEditorMode.h">
       <Filter>02_GameMode\MapEditor</Filter>
     </ClInclude>
   </ItemGroup>
@@ -63,7 +63,7 @@
     <ClCompile Include="Field_Green.cpp">
       <Filter>03_Actors\01_Play</Filter>
     </ClCompile>
-    <ClCompile Include="TileMapEditor.cpp">
+    <ClCompile Include="TileMapEditorMode.cpp">
       <Filter>02_GameMode\MapEditor</Filter>
     </ClCompile>
   </ItemGroup>

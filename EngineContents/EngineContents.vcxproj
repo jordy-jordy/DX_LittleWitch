@@ -200,7 +200,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="TileMapEditor.h">
+    <ClInclude Include="TileMapEditorMode.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -244,7 +244,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">PreCompile.h</PrecompiledHeaderFile>
     </ClCompile>
-    <ClCompile Include="TileMapEditor.cpp">
+    <ClCompile Include="TileMapEditorMode.cpp">
       <SubType>
       </SubType>
     </ClCompile>

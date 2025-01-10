@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-#include "TileMapEditor.h"
+#include "TileMapEditorMode.h"
 
 
 ATileMapEditor::ATileMapEditor()
