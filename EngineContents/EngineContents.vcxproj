@@ -172,6 +172,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ContentsCore.h" />
+    <ClInclude Include="ContentsEditorGUI.h" />
     <ClInclude Include="EndGameMode.h">
       <SubType>
       </SubType>
@@ -212,6 +213,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContentsCore.cpp" />
+    <ClCompile Include="ContentsEditorGUI.cpp" />
     <ClCompile Include="EndGameMode.cpp">
       <SubType>
       </SubType>
