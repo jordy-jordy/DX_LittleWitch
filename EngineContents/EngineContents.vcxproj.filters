@@ -10,9 +10,6 @@
     <ClInclude Include="ContentsCore.h">
       <Filter>00_Core</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>03_Actors\01_Play</Filter>
-    </ClInclude>
     <ClInclude Include="PlayGameMode.h">
       <Filter>02_GameMode</Filter>
     </ClInclude>
@@ -25,14 +22,17 @@
     <ClInclude Include="GlobalVar.h">
       <Filter>00_GlobalValue</Filter>
     </ClInclude>
-    <ClInclude Include="Field_Home.h">
-      <Filter>03_Actors\01_Play</Filter>
-    </ClInclude>
     <ClInclude Include="Field_Green.h">
       <Filter>03_Actors\01_Play</Filter>
     </ClInclude>
     <ClInclude Include="TileMapEditorMode.h">
       <Filter>02_GameMode\MapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>03_Actors\01_Play\00_Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Field_Home.h">
+      <Filter>03_Actors\01_Play</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -44,9 +44,6 @@
     </ClCompile>
     <ClCompile Include="ContentsCore.cpp">
       <Filter>00_Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>03_Actors\01_Play</Filter>
     </ClCompile>
     <ClCompile Include="PlayGameMode.cpp">
       <Filter>02_GameMode</Filter>
@@ -65,6 +62,9 @@
     </ClCompile>
     <ClCompile Include="TileMapEditorMode.cpp">
       <Filter>02_GameMode\MapEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>03_Actors\01_Play\00_Player</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +94,12 @@
     </Filter>
     <Filter Include="03_Actors\03_MapEditor">
       <UniqueIdentifier>{622ff84b-60c7-43af-bb5a-761901673055}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\00_Player">
+      <UniqueIdentifier>{1d58ae6d-66f4-47b8-9529-89132728c7c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\01_Objects">
+      <UniqueIdentifier>{f35e67bc-97b6-411d-8618-594f87453829}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -9,7 +9,7 @@
 #include "TitleGameMode.h"
 #include "PlayGameMode.h"
 #include "EndGameMode.h"
-#include "TileMapEditor.h"
+//#include "TileMapEditor.h"
 
 #include "Player.h"
 
@@ -30,7 +30,7 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 	UEngineCore::CreateLevel<ATitleGameMode, APawn>("TITLE");
 	UEngineCore::CreateLevel<APlayGameMode, APlayer>("PLAY");
 	UEngineCore::CreateLevel<AEndGameMode, APawn>("END");
-	UEngineCore::CreateLevel<ATileMapEditor, APawn>("MAPEDITOR");
+	//UEngineCore::CreateLevel<ATileMapEditor, APawn>("MAPEDITOR");
 
 	UEngineCore::OpenLevel(START_MODE);
 }
