@@ -100,22 +100,22 @@ APlayer::APlayer()
 	
 	ELLIE_SHADOW->ChangeAnimation("ELLIE_IDLE_SHADOW");
 	ELLIE_SHADOW->SetAutoScale(true);
-	ELLIE_SHADOW->SetAutoScaleRatio(2.25f);
+	ELLIE_SHADOW->SetAutoScaleRatio(ScaleRatio);
 	ELLIE_SHADOW->SetRelativeLocation({ 0, 0, 2 });
 
 	ELLIE->ChangeAnimation("ELLIE_IDLE_DOWN");
 	ELLIE->SetAutoScale(true);
-	ELLIE->SetAutoScaleRatio(2.25f);
+	ELLIE->SetAutoScaleRatio(ScaleRatio);
 	ELLIE->SetRelativeLocation({ 0, 0, 0 });
 
 	ELLIE_HAT->ChangeAnimation("HAT_IDLE_FRONT");
 	ELLIE_HAT->SetAutoScale(true);
-	ELLIE_HAT->SetAutoScaleRatio(2.25f);
+	ELLIE_HAT->SetAutoScaleRatio(ScaleRatio);
 	ELLIE_HAT->SetRelativeLocation({ 0, 0, -2 });
 
 	ELLIE_COL = CreateDefaultSubObject<UCollision>();
 	ELLIE_COL->SetCollisionProfileName("Player");
-	ELLIE_COL->SetWorldLocation({ 0, 56.25, 0 });
+	ELLIE_COL->SetWorldLocation({ 0, ELLIESIZE.Y * ScaleRatio * 0.5f, 0 });
 	ELLIE_COL->SetScale3D({ 10, 10, 1 });
 
 	ELLIE_SHADOW->SetupAttachment(RootComponent);

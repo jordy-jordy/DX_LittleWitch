@@ -258,6 +258,7 @@
     </ClInclude>
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="ThirdParty\DirectxTex\Inc\DirectXTex.h" />
+    <ClInclude Include="TileMapRenderer.h" />
     <ClInclude Include="TimeEventComponent.h" />
   </ItemGroup>
   <ItemGroup>
@@ -350,6 +351,7 @@
       </SubType>
     </ClCompile>
     <ClCompile Include="SpriteRenderer.cpp" />
+    <ClCompile Include="TileMapRenderer.cpp" />
     <ClCompile Include="TimeEventComponent.cpp" />
   </ItemGroup>
   <ItemGroup>

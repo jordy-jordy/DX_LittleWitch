@@ -148,6 +148,9 @@
     <ClInclude Include="Collision.h">
       <Filter>04_Object\Component\Collision</Filter>
     </ClInclude>
+    <ClInclude Include="TileMapRenderer.h">
+      <Filter>04_Object\Component\Contents</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Level.cpp">
@@ -284,6 +287,9 @@
     </ClCompile>
     <ClCompile Include="Collision.cpp">
       <Filter>04_Object\Component\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMapRenderer.cpp">
+      <Filter>04_Object\Component\Contents</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
