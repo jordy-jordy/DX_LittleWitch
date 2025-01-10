@@ -25,9 +25,9 @@ AField_Home::AField_Home()
 	HomeField_Coll->SetCollisionProfileName("Field");
 	HomeField_Coll->SetScale3D({ HomeFieldSize.X - ELLIESIZE.X, HomeFieldSize.Y - ELLIESIZE.Y });
 
+	HomeField_ColImage->SetupAttachment(RootComponent);
 	HomeField_Coll->SetupAttachment(RootComponent);
 	HomeField->SetupAttachment(RootComponent);
-	HomeField_ColImage->SetupAttachment(RootComponent);
 };
 
 AField_Home::~AField_Home()
