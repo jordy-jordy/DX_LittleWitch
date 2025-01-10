@@ -115,7 +115,7 @@ APlayer::APlayer()
 
 	ELLIE_COL = CreateDefaultSubObject<UCollision>();
 	ELLIE_COL->SetCollisionProfileName("Player");
-	ELLIE_COL->SetWorldLocation({ 0, ELLIESIZE.Y * ScaleRatio * 0.5f, 0 });
+	ELLIE_COL->SetWorldLocation({ 0, ELLIESIZE.Y * ScaleRatio * 0.3f, 0 });
 	ELLIE_COL->SetScale3D({ 10, 10, 1 });
 
 	ELLIE_SHADOW->SetupAttachment(RootComponent);

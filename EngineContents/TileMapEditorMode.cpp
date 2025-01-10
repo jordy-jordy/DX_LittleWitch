@@ -2,12 +2,19 @@
 #include "TileMapEditorMode.h"
 
 
-ATileMapEditor::ATileMapEditor()
+ATileMapEditorMode::ATileMapEditorMode()
 {
 
-};
+}
 
-ATileMapEditor::~ATileMapEditor()
+
+ATileMapEditorMode::~ATileMapEditorMode()
 {
 
-};
+}
+
+
+void ATileMapEditorMode::Tick(float _DeltaTime)
+{
+	AActor::Tick(_DeltaTime);
+}

@@ -3,28 +3,25 @@
 
 
 // Ό³Έν :
-class ATileMapEditor : public AGameMode
+class ATileMapEditorMode : public AGameMode
 {
 public:
 	// constrcuter destructer
-	ATileMapEditor();
-	~ATileMapEditor();
+	ATileMapEditorMode();
+	~ATileMapEditorMode();
 
 	// delete Function
-	ATileMapEditor(const ATileMapEditor& _Other) = delete;
-	ATileMapEditor(ATileMapEditor&& _Other) noexcept = delete;
-	ATileMapEditor& operator=(const ATileMapEditor& _Other) = delete;
-	ATileMapEditor& operator=(ATileMapEditor&& _Other) noexcept = delete;
+	ATileMapEditorMode(const ATileMapEditorMode& _Other) = delete;
+	ATileMapEditorMode(ATileMapEditorMode&& _Other) noexcept = delete;
+	ATileMapEditorMode& operator=(const ATileMapEditorMode& _Other) = delete;
+	ATileMapEditorMode& operator=(ATileMapEditorMode&& _Other) noexcept = delete;
 
-	//void Tick(float _DeltaTime);
+	void Tick(float _DeltaTime);
 
 protected:
-	//void LevelChangeStart() override;
 
 private:
 	std::shared_ptr<class UTileMapWindow> TileMapWindow;
-
 	std::shared_ptr<class USpriteRenderer> PivotSpriteRenderer;
-
 	std::shared_ptr<class UTileMapRenderer> TileMapRenderer;
 };
