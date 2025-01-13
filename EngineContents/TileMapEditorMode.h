@@ -29,5 +29,4 @@ private:
 	std::shared_ptr<class UTileMapWindow> TileMapWindow;
 	std::shared_ptr<class USpriteRenderer> PivotSpriteRenderer;
 	std::shared_ptr<class UTileMapRenderer> Renderer_Tile;
-	std::shared_ptr<class UTileMapRenderer> Renderer_TileSprite;
 };

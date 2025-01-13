@@ -37,6 +37,12 @@
     <ClInclude Include="ContentsEditorGUI.h">
       <Filter>01_GUI</Filter>
     </ClInclude>
+    <ClInclude Include="AllTree.h">
+      <Filter>03_Actors\03_MapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree0.h">
+      <Filter>03_Actors\03_MapEditor\Tree</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -71,6 +77,12 @@
     </ClCompile>
     <ClCompile Include="ContentsEditorGUI.cpp">
       <Filter>01_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="AllTree.cpp">
+      <Filter>03_Actors\03_MapEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree0.cpp">
+      <Filter>03_Actors\03_MapEditor\Tree</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +121,9 @@
     </Filter>
     <Filter Include="01_GUI">
       <UniqueIdentifier>{88ea9255-f5af-4a30-b5d1-0111e71e01e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\03_MapEditor\Tree">
+      <UniqueIdentifier>{fa990bf5-e19b-4b34-a055-e088e05ca333}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

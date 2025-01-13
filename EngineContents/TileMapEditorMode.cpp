@@ -14,6 +14,13 @@
 
 #include "GlobalVar.h"
 
+#include "Tree0.h"
+
+
+enum class ESpawnList
+{
+	Tree0
+};
 
 enum class EEditMode
 {
@@ -28,42 +35,11 @@ public:
 	int SelectItem = 0;
 	int ObjectItem = -1;
 	UTileMapRenderer* TileMapRenderer = nullptr;
-	EEditMode Mode = EEditMode::TileMap;
+	EEditMode Mode = EEditMode::Object;
 
-	int TileCountX = 10;
-	int TileCountY = 10;
+	int TileCountX = 20;
+	int TileCountY = 15;
 	int SelectTileIndex = 0;
-
-	void OnGUI() override
-	{
-		if (Mode == EEditMode::Object)
-		{
-			if (ImGui::Button("ObjectMode"))
-			{
-				Mode = EEditMode::TileMap;
-			}
-		}
-		else
-		{
-			if (ImGui::Button("TileMapMode"))
-			{
-				Mode = EEditMode::Object;
-			}
-		}
-
-		switch (Mode)
-		{
-		case EEditMode::TileMap:
-			TileMapMode();
-			break;
-		case EEditMode::Object:
-			break;
-		default:
-			break;
-		}
-
-		SaveAndLoad();
-	}
 
 	void TileMapMode()
 	{
@@ -81,7 +57,7 @@ public:
 
 			if (i != 0)
 			{
-				if (0 != (i % 10))
+				if (0 != (i % 6))
 				{
 					ImGui::SameLine();
 				}
@@ -98,7 +74,6 @@ public:
 			// 엔터를 치지 않는개념.
 		}
 
-
 		ImGui::InputInt("TileMapX", &TileCountX);
 		ImGui::InputInt("TileMapY", &TileCountY);
 
@@ -112,7 +87,6 @@ public:
 				}
 			}
 		}
-
 
 		if (true == UEngineInput::IsPress(VK_LBUTTON))
 		{
@@ -129,8 +103,87 @@ public:
 		}
 	}
 
+	void ObjectMode()
+	{
+		{
+			std::vector<const char*> Arr;
+			Arr.push_back("Tree0");
+
+			ImGui::ListBox("SpawnList", &SelectItem, &Arr[0], 1);
+
+			// GetMainWindow()->IsScreenOut();
+
+			if (true == UEngineInput::IsDown(VK_LBUTTON))
+			{
+				ESpawnList SelectTree = static_cast<ESpawnList>(SelectItem);
+				std::shared_ptr<class ACameraActor> Camera = GetWorld()->GetMainCamera();
+				FVector Pos = Camera->ScreenMousePosToWorldPos();
+				Pos.Z = 0.0f;
+
+				std::shared_ptr<AAllTree> NewTree;
+
+				switch (SelectTree)
+				{
+				case ESpawnList::Tree0:
+					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					break;
+				default:
+					break;
+				}
+
+				NewTree->SetActorLocation(Pos);
+			}
+		}
+
+		{
+			if (ImGui::Button("EditObjectDelete"))
+			{
+				std::list<std::shared_ptr<AAllTree>> AllTreeList = GetWorld()->GetAllActorListByClass<AAllTree>();
+				for (std::shared_ptr<AAllTree> Tree : AllTreeList)
+				{
+					Tree->Destroy();
+				}
+			}
+		}
+
+		{
+			std::vector<std::shared_ptr<AAllTree>> AllTreeList = GetWorld()->GetAllActorArrayByClass<AAllTree>();
+
+			std::vector<std::string> ArrString;
+			for (std::shared_ptr<class AActor> Actor : AllTreeList)
+			{
+				ArrString.push_back(Actor->GetName());
+			}
+
+			std::vector<const char*> Arr;
+			for (size_t i = 0; i < ArrString.size(); i++)
+			{
+				Arr.push_back(ArrString[i].c_str());
+			}
+
+
+			if (0 < Arr.size())
+			{
+				ImGui::ListBox("AllActorList", &ObjectItem, &Arr[0], static_cast<int>(Arr.size()));
+
+				if (ObjectItem != -1)
+				{
+
+				}
+
+				if (true == ImGui::Button("Delete"))
+				{
+					AllTreeList[ObjectItem]->Destroy();
+					ObjectItem = -1;
+				}
+
+			}
+		}
+	}
+
 	void SaveAndLoad()
 	{
+
 		if (true == ImGui::Button("Save"))
 		{
 			UEngineDirectory Dir;
@@ -160,7 +213,20 @@ public:
 
 			if (GetSaveFileNameA(&ofn) == TRUE)
 			{
+				std::list<std::shared_ptr<AAllTree>> AllTreeList = GetWorld()->GetAllActorListByClass<AAllTree>();
+
 				UEngineSerializer Ser;
+
+				Ser << static_cast<int>(AllTreeList.size());
+
+				for (std::shared_ptr<AAllTree> Actor : AllTreeList)
+				{
+
+					Ser << static_cast<int>(Actor->TreeTypeValue);
+					// 여기 저장된다는 이야기
+					Actor->Serialize(Ser);
+				}
+
 				TileMapRenderer->Serialize(Ser);
 
 				UEngineFile NewFile = Dir.GetFile(ofn.lpstrFile);
@@ -202,15 +268,77 @@ public:
 
 				NewFile.FileOpen("rb");
 				NewFile.Read(Ser);
+
+
+				int TreeCount = 0;
+
+				Ser >> TreeCount;
+
+				for (size_t i = 0; i < TreeCount; i++)
+				{
+					int TreeTypeValue = 0;
+					Ser >> TreeTypeValue;
+
+					ETreeType TreeType = static_cast<ETreeType>(TreeTypeValue);
+
+					std::shared_ptr<AAllTree> NewMon = nullptr;
+
+					switch (TreeType)
+					{
+					case ETreeType::Tree0:
+						NewMon = GetWorld()->SpawnActor<ATree0>();
+						break;
+					default:
+						break;
+					}
+
+					NewMon->DeSerialize(Ser);
+				}
+
 				TileMapRenderer->DeSerialize(Ser);
+
 			}
 		}
+	}
+
+	void OnGUI() override
+	{
+		if (Mode == EEditMode::Object)
+		{
+			if (ImGui::Button("ObjectMode"))
+			{
+				Mode = EEditMode::TileMap;
+			}
+		}
+		else
+		{
+			if (ImGui::Button("TileMapMode"))
+			{
+				Mode = EEditMode::Object;
+			}
+		}
+
+		switch (Mode)
+		{
+		case EEditMode::TileMap:
+			TileMapMode();
+			break;
+		case EEditMode::Object:
+			ObjectMode();
+			break;
+		default:
+			break;
+		}
+
+		SaveAndLoad();
 	}
 };
 
 
 ATileMapEditorMode::ATileMapEditorMode()
 {
+	GetWorld()->CreateCollisionProfile("Tree");
+
 	TileMapDirLoad();
 	GetWorld()->CreateCollisionProfile("GUI");
 
@@ -227,7 +355,7 @@ ATileMapEditorMode::ATileMapEditorMode()
 	Renderer_Tile->SetupAttachment(RootComponent);
 
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
-	Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });
+	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -1000.0f, 1.0f });
 	Camera->GetCameraComponent()->SetZSort(0, true);
 };
 
@@ -282,61 +410,33 @@ void ATileMapEditorMode::TileMapDirLoad()
 		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
 		return;
 	}
-	TILEMAP_TILE_Dir.Append("Image//WitchResource//TILEMAP_TILE");
+	TILEMAP_TILE_Dir.Append("Image\\WitchResource\\TILEMAP\\TILEMAP_TILE");
 	std::vector<UEngineFile> TILES = TILEMAP_TILE_Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
 	for (size_t i = 0; i < TILES.size(); i++)
 	{
-		std::string FilePath = TILES[i].GetPathToString();
-		UEngineTexture::Load(FilePath);
+		std::string TileFilePath = TILES[i].GetPathToString();
+		UEngineTexture::Load(TileFilePath);
 	}
-
 	UEngineSprite::CreateSpriteToFolder(TILEMAP_TILE_Dir.GetPathToString());
 
-	/*스프라이트 타일 리소스*/
-	UEngineDirectory TILEMAP_OBJECTS_Dir;
-	if (false == TILEMAP_OBJECTS_Dir.MoveParentToDirectory("ContentsResources"))
+
+	/*오브젝트 리소스*/
+	UEngineDirectory TILEMAP_OBJECT_Dir;
+	if (false == TILEMAP_OBJECT_Dir.MoveParentToDirectory("ContentsResources"))
 	{
 		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
 		return;
 	}
-	TILEMAP_OBJECTS_Dir.Append("Image//WitchResource//TILEMAP_OBJECTS");
-	std::vector<UEngineFile> TILES_SPRITES = TILEMAP_OBJECTS_Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
-	for (size_t i = 0; i < TILES_SPRITES.size(); i++)
+	TILEMAP_OBJECT_Dir.Append("Image\\WitchResource\\TILEMAP\\TILEMAP_OBJECTS\\Trees");
+	std::vector<UEngineFile> OBJECTS = TILEMAP_OBJECT_Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
+	for (size_t i = 0; i < OBJECTS.size(); i++)
 	{
-		std::string FilePath = TILES_SPRITES[i].GetPathToString();
-		UEngineTexture::Load(FilePath);
+		std::string ObjectFilePath = OBJECTS[i].GetPathToString();
+		UEngineTexture::Load(ObjectFilePath);
 	}
+	UEngineSprite::CreateSpriteToFolder(TILEMAP_OBJECT_Dir.GetPathToString());
 
-	UEngineSprite::CreateSpriteToMeta("grass_000.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_001.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_002.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_003.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_004.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_005.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_006.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_007.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_015.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_016.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_017.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_018.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_019.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_020.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_021.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_022.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_023.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("grass_024.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("ground_000.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("ground_002.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("ground_003.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("ground_009.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("ground_010.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("tree_000.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("tree_001.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("tree_002.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("tree_003.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("tree_004.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("tree_005.png", ".sdata");
-	UEngineSprite::CreateSpriteToMeta("tree_006.png", ".sdata");
+
 }
 
 

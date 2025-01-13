@@ -34,10 +34,12 @@ APlayGameMode::APlayGameMode()
 	PlayDirLoad();
 	PlaySpritesInit();
 
-	GetWorld()->CreateCollisionProfile("Field");
 	GetWorld()->CreateCollisionProfile("Player");
 
+	GetWorld()->CreateCollisionProfile("Field");
+
 	GetWorld()->LinkCollisionProfile("Player", "Field");
+	GetWorld()->LinkCollisionProfile("Player", "Tree");
 
 	MainField = GetWorld()->SpawnActor<AField_Home>();
 	MainField->SetActorLocation({ 0.0f, 0.0f, 1.0f });
