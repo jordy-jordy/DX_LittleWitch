@@ -19,7 +19,13 @@
 
 enum class ESpawnList
 {
-	Tree0
+	Tree0,
+	Tree1,
+	Tree2,
+	Tree3,
+	Tree4,
+	Tree5,
+	Tree6
 };
 
 enum class EEditMode
@@ -40,6 +46,7 @@ public:
 	int TileCountX = 20;
 	int TileCountY = 15;
 	int SelectTileIndex = 0;
+	int SelectTreeIndex = 0;
 
 	void TileMapMode()
 	{
@@ -106,18 +113,42 @@ public:
 	void ObjectMode()
 	{
 		{
-			std::vector<const char*> Arr;
-			Arr.push_back("Tree0");
+			 std::shared_ptr<UEngineSprite> SpriteName = UEngineSprite::Find<UEngineSprite>("Trees");
+			 UEngineSprite* Sprite = SpriteName.get();
 
-			ImGui::ListBox("SpawnList", &SelectItem, &Arr[0], 1);
+			for (size_t i = 0; i < Sprite->GetSpriteCount(); i++)
+			{
+				UEngineTexture* Texture = Sprite->GetTexture(i);
+				FSpriteData Data = Sprite->GetSpriteData(i);
 
-			// GetMainWindow()->IsScreenOut();
+				//SRV입니다
+				ImTextureID SRV = reinterpret_cast<ImTextureID>(Texture->GetSRV());
+
+				std::string Text = std::to_string(i);
+
+				if (i != 0)
+				{
+					if (0 != (i % 6))
+					{
+						ImGui::SameLine();
+					}
+				}
+
+
+				ImVec2 Pos = { Data.CuttingPos.X, Data.CuttingPos.Y };
+				ImVec2 Size = { Data.CuttingPos.X + Data.CuttingSize.X, Data.CuttingPos.Y + Data.CuttingSize.Y };
+
+				if (ImGui::ImageButton(Text.c_str(), SRV, { 60, 60 }, Pos, Size))
+				{
+					SelectTreeIndex = static_cast<int>(i);
+				}
+				// 엔터를 치지 않는개념.
+			}
 
 			if (true == UEngineInput::IsDown(VK_LBUTTON))
 			{
-				ESpawnList SelectTree = static_cast<ESpawnList>(SelectItem);
-				std::shared_ptr<class ACameraActor> Camera = GetWorld()->GetMainCamera();
-				FVector Pos = Camera->ScreenMousePosToWorldPos();
+				ESpawnList SelectTree = static_cast<ESpawnList>(SelectTreeIndex);
+				FVector Pos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
 				Pos.Z = 0.0f;
 
 				std::shared_ptr<AAllTree> NewTree;
@@ -126,6 +157,31 @@ public:
 				{
 				case ESpawnList::Tree0:
 					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree->GetRenderer()->SetSprite("Trees", 0);
+					break;
+				case ESpawnList::Tree1:
+					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree->GetRenderer()->SetSprite("Trees", 1);
+					break;
+				case ESpawnList::Tree2:
+					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree->GetRenderer()->SetSprite("Trees", 2);
+					break;
+				case ESpawnList::Tree3:
+					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree->GetRenderer()->SetSprite("Trees", 3);
+					break;
+				case ESpawnList::Tree4:
+					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree->GetRenderer()->SetSprite("Trees", 4);
+					break;
+				case ESpawnList::Tree5:
+					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree->GetRenderer()->SetSprite("Trees", 5);
+					break;
+				case ESpawnList::Tree6:
+					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree->GetRenderer()->SetSprite("Trees", 6);
 					break;
 				default:
 					break;

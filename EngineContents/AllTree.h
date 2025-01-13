@@ -31,6 +31,9 @@ public:
 
 	ETreeType TreeTypeValue;
 
+	virtual std::shared_ptr<class USpriteRenderer> GetRenderer() = 0;
+
+
 protected:
 
 private:

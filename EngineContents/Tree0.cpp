@@ -13,17 +13,16 @@ ATree0::ATree0()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
-	Renderer_Tree_000 = CreateDefaultSubObject<USpriteRenderer>();
-	Renderer_Tree_000->SetSprite("Trees", 0);
-	Renderer_Tree_000->SetScale3D({ 100.0f, 100.0f });
-	Renderer_Tree_000->SetWorldLocation({0, 0, -100});
+	Renderer = CreateDefaultSubObject<USpriteRenderer>();
+	Renderer->SetScale3D({ 100.0f, 100.0f });
+	Renderer->SetWorldLocation({0, 0, -100});
 
 	Collision = CreateDefaultSubObject<UCollision>();
 	Collision->SetCollisionProfileName("Tree");
 	Collision->SetScale3D({ 50.0f, 50.0f });
 
 	Collision->SetupAttachment(RootComponent);
-	Renderer_Tree_000->SetupAttachment(RootComponent);
+	Renderer->SetupAttachment(RootComponent);
 };
 
 ATree0::~ATree0()
