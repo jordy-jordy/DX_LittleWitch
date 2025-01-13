@@ -67,67 +67,65 @@ public:
 
 	void TileMapMode()
 	{
+		UEngineSprite* Sprite = TileMapRenderer->GetSprite();
+
+		for (size_t i = 0; i < Sprite->GetSpriteCount(); i++)
 		{
-			UEngineSprite* Sprite = TileMapRenderer->GetSprite();
+			UEngineTexture* Texture = Sprite->GetTexture(i);
+			FSpriteData Data = Sprite->GetSpriteData(i);
 
-			for (size_t i = 0; i < Sprite->GetSpriteCount(); i++)
+			//SRV입니다
+			ImTextureID SRV = reinterpret_cast<ImTextureID>(Texture->GetSRV());
+
+			std::string Text = std::to_string(i);
+
+			if (i != 0)
 			{
-				UEngineTexture* Texture = Sprite->GetTexture(i);
-				FSpriteData Data = Sprite->GetSpriteData(i);
-
-				//SRV입니다
-				ImTextureID SRV = reinterpret_cast<ImTextureID>(Texture->GetSRV());
-
-				std::string Text = std::to_string(i);
-
-				if (i != 0)
+				if (0 != (i % 10))
 				{
-					if (0 != (i % 10))
-					{
-						ImGui::SameLine();
-					}
-				}
-
-
-				ImVec2 Pos = { Data.CuttingPos.X, Data.CuttingPos.Y };
-				ImVec2 Size = { Data.CuttingPos.X + Data.CuttingSize.X, Data.CuttingPos.Y + Data.CuttingSize.Y };
-
-				if (ImGui::ImageButton(Text.c_str(), SRV, { 60, 60 }, Pos, Size))
-				{
-					SelectTileIndex = static_cast<int>(i);
-				}
-				// 엔터를 치지 않는개념.
-			}
-
-
-			ImGui::InputInt("TileMapX", &TileCountX);
-			ImGui::InputInt("TileMapY", &TileCountY);
-
-			if (ImGui::Button("TileMap Create"))
-			{
-				for (int y = 0; y < TileCountY; y++)
-				{
-					for (int x = 0; x < TileCountX; x++)
-					{
-						TileMapRenderer->SetTile(x, y, SelectTileIndex);
-					}
+					ImGui::SameLine();
 				}
 			}
 
 
-			if (true == UEngineInput::IsPress(VK_LBUTTON))
+			ImVec2 Pos = { Data.CuttingPos.X, Data.CuttingPos.Y };
+			ImVec2 Size = { Data.CuttingPos.X + Data.CuttingSize.X, Data.CuttingPos.Y + Data.CuttingSize.Y };
+
+			if (ImGui::ImageButton(Text.c_str(), SRV, { 60, 60 }, Pos, Size))
 			{
-				FVector ScreenPos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
-
-				TileMapRenderer->SetTile(ScreenPos, SelectTileIndex);
+				SelectTileIndex = static_cast<int>(i);
 			}
+			// 엔터를 치지 않는개념.
+		}
 
-			if (true == UEngineInput::IsPress(VK_RBUTTON))
+
+		ImGui::InputInt("TileMapX", &TileCountX);
+		ImGui::InputInt("TileMapY", &TileCountY);
+
+		if (ImGui::Button("TileMap Create"))
+		{
+			for (int y = 0; y < TileCountY; y++)
 			{
-				FVector ScreenPos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
-
-				TileMapRenderer->RemoveTile(ScreenPos);
+				for (int x = 0; x < TileCountX; x++)
+				{
+					TileMapRenderer->SetTile(x, y, SelectTileIndex);
+				}
 			}
+		}
+
+
+		if (true == UEngineInput::IsPress(VK_LBUTTON))
+		{
+			FVector ScreenPos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
+
+			TileMapRenderer->SetTile(ScreenPos, SelectTileIndex);
+		}
+
+		if (true == UEngineInput::IsPress(VK_RBUTTON))
+		{
+			FVector ScreenPos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
+
+			TileMapRenderer->RemoveTile(ScreenPos);
 		}
 	}
 
@@ -222,11 +220,11 @@ ATileMapEditorMode::ATileMapEditorMode()
 	PivotSpriteRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	PivotSpriteRenderer->SetRelativeScale3D({ 10.0f, 10.0f, 1.0f });
 
-	TileMapRenderer = CreateDefaultSubObject<UTileMapRenderer>();
-	TileMapRenderer->SetTileSetting(ETileMapType::Rect, "TILEMAP", { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 0.0f, 0.0f });
+	Renderer_Tile = CreateDefaultSubObject<UTileMapRenderer>();
+	Renderer_Tile->SetTileSetting(ETileMapType::Rect, "TILEMAP_TILE", { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 0.0f, 0.0f });
 
 	PivotSpriteRenderer->SetupAttachment(RootComponent);
-	TileMapRenderer->SetupAttachment(RootComponent);
+	Renderer_Tile->SetupAttachment(RootComponent);
 
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
 	Camera->SetActorLocation({ 0.0f, 0.0f, -1000.0f, 1.0f });
@@ -249,29 +247,24 @@ void ATileMapEditorMode::LevelChangeStart()
 {
 	UEngineGUI::AllWindowOff();
 
+	std::shared_ptr<UContentsEditorGUI> Window = UEngineGUI::FindGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
+
+	if (nullptr == Window)
 	{
-		std::shared_ptr<UContentsEditorGUI> Window = UEngineGUI::FindGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
-
-		if (nullptr == Window)
-		{
-			Window = UEngineGUI::CreateGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
-		}
-
-		Window->SetActive(true);
+		Window = UEngineGUI::CreateGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
 	}
 
+	Window->SetActive(true);
+
+	TileMapWindow = UEngineGUI::FindGUIWindow<UTileMapWindow>("TileMapWindow");
+
+	if (nullptr == TileMapWindow)
 	{
-		TileMapWindow = UEngineGUI::FindGUIWindow<UTileMapWindow>("TileMapWindow");
-
-		if (nullptr == TileMapWindow)
-		{
-			TileMapWindow = UEngineGUI::CreateGUIWindow<UTileMapWindow>("TileMapWindow");
-		}
-
-		TileMapWindow->SetActive(true);
-		TileMapWindow->TileMapRenderer = TileMapRenderer.get();
+		TileMapWindow = UEngineGUI::CreateGUIWindow<UTileMapWindow>("TileMapWindow");
 	}
 
+	TileMapWindow->SetActive(true);
+	TileMapWindow->TileMapRenderer = Renderer_Tile.get();
 }
 
 void ATileMapEditorMode::BeginPlay()
@@ -281,33 +274,69 @@ void ATileMapEditorMode::BeginPlay()
 
 void ATileMapEditorMode::TileMapDirLoad()
 {
+
+	/*16x16 타일 리소스*/
+	UEngineDirectory TILEMAP_TILE_Dir;
+	if (false == TILEMAP_TILE_Dir.MoveParentToDirectory("ContentsResources"))
 	{
-		UEngineDirectory Dir;
-		if (false == Dir.MoveParentToDirectory("ContentsResources"))
-		{
-			MSGASSERT("리소스 폴더를 찾지 못했습니다.");
-			return;
-		}
-		Dir.Append("Image//WitchResource//TILEMAP");
-		std::vector<UEngineFile> ImageFiles = Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
-		for (size_t i = 0; i < ImageFiles.size(); i++)
-		{
-			std::string FilePath = ImageFiles[i].GetPathToString();
-			UEngineTexture::Load(FilePath);
-		}
+		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
+		return;
+	}
+	TILEMAP_TILE_Dir.Append("Image//WitchResource//TILEMAP_TILE");
+	std::vector<UEngineFile> TILES = TILEMAP_TILE_Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
+	for (size_t i = 0; i < TILES.size(); i++)
+	{
+		std::string FilePath = TILES[i].GetPathToString();
+		UEngineTexture::Load(FilePath);
 	}
 
-	{
-		UEngineDirectory Dir;
-		if (false == Dir.MoveParentToDirectory("ContentsResources"))
-		{
-			MSGASSERT("리소스 폴더를 찾지 못했습니다.");
-			return;
-		}
-		Dir.Append("Image//WitchResource//TILEMAP");
-		UEngineSprite::CreateSpriteToFolder(Dir.GetPathToString());
+	UEngineSprite::CreateSpriteToFolder(TILEMAP_TILE_Dir.GetPathToString());
 
+	/*스프라이트 타일 리소스*/
+	UEngineDirectory TILEMAP_OBJECTS_Dir;
+	if (false == TILEMAP_OBJECTS_Dir.MoveParentToDirectory("ContentsResources"))
+	{
+		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
+		return;
 	}
+	TILEMAP_OBJECTS_Dir.Append("Image//WitchResource//TILEMAP_OBJECTS");
+	std::vector<UEngineFile> TILES_SPRITES = TILEMAP_OBJECTS_Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
+	for (size_t i = 0; i < TILES_SPRITES.size(); i++)
+	{
+		std::string FilePath = TILES_SPRITES[i].GetPathToString();
+		UEngineTexture::Load(FilePath);
+	}
+
+	UEngineSprite::CreateSpriteToMeta("grass_000.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_001.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_002.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_003.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_004.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_005.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_006.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_007.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_015.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_016.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_017.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_018.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_019.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_020.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_021.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_022.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_023.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("grass_024.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("ground_000.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("ground_002.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("ground_003.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("ground_009.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("ground_010.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("tree_000.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("tree_001.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("tree_002.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("tree_003.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("tree_004.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("tree_005.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("tree_006.png", ".sdata");
 }
 
 
