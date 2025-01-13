@@ -38,7 +38,7 @@ class UTileMapWindow : public UEngineGUIWindow
 {
 public:
 
-	int SelectItem = 0;
+	//int SelectItem = 0;
 	int ObjectItem = -1;
 	UTileMapRenderer* TileMapRenderer = nullptr;
 	EEditMode Mode = EEditMode::Object;
