@@ -5,6 +5,7 @@
 #include <EngineCore/EngineSprite.h>
 #include <EngineCore/EngineGUI.h>
 #include <EngineCore/EngineGUIWindow.h>
+#include <EngineCore/HUD.h>
 
 #include "GlobalVar.h"
 
@@ -34,10 +35,10 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 	std::shared_ptr<UContentsEditorGUI> Window = UEngineGUI::FindGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
 	Window->SetActive(true);
 
-	UEngineCore::CreateLevel<ATitleGameMode, APawn>("TITLE");
-	UEngineCore::CreateLevel<APlayGameMode, APlayer>("PLAY");
-	UEngineCore::CreateLevel<AEndGameMode, APawn>("END");
-	UEngineCore::CreateLevel<ATileMapEditorMode, APawn>("MAPEDITOR");
+	UEngineCore::CreateLevel<ATitleGameMode, APawn, AHUD>("TITLE");
+	UEngineCore::CreateLevel<APlayGameMode, APlayer, AHUD>("PLAY");
+	UEngineCore::CreateLevel<AEndGameMode, APawn, AHUD>("END");
+	UEngineCore::CreateLevel<ATileMapEditorMode, APawn, AHUD>("MAPEDITOR");
 
 	UEngineCore::OpenLevel(START_MODE);
 }
