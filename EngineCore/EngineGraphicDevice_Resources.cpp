@@ -8,6 +8,7 @@
 #include "EngineShader.h"
 #include "EngineMaterial.h"
 #include "EngineTexture.h"
+#include "EngineFont.h"
 #include "EngineDepthStencilState.h"
 
 void UEngineGraphicDevice::DefaultResourcesInit()
@@ -19,6 +20,9 @@ void UEngineGraphicDevice::DefaultResourcesInit()
 	RasterizerStateInit();
 	ShaderInit();
 	MaterialInit();
+
+	// Á÷Á¢ ÀÚ±â ÆùÆ® 
+	UEngineFont::Load("±Ã¼­", "±Ã¼­");
 }
 
 void UEngineGraphicDevice::DepthStencilInit()
@@ -128,7 +132,60 @@ void UEngineGraphicDevice::ShaderInit()
 
 void UEngineGraphicDevice::MeshInit()
 {
-	int a = 0;
+
+	{
+		std::vector<FEngineVertex> Vertexs;
+		Vertexs.resize(24);
+		Vertexs[0] = FEngineVertex{ FVector(-0.0, 0.5f, 0.0f), {0.0f , 0.0f }, {1.0f, 0.0f, 0.0f, 1.0f} };
+		Vertexs[1] = FEngineVertex{ FVector(0.5f, 0.5f, 0.0f), {1.0f , 0.0f } , {0.0f, 1.0f, 0.0f, 1.0f} };
+		Vertexs[2] = FEngineVertex{ FVector(-0.5f, -0.5f, 0.0f), {0.0f , 1.0f } , {0.0f, 0.0f, 1.0f, 1.0f} };
+
+		Vertexs[3] = FEngineVertex{ FVector(-0.5f, 0.5f, 0.0f), {0.0f , 0.0f }, {1.0f, 0.0f, 0.0f, 1.0f} };
+		Vertexs[4] = FEngineVertex{ FVector(0.5f, 0.5f, 0.0f), {1.0f , 0.0f } , {0.0f, 1.0f, 0.0f, 1.0f} };
+		Vertexs[5] = FEngineVertex{ FVector(-0.5f, -0.5f, 0.0f), {0.0f , 1.0f } , {0.0f, 0.0f, 1.0f, 1.0f} };
+
+		Vertexs[6] = FEngineVertex{ FVector(-0.5f, 0.5f, 0.0f), {0.0f , 0.0f }, {1.0f, 0.0f, 0.0f, 1.0f} };
+		Vertexs[7] = FEngineVertex{ FVector(0.5f, 0.5f, 0.0f), {1.0f , 0.0f } , {0.0f, 1.0f, 0.0f, 1.0f} };
+		Vertexs[8] = FEngineVertex{ FVector(-0.5f, -0.5f, 0.0f), {0.0f , 1.0f } , {0.0f, 0.0f, 1.0f, 1.0f} };
+
+		Vertexs[9] = FEngineVertex{ FVector(-0.5f, 0.5f, 0.0f), {0.0f , 0.0f }, {1.0f, 0.0f, 0.0f, 1.0f} };
+		Vertexs[10] = FEngineVertex{ FVector(0.5f, 0.5f, 0.0f), {1.0f , 0.0f } , {0.0f, 1.0f, 0.0f, 1.0f} };
+		Vertexs[11] = FEngineVertex{ FVector(-0.5f, -0.5f, 0.0f), {0.0f , 1.0f } , {0.0f, 0.0f, 1.0f, 1.0f} };
+
+		Vertexs[12] = FEngineVertex{ FVector(-0.5f, 0.5f, 0.0f), {0.0f , 0.0f }, {1.0f, 0.0f, 0.0f, 1.0f} };
+		Vertexs[13] = FEngineVertex{ FVector(0.5f, 0.5f, 0.0f), {1.0f , 0.0f } , {0.0f, 1.0f, 0.0f, 1.0f} };
+		Vertexs[14] = FEngineVertex{ FVector(-0.5f, -0.5f, 0.0f), {0.0f , 1.0f } , {0.0f, 0.0f, 1.0f, 1.0f} };
+
+		Vertexs[15] = FEngineVertex{ FVector(-0.5f, 0.5f, 0.0f), {0.0f , 0.0f }, {1.0f, 0.0f, 0.0f, 1.0f} };
+		Vertexs[16] = FEngineVertex{ FVector(0.5f, 0.5f, 0.0f), {1.0f , 0.0f } , {0.0f, 1.0f, 0.0f, 1.0f} };
+		Vertexs[17] = FEngineVertex{ FVector(-0.5f, -0.5f, 0.0f), {0.0f , 1.0f } , {0.0f, 0.0f, 1.0f, 1.0f} };
+
+		Vertexs[18] = FEngineVertex{ FVector(-0.5f, 0.5f, 0.0f), {0.0f , 0.0f }, {1.0f, 0.0f, 0.0f, 1.0f} };
+		Vertexs[19] = FEngineVertex{ FVector(0.5f, 0.5f, 0.0f), {1.0f , 0.0f } , {0.0f, 1.0f, 0.0f, 1.0f} };
+		Vertexs[20] = FEngineVertex{ FVector(-0.5f, -0.5f, 0.0f), {0.0f , 1.0f } , {0.0f, 0.0f, 1.0f, 1.0f} };
+
+		Vertexs[21] = FEngineVertex{ FVector(-0.5f, 0.5f, 0.0f), {0.0f , 0.0f }, {1.0f, 0.0f, 0.0f, 1.0f} };
+		Vertexs[22] = FEngineVertex{ FVector(0.5f, 0.5f, 0.0f), {1.0f , 0.0f } , {0.0f, 1.0f, 0.0f, 1.0f} };
+		Vertexs[23] = FEngineVertex{ FVector(-0.5f, -0.5f, 0.0f), {0.0f , 1.0f } , {0.0f, 0.0f, 1.0f, 1.0f} };
+
+		UEngineVertexBuffer::Create("Test", Vertexs);
+	}
+
+	{
+		std::vector<unsigned int> Indexs;
+
+		for (size_t i = 0; i < 24; i++)
+		{
+			Indexs.push_back(i);
+		}
+
+		UEngineIndexBuffer::Create("Test", Indexs);
+	}
+
+	{
+		UMesh::Create("Test");
+	}
+
 
 	{
 		std::vector<FEngineVertex> Vertexs;
