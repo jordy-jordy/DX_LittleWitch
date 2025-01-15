@@ -1,6 +1,7 @@
 #include "PreCompile.h"
 #include "Field_Home.h"
 
+#include <EnginePlatform/EngineWinImage.h>
 #include <EngineCore/DefaultSceneComponent.h>
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/Collision.h>
@@ -32,16 +33,28 @@ AField_Home::AField_Home()
 	FieldImage->SetupAttachment(RootComponent);
 	FieldColIamge->SetupAttachment(RootComponent);
 	FieldCol->SetupAttachment(RootComponent);
-};
 
-std::shared_ptr<class USpriteRenderer>AField_Home::GetHomeFieldColImage()
-{
-	return FieldColIamge;
-}
+	ColImageDir = "ContentsResources\\Image\\WitchResource\\PLAY";
+};
 
 void AField_Home::BeginPlay()
 {
 	AActor::BeginPlay();
+}
+
+void AField_Home::SetColImage(std::string_view _ColImageName, std::string_view _FolderName) 
+{
+	UEngineDirectory Dir;
+	if (false == Dir.MoveParentToDirectory(ColImageDir))
+	{
+		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
+		return;
+	}
+
+	Dir.Append(_FolderName);
+	UEngineFile ImageFiles = Dir.GetFile(_ColImageName);
+
+	ColImage.Load(nullptr, ImageFiles.GetPathToString());
 }
 
 void AField_Home::Tick(float _DeltaTime)

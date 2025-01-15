@@ -43,6 +43,7 @@ APlayGameMode::APlayGameMode()
 
 	Field_HOME = GetWorld()->SpawnActor<AField_Home>();
 	Field_HOME->SetActorLocation({ 0.0f, 0.0f, 1.0f });
+	Field_HOME->SetColImage("pixel_coll.png", "02_Field");
 
 	Player = GetWorld()->SpawnActor<APlayer>();
 	Player->SetActorLocation({ 0.0f, 0.0f, 0.0f });

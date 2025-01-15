@@ -17,12 +17,13 @@ public:
 	AField_Home& operator=(const AField_Home& _Other) = delete;
 	AField_Home& operator=(AField_Home&& _Other) noexcept = delete;
 
-	std::shared_ptr<class USpriteRenderer>GetHomeFieldColImage();
+	void SetColImage(std::string_view _ColImageName, std::string_view _FolderName) override;
 
 
 protected:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
+
 
 private:
 };
