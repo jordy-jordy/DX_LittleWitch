@@ -1,8 +1,10 @@
 #pragma once
-#include <EngineCore/Actor.h>
+#include "AllField.h"
+#include "GlobalVar.h"
+
 
 // Ό³Έν :
-class AField_Green : public AActor
+class AField_Green : public AAllField
 {
 public:
 	// constrcuter destructer

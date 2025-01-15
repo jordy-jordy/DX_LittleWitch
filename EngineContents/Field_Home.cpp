@@ -5,6 +5,8 @@
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/Collision.h>
 
+#include "AllField.h"
+
 #include "GlobalVar.h"
 
 
@@ -13,29 +15,29 @@ AField_Home::AField_Home()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
-	HomeField = CreateDefaultSubObject<USpriteRenderer>();
-	HomeField->SetRelativeScale3D(HomeFieldSize);
-	HomeField->SetWorldLocation({0, 0, 200});
-	HomeField->SetTexture("test_field.png");
+	FieldImage = CreateDefaultSubObject<USpriteRenderer>();
+	FieldImage->SetRelativeScale3D(HomeFieldSize);
+	FieldImage->SetWorldLocation({0, 0, 200});
+	FieldImage->SetTexture("test_field.png");
 
-	HomeField_ColImage = CreateDefaultSubObject<USpriteRenderer>();
-	HomeField_ColImage->SetRelativeScale3D({800, 800});
-	HomeField_ColImage->SetWorldLocation({ 0, 0, 100 });
-	HomeField_ColImage->SetTexture("pixel_coll.png");
+	FieldColIamge = CreateDefaultSubObject<USpriteRenderer>();
+	FieldColIamge->SetRelativeScale3D({800, 800});
+	FieldColIamge->SetWorldLocation({ 0, 0, 100 });
+	FieldColIamge->SetTexture("pixel_coll.png");
 
-	HomeField_Coll = CreateDefaultSubObject<UCollision>();
-	HomeField_Coll->SetCollisionProfileName("Field");
-	HomeField_Coll->SetScale3D({ HomeFieldSize.X - ELLIESIZE.X, HomeFieldSize.Y - ELLIESIZE.Y });
+	FieldCol = CreateDefaultSubObject<UCollision>();
+	FieldCol->SetCollisionProfileName("Field");
+	FieldCol->SetScale3D({ HomeFieldSize.X - ELLIESIZE.X, HomeFieldSize.Y - ELLIESIZE.Y });
 
-	HomeField_ColImage->SetupAttachment(RootComponent);
-	HomeField_Coll->SetupAttachment(RootComponent);
-	HomeField->SetupAttachment(RootComponent);
+	FieldImage->SetupAttachment(RootComponent);
+	FieldColIamge->SetupAttachment(RootComponent);
+	FieldCol->SetupAttachment(RootComponent);
 };
 
-AField_Home::~AField_Home()
+std::shared_ptr<class USpriteRenderer>AField_Home::GetHomeFieldColImage()
 {
-
-};
+	return FieldColIamge;
+}
 
 void AField_Home::BeginPlay()
 {
@@ -46,3 +48,9 @@ void AField_Home::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 }
+
+AField_Home::~AField_Home()
+{
+
+};
+

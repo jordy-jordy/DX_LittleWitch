@@ -18,6 +18,7 @@ ATitleScene::ATitleScene()
 	SetLocation_Window(BG_SKY, { 0, 0, 8900.0f });
 
 	SKY_STAR = CreateDefaultSubObject<USpriteRenderer>();
+	SKY_STAR->SetAutoScale(false);
 	SKY_STAR->SetSprite("Title_train_star.png", 0);
 	SKY_STAR->CreateAnimation("STARS", "Title_train_star.png", 0, 4, 0.15f);
 	SKY_STAR->SetRelativeScale3D({ 1275.0f, 352.0f, 1.0f });
@@ -146,13 +147,11 @@ ATitleScene::ATitleScene()
 
 	TREE_0 = CreateDefaultSubObject<USpriteRenderer>();
 	TREE_0->SetSprite("Title_Train_Tree_0.png", 0);
-	TREE_0->SetAutoScale(true);
 	TREE_0->SetAutoScaleRatio(1.0f);
 	SetLocation_Window(TREE_0, { 0.0f, 340.0f, 500.0f });
 
 	TREE_1 = CreateDefaultSubObject<USpriteRenderer>();
 	TREE_1->SetSprite("Title_Train_Tree_1.png", 0);
-	TREE_1->SetAutoScale(true);
 	TREE_1->SetAutoScaleRatio(1.0f);
 	SetLocation_Window(TREE_1, { 0.0f, 360.0f, 450.0f });
 
@@ -160,6 +159,34 @@ ATitleScene::ATitleScene()
 	LOGO->SetSprite("Logo.png", 0);
 	LOGO->SetRelativeScale3D({ 451.0f, 220.0f, 1.0f });
 	SetLocation_Window(LOGO, { 817.0f, 116.0f, 0.0f });
+
+	BG_SKY->SetAutoScale(false);
+	SKY_MOON->SetAutoScale(false);
+	CLOUD_FAR->SetAutoScale(false);
+	CLOUD_MID->SetAutoScale(false);
+	CLOUD_NEAR->SetAutoScale(false);
+	BG_WATER->SetAutoScale(false);
+	MOUNTAIN->SetAutoScale(false);
+	TRAIN_SHADOW->SetAutoScale(false);
+	MOUNTAIN_SHADOW->SetAutoScale(false);
+	TRAIN0->SetAutoScale(false);
+	TRAIN1->SetAutoScale(false);
+	TRAIN2->SetAutoScale(false);
+	TRAIN3->SetAutoScale(false);
+	TRAIN4->SetAutoScale(false);
+	TRAIN0_LIGHT->SetAutoScale(false);
+	TRAIN1_LIGHT->SetAutoScale(false);
+	TRAIN2_LIGHT->SetAutoScale(false);
+	TRAIN3_LIGHT->SetAutoScale(false);
+	BRIDGE_SHADOW1->SetAutoScale(false);
+	WATER_GLARE->SetAutoScale(false);
+	TRAIN_LIGHT_BLUR0->SetAutoScale(false);
+	TRAIN_LIGHT_BLUR1->SetAutoScale(false);
+	TRAIN_BRIDGE->SetAutoScale(false);
+	WATER_SHINE->SetAutoScale(false);
+	TREE_0->SetAutoScale(true);
+	TREE_1->SetAutoScale(true);
+	LOGO->SetAutoScale(false);
 
 	BG_SKY->SetupAttachment(RootComponent);
 	SKY_STAR->SetupAttachment(RootComponent);

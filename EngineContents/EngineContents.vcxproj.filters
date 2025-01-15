@@ -22,17 +22,11 @@
     <ClInclude Include="GlobalVar.h">
       <Filter>00_GlobalValue</Filter>
     </ClInclude>
-    <ClInclude Include="Field_Green.h">
-      <Filter>03_Actors\01_Play</Filter>
-    </ClInclude>
     <ClInclude Include="TileMapEditorMode.h">
       <Filter>02_GameMode\MapEditor</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
       <Filter>03_Actors\01_Play\00_Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Field_Home.h">
-      <Filter>03_Actors\01_Play</Filter>
     </ClInclude>
     <ClInclude Include="ContentsEditorGUI.h">
       <Filter>01_GUI</Filter>
@@ -42,6 +36,15 @@
     </ClInclude>
     <ClInclude Include="Tree.h">
       <Filter>03_Actors\03_MapEditor\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Field_Green.h">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
+    </ClInclude>
+    <ClInclude Include="Field_Home.h">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
+    </ClInclude>
+    <ClInclude Include="AllField.h">
+      <Filter>03_Actors\01_Play\01_Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -63,12 +66,6 @@
     <ClCompile Include="TitleScene.cpp">
       <Filter>03_Actors\00_Title</Filter>
     </ClCompile>
-    <ClCompile Include="Field_Home.cpp">
-      <Filter>03_Actors\01_Play</Filter>
-    </ClCompile>
-    <ClCompile Include="Field_Green.cpp">
-      <Filter>03_Actors\01_Play</Filter>
-    </ClCompile>
     <ClCompile Include="TileMapEditorMode.cpp">
       <Filter>02_GameMode\MapEditor</Filter>
     </ClCompile>
@@ -83,6 +80,15 @@
     </ClCompile>
     <ClCompile Include="Tree.cpp">
       <Filter>03_Actors\03_MapEditor\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Field_Green.cpp">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="Field_Home.cpp">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="AllField.cpp">
+      <Filter>03_Actors\01_Play\01_Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +130,9 @@
     </Filter>
     <Filter Include="03_Actors\03_MapEditor\Tree">
       <UniqueIdentifier>{fa990bf5-e19b-4b34-a055-e088e05ca333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\01_Objects\Field">
+      <UniqueIdentifier>{d896f048-3cbe-4736-aa2c-7319323b276e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

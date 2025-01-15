@@ -67,6 +67,8 @@ public:
 
 	void UpdateCameraLocation(const FVector& _ElliePos);
 
+	void SetField();
+
 
 protected:
 	void BeginPlay() override;
@@ -86,6 +88,6 @@ private:
 
 	std::shared_ptr<class UCollision> ELLIE_COL;
 
-	ACameraActor* Camera = nullptr;
+	class ACameraActor* Camera = nullptr;
 };
 

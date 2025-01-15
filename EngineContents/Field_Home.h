@@ -1,11 +1,10 @@
 #pragma once
-#include <EngineCore/Actor.h>
-
+#include "AllField.h"
 #include "GlobalVar.h"
 
 
 // Ό³Έν :
-class AField_Home : public AActor
+class AField_Home : public AAllField
 {
 public:
 	// constrcuter destructer
@@ -18,14 +17,12 @@ public:
 	AField_Home& operator=(const AField_Home& _Other) = delete;
 	AField_Home& operator=(AField_Home&& _Other) noexcept = delete;
 
+	std::shared_ptr<class USpriteRenderer>GetHomeFieldColImage();
+
 
 protected:
 	void BeginPlay() override;
 	void Tick(float _DeltaTime) override;
 
 private:
-	std::shared_ptr<class USpriteRenderer> HomeField;
-	std::shared_ptr<class UCollision> HomeField_Coll;
-	
-	std::shared_ptr<class USpriteRenderer> HomeField_ColImage;
 };

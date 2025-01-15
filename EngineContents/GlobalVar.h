@@ -3,7 +3,7 @@
 #include <EngineBase/EngineMath.h>
 
 
-static std::string_view START_MODE = "MAPEDITOR";
+static std::string_view START_MODE = "PLAY";
 
 static const FVector WINDOW_SIZE = { 1280, 720 };
 static const FVector HALF_WINDOW_SIZE = WINDOW_SIZE * 0.5;
