@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-#include "Tree0.h"
+#include "Tree.h"
 
 #include <EngineCore/DefaultSceneComponent.h>
 #include <EngineCore/SpriteRenderer.h>
@@ -7,7 +7,7 @@
 #include <EngineCore/Collision.h>
 
 
-ATree0::ATree0()
+ATree::ATree()
 {
 	TreeTypeValue = ETreeType::Tree0;
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
@@ -25,17 +25,17 @@ ATree0::ATree0()
 	Renderer->SetupAttachment(RootComponent);
 };
 
-ATree0::~ATree0()
+ATree::~ATree()
 {
 
 };
 
-void ATree0::BeginPlay()
+void ATree::BeginPlay()
 {
 	AActor::BeginPlay();
 }
 
-void ATree0::Tick(float _DeltaTime)
+void ATree::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
@@ -44,7 +44,7 @@ void ATree0::Tick(float _DeltaTime)
 	UEngineCore::GetMainWindow().GetMousePos();
 }
 
-void ATree0::Serialize(UEngineSerializer& _Ser)
+void ATree::Serialize(UEngineSerializer& _Ser)
 {
 	_Ser << GetActorLocation();
 	//_Ser << std::string("Test.png");
@@ -52,7 +52,7 @@ void ATree0::Serialize(UEngineSerializer& _Ser)
 }
 
 
-void ATree0::DeSerialize(UEngineSerializer& _Ser)
+void ATree::DeSerialize(UEngineSerializer& _Ser)
 {
 	FVector SavePos;
 	_Ser >> SavePos;

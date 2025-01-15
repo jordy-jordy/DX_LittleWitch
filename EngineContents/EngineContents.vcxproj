@@ -214,7 +214,7 @@
       <SubType>
       </SubType>
     </ClInclude>
-    <ClInclude Include="Tree0.h">
+    <ClInclude Include="Tree.h">
       <SubType>
       </SubType>
     </ClInclude>
@@ -267,7 +267,7 @@
       <SubType>
       </SubType>
     </ClCompile>
-    <ClCompile Include="Tree0.cpp">
+    <ClCompile Include="Tree.cpp">
       <SubType>
       </SubType>
     </ClCompile>

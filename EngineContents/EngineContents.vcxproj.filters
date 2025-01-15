@@ -40,7 +40,7 @@
     <ClInclude Include="AllTree.h">
       <Filter>03_Actors\03_MapEditor</Filter>
     </ClInclude>
-    <ClInclude Include="Tree0.h">
+    <ClInclude Include="Tree.h">
       <Filter>03_Actors\03_MapEditor\Tree</Filter>
     </ClInclude>
   </ItemGroup>
@@ -81,7 +81,7 @@
     <ClCompile Include="AllTree.cpp">
       <Filter>03_Actors\03_MapEditor</Filter>
     </ClCompile>
-    <ClCompile Include="Tree0.cpp">
+    <ClCompile Include="Tree.cpp">
       <Filter>03_Actors\03_MapEditor\Tree</Filter>
     </ClCompile>
   </ItemGroup>

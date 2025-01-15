@@ -14,7 +14,7 @@
 
 #include "GlobalVar.h"
 
-#include "Tree0.h"
+#include "Tree.h"
 
 
 enum class ESpawnList
@@ -156,31 +156,31 @@ public:
 				switch (SelectTree)
 				{
 				case ESpawnList::Tree0:
-					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 0);
 					break;
 				case ESpawnList::Tree1:
-					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 1);
 					break;
 				case ESpawnList::Tree2:
-					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 2);
 					break;
 				case ESpawnList::Tree3:
-					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 3);
 					break;
 				case ESpawnList::Tree4:
-					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 4);
 					break;
 				case ESpawnList::Tree5:
-					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 5);
 					break;
 				case ESpawnList::Tree6:
-					NewTree = GetWorld()->SpawnActor<ATree0>("Tree0");
+					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 6);
 					break;
 				default:
@@ -337,18 +337,43 @@ public:
 
 					ETreeType TreeType = static_cast<ETreeType>(TreeTypeValue);
 
-					std::shared_ptr<AAllTree> NewMon = nullptr;
+					std::shared_ptr<AAllTree> NewTree = nullptr;
 
 					switch (TreeType)
 					{
 					case ETreeType::Tree0:
-						NewMon = GetWorld()->SpawnActor<ATree0>();
+						NewTree = GetWorld()->SpawnActor<ATree>();
+						NewTree->GetRenderer()->SetSprite("Trees", 0);
+						break;
+					case ETreeType::Tree1:
+						NewTree = GetWorld()->SpawnActor<ATree>();
+						NewTree->GetRenderer()->SetSprite("Trees", 1);
+						break;
+					case ETreeType::Tree2:
+						NewTree = GetWorld()->SpawnActor<ATree>();
+						NewTree->GetRenderer()->SetSprite("Trees", 2);
+						break;
+					case ETreeType::Tree3:
+						NewTree = GetWorld()->SpawnActor<ATree>();
+						NewTree->GetRenderer()->SetSprite("Trees", 3);
+						break;
+					case ETreeType::Tree4:
+						NewTree = GetWorld()->SpawnActor<ATree>();
+						NewTree->GetRenderer()->SetSprite("Trees", 4);
+						break;
+					case ETreeType::Tree5:
+						NewTree = GetWorld()->SpawnActor<ATree>();
+						NewTree->GetRenderer()->SetSprite("Trees", 5);
+						break;
+					case ETreeType::Tree6:
+						NewTree = GetWorld()->SpawnActor<ATree>();
+						NewTree->GetRenderer()->SetSprite("Trees", 6);
 						break;
 					default:
 						break;
 					}
 
-					NewMon->DeSerialize(Ser);
+					NewTree->DeSerialize(Ser);
 				}
 
 				TileMapRenderer->DeSerialize(Ser);

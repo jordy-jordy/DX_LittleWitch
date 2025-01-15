@@ -6,18 +6,18 @@
 
 
 // Ό³Έν :
-class ATree0 : public AAllTree
+class ATree : public AAllTree
 {
 public:
 	// constrcuter destructer
-	ATree0();
-	~ATree0();
+	ATree();
+	~ATree();
 
 	// delete Function
-	ATree0(const ATree0& _Other) = delete;
-	ATree0(ATree0&& _Other) noexcept = delete;
-	ATree0& operator=(const ATree0& _Other) = delete;
-	ATree0& operator=(ATree0&& _Other) noexcept = delete;
+	ATree(const ATree& _Other) = delete;
+	ATree(ATree&& _Other) noexcept = delete;
+	ATree& operator=(const ATree& _Other) = delete;
+	ATree& operator=(ATree&& _Other) noexcept = delete;
 
 	std::shared_ptr<class USpriteRenderer> GetRenderer() override
 	{
