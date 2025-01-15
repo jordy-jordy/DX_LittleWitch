@@ -141,7 +141,6 @@ void APlayer::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
-
 	switch (CurState)
 	{
 	case EllieState::State::IDLE:

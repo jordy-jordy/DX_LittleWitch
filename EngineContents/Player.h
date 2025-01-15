@@ -67,7 +67,10 @@ public:
 
 	void UpdateCameraLocation(const FVector& _ElliePos);
 
-	void SetField();
+	void SetField(std::shared_ptr<class AAllField> _Field)
+	{
+		Field = _Field;
+	}
 
 
 protected:
@@ -89,5 +92,8 @@ private:
 	std::shared_ptr<class UCollision> ELLIE_COL;
 
 	class ACameraActor* Camera = nullptr;
+
+	std::shared_ptr<class AAllField> Field;
+
 };
 

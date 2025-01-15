@@ -41,16 +41,17 @@ APlayGameMode::APlayGameMode()
 	GetWorld()->LinkCollisionProfile("Player", "Field");
 	GetWorld()->LinkCollisionProfile("Player", "Tree");
 
-	MainField = GetWorld()->SpawnActor<AField_Home>();
-	MainField->SetActorLocation({ 0.0f, 0.0f, 1.0f });
+	Field_HOME = GetWorld()->SpawnActor<AField_Home>();
+	Field_HOME->SetActorLocation({ 0.0f, 0.0f, 1.0f });
+
 	Player = GetWorld()->SpawnActor<APlayer>();
 	Player->SetActorLocation({ 0.0f, 0.0f, 0.0f });
+	Player->SetField(Field_HOME);
 
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
 	Camera->GetCameraComponent()->SetFar(10000.0f);
 	Camera->GetCameraComponent()->SetNear(-100.0f);
 	Camera->GetCameraComponent()->SetZSort(0, false);
-
 };
 
 APlayGameMode::~APlayGameMode()
