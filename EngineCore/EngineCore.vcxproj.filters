@@ -163,6 +163,18 @@
     <ClInclude Include="Widget.h">
       <Filter>04_Object\UI</Filter>
     </ClInclude>
+    <ClInclude Include="EngineConst.h">
+      <Filter>06_Data</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineDataStruct.h">
+      <Filter>06_Data</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineFont.h">
+      <Filter>05_Resources\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdParty\FW1FontWrapper\Inc\FW1FontWrapper.h">
+      <Filter>01_ThirdParty\FW1FontWrapper\Inc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Level.cpp">
@@ -315,6 +327,9 @@
     <ClCompile Include="Widget.cpp">
       <Filter>04_Object\UI</Filter>
     </ClCompile>
+    <ClCompile Include="EngineFont.cpp">
+      <Filter>05_Resources\Font</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="01_PreCompile">
@@ -400,6 +415,15 @@
     </Filter>
     <Filter Include="04_Object\UI">
       <UniqueIdentifier>{1bb44bd1-6a03-4e78-8d1f-72420834110b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05_Resources\Font">
+      <UniqueIdentifier>{003a6ea9-c1a0-4390-bc8b-64f8163852ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_ThirdParty\FW1FontWrapper">
+      <UniqueIdentifier>{0e167a70-229d-4636-ac71-42a64042a111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_ThirdParty\FW1FontWrapper\Inc">
+      <UniqueIdentifier>{9a6d52ec-91be-4238-bda7-1955cce7623c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
