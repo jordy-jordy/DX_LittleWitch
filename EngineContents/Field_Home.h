@@ -1,5 +1,6 @@
 #pragma once
 #include "AllField.h"
+
 #include "GlobalVar.h"
 
 
@@ -19,6 +20,11 @@ public:
 
 	void SetColImage(std::string_view _ColImageName, std::string_view _FolderName) override;
 
+	UEngineWinImage& GetColImage() override
+	{
+		return ColImage;
+	}
+
 
 protected:
 	void BeginPlay() override;
@@ -26,4 +32,7 @@ protected:
 
 
 private:
+	UEngineWinImage ColImage;
+
+
 };

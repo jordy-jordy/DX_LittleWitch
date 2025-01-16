@@ -3,10 +3,11 @@
 
 #include <EngineCore/DefaultSceneComponent.h>
 #include <EngineCore/SpriteRenderer.h>
-#include <EnginePlatform/EngineInput.h>
 #include <EngineCore/Collision.h>
 #include <EngineCore/EngineCamera.h>
 #include <EngineCore/CameraActor.h>
+#include <EnginePlatform/EngineWinImage.h>
+#include <EnginePlatform/EngineInput.h>
 
 #include "Field_Home.h"
 
@@ -141,6 +142,7 @@ void APlayer::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
+
 	switch (CurState)
 	{
 	case EllieState::State::IDLE:
@@ -159,6 +161,23 @@ void APlayer::Tick(float _DeltaTime)
 		break;
 	}
 }
+
+void APlayer::SetColImage(std::string_view _ColImageName, std::string_view _FolderName)
+{
+	std::string_view ColImageDir = Field->GetColImageDir();
+	UEngineDirectory Dir;
+	if (false == Dir.MoveParentToDirectory(ColImageDir))
+	{
+		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
+		return;
+	}
+
+	Dir.Append(_FolderName);
+	UEngineFile ImageFiles = Dir.GetFile(_ColImageName);
+
+	ColImage.Load(nullptr, ImageFiles.GetPathToString());
+}
+
 
 void APlayer::ChangeState(EllieState::State _CurPlayerState)
 {
@@ -243,6 +262,16 @@ void APlayer::EllieMove(float _DeltaTime)
 	SwitchCurState_Speed();
 
 	FVector NEXTPOS = CurVector * CurState_Speed * _DeltaTime;
+	
+	FVector ColImageHALFSize = { ColImage.GetImageScale().Half().X, ColImage.GetImageScale().Half().Y };
+	FVector EllieLocation = FVector( GetActorLocation().X, (GetActorLocation().Y + ELLIESIZE.Y * ScaleRatio * 0.3f) * -1.0f, 0.0f ) + FVector(NEXTPOS.X, NEXTPOS.Y * -1.0f, 0);
+	FVector NEXTPOS_ColImg = ColImageHALFSize + EllieLocation;
+
+	UColor Color = ColImage.GetColor(NEXTPOS_ColImg);
+	if (Color == UColor::BLACK)
+	{
+		return;
+	}
 
 	std::vector<UCollision*> Result;
 	if (false != ELLIE_COL->CollisionCheck("Field", NEXTPOS, Result))

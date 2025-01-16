@@ -25,7 +25,7 @@ protected:
 	void BeginPlay();
 
 private:
-	std::shared_ptr<class APlayer> Player;
+	class APlayer* Player;
 	std::shared_ptr<class AAllField> Field_HOME;
 
 };

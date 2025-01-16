@@ -28,7 +28,7 @@ ATitleGameMode::~ATitleGameMode()
 
 void ATitleGameMode::BeginPlay()
 {
-	AActor::BeginPlay();
+	AGameMode::BeginPlay();
 }
 
 void ATitleGameMode::Tick(float _DeltaTime)

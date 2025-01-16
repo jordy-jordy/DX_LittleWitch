@@ -34,7 +34,6 @@ AField_Home::AField_Home()
 	FieldColIamge->SetupAttachment(RootComponent);
 	FieldCol->SetupAttachment(RootComponent);
 
-	ColImageDir = "ContentsResources\\Image\\WitchResource\\PLAY";
 };
 
 void AField_Home::BeginPlay()

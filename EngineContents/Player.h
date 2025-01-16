@@ -1,6 +1,8 @@
 #pragma once
 #include <EngineCore/Actor.h>
 
+#include <EnginePlatform/EngineWinImage.h>
+
 #include "GlobalVar.h"
 
 
@@ -67,6 +69,8 @@ public:
 
 	void UpdateCameraLocation(const FVector& _ElliePos);
 
+	void SetColImage(std::string_view _ColImageName, std::string_view _FolderName);
+
 	void SetField(std::shared_ptr<class AAllField> _Field)
 	{
 		Field = _Field;
@@ -91,9 +95,10 @@ private:
 
 	std::shared_ptr<class UCollision> ELLIE_COL;
 
-	class ACameraActor* Camera = nullptr;
-
 	std::shared_ptr<class AAllField> Field;
+	UEngineWinImage ColImage;
+
+	class ACameraActor* Camera = nullptr;
 
 };
 

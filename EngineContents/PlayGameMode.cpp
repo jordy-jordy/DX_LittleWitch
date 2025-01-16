@@ -41,14 +41,6 @@ APlayGameMode::APlayGameMode()
 	GetWorld()->LinkCollisionProfile("Player", "Field");
 	GetWorld()->LinkCollisionProfile("Player", "Tree");
 
-	Field_HOME = GetWorld()->SpawnActor<AField_Home>();
-	Field_HOME->SetActorLocation({ 0.0f, 0.0f, 1.0f });
-	Field_HOME->SetColImage("pixel_coll.png", "02_Field");
-
-	Player = GetWorld()->SpawnActor<APlayer>();
-	Player->SetActorLocation({ 0.0f, 0.0f, 0.0f });
-	Player->SetField(Field_HOME);
-
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
 	Camera->GetCameraComponent()->SetFar(10000.0f);
 	Camera->GetCameraComponent()->SetNear(-100.0f);
@@ -62,7 +54,16 @@ APlayGameMode::~APlayGameMode()
 
 void APlayGameMode::BeginPlay()
 {
-	AActor::BeginPlay();
+	AGameMode::BeginPlay();
+
+	Field_HOME = GetWorld()->SpawnActor<AField_Home>();
+	Field_HOME->SetActorLocation({ 0.0f, 0.0f, 1.0f });
+	Field_HOME->SetColImage("pixel_coll.png", "02_Field");
+
+	Player = dynamic_cast<APlayer*>(GetWorld()->GetMainPawn());
+	Player->SetActorLocation({ 0.0f, 0.0f, 0.0f });
+	Player->SetField(Field_HOME);
+	Player->SetColImage("pixel_coll.png", "02_Field");
 }
 
 void APlayGameMode::Tick(float _DeltaTime)

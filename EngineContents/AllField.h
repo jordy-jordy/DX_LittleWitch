@@ -20,31 +20,16 @@ public:
 	AAllField& operator=(const AAllField& _Other) = delete;
 	AAllField& operator=(AAllField&& _Other) noexcept = delete;
 
-	virtual void InitializeField
-	(
-		std::shared_ptr<class USpriteRenderer> _Image, 
-		std::shared_ptr<class USpriteRenderer> _ColImage, 
-		std::shared_ptr<class UCollision> _Collision
-	)
+	virtual void SetColImage(std::string_view _ColImageName, std::string_view _FolderName);
+
+	virtual UEngineWinImage& GetColImage()
 	{
-		FieldImage = _Image;
-		FieldColIamge = _ColImage;
-		FieldCol = _Collision;
+		return ColImage;
 	}
 
-	virtual void SetColImage(std::string_view _ColImageName, std::string_view _FolderName)
+	std::string_view GetColImageDir()
 	{
-		UEngineDirectory Dir;
-		if (false == Dir.MoveParentToDirectory(ColImageDir))
-		{
-			MSGASSERT("리소스 폴더를 찾지 못했습니다.");
-			return;
-		}
-
-		Dir.Append(_FolderName);
-		UEngineFile ImageFiles = Dir.GetFile(_ColImageName);
-
-		ColImage.Load(nullptr, ImageFiles.GetPathToString());
+		return ColImageDir;
 	}
 
 
@@ -54,9 +39,10 @@ protected:
 	std::shared_ptr<class UCollision> FieldCol;
 
 	UEngineWinImage ColImage;
-	std::string_view ColImageDir;
+	std::string_view ColImageDir = "ContentsResources\\Image\\WitchResource\\PLAY";
 
 
 private:
+
 
 };
