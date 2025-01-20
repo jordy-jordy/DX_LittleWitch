@@ -41,7 +41,7 @@ public:
 	//int SelectItem = 0;
 	int ObjectItem = -1;
 	UTileMapRenderer* TileMapRenderer = nullptr;
-	EEditMode Mode = EEditMode::Object;
+	EEditMode Mode = EEditMode::TileMap;
 
 	int TileCountX = 20;
 	int TileCountY = 15;
@@ -60,27 +60,35 @@ public:
 			//SRV입니다
 			ImTextureID SRV = reinterpret_cast<ImTextureID>(Texture->GetSRV());
 
-			std::string Text = std::to_string(i);
+			std::string Text = std::to_string(i); // 타일 인덱스를 문자열로 변환
+			std::string TileName = "Tile_" + std::to_string(i); // 타일 이름 생성
 
-			if (i != 0)
+			// 이미지 출력
+			if (i != 0 && i % 4 == 0) // 한 줄에 17개 출력
 			{
-				if (0 != (i % 6))
-				{
-					ImGui::SameLine();
-				}
+				ImGui::NewLine(); // 줄바꿈
 			}
 
+			ImGui::BeginGroup(); // 그룹 시작
 
 			ImVec2 Pos = { Data.CuttingPos.X, Data.CuttingPos.Y };
 			ImVec2 Size = { Data.CuttingPos.X + Data.CuttingSize.X, Data.CuttingPos.Y + Data.CuttingSize.Y };
 
-			if (ImGui::ImageButton(Text.c_str(), SRV, { 60, 60 }, Pos, Size))
+			if (ImGui::ImageButton(Text.c_str(), SRV, { 32, 32 }, Pos, Size))
 			{
 				SelectTileIndex = static_cast<int>(i);
 			}
-			// 엔터를 치지 않는개념.
+
+			// 이름 출력 (이미지 아래)
+			ImGui::Text(TileName.c_str());
+
+			ImGui::EndGroup(); // 그룹 종료
+
+			ImGui::SameLine(); // 다음 타일로 이동
 		}
 
+		// 기존 TileMap 크기 설정 및 타일 생성 코드
+		ImGui::NewLine(); // 버튼 영역 아래로 이동
 		ImGui::InputInt("TileMapX", &TileCountX);
 		ImGui::InputInt("TileMapY", &TileCountY);
 
@@ -430,13 +438,13 @@ ATileMapEditorMode::ATileMapEditorMode()
 	PivotSpriteRenderer->SetRelativeScale3D({ 10.0f, 10.0f, 1.0f });
 
 	Renderer_Tile = CreateDefaultSubObject<UTileMapRenderer>();
-	Renderer_Tile->SetTileSetting(ETileMapType::Rect, "TILEMAP_TILE", { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 0.0f, 0.0f });
+	Renderer_Tile->SetTileSetting(ETileMapType::Rect, "Wall_Default_0.png", { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 0.0f, 0.0f });
 
 	PivotSpriteRenderer->SetupAttachment(RootComponent);
 	Renderer_Tile->SetupAttachment(RootComponent);
 
 	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
-	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -1000.0f, 1.0f });
+	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -1000.0f, 5.0f });
 	Camera->GetCameraComponent()->SetZSort(0, true);
 };
 
@@ -483,7 +491,6 @@ void ATileMapEditorMode::BeginPlay()
 
 void ATileMapEditorMode::TileMapDirLoad()
 {
-
 	/*16x16 타일 리소스*/
 	UEngineDirectory TILEMAP_TILE_Dir;
 	if (false == TILEMAP_TILE_Dir.MoveParentToDirectory("ContentsResources"))
@@ -508,15 +515,17 @@ void ATileMapEditorMode::TileMapDirLoad()
 		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
 		return;
 	}
-	TILEMAP_OBJECT_Dir.Append("Image\\WitchResource\\TILEMAP\\TILEMAP_OBJECTS\\Trees");
+	TILEMAP_OBJECT_Dir.Append("Image\\WitchResource\\TILEMAP\\TILEMAP_OBJECTS");
 	std::vector<UEngineFile> OBJECTS = TILEMAP_OBJECT_Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
 	for (size_t i = 0; i < OBJECTS.size(); i++)
 	{
 		std::string ObjectFilePath = OBJECTS[i].GetPathToString();
 		UEngineTexture::Load(ObjectFilePath);
 	}
-	UEngineSprite::CreateSpriteToFolder(TILEMAP_OBJECT_Dir.GetPathToString());
 
+	UEngineSprite::CreateSpriteToMeta("Wall_Default_0.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("Wall_Ramp_0.png", ".sdata");
+	UEngineSprite::CreateSpriteToMeta("Wall_Stairs_0.png", ".sdata");
 
 }
 
