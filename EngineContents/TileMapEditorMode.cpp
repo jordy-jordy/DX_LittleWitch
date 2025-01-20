@@ -443,7 +443,7 @@ ATileMapEditorMode::ATileMapEditorMode()
 	PivotSpriteRenderer->SetupAttachment(RootComponent);
 	Renderer_Tile->SetupAttachment(RootComponent);
 
-	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
+	Camera = GetWorld()->GetMainCamera();
 	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -1000.0f, 5.0f });
 	Camera->GetCameraComponent()->SetZSort(0, true);
 };
@@ -458,6 +458,28 @@ ATileMapEditorMode::~ATileMapEditorMode()
 void ATileMapEditorMode::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
+
+	if (UEngineInput::IsPress('W'))
+	{
+		Camera->AddActorLocation({ 0.0f, 1.0f * 300.0f * _DeltaTime , 0.0f });
+	}
+
+	if (UEngineInput::IsPress('A'))
+	{
+		Camera->AddActorLocation({ -1.0f * 300.0f * _DeltaTime , 0.0f, 0.0f });
+	}
+
+	if (UEngineInput::IsPress('S'))
+	{
+		Camera->AddActorLocation({ 0.0f, -1.0f * 300.0f * _DeltaTime , 0.0f });
+	}
+
+	if (UEngineInput::IsPress('D'))
+	{
+		Camera->AddActorLocation({ 1.0f * 300.0f * _DeltaTime , 0.0f, 0.0f });
+	}
+
+
 }
 
 void ATileMapEditorMode::LevelChangeStart()
@@ -515,13 +537,27 @@ void ATileMapEditorMode::TileMapDirLoad()
 		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
 		return;
 	}
+	UEngineDirectory TREE_Dir;
+	if (false == TREE_Dir.MoveParentToDirectory("ContentsResources"))
+	{
+		MSGASSERT("리소스 폴더를 찾지 못했습니다.");
+		return;
+	}
+
 	TILEMAP_OBJECT_Dir.Append("Image\\WitchResource\\TILEMAP\\TILEMAP_OBJECTS");
+	TREE_Dir.Append("Image\\WitchResource\\TILEMAP\\TILEMAP_OBJECTS\\Trees");
+
 	std::vector<UEngineFile> OBJECTS = TILEMAP_OBJECT_Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
+	std::vector<UEngineFile> TREES = TREE_Dir.GetAllFile(true, { ".PNG", ".BMP", ".JPG" });
+
 	for (size_t i = 0; i < OBJECTS.size(); i++)
 	{
 		std::string ObjectFilePath = OBJECTS[i].GetPathToString();
+
 		UEngineTexture::Load(ObjectFilePath);
 	}
+
+	UEngineSprite::CreateSpriteToFolder(TREE_Dir.GetPathToString());
 
 	UEngineSprite::CreateSpriteToMeta("Wall_Default_0.png", ".sdata");
 	UEngineSprite::CreateSpriteToMeta("Wall_Ramp_0.png", ".sdata");
