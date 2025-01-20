@@ -465,6 +465,8 @@
     <CopyFileToFolders Include="ThirdParty\FW1FontWrapper\Release\FW1FontWrapper.dll">
       <Filter>01_ThirdParty\FW1FontWrapper\Release</Filter>
     </CopyFileToFolders>
-    <CopyFileToFolders Include="ThirdParty\FW1FontWrapper\Release\FW1FontWrapper.lib" />
+    <CopyFileToFolders Include="ThirdParty\FW1FontWrapper\Release\FW1FontWrapper.lib">
+      <Filter>01_ThirdParty\FW1FontWrapper\Release</Filter>
+    </CopyFileToFolders>
   </ItemGroup>
 </Project>
