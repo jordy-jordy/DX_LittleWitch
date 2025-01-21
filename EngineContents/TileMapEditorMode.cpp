@@ -248,7 +248,6 @@ public:
 
 	void SaveAndLoad()
 	{
-
 		if (true == ImGui::Button("Save"))
 		{
 			UEngineDirectory Dir;

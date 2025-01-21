@@ -40,9 +40,6 @@
     <ClInclude Include="Field_Green.h">
       <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
     </ClInclude>
-    <ClInclude Include="Field_Home.h">
-      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
-    </ClInclude>
     <ClInclude Include="AllField.h">
       <Filter>03_Actors\01_Play\01_Objects</Filter>
     </ClInclude>
@@ -82,9 +79,6 @@
       <Filter>03_Actors\03_MapEditor\Tree</Filter>
     </ClCompile>
     <ClCompile Include="Field_Green.cpp">
-      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
-    </ClCompile>
-    <ClCompile Include="Field_Home.cpp">
       <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
     </ClCompile>
     <ClCompile Include="AllField.cpp">

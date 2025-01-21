@@ -9,7 +9,7 @@
 #include <EnginePlatform/EngineWinImage.h>
 #include <EnginePlatform/EngineInput.h>
 
-#include "Field_Home.h"
+#include "Field_Green.h"
 
 #include "GlobalVar.h"
 
@@ -124,8 +124,7 @@ APlayer::APlayer()
 	ELLIE->SetupAttachment(RootComponent);
 	ELLIE_HAT->SetupAttachment(RootComponent);
 
-	Camera = GetWorld()->GetMainCamera().get();
-	Camera->SetActorLocation({ GetActorLocation().X, GetActorLocation().Y/* + 70.0f*/, 0.0f });
+	//Camera->SetActorLocation({ GetActorLocation().X, GetActorLocation().Y/* + 70.0f*/, 0.0f });
 
 }
 
@@ -136,6 +135,12 @@ APlayer::~APlayer()
 void APlayer::BeginPlay()
 {
 	AActor::BeginPlay();
+
+	Camera = GetWorld()->GetMainCamera().get();
+	Camera->GetCameraComponent()->SetFar(10000.0f);
+	Camera->GetCameraComponent()->SetNear(-100.0f);
+	Camera->GetCameraComponent()->SetZSort(0, true);
+	UpdateCameraLocation(this->GetActorLocation());
 }
 
 void APlayer::Tick(float _DeltaTime)
@@ -218,7 +223,7 @@ void APlayer::SetEllieAnimation(const std::string_view& _EllieAnimation, const s
 
 void APlayer::UpdateCameraLocation(const FVector& _ElliePos)
 {
-	FVector TargetScale = HomeFieldSize * 0.5f;
+	FVector TargetScale = GreenFieldSize_Plus * 0.5f;
 	float Plus_WinSizeX = _ElliePos.X + HALF_WINDOW_SIZE.X;
 	float Plus_WinSizeY = _ElliePos.Y + HALF_WINDOW_SIZE.Y;
 	float Minus_WinSizeX = _ElliePos.X - HALF_WINDOW_SIZE.X;

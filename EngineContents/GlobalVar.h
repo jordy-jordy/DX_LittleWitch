@@ -3,13 +3,13 @@
 #include <EngineBase/EngineMath.h>
 
 
-static std::string_view START_MODE = "MAPEDITOR";
+static std::string_view START_MODE = "PLAY";
 
 static const FVector WINDOW_SIZE = { 1280, 720 };
 static const FVector HALF_WINDOW_SIZE = WINDOW_SIZE * 0.5;
 
 static const FVector ELLIESIZE = { 50.0f, 50.0f, 0.0f };
-static const float ScaleRatio = 2.4f;
+static const float ScaleRatio = 2.35f;
 
 static const float ELLIE_ANIMDEFAULT_SPEED = 0.13f;
 
@@ -26,6 +26,7 @@ static const FVector VECTOR_RIGHT = { 1.0f, 0.0f, 0.0f };
 static const FVector VECTOR_RIGHT_UP = { 1.0f, 1.0f, 0.0f };
 static const FVector VECTOR_RIGHT_DOWN = { 1.0f, -1.0f, 0.0f };
 
-static const FVector HomeFieldSize = { 800.0f, 800.0f, 0.0f };
+static const FVector GreenFieldSize = { 720.0f , 604.0f , 0.0f };
+static const FVector GreenFieldSize_Plus = GreenFieldSize * ScaleRatio;
 
 

@@ -12,7 +12,7 @@
 #include <EngineCore/imgui.h>
 
 #include "Player.h"
-#include "Field_Home.h"
+#include "Field_Green.h"
 #include "Field_Green.h"
 
 
@@ -42,10 +42,10 @@ APlayGameMode::APlayGameMode()
 	GetWorld()->LinkCollisionProfile("Player", "Field");
 	GetWorld()->LinkCollisionProfile("Player", "Tree");
 
-	std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
-	Camera->GetCameraComponent()->SetFar(10000.0f);
-	Camera->GetCameraComponent()->SetNear(-100.0f);
-	Camera->GetCameraComponent()->SetZSort(0, false);
+	//std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
+	//Camera->GetCameraComponent()->SetFar(10000.0f);
+	//Camera->GetCameraComponent()->SetNear(-100.0f);
+	//Camera->GetCameraComponent()->SetZSort(0, true);
 };
 
 APlayGameMode::~APlayGameMode()
@@ -58,14 +58,14 @@ void APlayGameMode::BeginPlay()
 	AGameMode::BeginPlay();
 	UEngineCore::GetDevice().GetBackBufferTarget()->SetClearColor({ 0.337f, 0.388f, 0.263f, 1.0f });
 
-	Field_HOME = GetWorld()->SpawnActor<AField_Home>();
+	Field_HOME = GetWorld()->SpawnActor<AField_Green>();
 	Field_HOME->SetActorLocation({ 0.0f, 0.0f, 1.0f });
-	Field_HOME->SetColImage("pixel_coll.png", "02_Field");
+	Field_HOME->SetColImage("Field_Green_001.png", "02_Field");
 
 	Player = dynamic_cast<APlayer*>(GetWorld()->GetMainPawn());
-	Player->SetActorLocation({ 0.0f, 0.0f, 0.0f });
+	Player->SetActorLocation({ 0.0f, 100.0f, 0.0f });
 	Player->SetField(Field_HOME);
-	Player->SetColImage("pixel_coll.png", "02_Field");
+	Player->SetColImage("Field_Green_001.png", "02_Field");
 }
 
 void APlayGameMode::Tick(float _DeltaTime)
