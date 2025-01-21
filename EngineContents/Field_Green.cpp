@@ -7,6 +7,7 @@
 #include <EngineCore/Collision.h>
 #include <EngineCore/CameraActor.h>
 #include <EngineCore/EngineCamera.h>
+#include <EnginePlatform/EngineInput.h>
 
 #include "AllField.h"
 
@@ -19,13 +20,13 @@ AField_Green::AField_Green()
 	RootComponent = Default;
 
 	FieldImage = CreateDefaultSubObject<USpriteRenderer>();
-
 	FieldColIamge = CreateDefaultSubObject<USpriteRenderer>();
-
+	FieldColIamge2 = CreateDefaultSubObject<USpriteRenderer>();
 	FieldCol = CreateDefaultSubObject<UCollision>();
 
 	FieldImage->SetupAttachment(RootComponent);
 	FieldColIamge->SetupAttachment(RootComponent);
+	FieldColIamge2->SetupAttachment(RootComponent);
 	FieldCol->SetupAttachment(RootComponent);
 
 };
@@ -45,8 +46,12 @@ void AField_Green::BeginPlay()
 	//FieldColIamge->SetAutoScale(ScaleRatio);
 	FVector CheckSize = GreenFieldSize_Plus;
 	FieldColIamge->SetRelativeScale3D(CheckSize);
-	FieldColIamge->SetWorldLocation({ 0, 0, 0 });
+	FieldColIamge->SetWorldLocation({ 0, 0, 300 });
 	FieldColIamge->SetTexture("Field_Green_001.png");
+
+	FieldColIamge2->SetRelativeScale3D(GreenFieldSize);
+	FieldColIamge2->SetWorldLocation({ 0, 0, 0 });
+	FieldColIamge2->SetTexture("Field_Green_001.png");
 
 	FieldCol->SetCollisionProfileName("Field");
 	FieldCol->SetScale3D({ GreenFieldSize_Plus.X - ELLIESIZE.X, GreenFieldSize_Plus.Y - ELLIESIZE.Y });
@@ -70,6 +75,12 @@ void AField_Green::SetColImage(std::string_view _ColImageName, std::string_view 
 void AField_Green::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
+
+	if (UEngineInput::IsDown(VK_F1))
+	{
+		FieldColIamge2->SetActiveSwitch();
+	}
+
 }
 
 AField_Green::~AField_Green()
