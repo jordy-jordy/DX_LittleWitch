@@ -31,7 +31,7 @@
     <ClInclude Include="ContentsEditorGUI.h">
       <Filter>01_GUI</Filter>
     </ClInclude>
-    <ClInclude Include="AllTree.h">
+    <ClInclude Include="FieldObjects.h">
       <Filter>03_Actors\03_MapEditor</Filter>
     </ClInclude>
     <ClInclude Include="Tree.h">
@@ -75,7 +75,7 @@
     <ClCompile Include="ContentsEditorGUI.cpp">
       <Filter>01_GUI</Filter>
     </ClCompile>
-    <ClCompile Include="AllTree.cpp">
+    <ClCompile Include="FieldObjects.cpp">
       <Filter>03_Actors\03_MapEditor</Filter>
     </ClCompile>
     <ClCompile Include="Tree.cpp">

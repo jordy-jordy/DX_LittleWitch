@@ -160,7 +160,7 @@ public:
 				FVector Pos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
 				Pos.Z = 0.0f;
 
-				std::shared_ptr<AAllTree> NewTree;
+				std::shared_ptr<AFieldObjects> NewTree;
 
 				switch (SelectTree)
 				{
@@ -203,8 +203,8 @@ public:
 		{
 			if (ImGui::Button("EditObjectDelete"))
 			{
-				std::list<std::shared_ptr<AAllTree>> AllTreeList = GetWorld()->GetAllActorListByClass<AAllTree>();
-				for (std::shared_ptr<AAllTree> Tree : AllTreeList)
+				std::list<std::shared_ptr<AFieldObjects>> AllTreeList = GetWorld()->GetAllActorListByClass<AFieldObjects>();
+				for (std::shared_ptr<AFieldObjects> Tree : AllTreeList)
 				{
 					Tree->Destroy();
 				}
@@ -212,7 +212,7 @@ public:
 		}
 
 		{
-			std::vector<std::shared_ptr<AAllTree>> AllTreeList = GetWorld()->GetAllActorArrayByClass<AAllTree>();
+			std::vector<std::shared_ptr<AFieldObjects>> AllTreeList = GetWorld()->GetAllActorArrayByClass<AFieldObjects>();
 
 			std::vector<std::string> ArrString;
 			for (std::shared_ptr<class AActor> Actor : AllTreeList)
@@ -278,13 +278,13 @@ public:
 
 			if (GetSaveFileNameA(&ofn) == TRUE)
 			{
-				std::list<std::shared_ptr<AAllTree>> AllTreeList = GetWorld()->GetAllActorListByClass<AAllTree>();
+				std::list<std::shared_ptr<AFieldObjects>> AllTreeList = GetWorld()->GetAllActorListByClass<AFieldObjects>();
 
 				UEngineSerializer Ser;
 
 				Ser << static_cast<int>(AllTreeList.size());
 
-				for (std::shared_ptr<AAllTree> Actor : AllTreeList)
+				for (std::shared_ptr<AFieldObjects> Actor : AllTreeList)
 				{
 
 					Ser << static_cast<int>(Actor->TreeTypeValue);
@@ -334,19 +334,18 @@ public:
 				NewFile.FileOpen("rb");
 				NewFile.Read(Ser);
 
+				int ObjectsCount = 0;
 
-				int TreeCount = 0;
+				Ser >> ObjectsCount;
 
-				Ser >> TreeCount;
-
-				for (size_t i = 0; i < TreeCount; i++)
+				for (size_t i = 0; i < ObjectsCount; i++)
 				{
 					int TreeTypeValue = 0;
 					Ser >> TreeTypeValue;
 
 					ETreeType TreeType = static_cast<ETreeType>(TreeTypeValue);
 
-					std::shared_ptr<AAllTree> NewTree = nullptr;
+					std::shared_ptr<AFieldObjects> NewTree = nullptr;
 
 					switch (TreeType)
 					{
@@ -446,7 +445,7 @@ ATileMapEditorMode::ATileMapEditorMode()
 
 	Camera = GetWorld()->GetMainCamera();
 	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -100.0f, 0.0f });
-	Camera->GetCameraComponent()->SetProjectionType(EProjectionType::Perspective);
+	Camera->GetCameraComponent()->SetProjectionType(EProjectionType::Orthographic);
 	Camera->GetCameraComponent()->SetZSort(0, true);
 };
 

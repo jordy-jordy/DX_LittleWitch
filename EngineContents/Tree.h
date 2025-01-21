@@ -1,12 +1,12 @@
 #pragma once
-#include "AllTree.h"
+#include "FieldObjects.h"
 
 #include <EngineCore/SpriteRenderer.h>
 #include <EnginePlatform/EngineWinImage.h>
 
 
 // Ό³Έν :
-class ATree : public AAllTree
+class ATree : public AFieldObjects
 {
 public:
 	// constrcuter destructer

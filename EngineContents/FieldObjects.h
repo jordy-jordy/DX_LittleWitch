@@ -16,18 +16,18 @@ enum class ETreeType
 };
 
 // Ό³Έν :
-class AAllTree : public AActor
+class AFieldObjects : public AActor
 {
 public:
 	// constrcuter destructer
-	AAllTree();
-	~AAllTree();
+	AFieldObjects();
+	~AFieldObjects();
 
 	// delete Function
-	AAllTree(const AAllTree& _Other) = delete;
-	AAllTree(AAllTree&& _Other) noexcept = delete;
-	AAllTree& operator=(const AAllTree& _Other) = delete;
-	AAllTree& operator=(AAllTree&& _Other) noexcept = delete;
+	AFieldObjects(const AFieldObjects& _Other) = delete;
+	AFieldObjects(AFieldObjects&& _Other) noexcept = delete;
+	AFieldObjects& operator=(const AFieldObjects& _Other) = delete;
+	AFieldObjects& operator=(AFieldObjects&& _Other) noexcept = delete;
 
 	ETreeType TreeTypeValue;
 
