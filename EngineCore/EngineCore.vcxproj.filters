@@ -181,6 +181,9 @@
     <ClInclude Include="GameInstance.h">
       <Filter>00_Core</Filter>
     </ClInclude>
+    <ClInclude Include="EngineStructuredBuffer.h">
+      <Filter>05_Resources\Buffer</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Level.cpp">
@@ -341,6 +344,9 @@
     </ClCompile>
     <ClCompile Include="GameInstance.cpp">
       <Filter>00_Core</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineStructuredBuffer.cpp">
+      <Filter>05_Resources\Buffer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
