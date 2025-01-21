@@ -163,6 +163,10 @@ public:
 				FVector Pos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
 				Pos.Z = 0.0f;
 
+				FVector TargetLoc_TYPE0 = FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio;
+				FVector TargetLoc_TYPE1 = FVector{ TREE_SIZE_1.X * 0.025f, TREE_SIZE_1.Y * 0.4f * -1.0f } *ScaleRatio;
+
+
 				std::shared_ptr<AFieldObjects> NewTree;
 
 				switch (SelectTree)
@@ -170,43 +174,50 @@ public:
 				case ESpawnList::Tree0:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 0);
-					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } * ScaleRatio));
+					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
+					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree1:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 1);
-					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_1.X * 0.025f, TREE_SIZE_1.Y * 0.4f * -1.0f } *ScaleRatio));
+					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE1);
+					NewTree->SetActorLocation(Pos - TargetLoc_TYPE1);
 					break;
 				case ESpawnList::Tree2:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 2);
-					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
+					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
+					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree3:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 3);
-					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
+					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
+					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree4:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 4);
-					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
+					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
+					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree5:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 5);
-					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
+					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
+					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree6:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 6);
-					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
+					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
+					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				default:
 					break;
 				}
 
-				NewTree->SetActorLocation(Pos);
+				//NewTree->SetActorLocation(Pos);
 			}
 		}
 
