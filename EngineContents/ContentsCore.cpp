@@ -33,7 +33,7 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 
 	UEngineGUI::CreateGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
 	std::shared_ptr<UContentsEditorGUI> Window = UEngineGUI::FindGUIWindow<UContentsEditorGUI>("ContentsEditorGUI");
-	Window->SetActive(false);
+	Window->SetActive(true);
 
 	UEngineCore::CreateLevel<ATitleGameMode, APawn, AHUD>("TITLE");
 	UEngineCore::CreateLevel<APlayGameMode, APlayer, AHUD>("PLAY");

@@ -6,6 +6,8 @@
 #include <EngineCore/CameraActor.h>
 #include <EngineCore/Collision.h>
 
+#include "GlobalVar.h"
+
 
 ATree::ATree()
 {
@@ -14,8 +16,8 @@ ATree::ATree()
 	RootComponent = Default;
 
 	Renderer = CreateDefaultSubObject<USpriteRenderer>();
-	Renderer->SetScale3D({ 100.0f, 100.0f });
-	Renderer->SetWorldLocation({0, 0, -100});
+	Renderer->SetWorldLocation({ 0, 0, 50 });
+	Renderer->SetAutoScaleRatio(ScaleRatio);
 
 	Collision = CreateDefaultSubObject<UCollision>();
 	Collision->SetCollisionProfileName("Tree");

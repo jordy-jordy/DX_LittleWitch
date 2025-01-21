@@ -433,12 +433,19 @@ ATileMapEditorMode::ATileMapEditorMode()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
+	FieldRenderer = CreateDefaultSubObject<USpriteRenderer>();
+	FieldRenderer->SetTexture("Field_Green_000.png");
+	FieldRenderer->SetScale3D(GreenFieldSize_Plus);
+	FieldRenderer->SetWorldLocation({0.0f, 0.0f, 500.0f});
+
 	PivotSpriteRenderer = CreateDefaultSubObject<USpriteRenderer>();
 	PivotSpriteRenderer->SetRelativeScale3D({ 10.0f, 10.0f, 1.0f });
+	PivotSpriteRenderer->SetWorldLocation({ 0.0f, 0.0f, 200.0f });
 
 	Renderer_Tile = CreateDefaultSubObject<UTileMapRenderer>();
 	Renderer_Tile->SetTileSetting(ETileMapType::Rect, "Wall_Default_0.png", { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 0.0f, 0.0f });
 
+	FieldRenderer->SetupAttachment(RootComponent);
 	PivotSpriteRenderer->SetupAttachment(RootComponent);
 	Renderer_Tile->SetupAttachment(RootComponent);
 
@@ -461,7 +468,7 @@ void ATileMapEditorMode::Tick(float _DeltaTime)
 
 	// 휠 이동 방향 확인
 
-	float CameraSpeed = 5550.0f;
+	float CameraSpeed = 500.0f;
 
 	if (UEngineInput::IsPress('W'))
 	{
