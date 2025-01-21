@@ -2,7 +2,7 @@
 #include <string_view>
 #include <EngineBase/EngineMath.h>
 
-static const float ScaleRatio = 2.0f;
+static const float ScaleRatio = 2.8f;
 
 static std::string_view START_MODE = "PLAY";
 
@@ -14,8 +14,8 @@ static const FVector ELLIESIZE_PLUS = ELLIESIZE * ScaleRatio;
 
 static const float ELLIE_ANIMDEFAULT_SPEED = 0.13f;
 
-static float ELLIE_WALK_SPEED = 300.0f;
-static float ELLIE_RUN_SPEED = 600.0f;
+static float ELLIE_WALK_SPEED = 500.0f;
+static float ELLIE_RUN_SPEED = 800.0f;
 
 static const FVector VECTOR_NONE = { 0.0f, 0.0f, 0.0f };
 static const FVector VECTOR_UP = { 0.0f, 1.0f, 0.0f };

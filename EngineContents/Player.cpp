@@ -271,9 +271,10 @@ void APlayer::EllieMove(float _DeltaTime)
 	//FVector ColImageHALFSize = { ColImage.GetImageScale().Half().X, ColImage.GetImageScale().Half().Y };
 	FVector ColImageHALFSize = { GreenFieldSize_Plus.Half().X, GreenFieldSize_Plus.Half().Y };
 	FVector EllieLocation = FVector( GetActorLocation().X, (GetActorLocation().Y + ELLIESIZE_PLUS.Y * 0.3f) * -1.0f, 0.0f );
-	FVector NEXTPOS_ColImg = (ColImageHALFSize + (EllieLocation + FVector(NEXTPOS.X, NEXTPOS.Y * -1.0f, 0))) / ScaleRatio;
+	FVector NEXTIntPOS_ColImg = ColImageHALFSize + (EllieLocation + FVector(NEXTPOS.X, NEXTPOS.Y * -1.0f, 0));
+	FVector NEXTFloatPOS_ColImg = FVector{ NEXTIntPOS_ColImg.X / ScaleRatio , NEXTIntPOS_ColImg.Y / ScaleRatio };
 
-	UColor Color = ColImage.GetColor(NEXTPOS_ColImg);
+	UColor Color = ColImage.GetColor(NEXTFloatPOS_ColImg);
 	if (Color == UColor::BLACK)
 	{
 		return;

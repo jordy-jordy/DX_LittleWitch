@@ -63,7 +63,7 @@ void APlayGameMode::BeginPlay()
 	Field_HOME->SetColImage("Field_Green_001.png", "02_Field");
 
 	Player = dynamic_cast<APlayer*>(GetWorld()->GetMainPawn());
-	Player->SetActorLocation({ 0.0f, 100.0f, 0.0f });
+	Player->SetActorLocation({ 0.0f, 200.0f, 0.0f });
 	Player->SetField(Field_HOME);
 	Player->SetColImage("Field_Green_001.png", "02_Field");
 }
