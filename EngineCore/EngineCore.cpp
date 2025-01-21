@@ -6,6 +6,7 @@
 #include "IContentsCore.h"
 #include "EngineResources.h"
 #include "EngineConstantBuffer.h"
+#include "EngineStructuredBuffer.h"
 #include "EngineGUI.h"
 #include "Level.h"
 #include "GameInstance.h"
@@ -237,7 +238,11 @@ void UEngineCore::EngineEnd()
 	GEngine->Device.Release();
 
 	UEngineResources::Release();
+
+	// 아래의 2개의 리소스는 자신만의 관리구조를 가지고 있다.
+	// 그러므로 따로 릴리즈 해줘야 한다.
 	UEngineConstantBuffer::Release();
+	UEngineStructuredBuffer::Release();
 
 	GEngine->CurLevel = nullptr;
 	GEngine->NextLevel = nullptr;

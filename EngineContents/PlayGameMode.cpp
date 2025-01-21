@@ -58,7 +58,6 @@ void APlayGameMode::BeginPlay()
 	AGameMode::BeginPlay();
 	UEngineCore::GetDevice().GetBackBufferTarget()->SetClearColor({ 0.337f, 0.388f, 0.263f, 1.0f });
 
-
 	Field_HOME = GetWorld()->SpawnActor<AField_Home>();
 	Field_HOME->SetActorLocation({ 0.0f, 0.0f, 1.0f });
 	Field_HOME->SetColImage("pixel_coll.png", "02_Field");
