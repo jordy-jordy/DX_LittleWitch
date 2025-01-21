@@ -33,7 +33,6 @@ protected:
 
 private:
 	UEngineWinImage ColImage;
-	std::shared_ptr<class USpriteRenderer> FieldColIamge2;
 
 
 };

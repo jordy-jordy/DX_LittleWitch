@@ -21,12 +21,10 @@ AField_Green::AField_Green()
 
 	FieldImage = CreateDefaultSubObject<USpriteRenderer>();
 	FieldColIamge = CreateDefaultSubObject<USpriteRenderer>();
-	FieldColIamge2 = CreateDefaultSubObject<USpriteRenderer>();
 	FieldCol = CreateDefaultSubObject<UCollision>();
 
 	FieldImage->SetupAttachment(RootComponent);
 	FieldColIamge->SetupAttachment(RootComponent);
-	FieldColIamge2->SetupAttachment(RootComponent);
 	FieldCol->SetupAttachment(RootComponent);
 
 };
@@ -48,10 +46,7 @@ void AField_Green::BeginPlay()
 	FieldColIamge->SetRelativeScale3D(CheckSize);
 	FieldColIamge->SetWorldLocation({ 0, 0, 300 });
 	FieldColIamge->SetTexture("Field_Green_001.png");
-
-	FieldColIamge2->SetRelativeScale3D(GreenFieldSize);
-	FieldColIamge2->SetWorldLocation({ 0, 0, 0 });
-	FieldColIamge2->SetTexture("Field_Green_001.png");
+	FieldColIamge->SetActive(false);
 
 	FieldCol->SetCollisionProfileName("Field");
 	FieldCol->SetScale3D({ GreenFieldSize_Plus.X - ELLIESIZE.X, GreenFieldSize_Plus.Y - ELLIESIZE.Y });
@@ -78,7 +73,7 @@ void AField_Green::Tick(float _DeltaTime)
 
 	if (UEngineInput::IsDown(VK_F1))
 	{
-		FieldColIamge2->SetActiveSwitch();
+		FieldColIamge->SetActiveSwitch();
 	}
 
 }

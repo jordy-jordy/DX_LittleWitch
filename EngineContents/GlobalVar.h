@@ -2,7 +2,7 @@
 #include <string_view>
 #include <EngineBase/EngineMath.h>
 
-static const float ScaleRatio = 1.0f;
+static const float ScaleRatio = 2.0f;
 
 static std::string_view START_MODE = "PLAY";
 
