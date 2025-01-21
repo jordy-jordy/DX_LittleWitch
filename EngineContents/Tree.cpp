@@ -21,7 +21,7 @@ ATree::ATree()
 
 	Collision = CreateDefaultSubObject<UCollision>();
 	Collision->SetCollisionProfileName("Tree");
-	Collision->SetScale3D({ 50.0f, 50.0f });
+	Collision->SetScale3D({ 30.0f, 30.0f, 0.0f });
 
 	Collision->SetupAttachment(RootComponent);
 	Renderer->SetupAttachment(RootComponent);

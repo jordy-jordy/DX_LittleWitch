@@ -20,6 +20,9 @@ public:
 	
 	void Tick(float _DeltaTime);
 
+	FVector TreeSize = { 1, 1 };
+
+
 protected:
 	void LevelChangeStart() override;
 	void BeginPlay();

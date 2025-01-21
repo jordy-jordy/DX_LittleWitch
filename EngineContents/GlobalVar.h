@@ -7,7 +7,7 @@
 static const float ScaleRatio = 2.8f;
 
 // 시작 모드
-static std::string_view START_MODE = "PLAY";
+static std::string_view START_MODE = "MAPEDITOR";
 
 // 윈도우 창 크기
 static const FVector WINDOW_SIZE = { 1280, 720 };
@@ -38,5 +38,10 @@ static const FVector VECTOR_RIGHT_DOWN = { 1.0f, -1.0f, 0.0f };
 // 필드 정보
 static const FVector GreenFieldSize = { 720.0f , 604.0f , 0.0f };
 static const FVector GreenFieldSize_Plus = GreenFieldSize * ScaleRatio;
+
+// 오브젝트 정보
+// 나무
+static FVector TREE_SIZE_0 = { 112.0f, 128.0f, 0.0f };
+static FVector TREE_SIZE_1 = { 144.0f, 138.0f, 0.0f };
 
 

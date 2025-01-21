@@ -32,6 +32,7 @@ public:
 	ETreeType TreeTypeValue;
 
 	virtual std::shared_ptr<class USpriteRenderer> GetRenderer() = 0;
+	virtual std::shared_ptr<class UCollision> GetCollision() = 0;
 
 
 protected:

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1f20c97540528f24faef7c1c4f222972
+guid: 453cf094d7ae31246b2192edf17dba7d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1825168590650642499
-    second: tree_006_0
+      213: -1678390698925784065
+    second: Tree_006_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -50,7 +50,7 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: 0.5, y: 0.5}
+  spritePivot: {x: 0.5, y: 0}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tree_006_0
+      name: Tree_006_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 112
         height: 128
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dbf611346d2bba6e0800000000000000
-      internalID: -1825168590650642499
+      spriteID: ff385344d8825b8e0800000000000000
+      internalID: -1678390698925784065
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9468b011d9f9c9d4f8c49fbec01223bb
+    spriteID: 7e7b96a39319f914f98e12e5af174f40
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tree_006_0: -1825168590650642499
+      Tree_006_0: -1678390698925784065
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,6 +10,7 @@
 #include <EngineCore/imgui.h>
 #include <EngineCore/EngineCamera.h>
 #include <EnginePlatform/EngineInput.h>
+#include <EngineCore/Collision.h>
 
 #include "ContentsEditorGUI.h"
 
@@ -48,6 +49,8 @@ public:
 	int TileCountY = 15;
 	int SelectTileIndex = 0;
 	int SelectTreeIndex = 0;
+
+	FVector TreeSize = { 1, 1 };
 
 	void TileMapMode()
 	{
@@ -167,30 +170,37 @@ public:
 				case ESpawnList::Tree0:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 0);
+					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } * ScaleRatio));
 					break;
 				case ESpawnList::Tree1:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 1);
+					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_1.X * 0.025f, TREE_SIZE_1.Y * 0.4f * -1.0f } *ScaleRatio));
 					break;
 				case ESpawnList::Tree2:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 2);
+					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
 					break;
 				case ESpawnList::Tree3:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 3);
+					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
 					break;
 				case ESpawnList::Tree4:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 4);
+					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
 					break;
 				case ESpawnList::Tree5:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 5);
+					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
 					break;
 				case ESpawnList::Tree6:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 6);
+					NewTree->GetCollision()->SetRelativeLocation((FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio));
 					break;
 				default:
 					break;

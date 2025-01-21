@@ -23,30 +23,12 @@ public:
 	{
 		return Renderer;
 	}
-	//std::shared_ptr<class USpriteRenderer> GetRenderer_Tree_001()
-	//{
-	//	return Renderer_Tree_001;
-	//}
-	//std::shared_ptr<class USpriteRenderer> GetRenderer_Tree_002()
-	//{
-	//	return Renderer_Tree_002;
-	//}
-	//std::shared_ptr<class USpriteRenderer> GetRenderer_Tree_003()
-	//{
-	//	return Renderer_Tree_003;
-	//}
-	//std::shared_ptr<class USpriteRenderer> GetRenderer_Tree_004()
-	//{
-	//	return Renderer_Tree_004;
-	//}
-	//std::shared_ptr<class USpriteRenderer> GetRenderer_Tree_005()
-	//{
-	//	return Renderer_Tree_005;
-	//}
-	//std::shared_ptr<class USpriteRenderer> GetRenderer_Tree_006()
-	//{
-	//	return Renderer_Tree_006;
-	//}
+
+	std::shared_ptr<class UCollision> GetCollision() override
+	{
+		return Collision;
+	}
+
 
 
 protected:
