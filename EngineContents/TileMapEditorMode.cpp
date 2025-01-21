@@ -1,5 +1,6 @@
 #include "PreCompile.h"
 #include "TileMapEditorMode.h"
+
 #include <EngineCore/CameraActor.h>
 #include <EngineCore/DefaultSceneComponent.h>
 #include <EngineCore/SpriteRenderer.h>
@@ -444,7 +445,8 @@ ATileMapEditorMode::ATileMapEditorMode()
 	Renderer_Tile->SetupAttachment(RootComponent);
 
 	Camera = GetWorld()->GetMainCamera();
-	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -1000.0f, 5.0f });
+	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -100.0f, 0.0f });
+	Camera->GetCameraComponent()->SetProjectionType(EProjectionType::Perspective);
 	Camera->GetCameraComponent()->SetZSort(0, true);
 };
 
@@ -459,24 +461,38 @@ void ATileMapEditorMode::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
+	// 휠 이동 방향 확인
+
+	float CameraSpeed = 5550.0f;
+
 	if (UEngineInput::IsPress('W'))
 	{
-		Camera->AddActorLocation({ 0.0f, 1.0f * 300.0f * _DeltaTime , 0.0f });
+		Camera->AddActorLocation({ 0.0f, 1.0f * CameraSpeed * _DeltaTime , 0.0f });
 	}
 
 	if (UEngineInput::IsPress('A'))
 	{
-		Camera->AddActorLocation({ -1.0f * 300.0f * _DeltaTime , 0.0f, 0.0f });
+		Camera->AddActorLocation({ -1.0f * CameraSpeed * _DeltaTime , 0.0f, 0.0f });
 	}
 
 	if (UEngineInput::IsPress('S'))
 	{
-		Camera->AddActorLocation({ 0.0f, -1.0f * 300.0f * _DeltaTime , 0.0f });
+		Camera->AddActorLocation({ 0.0f, -1.0f * CameraSpeed * _DeltaTime , 0.0f });
 	}
 
 	if (UEngineInput::IsPress('D'))
 	{
-		Camera->AddActorLocation({ 1.0f * 300.0f * _DeltaTime , 0.0f, 0.0f });
+		Camera->AddActorLocation({ 1.0f * CameraSpeed * _DeltaTime , 0.0f, 0.0f });
+	}
+
+	if (UEngineInput::IsPress('Q'))
+	{
+		Camera->AddActorLocation({ 0.0f , 0.0f, -1.0f * CameraSpeed * _DeltaTime });
+	}
+
+	if (UEngineInput::IsPress('E'))
+	{
+		Camera->AddActorLocation({ 0.0f , 0.0f, 1.0f * CameraSpeed * _DeltaTime });
 	}
 
 

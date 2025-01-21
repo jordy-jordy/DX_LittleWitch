@@ -5,6 +5,7 @@
 #include <EngineCore/SpriteRenderer.h>
 #include <EngineCore/CameraActor.h>
 #include <EngineCore/EngineCamera.h>
+#include <EngineCore/EngineRenderTarget.h>
 
 #include <EngineCore/EngineGUIWindow.h>
 #include <EngineCore/EngineGUI.h>
@@ -55,6 +56,8 @@ APlayGameMode::~APlayGameMode()
 void APlayGameMode::BeginPlay()
 {
 	AGameMode::BeginPlay();
+	UEngineCore::GetDevice().GetBackBufferTarget()->SetClearColor({ 0.337f, 0.388f, 0.263f, 1.0f });
+
 
 	Field_HOME = GetWorld()->SpawnActor<AField_Home>();
 	Field_HOME->SetActorLocation({ 0.0f, 0.0f, 1.0f });
