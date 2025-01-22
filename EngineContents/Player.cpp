@@ -123,9 +123,6 @@ APlayer::APlayer()
 	ELLIE_COL->SetupAttachment(RootComponent);
 	ELLIE->SetupAttachment(RootComponent);
 	ELLIE_HAT->SetupAttachment(RootComponent);
-
-	//Camera->SetActorLocation({ GetActorLocation().X, GetActorLocation().Y/* + 70.0f*/, 0.0f });
-
 }
 
 APlayer::~APlayer()

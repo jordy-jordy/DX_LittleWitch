@@ -109,7 +109,6 @@ void APlayGameMode::SetFieldColImageName()
 	}
 }
 
-
 void APlayGameMode::SetCurField(std::shared_ptr<class AAllField> _CurField)
 {
 	CurField = _CurField;
