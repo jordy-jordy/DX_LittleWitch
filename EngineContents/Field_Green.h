@@ -30,6 +30,9 @@ public:
 		return FieldSize_Plus;
 	}
 
+	std::shared_ptr<class UCollision> Col_ToHome;
+	std::shared_ptr<class UCollision> Col_ToNPC;
+
 
 protected:
 	void BeginPlay() override;

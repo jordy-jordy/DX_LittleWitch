@@ -22,19 +22,18 @@ AField_Home::AField_Home()
 	FieldImage = CreateDefaultSubObject<USpriteRenderer>();
 	FieldColIamge = CreateDefaultSubObject<USpriteRenderer>();
 	FieldCol = CreateDefaultSubObject<UCollision>();
+	Col_ToGreen = CreateDefaultSubObject<UCollision>();
 
 	FieldImage->SetupAttachment(RootComponent);
 	FieldColIamge->SetupAttachment(RootComponent);
 	FieldCol->SetupAttachment(RootComponent);
+	Col_ToGreen->SetupAttachment(RootComponent);
 
 };
 
 void AField_Home::BeginPlay()
 {
 	AActor::BeginPlay();
-
-	ACameraActor* Camera = GetWorld()->GetMainCamera().get();
-	Camera->GetCameraComponent().get()->SetZSort(0, true);
 
 	FieldImage->SetRelativeScale3D(FieldSize_Plus);
 	FieldImage->SetWorldLocation({ 0, 0, 1000 });
@@ -47,6 +46,11 @@ void AField_Home::BeginPlay()
 
 	FieldCol->SetCollisionProfileName("Field");
 	FieldCol->SetScale3D({ FieldSize_Plus.X - ELLIESIZE.X, FieldSize_Plus.Y - ELLIESIZE.Y });
+
+	Col_ToGreen->SetCollisionProfileName("MovePoint");
+	Col_ToGreen->SetScale3D({ 144.0f * ScaleRatio, 32.0f * ScaleRatio });
+	Col_ToGreen->SetRelativeLocation({ -(FieldSize.Half().X - 264.0f) * ScaleRatio, (FieldSize.Half().Y - 448.0f) * ScaleRatio });
+
 }
 
 void AField_Home::SetColImage(std::string_view _ColImageName, std::string_view _FolderName) 

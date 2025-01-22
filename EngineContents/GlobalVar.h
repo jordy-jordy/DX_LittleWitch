@@ -4,7 +4,7 @@
 
 
 // 원본 사이즈에서 곱해지는 비율
-static const float ScaleRatio = 2.8f;
+static const float ScaleRatio = 2.6f;
 
 // 시작 모드
 static std::string_view START_MODE = "PLAY";

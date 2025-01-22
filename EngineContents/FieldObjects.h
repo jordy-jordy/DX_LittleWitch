@@ -29,7 +29,7 @@ public:
 	AFieldObjects& operator=(const AFieldObjects& _Other) = delete;
 	AFieldObjects& operator=(AFieldObjects&& _Other) noexcept = delete;
 
-	ETreeType TreeTypeValue;
+	ETreeType TreeTypeValue = ETreeType::NONE;
 
 	virtual std::shared_ptr<class USpriteRenderer> GetRenderer() = 0;
 	virtual std::shared_ptr<class UCollision> GetCollision() = 0;

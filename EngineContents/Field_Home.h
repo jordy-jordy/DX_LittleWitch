@@ -30,6 +30,8 @@ public:
 		return FieldSize_Plus;
 	}
 
+	std::shared_ptr<class UCollision> Col_ToGreen;
+
 
 protected:
 	void BeginPlay() override;

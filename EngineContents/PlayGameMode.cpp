@@ -36,16 +36,13 @@ APlayGameMode::APlayGameMode()
 	PlaySpritesInit();
 
 	GetWorld()->CreateCollisionProfile("Player");
-
 	GetWorld()->CreateCollisionProfile("Field");
+	GetWorld()->CreateCollisionProfile("Tree");
+	GetWorld()->CreateCollisionProfile("MovePoint");
 
 	GetWorld()->LinkCollisionProfile("Player", "Field");
 	GetWorld()->LinkCollisionProfile("Player", "Tree");
-
-	//std::shared_ptr<ACameraActor> Camera = GetWorld()->GetMainCamera();
-	//Camera->GetCameraComponent()->SetFar(10000.0f);
-	//Camera->GetCameraComponent()->SetNear(-100.0f);
-	//Camera->GetCameraComponent()->SetZSort(0, true);
+	GetWorld()->LinkCollisionProfile("Player", "MovePoint");
 };
 
 APlayGameMode::~APlayGameMode()

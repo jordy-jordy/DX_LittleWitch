@@ -43,6 +43,6 @@ private:
 
 	FieldList Field = FieldList::HOME;
 	std::string_view FieldFolderName = "02_Field";
-	std::string_view FieldColImageName = "Field_Home_001.png";
+	std::string_view FieldColImageName;
 
 };
