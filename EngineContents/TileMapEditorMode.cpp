@@ -115,7 +115,7 @@ public:
 			TileMapRenderer->SetTile(ScreenPos, SelectTileIndex);
 		}
 
-		if (true == UEngineInput::IsPress(VK_RBUTTON))
+		if (true == UEngineInput::IsPress(VK_RBUTTON) && true != GEngine->GetMainWindow().IsMouseScreenOut())
 		{
 			FVector ScreenPos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
 
