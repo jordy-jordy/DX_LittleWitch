@@ -36,6 +36,8 @@ void URenderUnit::MaterialResourcesCheck()
 
 	if (nullptr != TransformObject)
 	{
+		// Æ®·£½ºÆû
+
 		for (EShaderType i = EShaderType::VS; i < EShaderType::MAX; i = static_cast<EShaderType>(static_cast<int>(i) + 1))
 		{
 			if (false == Resources.contains(i))
@@ -48,9 +50,25 @@ void URenderUnit::MaterialResourcesCheck()
 				continue;
 			}
 
-
 			FTransform& Ref = TransformObject->GetTransformRef();
 			Resources[i].ConstantBufferLinkData("FTransform", Ref);
+		}
+
+
+		for (EShaderType i = EShaderType::VS; i < EShaderType::MAX; i = static_cast<EShaderType>(static_cast<int>(i) + 1))
+		{
+			if (false == Resources.contains(i))
+			{
+				continue;
+			}
+
+			if (false == Resources[i].IsConstantBuffer("FLightDatas"))
+			{
+				continue;
+			}
+
+			FLightDatas& Data = ParentRenderer->GetWorld()->GetLightDatasRef();
+			Resources[i].ConstantBufferLinkData("FLightDatas", Data);
 		}
 		
 	}

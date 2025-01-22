@@ -1,8 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <FxCompile Include="EngineSpriteShader.fx" />
-    <FxCompile Include="EngineDebugCollisionShader.fx" />
-    <FxCompile Include="EngineTileMapShader.fx" />
+    <FxCompile Include="EngineDebugCollisionShader.fx">
+      <Filter>2D</Filter>
+    </FxCompile>
+    <FxCompile Include="EngineSpriteShader.fx">
+      <Filter>2D</Filter>
+    </FxCompile>
+    <FxCompile Include="EngineTileMapShader.fx">
+      <Filter>2D</Filter>
+    </FxCompile>
+    <FxCompile Include="EngineTileMapInstShader.fx">
+      <Filter>2D</Filter>
+    </FxCompile>
+    <FxCompile Include="EngineTargetMergeShader.fx">
+      <Filter>Target</Filter>
+    </FxCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="2D">
+      <UniqueIdentifier>{dfe1b63a-1036-48ee-a3bd-75cbe12d19fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header">
+      <UniqueIdentifier>{32a9aec2-98c9-41a1-9d91-6614907e64a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Target">
+      <UniqueIdentifier>{a2893a96-d147-40cf-95e4-2270e560dd56}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Light.hlsli">
+      <Filter>Header</Filter>
+    </None>
+    <None Include="Transform.hlsli">
+      <Filter>Header</Filter>
+    </None>
   </ItemGroup>
 </Project>

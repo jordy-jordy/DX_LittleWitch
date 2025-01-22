@@ -249,6 +249,8 @@
       <SubType>
       </SubType>
     </ClInclude>
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="LightActor.h" />
     <ClInclude Include="Mesh.h" />
     <ClInclude Include="Pawn.h">
       <SubType>
@@ -343,6 +345,8 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="LightActor.cpp" />
     <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Pawn.cpp">
       <SubType>

@@ -129,7 +129,13 @@
   <ItemGroup>
     <FxCompile Include="EngineDebugCollisionShader.fx" />
     <FxCompile Include="EngineSpriteShader.fx" />
+    <FxCompile Include="EngineTargetMergeShader.fx" />
+    <FxCompile Include="EngineTileMapInstShader.fx" />
     <FxCompile Include="EngineTileMapShader.fx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Light.hlsli" />
+    <None Include="Transform.hlsli" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

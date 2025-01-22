@@ -46,6 +46,6 @@ private:
 	// 대용량 데이터는 텍스처와 슬롯 공유한다.
 	// regaster(t0)
 	// 세팅하기 위해서 SRV
-	ID3D11ShaderResourceView* SRV = nullptr;
+	Microsoft::WRL::ComPtr<ID3D11ShaderResourceView> SRV = nullptr;
 };
 

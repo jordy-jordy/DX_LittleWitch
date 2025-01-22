@@ -184,6 +184,12 @@
     <ClInclude Include="EngineStructuredBuffer.h">
       <Filter>05_Resources\Buffer</Filter>
     </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>04_Object\Light</Filter>
+    </ClInclude>
+    <ClInclude Include="LightActor.h">
+      <Filter>04_Object\Render</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Level.cpp">
@@ -348,6 +354,12 @@
     <ClCompile Include="EngineStructuredBuffer.cpp">
       <Filter>05_Resources\Buffer</Filter>
     </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>04_Object\Light</Filter>
+    </ClCompile>
+    <ClCompile Include="LightActor.cpp">
+      <Filter>04_Object\Render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="01_PreCompile">
@@ -448,6 +460,9 @@
     </Filter>
     <Filter Include="01_ThirdParty\FW1FontWrapper\Release">
       <UniqueIdentifier>{3988ef29-f6bb-49df-8eef-35bc6f9c912c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Object\Light">
+      <UniqueIdentifier>{a8e06a14-e1b7-4d26-995b-bd99bba36263}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
