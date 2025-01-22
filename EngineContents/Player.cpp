@@ -223,7 +223,7 @@ void APlayer::SetEllieAnimation(const std::string_view& _EllieAnimation, const s
 
 void APlayer::UpdateCameraLocation(const FVector& _ElliePos)
 {
-	FVector TargetScale = GreenFieldSize_Plus * 0.5f;
+	FVector TargetScale = Field->GetFieldSize_Plus() * 0.5f;
 	float Plus_WinSizeX = _ElliePos.X + HALF_WINDOW_SIZE.X;
 	float Plus_WinSizeY = _ElliePos.Y + HALF_WINDOW_SIZE.Y;
 	float Minus_WinSizeX = _ElliePos.X - HALF_WINDOW_SIZE.X;
@@ -269,7 +269,7 @@ void APlayer::EllieMove(float _DeltaTime)
 	FVector NEXTPOS = CurVector * CurState_Speed * _DeltaTime;
 	
 	//FVector ColImageHALFSize = { ColImage.GetImageScale().Half().X, ColImage.GetImageScale().Half().Y };
-	FVector ColImageHALFSize = { GreenFieldSize_Plus.Half().X, GreenFieldSize_Plus.Half().Y }; // *주의* ColImage는 확대 되지 않음
+	FVector ColImageHALFSize = { Field->GetFieldSize_Plus().Half().X, Field->GetFieldSize_Plus().Half().Y }; // *주의* ColImage는 확대 되지 않음
 	FVector EllieLocation = FVector( GetActorLocation().X, (GetActorLocation().Y + ELLIESIZE_PLUS.Y * 0.3f) * -1.0f, 0.0f );
 	FVector NEXTIntPOS_ColImg = ColImageHALFSize + (EllieLocation + FVector(NEXTPOS.X, NEXTPOS.Y * -1.0f, 0));
 	FVector NEXTFloatPOS_ColImg = FVector{ NEXTIntPOS_ColImg.X / ScaleRatio , NEXTIntPOS_ColImg.Y / ScaleRatio }; // ColImage는 확대 되지 않기 때문에 다시 나누어 줌

@@ -5,24 +5,29 @@
 
 
 // Ό³Έν :
-class AField_Green : public AAllField
+class AField_Home : public AAllField
 {
 public:
 	// constrcuter destructer
-	AField_Green();
-	~AField_Green();
+	AField_Home();
+	~AField_Home();
 
 	// delete Function
-	AField_Green(const AField_Green& _Other) = delete;
-	AField_Green(AField_Green&& _Other) noexcept = delete;
-	AField_Green& operator=(const AField_Green& _Other) = delete;
-	AField_Green& operator=(AField_Green&& _Other) noexcept = delete;
+	AField_Home(const AField_Home& _Other) = delete;
+	AField_Home(AField_Home&& _Other) noexcept = delete;
+	AField_Home& operator=(const AField_Home& _Other) = delete;
+	AField_Home& operator=(AField_Home&& _Other) noexcept = delete;
 
 	void SetColImage(std::string_view _ColImageName, std::string_view _FolderName) override;
 
 	UEngineWinImage& GetColImage() override
 	{
 		return ColImage;
+	}
+
+	FVector GetFieldSize_Plus() override
+	{
+		return FieldSize_Plus;
 	}
 
 
@@ -34,5 +39,7 @@ protected:
 private:
 	UEngineWinImage ColImage;
 
+	FVector FieldSize = { 480.0f , 464.0f , 0.0f };
+	FVector FieldSize_Plus = FieldSize * ScaleRatio;
 
 };

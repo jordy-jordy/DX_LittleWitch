@@ -25,6 +25,11 @@ public:
 		return ColImage;
 	}
 
+	FVector GetFieldSize_Plus() override
+	{
+		return FieldSize_Plus;
+	}
+
 
 protected:
 	void BeginPlay() override;
@@ -34,5 +39,7 @@ protected:
 private:
 	UEngineWinImage ColImage;
 
+	FVector FieldSize = { 720.0f , 604.0f , 0.0f };
+	FVector FieldSize_Plus = FieldSize * ScaleRatio;
 
 };

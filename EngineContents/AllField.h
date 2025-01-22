@@ -27,6 +27,11 @@ public:
 		return ColImage;
 	}
 
+	virtual FVector GetFieldSize_Plus()
+	{
+		return FieldSize_Plus;
+	}
+
 	std::string_view GetColImageDir()
 	{
 		return ColImageDir;
@@ -40,6 +45,10 @@ protected:
 
 	UEngineWinImage ColImage;
 	std::string_view ColImageDir = "ContentsResources\\Image\\WitchResource\\PLAY";
+
+	FVector FieldSize = { 0.0f , 0.0f , 0.0f };
+	FVector FieldSize_Plus = FieldSize * ScaleRatio;
+
 
 
 private:

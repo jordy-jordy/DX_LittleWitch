@@ -13,7 +13,7 @@
 
 #include "Player.h"
 #include "Field_Green.h"
-#include "Field_Green.h"
+#include "Field_Home.h"
 
 
 class EditValue : public UEngineGUIWindow
@@ -58,14 +58,21 @@ void APlayGameMode::BeginPlay()
 	AGameMode::BeginPlay();
 	UEngineCore::GetDevice().GetBackBufferTarget()->SetClearColor({ 0.337f, 0.388f, 0.263f, 1.0f });
 
-	Field_HOME = GetWorld()->SpawnActor<AField_Green>();
-	Field_HOME->SetActorLocation({ 0.0f, 0.0f, 1.0f });
-	Field_HOME->SetColImage("Field_Green_001.png", "02_Field");
+	//Field_Green = GetWorld()->SpawnActor<AField_Green>();
+	//Field_Green->SetActorLocation({ 0.0f, 0.0f, 1.0f });
+	//Field_Green->SetColImage("Field_Green_001.png", FieldFolderName);
+
+	Field_Home = GetWorld()->SpawnActor<AField_Home>();
+	Field_Home->SetActorLocation({ 0.0f, 0.0f, 1.0f });
+	Field_Home->SetColImage("Field_Home_001.png", FieldFolderName);
+
+	SetCurField(Field_Home);
+	SetFieldColImageName();
 
 	Player = dynamic_cast<APlayer*>(GetWorld()->GetMainPawn());
 	Player->SetActorLocation({ 0.0f, 200.0f, 0.0f });
-	Player->SetField(Field_HOME);
-	Player->SetColImage("Field_Green_001.png", "02_Field");
+	Player->SetField(CurField);
+	Player->SetColImage(FieldColImageName, FieldFolderName);
 }
 
 void APlayGameMode::Tick(float _DeltaTime)
@@ -77,6 +84,38 @@ void APlayGameMode::Tick(float _DeltaTime)
 		UEngineCore::OpenLevel("TITLE");
 	}
 
+}
+
+void APlayGameMode::SetFieldColImageName()
+{
+	if (CurField == Field_Green)
+	{
+		Field = FieldList::GREEN;
+	}
+	if (CurField == Field_Home)
+	{
+		Field = FieldList::HOME;
+	}
+
+	switch (Field)
+	{
+	case FieldList::HOME:
+		FieldColImageName = "Field_Home_001.png";
+		break;
+
+	case FieldList::GREEN:
+		FieldColImageName = "Field_Green_001.png";
+		break;
+
+	default:
+		break;
+	}
+}
+
+
+void APlayGameMode::SetCurField(std::shared_ptr<class AAllField> _CurField)
+{
+	CurField = _CurField;
 }
 
 void APlayGameMode::PlayDirLoad()

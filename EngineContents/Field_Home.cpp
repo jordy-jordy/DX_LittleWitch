@@ -1,5 +1,5 @@
 #include "PreCompile.h"
-#include "Field_Green.h"
+#include "Field_Home.h"
 
 #include <EnginePlatform/EngineWinImage.h>
 #include <EngineCore/DefaultSceneComponent.h>
@@ -14,7 +14,7 @@
 #include "GlobalVar.h"
 
 
-AField_Green::AField_Green()
+AField_Home::AField_Home()
 {
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
@@ -29,30 +29,27 @@ AField_Green::AField_Green()
 
 };
 
-void AField_Green::BeginPlay()
+void AField_Home::BeginPlay()
 {
 	AActor::BeginPlay();
 
 	ACameraActor* Camera = GetWorld()->GetMainCamera().get();
 	Camera->GetCameraComponent().get()->SetZSort(0, true);
 
-	FieldImage->SetRelativeScale3D(GreenFieldSize_Plus);
+	FieldImage->SetRelativeScale3D(FieldSize_Plus);
 	FieldImage->SetWorldLocation({ 0, 0, 1000 });
-	FieldImage->SetTexture("Field_Green_000.png");
+	FieldImage->SetTexture("Field_Home_000.png");
 
-	//FieldColIamge->SetAutoScale(true);
-	//FieldColIamge->SetAutoScale(ScaleRatio);
-	FVector CheckSize = GreenFieldSize_Plus;
-	FieldColIamge->SetRelativeScale3D(CheckSize);
+	FieldColIamge->SetRelativeScale3D(FieldSize_Plus);
 	FieldColIamge->SetWorldLocation({ 0, 0, 300 });
-	FieldColIamge->SetTexture("Field_Green_001.png");
+	FieldColIamge->SetTexture("Field_Home_001.png");
 	FieldColIamge->SetActive(false);
 
 	FieldCol->SetCollisionProfileName("Field");
-	FieldCol->SetScale3D({ GreenFieldSize_Plus.X - ELLIESIZE.X, GreenFieldSize_Plus.Y - ELLIESIZE.Y });
+	FieldCol->SetScale3D({ FieldSize_Plus.X - ELLIESIZE.X, FieldSize_Plus.Y - ELLIESIZE.Y });
 }
 
-void AField_Green::SetColImage(std::string_view _ColImageName, std::string_view _FolderName) 
+void AField_Home::SetColImage(std::string_view _ColImageName, std::string_view _FolderName) 
 {
 	UEngineDirectory Dir;
 	if (false == Dir.MoveParentToDirectory(ColImageDir))
@@ -67,7 +64,7 @@ void AField_Green::SetColImage(std::string_view _ColImageName, std::string_view 
 	ColImage.Load(nullptr, ImageFiles.GetPathToString());
 }
 
-void AField_Green::Tick(float _DeltaTime)
+void AField_Home::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
@@ -78,7 +75,7 @@ void AField_Green::Tick(float _DeltaTime)
 
 }
 
-AField_Green::~AField_Green()
+AField_Home::~AField_Home()
 {
 
 };

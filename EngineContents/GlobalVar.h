@@ -36,8 +36,10 @@ static const FVector VECTOR_RIGHT_UP = { 1.0f, 1.0f, 0.0f };
 static const FVector VECTOR_RIGHT_DOWN = { 1.0f, -1.0f, 0.0f };
 
 // 필드 정보
-static const FVector GreenFieldSize = { 720.0f , 604.0f , 0.0f };
+static const FVector GreenFieldSize = { 720.0f , 604.0f , 0.0f };	// 그린 필드
 static const FVector GreenFieldSize_Plus = GreenFieldSize * ScaleRatio;
+static const FVector HomeFieldSize = { 480.0f , 464.0f , 0.0f };	// 홈 필드
+static const FVector HomeFieldSize_Plus = HomeFieldSize * ScaleRatio;
 
 // 오브젝트 정보
 // 나무

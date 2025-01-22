@@ -36,20 +36,17 @@ void AField_Green::BeginPlay()
 	ACameraActor* Camera = GetWorld()->GetMainCamera().get();
 	Camera->GetCameraComponent().get()->SetZSort(0, true);
 
-	FieldImage->SetRelativeScale3D(GreenFieldSize_Plus);
+	FieldImage->SetRelativeScale3D(FieldSize_Plus);
 	FieldImage->SetWorldLocation({ 0, 0, 1000 });
 	FieldImage->SetTexture("Field_Green_000.png");
 
-	//FieldColIamge->SetAutoScale(true);
-	//FieldColIamge->SetAutoScale(ScaleRatio);
-	FVector CheckSize = GreenFieldSize_Plus;
-	FieldColIamge->SetRelativeScale3D(CheckSize);
+	FieldColIamge->SetRelativeScale3D(FieldSize_Plus);
 	FieldColIamge->SetWorldLocation({ 0, 0, 300 });
 	FieldColIamge->SetTexture("Field_Green_001.png");
 	FieldColIamge->SetActive(false);
 
 	FieldCol->SetCollisionProfileName("Field");
-	FieldCol->SetScale3D({ GreenFieldSize_Plus.X - ELLIESIZE.X, GreenFieldSize_Plus.Y - ELLIESIZE.Y });
+	FieldCol->SetScale3D({ FieldSize_Plus.X - ELLIESIZE.X, FieldSize_Plus.Y - ELLIESIZE.Y });
 }
 
 void AField_Green::SetColImage(std::string_view _ColImageName, std::string_view _FolderName) 
