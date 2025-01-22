@@ -43,6 +43,9 @@
     <ClInclude Include="AllField.h">
       <Filter>03_Actors\01_Play\01_Objects</Filter>
     </ClInclude>
+    <ClInclude Include="Field_Home.h">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="PreCompile.cpp">
@@ -83,6 +86,9 @@
     </ClCompile>
     <ClCompile Include="AllField.cpp">
       <Filter>03_Actors\01_Play\01_Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Field_Home.cpp">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
