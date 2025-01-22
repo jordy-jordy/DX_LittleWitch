@@ -25,6 +25,11 @@ public:
 		return ColImage;
 	}
 
+	FVector GetFieldSize() override
+	{
+		return FieldSize;
+	}
+
 	FVector GetFieldSize_Plus() override
 	{
 		return FieldSize_Plus;

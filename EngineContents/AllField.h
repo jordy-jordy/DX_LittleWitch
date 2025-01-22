@@ -27,6 +27,11 @@ public:
 		return ColImage;
 	}
 
+	virtual FVector GetFieldSize()
+	{
+		return FieldSize;
+	}
+
 	virtual FVector GetFieldSize_Plus()
 	{
 		return FieldSize_Plus;

@@ -87,7 +87,7 @@ void APlayGameMode::Tick(float _DeltaTime)
 		UEngineCore::OpenLevel("TITLE");
 	}
 
-	ChangeField();
+	ChangeField(_DeltaTime);
 
 	switch (Field)
 	{
@@ -102,13 +102,14 @@ void APlayGameMode::Tick(float _DeltaTime)
 	}
 }
 
-void APlayGameMode::ChangeField()
+void APlayGameMode::ChangeField(float _DeltaTime)
 {
 	std::vector<UCollision*> Result0;
 	if (false != Player->GetELLIE_COL()->CollisionCheck("Point_ToHome", Result0))
 	{
 		SetCurField(Field_Home);
-		Player->SetActorLocation({ 0.0f, 0.0f, 0.0f });
+		FVector FieldHomeSize = Field_Home->GetFieldSize();
+		Player->SetActorLocation({ -(FieldHomeSize.Half().X - 264.0f) * ScaleRatio, (FieldHomeSize.Half().Y - 424.0f) * ScaleRatio, 0.0f });
 		Player->SetField(CurField);
 		Player->SetColImage(FieldColImageName, FieldFolderName);
 	}
@@ -116,7 +117,8 @@ void APlayGameMode::ChangeField()
 	if (false != Player->GetELLIE_COL()->CollisionCheck("Point_ToGreen", Result1))
 	{
 		SetCurField(Field_Green);
-		Player->SetActorLocation({ 0.0f, 200.0f, 0.0f });
+		FVector FieldGreenSize = Field_Green->GetFieldSize();
+		Player->SetActorLocation({ -(FieldGreenSize.Half().X - 520.0f) * ScaleRatio, (FieldGreenSize.Half().Y - 80.0f) * ScaleRatio, 0.0f });
 		Player->SetField(CurField);
 		Player->SetColImage(FieldColImageName, FieldFolderName);
 	}

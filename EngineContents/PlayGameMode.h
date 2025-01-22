@@ -29,7 +29,7 @@ public:
 
 	void SetCurField(std::shared_ptr<class AAllField> _CurField);
 
-	void ChangeField();
+	void ChangeField(float _DeltaTime);
 
 
 protected:
