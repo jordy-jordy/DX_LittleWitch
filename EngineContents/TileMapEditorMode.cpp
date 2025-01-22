@@ -11,6 +11,7 @@
 #include <EngineCore/EngineCamera.h>
 #include <EnginePlatform/EngineInput.h>
 #include <EngineCore/Collision.h>
+#include <EnginePlatform/EngineWindow.h>
 
 #include "ContentsEditorGUI.h"
 
@@ -107,7 +108,7 @@ public:
 			}
 		}
 
-		if (true == UEngineInput::IsPress(VK_LBUTTON))
+		if (true == UEngineInput::IsPress(VK_LBUTTON) && true != GEngine->GetMainWindow().IsMouseScreenOut())
 		{
 			FVector ScreenPos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
 
@@ -157,7 +158,7 @@ public:
 				// 엔터를 치지 않는개념.
 			}
 
-			if (true == UEngineInput::IsDown(VK_LBUTTON))
+			if (true == UEngineInput::IsDown(VK_LBUTTON) && true != GEngine->GetMainWindow().IsMouseScreenOut())
 			{
 				ESpawnList SelectTree = static_cast<ESpawnList>(SelectTreeIndex);
 				FVector Pos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();

@@ -7,7 +7,7 @@
 static const float ScaleRatio = 2.6f;
 
 // 시작 모드
-static std::string_view START_MODE = "PLAY";
+static std::string_view START_MODE = "MAPEDITOR";
 
 // 윈도우 창 크기
 static const FVector WINDOW_SIZE = { 1280, 720 };
