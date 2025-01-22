@@ -76,6 +76,11 @@ public:
 		Field = _Field;
 	}
 
+	std::shared_ptr<class UCollision> GetELLIE_COL()
+	{
+		return ELLIE_COL;
+	}
+
 
 protected:
 	void BeginPlay() override;

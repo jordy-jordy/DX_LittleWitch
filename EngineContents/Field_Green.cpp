@@ -49,11 +49,11 @@ void AField_Green::BeginPlay()
 	FieldCol->SetCollisionProfileName("Field");
 	FieldCol->SetScale3D({ FieldSize_Plus.X - ELLIESIZE.X, FieldSize_Plus.Y - ELLIESIZE.Y });
 
-	Col_ToHome->SetCollisionProfileName("MovePoint");
+	Col_ToHome->SetCollisionProfileName("Point_ToHome");
 	Col_ToHome->SetScale3D({ 144.0f * ScaleRatio, 48.0f * ScaleRatio });
 	Col_ToHome->SetRelativeLocation({ -(FieldSize.Half().X - 520.0f) * ScaleRatio, (FieldSize.Half().Y - 24.0f) * ScaleRatio });
 
-	Col_ToNPC->SetCollisionProfileName("MovePoint");
+	Col_ToNPC->SetCollisionProfileName("Point_ToNPC");
 	Col_ToNPC->SetScale3D({ 32.0f * ScaleRatio, 208.0f * ScaleRatio });
 	Col_ToNPC->SetRelativeLocation({ -(FieldSize.Half().X - 704.0f) * ScaleRatio, (FieldSize.Half().Y - 440.0f) * ScaleRatio });
 

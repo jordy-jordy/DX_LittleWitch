@@ -28,7 +28,8 @@ public:
 	void PlaySpritesInit();
 
 	void SetCurField(std::shared_ptr<class AAllField> _CurField);
-	void SetFieldColImageName();
+
+	void ChangeField();
 
 
 protected:
@@ -41,7 +42,7 @@ private:
 	std::shared_ptr<class AAllField> Field_Home;
 	std::shared_ptr<class AAllField> CurField;
 
-	FieldList Field = FieldList::HOME;
+	FieldList Field = FieldList::NONE;
 	std::string_view FieldFolderName = "02_Field";
 	std::string_view FieldColImageName;
 

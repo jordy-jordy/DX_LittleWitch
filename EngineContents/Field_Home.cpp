@@ -47,7 +47,7 @@ void AField_Home::BeginPlay()
 	FieldCol->SetCollisionProfileName("Field");
 	FieldCol->SetScale3D({ FieldSize_Plus.X - ELLIESIZE.X, FieldSize_Plus.Y - ELLIESIZE.Y });
 
-	Col_ToGreen->SetCollisionProfileName("MovePoint");
+	Col_ToGreen->SetCollisionProfileName("Point_ToGreen");
 	Col_ToGreen->SetScale3D({ 144.0f * ScaleRatio, 32.0f * ScaleRatio });
 	Col_ToGreen->SetRelativeLocation({ -(FieldSize.Half().X - 264.0f) * ScaleRatio, (FieldSize.Half().Y - 448.0f) * ScaleRatio });
 
