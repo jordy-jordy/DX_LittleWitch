@@ -38,7 +38,7 @@ void AField_Green::BeginPlay()
 	AActor::BeginPlay();
 
 	FieldImage->SetRelativeScale3D(FieldSize_Plus);
-	FieldImage->SetWorldLocation({ 0, 0, 1000 });
+	FieldImage->SetWorldLocation({ 0, 0, 10000 });
 	FieldImage->SetTexture("Field_Green_000.png");
 
 	FieldColIamge->SetRelativeScale3D(FieldSize_Plus);

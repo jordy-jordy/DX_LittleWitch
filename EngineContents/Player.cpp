@@ -134,7 +134,7 @@ void APlayer::BeginPlay()
 	AActor::BeginPlay();
 
 	Camera = GetWorld()->GetMainCamera().get();
-	Camera->GetCameraComponent()->SetFar(10000.0f);
+	Camera->GetCameraComponent()->SetFar(30000.0f);
 	Camera->GetCameraComponent()->SetNear(-100.0f);
 	Camera->GetCameraComponent()->SetZSort(0, true);
 	UpdateCameraLocation(this->GetActorLocation());
@@ -144,6 +144,12 @@ void APlayer::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
+	{
+		FVector Pos = GetActorLocation();
+		Pos.Z = Pos.Y;
+
+		SetActorLocation(Pos);
+	}
 
 	switch (CurState)
 	{
@@ -162,6 +168,7 @@ void APlayer::Tick(float _DeltaTime)
 	default:
 		break;
 	}
+	
 }
 
 void APlayer::SetColImage(std::string_view _ColImageName, std::string_view _FolderName)

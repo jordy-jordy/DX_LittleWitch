@@ -53,47 +53,162 @@ public:
 
 	FVector TreeSize = { 1, 1 };
 
+	std::vector<std::vector<int>> TileGroups = {
+		{0, 1, 2, 3},
+		{9, 10, 11, 12},
+		{18, 19},
+		{25, 35, 41, 51},
+		{26, 36, 42, 52, 63},
+		{27, 37, 43, 53, 64},
+		{38, 44, 54, 65},
+		{28, 39, 45, 55, 66},
+		{29, 40, 46, 56},
+		{4, 13, 20, 30},
+		{5, 14, 21, 31},
+		{6, 15, 22, 32},
+		{7, 16, 23, 33},
+		{8, 17, 24, 34},
+		{47, 57, 67, 71},
+		{48, 58, 68, 72},
+		{49, 59},
+		{60, 69},
+		{61, 70},
+		{50, 62},
+		{75, 76, 86, 87},
+		{77, 78, 88, 89},
+		{79, 80, 81, 90, 91, 92},
+		{73, 74, 82, 83, 84, 85, 93, 94, 95, 96, 97, 98, 99, 100},
+		{107, 108, 109, 110, 111, 112, 120, 121, 122, 130, 131, 132},
+		{133, 134, 135, 136, 145, 146, 147, 148, 153, 154, 155, 156, 157, 158, 159, 160},
+		{113, 114, 123, 124},
+		{115, 116, 125, 126},
+		{117, 127},
+		{118, 119, 128, 129},
+		{137, 138, 149, 150},
+		{143, 144, 151, 152},
+		{101, 102, 103, 104, 105, 106}
+		
+	};
+
+
+	//void TileMapMode()
+	//{
+	//	UEngineSprite* Sprite = TileMapRenderer->GetSprite();
+
+	//	for (size_t i = 0; i < Sprite->GetSpriteCount(); i++)
+	//	{
+	//		UEngineTexture* Texture = Sprite->GetTexture(i);
+	//		FSpriteData Data = Sprite->GetSpriteData(i);
+
+	//		//SRV입니다
+	//		ImTextureID SRV = reinterpret_cast<ImTextureID>(Texture->GetSRV());
+
+	//		std::string Text = std::to_string(i); // 타일 인덱스를 문자열로 변환
+	//		std::string TileName = "Tile_" + std::to_string(i); // 타일 이름 생성
+
+	//		// 이미지 출력
+	//		if (i != 0 && i % 4 == 0) // 한 줄에 17개 출력
+	//		{
+	//			ImGui::NewLine(); // 줄바꿈
+	//		}
+
+	//		ImGui::BeginGroup(); // 그룹 시작
+
+	//		ImVec2 Pos = { Data.CuttingPos.X, Data.CuttingPos.Y };
+	//		ImVec2 Size = { Data.CuttingPos.X + Data.CuttingSize.X, Data.CuttingPos.Y + Data.CuttingSize.Y };
+
+	//		if (ImGui::ImageButton(Text.c_str(), SRV, { 32, 32 }, Pos, Size))
+	//		{
+	//			SelectTileIndex = static_cast<int>(i);
+	//		}
+
+	//		// 이름 출력 (이미지 아래)
+	//		ImGui::Text(TileName.c_str());
+
+	//		ImGui::EndGroup(); // 그룹 종료
+
+	//		ImGui::SameLine(); // 다음 타일로 이동
+	//	}
+
+	//	// 기존 TileMap 크기 설정 및 타일 생성 코드
+	//	ImGui::NewLine(); // 버튼 영역 아래로 이동
+	//	ImGui::InputInt("TileMapX", &TileCountX);
+	//	ImGui::InputInt("TileMapY", &TileCountY);
+
+	//	if (ImGui::Button("TileMap Create"))
+	//	{
+	//		for (int y = 0; y < TileCountY; y++)
+	//		{
+	//			for (int x = 0; x < TileCountX; x++)
+	//			{
+	//				TileMapRenderer->SetTile(x, y, SelectTileIndex);
+	//			}
+	//		}
+	//	}
+
+	//	if (true == UEngineInput::IsPress(VK_LBUTTON) && true != GEngine->GetMainWindow().IsMouseScreenOut())
+	//	{
+	//		FVector ScreenPos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
+	//		ScreenPos.Z = ScreenPos.Y;
+
+	//		TileMapRenderer->SetTile(ScreenPos, SelectTileIndex);
+	//	}
+
+	//	if (true == UEngineInput::IsPress(VK_RBUTTON) && true != GEngine->GetMainWindow().IsMouseScreenOut())
+	//	{
+	//		FVector ScreenPos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
+	//		ScreenPos.Z = ScreenPos.Y;
+
+	//		TileMapRenderer->RemoveTile(ScreenPos);
+	//	}
+	//}
+
 	void TileMapMode()
 	{
 		UEngineSprite* Sprite = TileMapRenderer->GetSprite();
 
-		for (size_t i = 0; i < Sprite->GetSpriteCount(); i++)
+		for (size_t groupIndex = 0; groupIndex < TileGroups.size(); ++groupIndex)
 		{
-			UEngineTexture* Texture = Sprite->GetTexture(i);
-			FSpriteData Data = Sprite->GetSpriteData(i);
+			ImGui::Text(("Group " + std::to_string(groupIndex + 1)).c_str());
+			ImGui::Separator(); // 그룹 구분선 출력
 
-			//SRV입니다
-			ImTextureID SRV = reinterpret_cast<ImTextureID>(Texture->GetSRV());
-
-			std::string Text = std::to_string(i); // 타일 인덱스를 문자열로 변환
-			std::string TileName = "Tile_" + std::to_string(i); // 타일 이름 생성
-
-			// 이미지 출력
-			if (i != 0 && i % 4 == 0) // 한 줄에 17개 출력
+			for (size_t i = 0; i < TileGroups[groupIndex].size(); ++i)
 			{
-				ImGui::NewLine(); // 줄바꿈
+				int tileIndex = TileGroups[groupIndex][i];
+				UEngineTexture* Texture = Sprite->GetTexture(tileIndex);
+				FSpriteData Data = Sprite->GetSpriteData(tileIndex);
+
+				// SRV입니다
+				ImTextureID SRV = reinterpret_cast<ImTextureID>(Texture->GetSRV());
+
+				std::string Text = std::to_string(tileIndex);
+				std::string TileName = "Tile_" + std::to_string(tileIndex);
+
+				// 이미지 출력
+				if (i != 0 && i % 5 == 0) // 한 줄에 5개 출력
+				{
+					ImGui::NewLine(); // 줄바꿈
+				}
+
+				ImGui::BeginGroup(); // 그룹 시작
+
+				ImVec2 Pos = { Data.CuttingPos.X, Data.CuttingPos.Y };
+				ImVec2 Size = { Data.CuttingPos.X + Data.CuttingSize.X, Data.CuttingPos.Y + Data.CuttingSize.Y };
+
+				if (ImGui::ImageButton(Text.c_str(), SRV, { 32, 32 }, Pos, Size))
+				{
+					SelectTileIndex = tileIndex;
+				}
+
+				ImGui::Text(TileName.c_str());
+				ImGui::EndGroup(); // 그룹 종료
+				ImGui::SameLine(); // 다음 타일로 이동
 			}
-
-			ImGui::BeginGroup(); // 그룹 시작
-
-			ImVec2 Pos = { Data.CuttingPos.X, Data.CuttingPos.Y };
-			ImVec2 Size = { Data.CuttingPos.X + Data.CuttingSize.X, Data.CuttingPos.Y + Data.CuttingSize.Y };
-
-			if (ImGui::ImageButton(Text.c_str(), SRV, { 32, 32 }, Pos, Size))
-			{
-				SelectTileIndex = static_cast<int>(i);
-			}
-
-			// 이름 출력 (이미지 아래)
-			ImGui::Text(TileName.c_str());
-
-			ImGui::EndGroup(); // 그룹 종료
-
-			ImGui::SameLine(); // 다음 타일로 이동
+			ImGui::NewLine(); // 다음 그룹으로 이동
 		}
 
-		// 기존 TileMap 크기 설정 및 타일 생성 코드
-		ImGui::NewLine(); // 버튼 영역 아래로 이동
+		// 기존 TileMap 크기 설정 및 타일 생성 코드는 동일
+		ImGui::NewLine();
 		ImGui::InputInt("TileMapX", &TileCountX);
 		ImGui::InputInt("TileMapY", &TileCountY);
 
@@ -108,11 +223,13 @@ public:
 			}
 		}
 
+		// 마우스 클릭으로 타일 설정 코드는 그대로 유지
 		if (true == UEngineInput::IsPress(VK_LBUTTON) && true != GEngine->GetMainWindow().IsMouseScreenOut())
 		{
 			FVector ScreenPos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
 
 			TileMapRenderer->SetTile(ScreenPos, SelectTileIndex);
+			TileMapRenderer->SetWorldLocation({ ScreenPos.X, ScreenPos.Y, ScreenPos.Y });
 		}
 
 		if (true == UEngineInput::IsPress(VK_RBUTTON) && true != GEngine->GetMainWindow().IsMouseScreenOut())
@@ -122,6 +239,7 @@ public:
 			TileMapRenderer->RemoveTile(ScreenPos);
 		}
 	}
+
 
 	void ObjectMode()
 	{
@@ -147,7 +265,6 @@ public:
 					}
 				}
 
-
 				ImVec2 Pos = { Data.CuttingPos.X, Data.CuttingPos.Y };
 				ImVec2 Size = { Data.CuttingPos.X + Data.CuttingSize.X, Data.CuttingPos.Y + Data.CuttingSize.Y };
 
@@ -162,11 +279,7 @@ public:
 			{
 				ESpawnList SelectTree = static_cast<ESpawnList>(SelectTreeIndex);
 				FVector Pos = GetWorld()->GetMainCamera()->ScreenMousePosToWorldPos();
-				Pos.Z = 0.0f;
-
-				FVector TargetLoc_TYPE0 = FVector{ TREE_SIZE_0.X * 0.0f, TREE_SIZE_0.Y * 0.4f * -1.0f } *ScaleRatio;
-				FVector TargetLoc_TYPE1 = FVector{ TREE_SIZE_1.X * 0.025f, TREE_SIZE_1.Y * 0.4f * -1.0f } *ScaleRatio;
-
+				Pos.Z = 0;
 
 				std::shared_ptr<AFieldObjects> NewTree;
 
@@ -175,50 +288,37 @@ public:
 				case ESpawnList::Tree0:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 0);
-					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
-					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree1:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 1);
-					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE1);
-					NewTree->SetActorLocation(Pos - TargetLoc_TYPE1);
 					break;
 				case ESpawnList::Tree2:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 2);
-					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
-					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree3:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 3);
-					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
-					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree4:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 4);
-					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
-					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree5:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 5);
-					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
-					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				case ESpawnList::Tree6:
 					NewTree = GetWorld()->SpawnActor<ATree>("Tree");
 					NewTree->GetRenderer()->SetSprite("Trees", 6);
-					NewTree->GetCollision()->SetRelativeLocation(TargetLoc_TYPE0);
-					NewTree->SetActorLocation(Pos - TargetLoc_TYPE0);
 					break;
 				default:
 					break;
 				}
 
-				//NewTree->SetActorLocation(Pos);
+				NewTree->GetRenderer()->SpriteData.Pivot = { 0.5f, 0.15f };
+				NewTree->SetActorLocation(Pos);
 			}
 		}
 
@@ -456,25 +556,12 @@ ATileMapEditorMode::ATileMapEditorMode()
 	RootComponent = Default;
 
 	FieldRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	FieldRenderer->SetTexture("Field_Green_000.png");
-	FieldRenderer->SetScale3D(GreenFieldSize_Plus);
-	FieldRenderer->SetWorldLocation({0.0f, 0.0f, 500.0f});
-
 	PivotSpriteRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	PivotSpriteRenderer->SetRelativeScale3D({ 10.0f, 10.0f, 1.0f });
-	PivotSpriteRenderer->SetWorldLocation({ 0.0f, 0.0f, 200.0f });
-
 	Renderer_Tile = CreateDefaultSubObject<UTileMapRenderer>();
-	Renderer_Tile->SetTileSetting(ETileMapType::Rect, "Wall_Default_0.png", { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 16.0f * ScaleRatio, 16.0f * ScaleRatio }, { 0.0f, 0.0f });
 
 	FieldRenderer->SetupAttachment(RootComponent);
 	PivotSpriteRenderer->SetupAttachment(RootComponent);
 	Renderer_Tile->SetupAttachment(RootComponent);
-
-	Camera = GetWorld()->GetMainCamera();
-	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -100.0f, 0.0f });
-	Camera->GetCameraComponent()->SetProjectionType(EProjectionType::Orthographic);
-	Camera->GetCameraComponent()->SetZSort(0, true);
 };
 
 
@@ -522,6 +609,7 @@ void ATileMapEditorMode::Tick(float _DeltaTime)
 		Camera->AddActorLocation({ 0.0f , 0.0f, 1.0f * CameraSpeed * _DeltaTime });
 	}
 
+	Camera->GetCameraComponent()->SetZSort(0, true);
 
 }
 
@@ -552,6 +640,22 @@ void ATileMapEditorMode::LevelChangeStart()
 void ATileMapEditorMode::BeginPlay()
 {
 	AActor::BeginPlay();
+
+	FieldRenderer->SetTexture("Field_Green_002.png");
+	FieldRenderer->SetScale3D(GreenFieldSize_Plus);
+	FieldRenderer->SetWorldLocation({ GreenFieldSize_Plus.Half().X, GreenFieldSize_Plus.Half().Y, 10000.0f });
+
+	PivotSpriteRenderer->SetRelativeScale3D({ 10.0f, 10.0f, 1.0f });
+	PivotSpriteRenderer->SetWorldLocation({ 0.0f, 0.0f, 200.0f });
+
+	FVector TileSize = FVector(16.0f, 16.0f) * ScaleRatio;
+	Renderer_Tile->SetTileSetting(ETileMapType::Rect, "Wall_Default_0.png", TileSize, TileSize, { 0.0f, 0.0f });
+
+	Camera = GetWorld()->GetMainCamera();
+	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -100.0f, 0.0f });
+	Camera->GetCameraComponent()->SetProjectionType(EProjectionType::Orthographic);
+	Camera->GetCameraComponent()->SetFar(30000.0f);
+	Camera->GetCameraComponent()->SetNear(-100.0f);
 }
 
 void ATileMapEditorMode::TileMapDirLoad()

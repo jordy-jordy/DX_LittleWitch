@@ -16,12 +16,12 @@ ATree::ATree()
 	RootComponent = Default;
 
 	Renderer = CreateDefaultSubObject<USpriteRenderer>();
-	Renderer->SetWorldLocation({ 0, 0, 50 });
 	Renderer->SetAutoScaleRatio(ScaleRatio);
 
 	Collision = CreateDefaultSubObject<UCollision>();
 	Collision->SetCollisionProfileName("Tree");
 	Collision->SetScale3D({ 30.0f, 30.0f, 0.0f });
+	Collision->SetRelativeLocation({ 0, 0, 0 });
 
 	Collision->SetupAttachment(RootComponent);
 	Renderer->SetupAttachment(RootComponent);
@@ -41,9 +41,15 @@ void ATree::Tick(float _DeltaTime)
 {
 	AActor::Tick(_DeltaTime);
 
-	std::shared_ptr<class ACameraActor> Camera = GetWorld()->GetCamera(0);
+	{
+		FVector Pos = GetActorLocation();
+		Pos.Z = Pos.Y;
 
-	UEngineCore::GetMainWindow().GetMousePos();
+		SetActorLocation(Pos);
+	}
+
+	//std::shared_ptr<class ACameraActor> Camera = GetWorld()->GetCamera(0);
+	//UEngineCore::GetMainWindow().GetMousePos();
 }
 
 void ATree::Serialize(UEngineSerializer& _Ser)
