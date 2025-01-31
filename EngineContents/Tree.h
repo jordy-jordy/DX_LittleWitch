@@ -1,9 +1,6 @@
 #pragma once
 #include "FieldObjects.h"
 
-#include <EngineCore/SpriteRenderer.h>
-#include <EnginePlatform/EngineWinImage.h>
-
 
 // Ό³Έν :
 class ATree : public AFieldObjects
@@ -19,12 +16,12 @@ public:
 	ATree& operator=(const ATree& _Other) = delete;
 	ATree& operator=(ATree&& _Other) noexcept = delete;
 
-	std::shared_ptr<class USpriteRenderer> GetRenderer() override
+	USpriteRenderer* GetRenderer() override
 	{
 		return Renderer;
 	}
 
-	std::shared_ptr<class UCollision> GetCollision() override
+	UCollision* GetCollision() override
 	{
 		return Collision;
 	}
@@ -40,14 +37,14 @@ protected:
 
 
 private:
-	std::shared_ptr<class USpriteRenderer> Renderer;
-	std::shared_ptr<class USpriteRenderer> Renderer_Tree_000;
-	std::shared_ptr<class USpriteRenderer> Renderer_Tree_001;
-	std::shared_ptr<class USpriteRenderer> Renderer_Tree_002;
-	std::shared_ptr<class USpriteRenderer> Renderer_Tree_003;
-	std::shared_ptr<class USpriteRenderer> Renderer_Tree_004;
-	std::shared_ptr<class USpriteRenderer> Renderer_Tree_005;
-	std::shared_ptr<class USpriteRenderer> Renderer_Tree_006;
-	std::shared_ptr<class UCollision> Collision;
+	USpriteRenderer* Renderer;
+	USpriteRenderer* Renderer_Tree_000;
+	USpriteRenderer* Renderer_Tree_001;
+	USpriteRenderer* Renderer_Tree_002;
+	USpriteRenderer* Renderer_Tree_003;
+	USpriteRenderer* Renderer_Tree_004;
+	USpriteRenderer* Renderer_Tree_005;
+	USpriteRenderer* Renderer_Tree_006;
+	UCollision* Collision;
 
 };

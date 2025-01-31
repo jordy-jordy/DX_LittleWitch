@@ -60,12 +60,12 @@ void APlayGameMode::BeginPlay()
 	AGameMode::BeginPlay();
 	UEngineCore::GetDevice().GetBackBufferTarget()->SetClearColor({ 0.337f, 0.388f, 0.263f, 1.0f });
 
-	Field_Home = GetWorld()->SpawnActor<AField_Home>();
+	Field_Home = GetWorld()->SpawnActor<AField_Home>().get();
 	Field_Home->SetActorLocation({ 0.0f, 0.0f, 1.0f });
 	Field_Home->SetColImage("Field_Home_001.png", FieldFolderName);
 	Field_Home->SetActive(false);
 
-	Field_Green = GetWorld()->SpawnActor<AField_Green>();
+	Field_Green = GetWorld()->SpawnActor<AField_Green>().get();
 	Field_Green->SetActorLocation({ 0.0f, 0.0f, 1.0f });
 	Field_Green->SetColImage("Field_Green_001.png", FieldFolderName);
 	Field_Green->SetActive(false);
@@ -126,7 +126,7 @@ void APlayGameMode::ChangeField(float _DeltaTime)
 }
 
 
-void APlayGameMode::SetCurField(std::shared_ptr<class AAllField> _CurField)
+void APlayGameMode::SetCurField(class AAllField* _CurField)
 {
 	CurField = _CurField;
 

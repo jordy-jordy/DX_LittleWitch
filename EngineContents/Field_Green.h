@@ -35,8 +35,8 @@ public:
 		return FieldSize_Plus;
 	}
 
-	std::shared_ptr<class UCollision> Col_ToHome;
-	std::shared_ptr<class UCollision> Col_ToNPC;
+	class UCollision* Col_ToHome;
+	class UCollision* Col_ToNPC;
 
 
 protected:

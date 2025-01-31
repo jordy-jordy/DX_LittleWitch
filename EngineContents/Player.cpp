@@ -19,9 +19,9 @@ APlayer::APlayer()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
-	ELLIE = CreateDefaultSubObject<USpriteRenderer>();
-	ELLIE_HAT = CreateDefaultSubObject<USpriteRenderer>();
-	ELLIE_SHADOW = CreateDefaultSubObject<USpriteRenderer>();
+	ELLIE = CreateDefaultSubObject<USpriteRenderer>().get();
+	ELLIE_HAT = CreateDefaultSubObject<USpriteRenderer>().get();
+	ELLIE_SHADOW = CreateDefaultSubObject<USpriteRenderer>().get();
 
 	/***** ¿¤¸® - IDLE - Ä³¸¯ÅÍ *****/
 	{
@@ -114,7 +114,7 @@ APlayer::APlayer()
 	ELLIE_HAT->SetAutoScaleRatio(ScaleRatio);
 	ELLIE_HAT->SetRelativeLocation({ 0, 0, -2 });
 
-	ELLIE_COL = CreateDefaultSubObject<UCollision>();
+	ELLIE_COL = CreateDefaultSubObject<UCollision>().get();
 	ELLIE_COL->SetCollisionProfileName("Player");
 	ELLIE_COL->SetWorldLocation({ 0, ELLIESIZE.Y * ScaleRatio * 0.3f, 0 });
 	ELLIE_COL->SetScale3D({ 10, 10, 1 });

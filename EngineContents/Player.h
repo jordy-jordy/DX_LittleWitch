@@ -71,12 +71,12 @@ public:
 
 	void SetColImage(std::string_view _ColImageName, std::string_view _FolderName);
 
-	void SetField(std::shared_ptr<class AAllField> _Field)
+	void SetField(class AAllField* _Field)
 	{
 		Field = _Field;
 	}
 
-	std::shared_ptr<class UCollision> GetELLIE_COL()
+	UCollision* GetELLIE_COL()
 	{
 		return ELLIE_COL;
 	}
@@ -94,13 +94,13 @@ private:
 	EllieState::State CurState = EllieState::State::IDLE;
 	EllieState::POSVECTOR CurPosVector = EllieState::POSVECTOR::NONE;
 
-	std::shared_ptr<class USpriteRenderer> ELLIE_SHADOW;
-	std::shared_ptr<class USpriteRenderer> ELLIE;
-	std::shared_ptr<class USpriteRenderer> ELLIE_HAT;
+	class USpriteRenderer* ELLIE_SHADOW;
+	class USpriteRenderer* ELLIE;
+	class USpriteRenderer* ELLIE_HAT;
 
-	std::shared_ptr<class UCollision> ELLIE_COL;
+	class UCollision* ELLIE_COL;
 
-	std::shared_ptr<class AAllField> Field;
+	class AAllField* Field;
 	UEngineWinImage ColImage;
 
 	class ACameraActor* Camera = nullptr;

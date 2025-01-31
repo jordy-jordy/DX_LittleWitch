@@ -27,7 +27,7 @@ public:
 	void PlayDirLoad();
 	void PlaySpritesInit();
 
-	void SetCurField(std::shared_ptr<class AAllField> _CurField);
+	void SetCurField(class AAllField* _CurField);
 
 	void ChangeField(float _DeltaTime);
 
@@ -38,9 +38,9 @@ protected:
 
 private:
 	class APlayer* Player;
-	std::shared_ptr<class AAllField> Field_Green;
-	std::shared_ptr<class AAllField> Field_Home;
-	std::shared_ptr<class AAllField> CurField;
+	class AAllField* Field_Green;
+	class AAllField* Field_Home;
+	class AAllField* CurField;
 
 	FieldList Field = FieldList::NONE;
 	std::string_view FieldFolderName = "02_Field";

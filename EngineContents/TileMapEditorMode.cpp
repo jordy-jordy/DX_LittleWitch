@@ -555,9 +555,9 @@ ATileMapEditorMode::ATileMapEditorMode()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
-	FieldRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	PivotSpriteRenderer = CreateDefaultSubObject<USpriteRenderer>();
-	Renderer_Tile = CreateDefaultSubObject<UTileMapRenderer>();
+	FieldRenderer = CreateDefaultSubObject<USpriteRenderer>().get();
+	PivotSpriteRenderer = CreateDefaultSubObject<USpriteRenderer>().get();
+	Renderer_Tile = CreateDefaultSubObject<UTileMapRenderer>().get();
 
 	FieldRenderer->SetupAttachment(RootComponent);
 	PivotSpriteRenderer->SetupAttachment(RootComponent);
@@ -626,15 +626,15 @@ void ATileMapEditorMode::LevelChangeStart()
 
 	Window->SetActive(true);
 
-	TileMapWindow = UEngineGUI::FindGUIWindow<UTileMapWindow>("TileMapWindow");
+	TileMapWindow = UEngineGUI::FindGUIWindow<UTileMapWindow>("TileMapWindow").get();
 
 	if (nullptr == TileMapWindow)
 	{
-		TileMapWindow = UEngineGUI::CreateGUIWindow<UTileMapWindow>("TileMapWindow");
+		TileMapWindow = UEngineGUI::CreateGUIWindow<UTileMapWindow>("TileMapWindow").get();
 	}
 
 	TileMapWindow->SetActive(true);
-	TileMapWindow->TileMapRenderer = Renderer_Tile.get();
+	TileMapWindow->TileMapRenderer = Renderer_Tile;
 }
 
 void ATileMapEditorMode::BeginPlay()
@@ -651,7 +651,7 @@ void ATileMapEditorMode::BeginPlay()
 	FVector TileSize = FVector(16.0f, 16.0f) * ScaleRatio;
 	Renderer_Tile->SetTileSetting(ETileMapType::Rect, "Wall_Default_0.png", TileSize, TileSize, { 0.0f, 0.0f });
 
-	Camera = GetWorld()->GetMainCamera();
+	Camera = GetWorld()->GetMainCamera().get();
 	Camera->SetActorLocation({ HALF_WINDOW_SIZE.X, HALF_WINDOW_SIZE.Y, -100.0f, 0.0f });
 	Camera->GetCameraComponent()->SetProjectionType(EProjectionType::Orthographic);
 	Camera->GetCameraComponent()->SetFar(30000.0f);

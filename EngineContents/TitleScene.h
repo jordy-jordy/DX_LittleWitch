@@ -16,7 +16,7 @@ public:
 	ATitleScene& operator=(const ATitleScene& _Other) = delete;
 	ATitleScene& operator=(ATitleScene&& _Other) noexcept = delete;
 
-	void SetLocation_Window(const std::shared_ptr<class USpriteRenderer> _Renderer, const FVector _value);
+	void SetLocation_Window(class USpriteRenderer* _Renderer, FVector _Value);
 
 	//std::shared_ptr<class USpriteRenderer> GetRenderer()
 	//{
@@ -28,33 +28,33 @@ protected:
 	void Tick(float _DeltaTime) override;
 
 private:
-	std::shared_ptr<class USpriteRenderer> LOGO;
-	std::shared_ptr<class USpriteRenderer> BG_SKY;
-	std::shared_ptr<class USpriteRenderer> BG_WATER;
-	std::shared_ptr<class USpriteRenderer> MOUNTAIN;
-	std::shared_ptr<class USpriteRenderer> MOUNTAIN_SHADOW;
-	std::shared_ptr<class USpriteRenderer> WATER_GLARE;
-	std::shared_ptr<class USpriteRenderer> WATER_SHINE;
-	std::shared_ptr<class USpriteRenderer> SKY_MOON;
-	std::shared_ptr<class USpriteRenderer> SKY_STAR;
-	std::shared_ptr<class USpriteRenderer> TRAIN0;
-	std::shared_ptr<class USpriteRenderer> TRAIN0_LIGHT;
-	std::shared_ptr<class USpriteRenderer> TRAIN1;
-	std::shared_ptr<class USpriteRenderer> TRAIN1_LIGHT;
-	std::shared_ptr<class USpriteRenderer> TRAIN2;
-	std::shared_ptr<class USpriteRenderer> TRAIN2_LIGHT;
-	std::shared_ptr<class USpriteRenderer> TRAIN3;
-	std::shared_ptr<class USpriteRenderer> TRAIN3_LIGHT;
-	std::shared_ptr<class USpriteRenderer> TRAIN4;
-	std::shared_ptr<class USpriteRenderer> TRAIN_BRIDGE;
-	std::shared_ptr<class USpriteRenderer> TRAIN_LIGHT_BLUR0;
-	std::shared_ptr<class USpriteRenderer> TRAIN_LIGHT_BLUR1;
-	std::shared_ptr<class USpriteRenderer> BRIDGE_SHADOW0;
-	std::shared_ptr<class USpriteRenderer> BRIDGE_SHADOW1;
-	std::shared_ptr<class USpriteRenderer> TRAIN_SHADOW;
-	std::shared_ptr<class USpriteRenderer> CLOUD_FAR;
-	std::shared_ptr<class USpriteRenderer> CLOUD_MID;
-	std::shared_ptr<class USpriteRenderer> CLOUD_NEAR;
-	std::shared_ptr<class USpriteRenderer> TREE_0;
-	std::shared_ptr<class USpriteRenderer> TREE_1;
+	class USpriteRenderer* LOGO;
+	class USpriteRenderer* BG_SKY;
+	class USpriteRenderer* BG_WATER;
+	class USpriteRenderer* MOUNTAIN;
+	class USpriteRenderer* MOUNTAIN_SHADOW;
+	class USpriteRenderer* WATER_GLARE;
+	class USpriteRenderer* WATER_SHINE;
+	class USpriteRenderer* SKY_MOON;
+	class USpriteRenderer* SKY_STAR;
+	class USpriteRenderer* TRAIN0;
+	class USpriteRenderer* TRAIN0_LIGHT;
+	class USpriteRenderer* TRAIN1;
+	class USpriteRenderer* TRAIN1_LIGHT;
+	class USpriteRenderer* TRAIN2;
+	class USpriteRenderer* TRAIN2_LIGHT;
+	class USpriteRenderer* TRAIN3;
+	class USpriteRenderer* TRAIN3_LIGHT;
+	class USpriteRenderer* TRAIN4;
+	class USpriteRenderer* TRAIN_BRIDGE;
+	class USpriteRenderer* TRAIN_LIGHT_BLUR0;
+	class USpriteRenderer* TRAIN_LIGHT_BLUR1;
+	class USpriteRenderer* BRIDGE_SHADOW0;
+	class USpriteRenderer* BRIDGE_SHADOW1;
+	class USpriteRenderer* TRAIN_SHADOW;
+	class USpriteRenderer* CLOUD_FAR;
+	class USpriteRenderer* CLOUD_MID;
+	class USpriteRenderer* CLOUD_NEAR;
+	class USpriteRenderer* TREE_0;
+	class USpriteRenderer* TREE_1;
 };

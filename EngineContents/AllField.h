@@ -44,9 +44,9 @@ public:
 
 
 protected:
-	std::shared_ptr<class USpriteRenderer> FieldImage;
-	std::shared_ptr<class USpriteRenderer> FieldColIamge;
-	std::shared_ptr<class UCollision> FieldCol;
+	class USpriteRenderer* FieldImage;
+	class USpriteRenderer* FieldColIamge;
+	class UCollision* FieldCol;
 
 	UEngineWinImage ColImage;
 	std::string_view ColImageDir = "ContentsResources\\Image\\WitchResource\\PLAY";

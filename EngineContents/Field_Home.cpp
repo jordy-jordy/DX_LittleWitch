@@ -19,10 +19,10 @@ AField_Home::AField_Home()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
-	FieldImage = CreateDefaultSubObject<USpriteRenderer>();
-	FieldColIamge = CreateDefaultSubObject<USpriteRenderer>();
-	FieldCol = CreateDefaultSubObject<UCollision>();
-	Col_ToGreen = CreateDefaultSubObject<UCollision>();
+	FieldImage = CreateDefaultSubObject<USpriteRenderer>().get();
+	FieldColIamge = CreateDefaultSubObject<USpriteRenderer>().get();
+	FieldCol = CreateDefaultSubObject<UCollision>().get();
+	Col_ToGreen = CreateDefaultSubObject<UCollision>().get();
 
 	FieldImage->SetupAttachment(RootComponent);
 	FieldColIamge->SetupAttachment(RootComponent);

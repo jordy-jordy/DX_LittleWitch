@@ -68,6 +68,6 @@ private:
 	FVector SlotSize = { 50, 50 };   // 슬롯의 기본 크기
 	FVector SlotPosition = { 0, 0 }; // 슬롯의 위치
 
-	std::shared_ptr<class USpriteRenderer> Slot_Unlock;
-	std::shared_ptr<class USpriteRenderer> Slot_Lock;
+	class USpriteRenderer* Slot_Unlock;
+	class USpriteRenderer* Slot_Lock;
 };

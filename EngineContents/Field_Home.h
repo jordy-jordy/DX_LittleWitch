@@ -35,7 +35,7 @@ public:
 		return FieldSize_Plus;
 	}
 
-	std::shared_ptr<class UCollision> Col_ToGreen;
+	class UCollision* Col_ToGreen;
 
 
 protected:

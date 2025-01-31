@@ -26,6 +26,6 @@ protected:
 
 
 private:
-	std::shared_ptr<class AActor> Title;
+	class AActor* Title;
 };
 

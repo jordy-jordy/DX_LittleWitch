@@ -15,10 +15,10 @@ ATree::ATree()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
-	Renderer = CreateDefaultSubObject<USpriteRenderer>();
+	Renderer = CreateDefaultSubObject<USpriteRenderer>().get();
 	Renderer->SetAutoScaleRatio(ScaleRatio);
 
-	Collision = CreateDefaultSubObject<UCollision>();
+	Collision = CreateDefaultSubObject<UCollision>().get();
 	Collision->SetCollisionProfileName("Tree");
 	Collision->SetScale3D({ 30.0f, 30.0f, 0.0f });
 	Collision->SetRelativeLocation({ 0, 0, 0 });

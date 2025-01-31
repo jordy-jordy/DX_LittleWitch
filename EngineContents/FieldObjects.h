@@ -1,6 +1,10 @@
 #pragma once
 #include <EngineCore/Actor.h>
 
+#include <EngineCore/SpriteRenderer.h>
+#include <EngineCore/Collision.h>
+#include <EnginePlatform/EngineWinImage.h>
+
 
 enum class ETreeType
 {
@@ -31,8 +35,8 @@ public:
 
 	ETreeType TreeTypeValue = ETreeType::NONE;
 
-	virtual std::shared_ptr<class USpriteRenderer> GetRenderer() = 0;
-	virtual std::shared_ptr<class UCollision> GetCollision() = 0;
+	virtual USpriteRenderer* GetRenderer() = 0;
+	virtual UCollision* GetCollision() = 0;
 
 
 protected:

@@ -29,10 +29,10 @@ protected:
 
 
 private:
-	std::shared_ptr<class UTileMapWindow> TileMapWindow;
-	std::shared_ptr<class UTileMapRenderer> Renderer_Tile;
-	std::shared_ptr<class USpriteRenderer> PivotSpriteRenderer;
-	std::shared_ptr<class USpriteRenderer> FieldRenderer;
+	class UTileMapWindow* TileMapWindow;
+	class UTileMapRenderer* Renderer_Tile;
+	class USpriteRenderer* PivotSpriteRenderer;
+	class USpriteRenderer* FieldRenderer;
 
-	std::shared_ptr<class ACameraActor> Camera;
+	class ACameraActor* Camera;
 };

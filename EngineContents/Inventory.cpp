@@ -10,7 +10,7 @@ AInventory::AInventory()
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
 
-	Inventory = CreateDefaultSubObject<USpriteRenderer>();
+	Inventory = CreateDefaultSubObject<USpriteRenderer>().get();
 
 	Inventory->SetupAttachment(RootComponent);
 }
@@ -22,8 +22,8 @@ AInventory::~AInventory()
 void AInventory::BeginPlay()
 {
 	AActor::BeginPlay();
+	Inventory->SetTexture("Inventory_Base_mod.png");
 
-	Inventory->SetTexture("")
 }
 
 void AInventory::Tick(float _DeltaTime)
