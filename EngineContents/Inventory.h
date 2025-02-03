@@ -2,7 +2,7 @@
 #include <EngineCore/ImageWidget.h>
 #include <EngineCore/SpriteRenderer.h>
 
-class ASlot
+class ASlot 
 {
 public:
 	class USpriteRenderer* Slot_Unlock;
