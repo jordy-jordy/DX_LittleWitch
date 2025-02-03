@@ -130,9 +130,6 @@
     <ClInclude Include="EngineSampler.h">
       <Filter>05_Resources\Texture</Filter>
     </ClInclude>
-    <ClInclude Include="EngineEnums.h">
-      <Filter>06_Data</Filter>
-    </ClInclude>
     <ClInclude Include="RenderUnit.h">
       <Filter>06_Render</Filter>
     </ClInclude>
@@ -163,12 +160,6 @@
     <ClInclude Include="Widget.h">
       <Filter>04_Object\UI</Filter>
     </ClInclude>
-    <ClInclude Include="EngineConst.h">
-      <Filter>06_Data</Filter>
-    </ClInclude>
-    <ClInclude Include="EngineDataStruct.h">
-      <Filter>06_Data</Filter>
-    </ClInclude>
     <ClInclude Include="EngineFont.h">
       <Filter>05_Resources\Font</Filter>
     </ClInclude>
@@ -185,10 +176,28 @@
       <Filter>05_Resources\Buffer</Filter>
     </ClInclude>
     <ClInclude Include="Light.h">
-      <Filter>04_Object\Light</Filter>
+      <Filter>04_Object\Component\Light</Filter>
     </ClInclude>
     <ClInclude Include="LightActor.h">
       <Filter>04_Object\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineConst.h">
+      <Filter>00_Global</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineDataStruct.h">
+      <Filter>00_Global</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineEnums.h">
+      <Filter>00_Global</Filter>
+    </ClInclude>
+    <ClInclude Include="EngineStruct.h">
+      <Filter>00_Global</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageWidget.h">
+      <Filter>04_Object\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="FontWidget.h">
+      <Filter>04_Object\UI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -355,10 +364,19 @@
       <Filter>05_Resources\Buffer</Filter>
     </ClCompile>
     <ClCompile Include="Light.cpp">
-      <Filter>04_Object\Light</Filter>
+      <Filter>04_Object\Component\Light</Filter>
     </ClCompile>
     <ClCompile Include="LightActor.cpp">
       <Filter>04_Object\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="EngineStruct.cpp">
+      <Filter>00_Global</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageWidget.cpp">
+      <Filter>04_Object\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="FontWidget.cpp">
+      <Filter>04_Object\UI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -434,9 +452,6 @@
     <Filter Include="05_Resources\Texture">
       <UniqueIdentifier>{38e9cfb3-4e58-46b9-8498-10a76e5ced45}</UniqueIdentifier>
     </Filter>
-    <Filter Include="06_Data">
-      <UniqueIdentifier>{a8516d09-7969-4b37-8e8f-6d9c46cb9104}</UniqueIdentifier>
-    </Filter>
     <Filter Include="06_Render">
       <UniqueIdentifier>{8f5a72d2-276d-4353-8f35-d47154c67097}</UniqueIdentifier>
     </Filter>
@@ -461,7 +476,10 @@
     <Filter Include="01_ThirdParty\FW1FontWrapper\Release">
       <UniqueIdentifier>{3988ef29-f6bb-49df-8eef-35bc6f9c912c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="04_Object\Light">
+    <Filter Include="00_Global">
+      <UniqueIdentifier>{1cf7af04-2437-45b2-bd73-b65fb22eddd0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_Object\Component\Light">
       <UniqueIdentifier>{a8e06a14-e1b7-4d26-995b-bd99bba36263}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

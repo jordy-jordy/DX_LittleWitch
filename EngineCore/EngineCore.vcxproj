@@ -221,18 +221,21 @@
     <ClInclude Include="EngineShader.h" />
     <ClInclude Include="EngineShaderResources.h" />
     <ClInclude Include="EngineSprite.h" />
+    <ClInclude Include="EngineStruct.h" />
     <ClInclude Include="EngineStructuredBuffer.h" />
     <ClInclude Include="EngineTexture.h" />
     <ClInclude Include="EngineVertex.h" />
     <ClInclude Include="EngineVertexBuffer.h" />
     <ClInclude Include="EngineVertexShader.h" />
     <ClInclude Include="FontRenderer.h" />
+    <ClInclude Include="FontWidget.h" />
     <ClInclude Include="GameInstance.h" />
     <ClInclude Include="GameMode.h">
       <SubType>
       </SubType>
     </ClInclude>
     <ClInclude Include="HUD.h" />
+    <ClInclude Include="ImageWidget.h" />
     <ClInclude Include="imconfig.h" />
     <ClInclude Include="imgui.h" />
     <ClInclude Include="imgui_impl_dx11.h" />
@@ -323,18 +326,21 @@
     <ClCompile Include="EngineShader.cpp" />
     <ClCompile Include="EngineShaderResources.cpp" />
     <ClCompile Include="EngineSprite.cpp" />
+    <ClCompile Include="EngineStruct.cpp" />
     <ClCompile Include="EngineStructuredBuffer.cpp" />
     <ClCompile Include="EngineTexture.cpp" />
     <ClCompile Include="EngineVertex.cpp" />
     <ClCompile Include="EngineVertexBuffer.cpp" />
     <ClCompile Include="EngineVertexShader.cpp" />
     <ClCompile Include="FontRenderer.cpp" />
+    <ClCompile Include="FontWidget.cpp" />
     <ClCompile Include="GameInstance.cpp" />
     <ClCompile Include="GameMode.cpp">
       <SubType>
       </SubType>
     </ClCompile>
     <ClCompile Include="HUD.cpp" />
+    <ClCompile Include="ImageWidget.cpp" />
     <ClCompile Include="imgui.cpp" />
     <ClCompile Include="imgui_draw.cpp" />
     <ClCompile Include="imgui_impl_dx11.cpp" />

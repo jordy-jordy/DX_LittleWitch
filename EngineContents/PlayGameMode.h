@@ -41,6 +41,7 @@ private:
 	class AAllField* Field_Green;
 	class AAllField* Field_Home;
 	class AAllField* CurField;
+	
 
 	FieldList Field = FieldList::NONE;
 	std::string_view FieldFolderName = "02_Field";

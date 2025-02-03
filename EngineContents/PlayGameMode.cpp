@@ -7,6 +7,7 @@
 #include <EngineCore/EngineCamera.h>
 #include <EngineCore/EngineRenderTarget.h>
 #include <EngineCore/Collision.h>
+#include <EngineCore/HUD.h>
 
 #include <EngineCore/EngineGUIWindow.h>
 #include <EngineCore/EngineGUI.h>
@@ -61,21 +62,22 @@ void APlayGameMode::BeginPlay()
 	UEngineCore::GetDevice().GetBackBufferTarget()->SetClearColor({ 0.337f, 0.388f, 0.263f, 1.0f });
 
 	Field_Home = GetWorld()->SpawnActor<AField_Home>().get();
-	Field_Home->SetActorLocation({ 0.0f, 0.0f, 1.0f });
+	Field_Home->SetActorLocation({ 0.0f, 0.0f, 10.0f });
 	Field_Home->SetColImage("Field_Home_001.png", FieldFolderName);
 	Field_Home->SetActive(false);
 
 	Field_Green = GetWorld()->SpawnActor<AField_Green>().get();
-	Field_Green->SetActorLocation({ 0.0f, 0.0f, 1.0f });
+	Field_Green->SetActorLocation({ 0.0f, 0.0f, 10.0f });
 	Field_Green->SetColImage("Field_Green_001.png", FieldFolderName);
 	Field_Green->SetActive(false);
 
 	SetCurField(Field_Green);
 
 	Player = dynamic_cast<APlayer*>(GetWorld()->GetMainPawn());
-	Player->SetActorLocation({ 0.0f, 200.0f, 0.0f });
+	Player->SetActorLocation({ 10.0f * ScaleRatio, 10.0f * ScaleRatio, 0.0f });
 	Player->SetField(CurField);
 	Player->SetColImage(FieldColImageName, FieldFolderName);
+
 }
 
 void APlayGameMode::Tick(float _DeltaTime)

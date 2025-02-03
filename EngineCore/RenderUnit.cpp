@@ -70,7 +70,21 @@ void URenderUnit::MaterialResourcesCheck()
 			FLightDatas& Data = ParentRenderer->GetWorld()->GetLightDatasRef();
 			Resources[i].ConstantBufferLinkData("FLightDatas", Data);
 		}
-		
+	}
+
+	for (EShaderType i = EShaderType::VS; i < EShaderType::MAX; i = static_cast<EShaderType>(static_cast<int>(i) + 1))
+	{
+		if (false == Resources.contains(i))
+		{
+			continue;
+		}
+
+		if (false == Resources[i].IsConstantBuffer("FRenderBaseData"))
+		{
+			continue;
+		}
+
+		Resources[i].ConstantBufferLinkData("FRenderBaseData", Data);
 	}
 }
 
@@ -222,18 +236,8 @@ void URenderUnit::SetMaterial(std::string_view _Name)
 
 void URenderUnit::Render(class UEngineCamera* _Camera, float _DeltaTime)
 {
-	// ¿’«≤æÓº¿∫Ì∑Ø 
-	
-	// Ω¶¿Ã¥ı ∏Æº“Ω∫
-
-	//	ShaderResSetting();
-	
-	//for (std::pair<EShaderType, UEngineShaderResources>& ShaderRes : Resources)
-	//{
-	//	UEngineShaderResources& Res = ShaderRes.second;
-	//	Res.Setting();
-	//}
-	
+	Data.DeltaTime = _DeltaTime;
+	Data.AccTime += _DeltaTime;
 
 	for (std::pair<const EShaderType, UEngineShaderResources>& Pair : Resources)
 	{
@@ -245,7 +249,7 @@ void URenderUnit::Render(class UEngineCamera* _Camera, float _DeltaTime)
 
 	//	VertexShaderSetting();
 	Material->GetVertexShader()->Setting();
-	
+
 	//	InputAssembler2Setting();
 	Mesh->GetIndexBuffer()->Setting();
 	Material->PrimitiveTopologySetting();
@@ -301,7 +305,7 @@ void URenderUnit::RenderInst(class UEngineCamera* _Camera, UINT _InstCount, floa
 
 	// FBX ∏≈Ω¨∆Øº∫
 	// æ÷¥œ∏ﬁ¿Ãº« ¿ŒΩ∫≈œΩÃ
-	UEngineCore::GetDevice().GetContext()->DrawIndexedInstanced(Mesh->GetIndexBuffer()->GetIndexCount(), _InstCount,0, 0, 0);
+	UEngineCore::GetDevice().GetContext()->DrawIndexedInstanced(Mesh->GetIndexBuffer()->GetIndexCount(), _InstCount, 0, 0, 0);
 }
 
 void URenderUnit::InputLayOutCreate()

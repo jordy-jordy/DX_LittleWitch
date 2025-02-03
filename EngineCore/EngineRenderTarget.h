@@ -3,13 +3,37 @@
 #include "EngineTexture.h"
 #include "RenderUnit.h"
 #include "EngineGraphicDevice.h"
+
+class UPostEffect
+{
+	friend class UEngineRenderTarget;
+
+public:
+	URenderUnit RenderUnit;
+	// 내가 준 효과가 출력될 결과물이 될 타겟
+	UEngineRenderTarget* ResultTarget;
+
+	bool IsActive = true;
+
+protected:
+	ENGINEAPI virtual void Init() = 0
+	{
+
+	}
+	ENGINEAPI virtual void Effect(UEngineCamera* Camera, float _DeltaTime) = 0
+	{
+
+	}
+private:
+};
+
 // 설명 :
 class UEngineRenderTarget : public UEngineResources
 {
 public:
 	// constrcuter destructer
-	UEngineRenderTarget();
-	~UEngineRenderTarget();
+	ENGINEAPI UEngineRenderTarget();
+	ENGINEAPI ~UEngineRenderTarget();
 
 	// delete Function
 	UEngineRenderTarget(const UEngineRenderTarget& _Other) = delete;
@@ -45,7 +69,16 @@ public:
 	// 지우고 복사한다.
 	ENGINEAPI void CopyTo(std::shared_ptr<UEngineRenderTarget> _Target);
 
+
 	ENGINEAPI void MergeTo(std::shared_ptr<UEngineRenderTarget> _Target);
+
+	ENGINEAPI void CopyTo(UEngineRenderTarget* _Target);
+	ENGINEAPI void MergeTo(UEngineRenderTarget* _Target);
+
+	UEngineTexture* GetTexture(int _Index = 0)
+	{
+		return ArrTexture[_Index].get();
+	}
 
 protected:
 
@@ -61,5 +94,28 @@ private:
 	// 타겟마다 가지게 하겠습니다.
 	// 이게 낭비인거 같은데 그냥하겠습니다.
 	URenderUnit TargetUnit;
+
+//// 포스트 이펙트 부분
+public:
+	template<typename EffectType>
+	void AddEffect()
+	{
+		std::shared_ptr<EffectType> NewEffect = std::make_shared<EffectType>();
+
+		std::shared_ptr<UPostEffect> PostEffect = std::dynamic_pointer_cast<UPostEffect>(NewEffect);
+
+		PostEffect->ResultTarget = this;
+		PostEffect->Init();
+		PosEffects.push_back(NewEffect);
+	}
+
+	void Effect(UEngineCamera* _Camera, float _DeltaTime);
+	std::shared_ptr<UPostEffect> GetPostEffect(int _Index)
+	{
+		return PosEffects[_Index];
+	}
+
+private:
+	std::vector<std::shared_ptr<UPostEffect>> PosEffects;
 };
 

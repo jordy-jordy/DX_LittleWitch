@@ -28,6 +28,8 @@ std::shared_ptr<class ACameraActor> ULevel::SpawnCamera(int _Order)
 		MSGASSERT("이미 존재하는 카메라를 또 만들려고 했습니다.");
 	}
 
+	AActor* Actor = dynamic_cast<AActor*>(Camera.get());
+	Actor->World = this;
 	Camera->BeginPlay();
 
 	Cameras.insert({ _Order , Camera });
@@ -160,9 +162,6 @@ void ULevel::Render(float _DeltaTime)
 		Camera.second->Tick(_DeltaTime);
 		Camera.second->GetCameraComponent()->Render(_DeltaTime);
 
-		// 난 다 그려졌으니 
-		// MainCamera RenderTarget
-		// Camera.second->GetCameraComponent()->CameraTarget->MergeTo(LastRenderTarget);
 	}
 
 	if (true == Cameras.contains(static_cast<int>(EEngineCameraType::UICamera)))
@@ -177,23 +176,32 @@ void ULevel::Render(float _DeltaTime)
 			CameraComponent->CameraTarget->Setting();
 
 			HUD->UIRender(CameraComponent.get(), _DeltaTime);
-
-			
-
-
-			// CameraComponent->CameraTarget->MergeTo(LastRenderTarget);
 		}
 
 	} else 
 	{
 		MSGASSERT("UI카메라가 존재하지 않습니다. 엔진 오류입니다. UI카메라를 제작해주세요.");
 	}
-	
-	Cameras[static_cast<int>(EEngineCameraType::MainCamera)]->GetCameraComponent()->CameraTarget->MergeTo(LastRenderTarget);
-	Cameras[static_cast<int>(EEngineCameraType::UICamera)]->GetCameraComponent()->CameraTarget->MergeTo(LastRenderTarget);
 
-	// LastRenderTarget->PostEffect();
+	for (std::pair<const int, std::shared_ptr<class ACameraActor>>& Pair : Cameras)
+	{
+		Pair.second->GetCameraComponent()->CameraTarget->Effect(nullptr, _DeltaTime);
+		// Pair.second->GetCameraComponent()->CameraTarget->MergeTo(LastRenderTarget);
+	}
 
+	// 모든 카메라의 최종 결과물은 어디에 머지됩니까?
+	// Last타겟에 머지됩니다.
+	for (std::pair<const int, std::shared_ptr<class ACameraActor>>& Pair : Cameras)
+	{
+		Pair.second->GetCameraComponent()->CameraTarget->MergeTo(LastRenderTarget);
+	}
+
+	// 이때가 후처리이펙트(PostEffect)를 하기 가장 좋은 시점이다.
+	LastRenderTarget->Effect(nullptr, _DeltaTime);
+
+	//Cameras[static_cast<int>(EEngineCameraType::UICamera)]->GetCameraComponent()->CameraTarget->MergeTo(LastRenderTarget);
+
+	// 최종적으로 라스트 타겟은 백버퍼에 랜더링 되면서 화면에 보이게 됩니다.
 	std::shared_ptr<UEngineRenderTarget> BackBuffer = UEngineCore::GetDevice().GetBackBufferTarget();
 	LastRenderTarget->MergeTo(BackBuffer);
 

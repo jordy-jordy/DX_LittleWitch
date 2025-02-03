@@ -4,7 +4,7 @@
 
 
 // 원본 사이즈에서 곱해지는 비율
-static const float ScaleRatio = 2.6f;
+static const float ScaleRatio = 2.8f;
 
 // 시작 모드
 static std::string_view START_MODE = "PLAY";
@@ -21,8 +21,8 @@ static const FVector ELLIESIZE_PLUS = ELLIESIZE * ScaleRatio;
 static const float ELLIE_ANIMDEFAULT_SPEED = 0.13f;
 
 // 엘리 걷기, 뛰기 스피드
-static float ELLIE_WALK_SPEED = 500.0f;
-static float ELLIE_RUN_SPEED = 800.0f;
+static float ELLIE_WALK_SPEED = 600.0f;
+static float ELLIE_RUN_SPEED = 1000.0f;
 
 // 각 방향 벡터
 static const FVector VECTOR_NONE = { 0.0f, 0.0f, 0.0f };
@@ -45,5 +45,10 @@ static const FVector HomeFieldSize_Plus = HomeFieldSize * ScaleRatio;
 // 나무
 static FVector TREE_SIZE_0 = { 112.0f, 128.0f, 0.0f };
 static FVector TREE_SIZE_1 = { 144.0f, 138.0f, 0.0f };
+
+// 인벤토리
+// 베이스 크기
+static FVector INVENTORY_Base = { 108.0f, 156.0f, 0.0f };
+
 
 

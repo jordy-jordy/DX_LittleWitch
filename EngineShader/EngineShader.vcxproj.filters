@@ -16,6 +16,9 @@
     <FxCompile Include="EngineTargetMergeShader.fx">
       <Filter>Target</Filter>
     </FxCompile>
+    <FxCompile Include="EngineMeshLightShader.fx">
+      <Filter>2D</Filter>
+    </FxCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="2D">
@@ -33,6 +36,9 @@
       <Filter>Header</Filter>
     </None>
     <None Include="Transform.hlsli">
+      <Filter>Header</Filter>
+    </None>
+    <None Include="RenderBaseData.hlsli">
       <Filter>Header</Filter>
     </None>
   </ItemGroup>

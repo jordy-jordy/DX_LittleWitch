@@ -30,7 +30,7 @@ void ULight::LightUpdate(UEngineCamera* _Camera, float _DeltaTime)
 
     // LightDir은 회전에 관련된 녀석이기 때문에 Nomrmal되어 있어야 하고 이동관련 수치가 적용되면 안된다.
     LightData.LightDir = GetWorldForwardVector(); // 빛의 Forward
-    LightData.LightRevDir = LightData.LightDir.operator-(); // 빛의 반대방향이 < L!!!!! <= 
+    LightData.LightRevDir = -LightData.LightDir; // 빛의 반대방향이 < L!!!!! <= 
     LightData.LightColor = float4(1.0f, 1.0f, 1.0f, 1.0f);
     LightData.AmbientLight = float4(0.1f, 0.1f, 0.1f, 1.0f);
 
@@ -39,7 +39,8 @@ void ULight::LightUpdate(UEngineCamera* _Camera, float _DeltaTime)
     LightData.ViewLightPos = LightData.LightPos * View;
     LightData.ViewLightDir = LightData.LightDir * View;
     LightData.ViewLightRevDir = LightData.LightRevDir * View;
-    LightData.CameraPosition = _Camera->GetWorldLocation();
+    FVector Pos = _Camera->GetWorldLocation();
+    LightData.CameraPosition = _Camera->GetWorldLocation() * View;
 
 }
 

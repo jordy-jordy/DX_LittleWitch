@@ -43,6 +43,11 @@ public:
 		CollisionType = _Type;
 	}
 
+	ECollisionType GetCollisionType()
+	{
+		return CollisionType;
+	}
+
 	void CollisionEventCheck(std::shared_ptr<UCollision> _Other);
 
 	ENGINEAPI void SetCollisionEnter(std::function<void(UCollision*, UCollision*)> _Function);

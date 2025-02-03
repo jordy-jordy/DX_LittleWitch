@@ -28,13 +28,13 @@ public:
 	}
 
 	template<typename ResType>
-	ENGINEAPI static std::shared_ptr<ResType> Find(std::string_view _Name)
+	static std::shared_ptr<ResType> Find(std::string_view _Name)
 	{
 		const type_info& Info = typeid(ResType);
 		return std::dynamic_pointer_cast<ResType>(Find(Info.name(), _Name.data()));
 	}
 
-	ENGINEAPI static std::shared_ptr<UEngineResources> Find(std::string_view _ResName, std::string_view _Name);
+	static std::shared_ptr<UEngineResources> Find(std::string_view _ResName, std::string_view _Name);
 
 	static bool Contains(std::string_view _Name)
 	{
@@ -55,6 +55,17 @@ public:
 
 	// 이 resources 관리 함수들은 전부다 core에서만 사용되게 하겠습니다.
 	ENGINEAPI static void PushRes(std::shared_ptr<UEngineResources> _Res, const std::string_view _Info, std::string_view _Name, std::string_view _Path);
+
+	template<typename ResType>
+	ENGINEAPI static void ThreadSafePushRes(std::shared_ptr<UEngineResources> _Res, std::string_view _Name, std::string_view _Path)
+	{
+		const type_info& Info = typeid(ResType);
+		ThreadSafePushRes(_Res, Info.name(), _Name, _Path);
+	}
+
+	// 이 resources 관리 함수들은 전부다 core에서만 사용되게 하겠습니다.
+	ENGINEAPI static void ThreadSafePushRes(std::shared_ptr<UEngineResources> _Res, const std::string_view _Info, std::string_view _Name, std::string_view _Path);
+
 
 
 	ENGINEAPI UEnginePath GetPath()

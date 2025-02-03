@@ -43,18 +43,21 @@ VertexShaderOutPut MeshLight_VS(EngineVertex _Vertex /*, int _DataIndex*/)
 	// 뷰공간으로 노말을 보냈어
 	
 	// 뷰공간으로 보낸 포지션이 됩니다.
-	OutPut.VIEWPOS = mul(_Vertex.POSITION, World * View);
+	OutPut.VIEWPOS = mul(_Vertex.POSITION, WV);
 	
 	// 실수로 w에 1이 들어가면 이동값을 적용받게 된다.
 	// 그러므로 이동값이 적용되는것을 확실하게 차단하기 위해서 w를 신경써주는게 좋다.
 	_Vertex.NORMAL.w = 0.0f;
-	OutPut.NORMAL = mul(_Vertex.NORMAL, World * View);
+	OutPut.NORMAL = mul(_Vertex.NORMAL, WV);
+	OutPut.NORMAL.w = 0.0f;
 	
 	_Vertex.BINORMAL.w = 0.0f;
-	OutPut.BINORMAL = mul(_Vertex.BINORMAL, World * View);
+	OutPut.BINORMAL = mul(_Vertex.BINORMAL, WV);
+	OutPut.NORMAL.w = 0.0f;
 	
 	_Vertex.TANGENT.w = 0.0f;
-	OutPut.TANGENT = mul(_Vertex.TANGENT, World * View);
+	OutPut.TANGENT = mul(_Vertex.TANGENT, WV);
+	OutPut.NORMAL.w = 0.0f;
 	
 	// 빛 계산공식을 여기에서 해버리고 넘기면 고로쉐이딩이라고 한다.
 	// OutPut.LIGHTCOLOR = 
@@ -86,6 +89,8 @@ float4 MeshLight_PS(VertexShaderOutPut _Vertex) : SV_Target0
 		//AmbiantLight += LightArr[0].AmbientLight;
 	}
 	
+	
+	// ResultColor.xyz *= (DiffuseColor.xyz + AmbiantLight.xyz);
 	ResultColor.xyz *= (DiffuseColor.xyz + SpacularLight.xyz + AmbiantLight.xyz);
 	ResultColor.a = 1.0f;
 	

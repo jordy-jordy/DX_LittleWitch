@@ -40,20 +40,23 @@
     <ClInclude Include="Field_Home.h">
       <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
     </ClInclude>
-    <ClInclude Include="Inventory.h">
-      <Filter>03_Actors\01_Play\02_Inventory</Filter>
-    </ClInclude>
     <ClInclude Include="FieldObjects.h">
       <Filter>03_Actors\01_Play\01_Objects</Filter>
     </ClInclude>
     <ClInclude Include="Tree.h">
       <Filter>03_Actors\01_Play\01_Objects\Tree</Filter>
     </ClInclude>
-    <ClInclude Include="Slot.h">
-      <Filter>03_Actors\01_Play\02_Inventory</Filter>
+    <ClInclude Include="Inventory.h">
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
     </ClInclude>
     <ClInclude Include="Item.h">
-      <Filter>03_Actors\01_Play\02_Inventory</Filter>
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Slot.h">
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="WitchHUD.h">
+      <Filter>03_Actors\01_Play\02_HUD</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -93,20 +96,23 @@
     <ClCompile Include="Field_Home.cpp">
       <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
     </ClCompile>
-    <ClCompile Include="Inventory.cpp">
-      <Filter>03_Actors\01_Play\02_Inventory</Filter>
-    </ClCompile>
     <ClCompile Include="FieldObjects.cpp">
       <Filter>03_Actors\01_Play\01_Objects</Filter>
     </ClCompile>
     <ClCompile Include="Tree.cpp">
       <Filter>03_Actors\01_Play\01_Objects\Tree</Filter>
     </ClCompile>
-    <ClCompile Include="Slot.cpp">
-      <Filter>03_Actors\01_Play\02_Inventory</Filter>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>03_Actors\01_Play\02_Inventory</Filter>
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="Slot.cpp">
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="WitchHUD.cpp">
+      <Filter>03_Actors\01_Play\02_HUD</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -146,11 +152,14 @@
     <Filter Include="03_Actors\01_Play\01_Objects\Field">
       <UniqueIdentifier>{d896f048-3cbe-4736-aa2c-7319323b276e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="03_Actors\01_Play\02_Inventory">
-      <UniqueIdentifier>{1558f517-0555-4733-8361-8e8edecd6f22}</UniqueIdentifier>
-    </Filter>
     <Filter Include="03_Actors\01_Play\01_Objects\Tree">
       <UniqueIdentifier>{fa990bf5-e19b-4b34-a055-e088e05ca333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\02_HUD">
+      <UniqueIdentifier>{1558f517-0555-4733-8361-8e8edecd6f22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\02_HUD\Inventory">
+      <UniqueIdentifier>{1faaf555-cf16-4bbf-8512-ebd4c9a0e855}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

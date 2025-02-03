@@ -5,6 +5,8 @@
 // Ό³Έν :
 class ACameraActor : public AActor
 {
+	friend class ULevel;
+
 public:
 	// constrcuter destructer
 	ACameraActor();
@@ -48,6 +50,8 @@ public:
 
 	ENGINEAPI void FreeCameraSwitch();
 
+	ENGINEAPI void EngineFreeCameraUpdate(float _DeltaTime);
+
 
 // #ifdef _DEBUG
 	void SetFreeCameraSpeed(float _Speed)
@@ -75,6 +79,6 @@ private:
 
 	FVector ScreenPos;
 	FVector PrevScreenPos;
-	float RotSpeed = 360.0f;
+	float RotSpeed = 80.0f;
 };
 

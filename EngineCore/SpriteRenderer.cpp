@@ -136,6 +136,7 @@ void USpriteRenderer::CameraTransUpdate(UEngineCamera* _Camera)
 	}
 
 	RendererTrans.Projection = CameraTrans.Projection;
+	RendererTrans.WV = CurWorld * RendererTrans.View;
 	RendererTrans.WVP = CurWorld * RendererTrans.View * RendererTrans.Projection;
 }
 

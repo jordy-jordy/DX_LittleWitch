@@ -46,6 +46,8 @@ VertexShaderOutPut SpriteRender_VS(EngineVertex _Vertex)
 	_Vertex.POSITION.x += (1.0f - Pivot.x) - 0.5f;
 	_Vertex.POSITION.y += (1.0f - Pivot.y) - 0.5f;
 	
+	_Vertex.POSITION.w = 1.0f;
+	
 	OutPut.SVPOSITION = mul(_Vertex.POSITION, WVP);
 	
 	OutPut.UV = _Vertex.UV;
