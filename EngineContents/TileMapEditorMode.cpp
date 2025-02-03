@@ -9,8 +9,8 @@
 #include <EngineCore/EngineGUI.h>
 #include <EngineCore/imgui.h>
 #include <EngineCore/EngineCamera.h>
-#include <EnginePlatform/EngineInput.h>
 #include <EngineCore/Collision.h>
+#include <EnginePlatform/EngineInput.h>
 #include <EnginePlatform/EngineWindow.h>
 
 #include "ContentsEditorGUI.h"

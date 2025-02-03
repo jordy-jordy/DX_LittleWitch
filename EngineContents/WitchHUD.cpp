@@ -3,6 +3,7 @@
 
 #include <EngineCore/ImageWidget.h>
 
+#include "Inventory.h"
 #include "GlobalVar.h"
 
 
@@ -19,9 +20,12 @@ void AWitchHUD::BeginPlay()
 	AHUD::BeginPlay();
 
 	{
-		std::shared_ptr<UImageWidget> BaseInventory = CreateWidget<UImageWidget>(-1);
+		std::shared_ptr<UInventory> BaseInventory = CreateWidget<UInventory>(-500);
 		BaseInventory->SetScale3D({ INVENTORY_Base * ScaleRatio });
+		BaseInventory->SetWorldLocation({ -400, 0 });
 		BaseInventory->SetTexture("Inventory_Base_mod.png");
+
+		BaseInventory->SlotInit();
 	}
 	
 

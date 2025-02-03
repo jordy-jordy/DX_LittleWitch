@@ -15,6 +15,7 @@
 #include "PlayGameMode.h"
 #include "EndGameMode.h"
 
+#include "WitchHUD.h"
 #include "Player.h"
 
 CreateContentsCoreDefine(UContentsCore);
@@ -36,7 +37,7 @@ void UContentsCore::EngineStart(UEngineInitData& _Data)
 	Window->SetActive(true);
 
 	UEngineCore::CreateLevel<ATitleGameMode, APawn, AHUD>("TITLE");
-	UEngineCore::CreateLevel<APlayGameMode, APlayer, AHUD>("PLAY");
+	UEngineCore::CreateLevel<APlayGameMode, APlayer, AWitchHUD>("PLAY");
 	UEngineCore::CreateLevel<AEndGameMode, APawn, AHUD>("END");
 	UEngineCore::CreateLevel<ATileMapEditorMode, APawn, AHUD>("MAPEDITOR");
 

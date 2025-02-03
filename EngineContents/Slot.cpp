@@ -5,7 +5,7 @@
 #include <EngineCore/SpriteRenderer.h>
 
 
-ASlot::ASlot()
+ASlot0::ASlot0()
 {
 	std::shared_ptr<UDefaultSceneComponent> Default = CreateDefaultSubObject<UDefaultSceneComponent>();
 	RootComponent = Default;
@@ -18,7 +18,7 @@ ASlot::ASlot()
 
 };
 
-ASlot::~ASlot()
+ASlot0::~ASlot0()
 {
 
 };

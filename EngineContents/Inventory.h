@@ -1,25 +1,41 @@
 #pragma once
+#include <EngineCore/ImageWidget.h>
+#include <EngineCore/SpriteRenderer.h>
 
+class ASlot
+{
+public:
+	class USpriteRenderer* Slot_Unlock;
+	class USpriteRenderer* Slot_Lock;
+
+	bool IsLocked = false;
+	bool IsHaveItem = false;
+	FVector SlotScale = { 50, 50 };
+
+	class AItem* Item = nullptr;
+};
 
 // Ό³Έν :
-class AInventory 
+class UInventory : public UImageWidget
 {
 public:
 	// constrcuter destructer
-	AInventory();
-	~AInventory();
+	UInventory();
+	~UInventory();
 
 	// delete Function
-	AInventory(const AInventory& _Other) = delete;
-	AInventory(AInventory&& _Other) noexcept = delete;
-	AInventory& operator=(const AInventory& _Other) = delete;
-	AInventory& operator=(AInventory&& _Other) noexcept = delete;
+	UInventory(const UInventory& _Other) = delete;
+	UInventory(UInventory&& _Other) noexcept = delete;
+	UInventory& operator=(const UInventory& _Other) = delete;
+	UInventory& operator=(UInventory&& _Other) noexcept = delete;
 
+	void SlotInit();
 
 protected:
-
+	void Tick(float _DeltaTime);
 
 private:
-
+	std::vector<std::vector<ASlot>> AllSlots;
+	FIntPoint InvenSize = {4, 3};
 
 };

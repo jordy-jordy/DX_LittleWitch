@@ -4,18 +4,12 @@
 
 
 // 설명 :
-class ASlot : public AActor
+class ASlot0 : public AActor
 {
 public:
 	// constrcuter destructer
-	ASlot();
-	~ASlot();
-
-	// delete Function
-	ASlot(const ASlot& _Other) = delete;
-	ASlot(ASlot&& _Other) noexcept = delete;
-	ASlot& operator=(const ASlot& _Other) = delete;
-	ASlot& operator=(ASlot&& _Other) noexcept = delete;
+	ASlot0();
+	~ASlot0();
 
 	void SetLocked(bool Locked)
 	{
@@ -48,15 +42,6 @@ public:
 		return SlotSize;
 	}
 
-	// 위치 설정 및 가져오기
-	void SetPosition(const FVector& Position)
-	{
-		SlotPosition = Position;
-	}
-	FVector GetPosition() const
-	{
-		return SlotPosition;
-	}
 
 
 protected:
@@ -66,7 +51,6 @@ private:
 	bool bLocked = false;           // 슬롯 잠금 여부
 	AItem* Item = nullptr;          // 슬롯에 담긴 아이템
 	FVector SlotSize = { 50, 50 };   // 슬롯의 기본 크기
-	FVector SlotPosition = { 0, 0 }; // 슬롯의 위치
 
 	class USpriteRenderer* Slot_Unlock;
 	class USpriteRenderer* Slot_Lock;

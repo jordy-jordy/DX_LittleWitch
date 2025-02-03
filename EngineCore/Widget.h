@@ -2,6 +2,7 @@
 #include "TransformObject.h"
 #include "EngineDataStruct.h"
 #include "RenderUnit.h"
+#include "HUD.h"
 
 // 설명 : 랜더러를 겸한다고 생각하고
 class UWidget : public UObject, public UTransformObject

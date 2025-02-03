@@ -15,11 +15,10 @@ public:
 	AWitchHUD& operator=(const AWitchHUD& _Other) = delete;
 	AWitchHUD& operator=(AWitchHUD&& _Other) noexcept = delete;
 
-	void BeginPlay();
-	void Tick(float _DeltaTime);
-
 
 protected:
+	void BeginPlay();
+	void Tick(float _DeltaTime);
 
 
 private:
