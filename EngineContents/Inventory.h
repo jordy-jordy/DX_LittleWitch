@@ -28,6 +28,13 @@ public:
 
 	void SlotInit();
 
+	ASlot* GetSlotWidget()
+	{
+		return SlotWidget;
+	}
+
+	void SetAllSlotsActiveSwitch();
+
 
 protected:
 	void Tick(float _DeltaTime);
@@ -37,5 +44,6 @@ private:
 	std::vector<std::vector<ASlot*>> AllSlots; 
 	FIntPoint InvenSize = {4, 6};
 	int OpenSlot = 12;
+	ASlot* SlotWidget;
 
 };

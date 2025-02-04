@@ -22,5 +22,5 @@ protected:
 
 
 private:
-
+	class UInventory* BaseInventory;
 };
