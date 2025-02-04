@@ -52,9 +52,6 @@
     <ClInclude Include="Item.h">
       <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
     </ClInclude>
-    <ClInclude Include="Slot.h">
-      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
-    </ClInclude>
     <ClInclude Include="WitchHUD.h">
       <Filter>03_Actors\01_Play\02_HUD</Filter>
     </ClInclude>
@@ -106,9 +103,6 @@
       <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
     </ClCompile>
     <ClCompile Include="Item.cpp">
-      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
-    </ClCompile>
-    <ClCompile Include="Slot.cpp">
       <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
     </ClCompile>
     <ClCompile Include="WitchHUD.cpp">

@@ -2,15 +2,12 @@
 #include <EngineCore/ImageWidget.h>
 #include <EngineCore/SpriteRenderer.h>
 
-class ASlot 
+class ASlot : public UImageWidget
 {
 public:
-	class USpriteRenderer* Slot_Unlock;
-	class USpriteRenderer* Slot_Lock;
-
 	bool IsLocked = false;
 	bool IsHaveItem = false;
-	FVector SlotScale = { 50, 50 };
+	FVector SlotScale = { 20, 20 };
 
 	class AItem* Item = nullptr;
 };
@@ -31,11 +28,14 @@ public:
 
 	void SlotInit();
 
+
 protected:
 	void Tick(float _DeltaTime);
 
 private:
-	std::vector<std::vector<ASlot>> AllSlots;
-	FIntPoint InvenSize = {4, 3};
+private:
+	std::vector<std::vector<ASlot*>> AllSlots; 
+	FIntPoint InvenSize = {4, 6};
+	int OpenSlot = 12;
 
 };

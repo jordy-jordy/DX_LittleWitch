@@ -22,8 +22,8 @@ void AWitchHUD::BeginPlay()
 	{
 		std::shared_ptr<UInventory> BaseInventory = CreateWidget<UInventory>(-500);
 		BaseInventory->SetScale3D({ INVENTORY_Base * ScaleRatio });
-		BaseInventory->SetWorldLocation({ -400, 0 });
-		BaseInventory->SetTexture("Inventory_Base_mod.png");
+		BaseInventory->SetWorldLocation(INVENTORY_Pos);
+		BaseInventory->SetTexture("Inventory_Base.png");
 
 		BaseInventory->SlotInit();
 	}
