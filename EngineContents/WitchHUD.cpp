@@ -39,7 +39,7 @@ void AWitchHUD::BeginPlay()
 	MongsiriWater->SetTexture("Mongsiri_Water.png", true, ScaleRatio);
 
 	UItem* WitchFlower = CreateWidget<UItem>(-25).get();
-	WitchFlower->SetItemInfo(false, 100, 0, 0, "WitchFlower_Collect.png");
+	WitchFlower->SetItemInfo(true, 100, 0, 0, "WitchFlower_Collect.png");
 	WitchFlower->SetTexture("WitchFlower_Collect.png", true, ScaleRatio);
 
 	FrontInventory->AddItem(MongsiriWater, 3);
