@@ -42,8 +42,6 @@ protected:
 private:
 private:
 	std::vector<std::vector<ASlot*>> AllSlots; 
-	FIntPoint InvenSize = {4, 6};
-	int OpenSlot = 12;
 	ASlot* SlotWidget;
 
 };
