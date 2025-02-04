@@ -89,7 +89,7 @@ protected:
 
 private:
 	float CurState_Speed = 0.0f;
-
+	
 	FVector CurVector = VECTOR_NONE;
 	EllieState::State CurState = EllieState::State::IDLE;
 	EllieState::POSVECTOR CurPosVector = EllieState::POSVECTOR::NONE;

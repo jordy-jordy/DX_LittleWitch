@@ -19,7 +19,7 @@ void UInventory::Tick(float _DeltaTime)
 	UImageWidget::Tick(_DeltaTime);
 }
 
-void UInventory::SlotInit()
+void UInventory::SlotInit(std::string_view _Left, std::string_view _Right)
 {
 	// 2D 벡터 크기 조정
 	AllSlots.resize(InvenSize.Y); // Y(행) 크기 설정
@@ -48,7 +48,7 @@ void UInventory::SlotInit()
 		for (int x = 0; x < InvenSize.X; ++x)
 		{
 			// HUD를 통해 새로운 슬롯 생성
-			SlotWidget = HUD->CreateWidget<ASlot>(0, "SlotWidget").get();
+			SlotWidget = HUD->CreateWidget<USlot>(0, "SlotWidget").get();
 
 			if (SlotWidget == nullptr)
 			{
@@ -72,12 +72,12 @@ void UInventory::SlotInit()
 			// `IsLocked` 상태에 따라 텍스처 설정
 			if (SlotWidget->IsLocked)
 			{
-				SlotWidget->SetTexture("Inventory_SlotLock.png", true, ScaleRatio);
+				SlotWidget->SetTexture(_Left, true, ScaleRatio);
 				SlotWidget->SetActive(false);
 			}
 			else
 			{
-				SlotWidget->SetTexture("Inventory_Slot #1184.png", true, ScaleRatio);
+				SlotWidget->SetTexture(_Right, true, ScaleRatio);
 				SlotWidget->SetActive(false);
 			}
 
@@ -102,4 +102,107 @@ void UInventory::SetAllSlotsActiveSwitch()
 			}
 		}
 	}
+}
+
+bool UInventory::AddItem(const UItem* _NewItem, int _ItemCount)
+{
+	if (_NewItem == nullptr)
+	{
+		return false;
+	}
+
+	// 1. 스택 가능한 아이템이면 기존 슬롯에 추가
+	if (_NewItem->GetItemInfo().IsStackable)
+	{
+		for (int y = 0; y < InvenSize.Y; ++y)
+		{
+			for (int x = 0; x < InvenSize.X; ++x)
+			{
+				USlot* _Slot = AllSlots[y][x];
+				if (_Slot == nullptr || _Slot->IsLocked)
+				{
+					continue;
+				}
+
+				if (_Slot->IsHaveItem && _Slot->Item.GetItemInfo().Name == _NewItem->GetItemInfo().Name)
+				{
+					// 기존 슬롯에 수량 추가
+					_Slot->Item.SetItemInfo(
+						_Slot->Item.GetItemInfo().IsStackable,
+						_Slot->Item.GetItemInfo().Cost,
+						_Slot->Item.GetItemInfo().ItemCount + _ItemCount, // 개수 추가
+						_Slot->Item.GetItemInfo().SpriteIndex,
+						_Slot->Item.GetItemInfo().Name
+					);
+
+					// 기존 슬롯의 텍스처 업데이트 (UI 반영)
+					_Slot->SetTexture(_NewItem->GetItemInfo().Name, true, ScaleRatio);
+
+					return true; // 기존 슬롯에 추가 완료
+				}
+			}
+		}
+
+		// 2. 기존 슬롯에 없으면 새 슬롯을 찾아 추가 (최초 습득)
+		for (int y = 0; y < InvenSize.Y; ++y)
+		{
+			for (int x = 0; x < InvenSize.X; ++x)
+			{
+				USlot* _Slot = AllSlots[y][x];
+				if (_Slot == nullptr || _Slot->IsLocked || _Slot->IsHaveItem)
+				{
+					continue;
+				}
+
+				// 새로운 아이템을 슬롯에 추가 (최초 습득)
+				_Slot->Item.SetItemInfo(
+					_NewItem->GetItemInfo().IsStackable,
+					_NewItem->GetItemInfo().Cost,
+					_ItemCount, // 최초 습득 시 전체 개수 추가
+					_NewItem->GetItemInfo().SpriteIndex,
+					_NewItem->GetItemInfo().Name
+				);
+
+				_Slot->IsHaveItem = true;
+
+				// 아이템의 텍스처를 슬롯에 적용
+				_Slot->SetTexture(_NewItem->GetItemInfo().Name, true, ScaleRatio);
+
+				return true; // 아이템 추가 완료
+			}
+		}
+	}
+
+	// 3. 스택 불가능한 아이템이면 각 슬롯에 1개씩 배치
+	int _AddedCount = 0;
+
+	for (int y = 0; y < InvenSize.Y && _AddedCount < _ItemCount; ++y)
+	{
+		for (int x = 0; x < InvenSize.X && _AddedCount < _ItemCount; ++x)
+		{
+			USlot* _Slot = AllSlots[y][x];
+			if (_Slot == nullptr || _Slot->IsLocked || _Slot->IsHaveItem)
+			{
+				continue;
+			}
+
+			// 새로운 아이템을 슬롯에 추가 (스택 불가능 → 한 슬롯에 1개씩)
+			_Slot->Item.SetItemInfo(
+				_NewItem->GetItemInfo().IsStackable,
+				_NewItem->GetItemInfo().Cost,
+				1, // 스택 불가능 => 한 슬롯에 1개만
+				_NewItem->GetItemInfo().SpriteIndex,
+				_NewItem->GetItemInfo().Name
+			);
+
+			_Slot->IsHaveItem = true;
+
+			// 아이템의 텍스처를 슬롯에 적용
+			_Slot->SetTexture(_NewItem->GetItemInfo().Name, true, ScaleRatio);
+
+			_AddedCount++;
+		}
+	}
+
+	return _AddedCount == _ItemCount; // 모든 아이템이 성공적으로 추가되었는지 확인
 }

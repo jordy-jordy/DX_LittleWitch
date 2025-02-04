@@ -48,7 +48,7 @@ static FVector TREE_SIZE_1 = { 144.0f, 138.0f, 0.0f };
 
 // 인벤토리
 static FIntPoint InvenSize = {4, 6};
-static int OpenSlot = 7;
+static int OpenSlot = 15;
 // 베이스 크기
 static FVector INVENTORY_Base = { 108.0f, 156.0f, 0.0f };
 // 기본 위치

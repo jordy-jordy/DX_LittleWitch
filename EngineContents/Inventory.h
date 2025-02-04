@@ -1,18 +1,18 @@
 #pragma once
 #include <EngineCore/ImageWidget.h>
-#include <EngineCore/SpriteRenderer.h>
+#include "Item.h"
 
-class ASlot : public UImageWidget
+
+class USlot : public UImageWidget
 {
 public:
 	bool IsLocked = false;
 	bool IsHaveItem = false;
 	FVector SlotScale = { 20, 20 };
 
-	class AItem* Item = nullptr;
+	UItem Item;
 };
 
-// Ό³Έν :
 class UInventory : public UImageWidget
 {
 public:
@@ -26,14 +26,9 @@ public:
 	UInventory& operator=(const UInventory& _Other) = delete;
 	UInventory& operator=(UInventory&& _Other) noexcept = delete;
 
-	void SlotInit();
-
-	ASlot* GetSlotWidget()
-	{
-		return SlotWidget;
-	}
-
+	void SlotInit(std::string_view _Left = "EmptySlot.png", std::string_view _Right = "EmptySlot.png");
 	void SetAllSlotsActiveSwitch();
+	bool AddItem(const UItem* _NewItem, int _ItemCount);
 
 
 protected:
@@ -41,7 +36,7 @@ protected:
 
 private:
 private:
-	std::vector<std::vector<ASlot*>> AllSlots; 
-	ASlot* SlotWidget;
+	std::vector<std::vector<USlot*>> AllSlots; 
+	USlot* SlotWidget;
 
 };

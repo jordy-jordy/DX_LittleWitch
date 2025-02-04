@@ -22,5 +22,6 @@ protected:
 
 
 private:
-	class UInventory* BaseInventory;
+	class UInventory* BackInventory = nullptr;
+	class UInventory* FrontInventory = nullptr;
 };
