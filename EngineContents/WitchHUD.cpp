@@ -34,16 +34,15 @@ void AWitchHUD::BeginPlay()
 	FrontInventory->SlotInit();
 	FrontInventory->SetActive(false);
 
-	UItem* MongsiriWater = CreateWidget<UItem>(-25).get();
+	MongsiriWater = CreateWidget<UItem>(-25).get();
 	MongsiriWater->SetItemInfo(true, 100, 0, 0, "Mongsiri_Water.png");
 	MongsiriWater->SetTexture("Mongsiri_Water.png", true, ScaleRatio);
 
-	UItem* WitchFlower = CreateWidget<UItem>(-25).get();
-	WitchFlower->SetItemInfo(true, 100, 0, 0, "WitchFlower_Collect.png");
+	WitchFlower = CreateWidget<UItem>(-25).get();
+	WitchFlower->SetItemInfo(false, 100, 0, 0, "WitchFlower_Collect.png");
 	WitchFlower->SetTexture("WitchFlower_Collect.png", true, ScaleRatio);
 
-	FrontInventory->AddItem(MongsiriWater, 3);
-	FrontInventory->AddItem(WitchFlower, 6);
+
 
 }
 
@@ -57,6 +56,12 @@ void AWitchHUD::Tick(float _DeltaTime)
 		BackInventory->SetAllSlotsActiveSwitch();
 		FrontInventory->SetActiveSwitch();
 		FrontInventory->SetAllSlotsActiveSwitch();
-
 	}
+
+	if (UEngineInput::IsDown('L'))
+	{
+		FrontInventory->AddItem(MongsiriWater, 3);
+		FrontInventory->AddItem(WitchFlower, 1);
+	}
+
 }

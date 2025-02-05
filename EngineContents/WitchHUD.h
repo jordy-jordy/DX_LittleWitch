@@ -24,4 +24,7 @@ protected:
 private:
 	class UInventory* BackInventory = nullptr;
 	class UInventory* FrontInventory = nullptr;
+
+	class UItem* MongsiriWater;
+	class UItem* WitchFlower;
 };
