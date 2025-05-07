@@ -1,0 +1,545 @@
+fileFormatVersion: 2
+guid: ac25984b108a4664582341d0eb064289
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2614332332699152844
+    second: Title_train_star_0
+  - first:
+      213: -4643149175302795014
+    second: Title_train_star_1
+  - first:
+      213: 5136069055103831402
+    second: Title_train_star_2
+  - first:
+      213: 6416914191597722922
+    second: Title_train_star_3
+  - first:
+      213: -302586248862216153
+    second: Title_train_star_4
+  - first:
+      213: -6469038383483816980
+    second: Title_train_star_5
+  - first:
+      213: 5224689070529285204
+    second: Title_train_star_6
+  - first:
+      213: -8951768171868842604
+    second: Title_train_star_7
+  - first:
+      213: -8482516384734615467
+    second: Title_train_star_8
+  - first:
+      213: -4716589607125520961
+    second: Title_train_star_9
+  - first:
+      213: 1888419366246686556
+    second: Title_train_star_10
+  - first:
+      213: 2613838833580552246
+    second: Title_train_star_11
+  - first:
+      213: 1931082636675565815
+    second: Title_train_star_12
+  - first:
+      213: 6028726577786775460
+    second: Title_train_star_13
+  - first:
+      213: 2370393258903034131
+    second: Title_train_star_14
+  - first:
+      213: 9155250370585250968
+    second: Title_train_star_15
+  - first:
+      213: 4543075657367421797
+    second: Title_train_star_16
+  - first:
+      213: -7583722702027439029
+    second: Title_train_star_17
+  - first:
+      213: -8389009151544378170
+    second: Title_train_star_18
+  - first:
+      213: -4203248097979754513
+    second: Title_train_star_19
+  - first:
+      213: -6307347065721429250
+    second: Title_train_star_20
+  - first:
+      213: -8418101636263497127
+    second: Title_train_star_21
+  - first:
+      213: -5868741081317124509
+    second: Title_train_star_22
+  - first:
+      213: -6947949577379078051
+    second: Title_train_star_23
+  - first:
+      213: -8537297513168856802
+    second: Title_train_star_24
+  - first:
+      213: -1858150915816816492
+    second: Title_train_star_25
+  - first:
+      213: 7002685663161559933
+    second: Title_train_star_26
+  - first:
+      213: -5857259795357484407
+    second: Title_train_star_27
+  - first:
+      213: -3329763881527249289
+    second: Title_train_star_28
+  - first:
+      213: -6746028067094157647
+    second: Title_train_star_29
+  - first:
+      213: -7304224205675040515
+    second: Title_train_star_30
+  - first:
+      213: -8169326152504722562
+    second: Title_train_star_31
+  - first:
+      213: 8299427328407549743
+    second: Title_train_star_32
+  - first:
+      213: -9194618898413445031
+    second: Title_train_star_33
+  - first:
+      213: -4186418810153935753
+    second: Title_train_star_34
+  - first:
+      213: 9218158256781256216
+    second: Title_train_star_35
+  - first:
+      213: 7000477699956411496
+    second: Title_train_star_36
+  - first:
+      213: -1936149676997045644
+    second: Title_train_star_37
+  - first:
+      213: -6025546792757955992
+    second: Title_train_star_38
+  - first:
+      213: 3250292340557736500
+    second: Title_train_star_39
+  - first:
+      213: 6650721647165272320
+    second: Title_train_star_40
+  - first:
+      213: -4001423055846048449
+    second: Title_train_star_41
+  - first:
+      213: 5833473498339035764
+    second: Title_train_star_42
+  - first:
+      213: 6946275406583648752
+    second: Title_train_star_43
+  - first:
+      213: 2419303626269819047
+    second: Title_train_star_44
+  - first:
+      213: -4915311691470297947
+    second: Title_train_star_45
+  - first:
+      213: 1920315571896234073
+    second: Title_train_star_46
+  - first:
+      213: 5748634664448594208
+    second: Title_train_star_47
+  - first:
+      213: -5642682490788682357
+    second: Title_train_star_48
+  - first:
+      213: 3238752091807415895
+    second: Title_train_star_49
+  - first:
+      213: -3112174045394825439
+    second: Title_train_star_50
+  - first:
+      213: 1685600511441889816
+    second: Title_train_star_51
+  - first:
+      213: 5809946302710952769
+    second: Title_train_star_52
+  - first:
+      213: 9216318014862326057
+    second: Title_train_star_53
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Title_train_star_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 272
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43e06a0489608bbd0800000000000000
+      internalID: -2614332332699152844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_1
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 272
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af0ddeeec68309fb0800000000000000
+      internalID: -4643149175302795014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_2
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 272
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6d0753f79bf64740800000000000000
+      internalID: 5136069055103831402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_3
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 272
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d585085757d0950800000000000000
+      internalID: 6416914191597722922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 136
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72056aae86ffccbf0800000000000000
+      internalID: -302586248862216153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_5
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 136
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce3741a5ddb5936a0800000000000000
+      internalID: -6469038383483816980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 136
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45c83ce2703d18840800000000000000
+      internalID: 5224689070529285204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_7
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 136
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4951c14b64ee4c380800000000000000
+      internalID: -8951768171868842604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55866765a4c084a80800000000000000
+      internalID: -8482516384734615467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_9
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbdebfbedbe4b8eb0800000000000000
+      internalID: -4716589607125520961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Title_train_star_10
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 480
+        height: 136
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5f1a188863053a10800000000000000
+      internalID: 1888419366246686556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 6ea5db539ce11524f8df117d20328feb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Title_train_star_0: -2614332332699152844
+      Title_train_star_1: -4643149175302795014
+      Title_train_star_10: 1888419366246686556
+      Title_train_star_2: 5136069055103831402
+      Title_train_star_3: 6416914191597722922
+      Title_train_star_4: -302586248862216153
+      Title_train_star_5: -6469038383483816980
+      Title_train_star_6: 5224689070529285204
+      Title_train_star_7: -8951768171868842604
+      Title_train_star_8: -8482516384734615467
+      Title_train_star_9: -4716589607125520961
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClInclude Include="PreCompile.h">
+      <Filter>01_PreCompile</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleGameMode.h">
+      <Filter>02_GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentsCore.h">
+      <Filter>00_Core</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayGameMode.h">
+      <Filter>02_GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="EndGameMode.h">
+      <Filter>02_GameMode</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleScene.h">
+      <Filter>03_Actors\00_Title</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalVar.h">
+      <Filter>00_GlobalValue</Filter>
+    </ClInclude>
+    <ClInclude Include="TileMapEditorMode.h">
+      <Filter>02_GameMode\MapEditor</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>03_Actors\01_Play\00_Player</Filter>
+    </ClInclude>
+    <ClInclude Include="ContentsEditorGUI.h">
+      <Filter>01_GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Field_Green.h">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
+    </ClInclude>
+    <ClInclude Include="AllField.h">
+      <Filter>03_Actors\01_Play\01_Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Field_Home.h">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
+    </ClInclude>
+    <ClInclude Include="FieldObjects.h">
+      <Filter>03_Actors\01_Play\01_Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Tree.h">
+      <Filter>03_Actors\01_Play\01_Objects\Tree</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventory.h">
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
+    </ClInclude>
+    <ClInclude Include="WitchHUD.h">
+      <Filter>03_Actors\01_Play\02_HUD</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="PreCompile.cpp">
+      <Filter>01_PreCompile</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleGameMode.cpp">
+      <Filter>02_GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="ContentsCore.cpp">
+      <Filter>00_Core</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayGameMode.cpp">
+      <Filter>02_GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="EndGameMode.cpp">
+      <Filter>02_GameMode</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>03_Actors\00_Title</Filter>
+    </ClCompile>
+    <ClCompile Include="TileMapEditorMode.cpp">
+      <Filter>02_GameMode\MapEditor</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>03_Actors\01_Play\00_Player</Filter>
+    </ClCompile>
+    <ClCompile Include="ContentsEditorGUI.cpp">
+      <Filter>01_GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Field_Green.cpp">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="AllField.cpp">
+      <Filter>03_Actors\01_Play\01_Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Field_Home.cpp">
+      <Filter>03_Actors\01_Play\01_Objects\Field</Filter>
+    </ClCompile>
+    <ClCompile Include="FieldObjects.cpp">
+      <Filter>03_Actors\01_Play\01_Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Tree.cpp">
+      <Filter>03_Actors\01_Play\01_Objects\Tree</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventory.cpp">
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>03_Actors\01_Play\02_HUD\Inventory</Filter>
+    </ClCompile>
+    <ClCompile Include="WitchHUD.cpp">
+      <Filter>03_Actors\01_Play\02_HUD</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="00_Core">
+      <UniqueIdentifier>{198bad0d-532e-43f7-9e7e-0653385b4d74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_PreCompile">
+      <UniqueIdentifier>{d511870a-15a1-476a-8431-71e4243d5754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_GameMode">
+      <UniqueIdentifier>{bac4216a-1f5e-4ea6-8d0a-781ca85e8baf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors">
+      <UniqueIdentifier>{5330aaca-3ea8-4355-a83a-2f01272a40c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\00_Title">
+      <UniqueIdentifier>{3f56e8c4-d1a6-41ec-bea6-a4d1e3a0d279}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play">
+      <UniqueIdentifier>{7f451d07-f808-4eda-bd64-9fa093a42036}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00_GlobalValue">
+      <UniqueIdentifier>{731b4870-d7cf-40ee-8541-120ca62301f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_GameMode\MapEditor">
+      <UniqueIdentifier>{c47a3ade-d210-4ebb-9de8-e56ea4a499b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\00_Player">
+      <UniqueIdentifier>{1d58ae6d-66f4-47b8-9529-89132728c7c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\01_Objects">
+      <UniqueIdentifier>{f35e67bc-97b6-411d-8618-594f87453829}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_GUI">
+      <UniqueIdentifier>{88ea9255-f5af-4a30-b5d1-0111e71e01e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\01_Objects\Field">
+      <UniqueIdentifier>{d896f048-3cbe-4736-aa2c-7319323b276e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\01_Objects\Tree">
+      <UniqueIdentifier>{fa990bf5-e19b-4b34-a055-e088e05ca333}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\02_HUD">
+      <UniqueIdentifier>{1558f517-0555-4733-8361-8e8edecd6f22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_Actors\01_Play\02_HUD\Inventory">
+      <UniqueIdentifier>{1faaf555-cf16-4bbf-8512-ebd4c9a0e855}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
